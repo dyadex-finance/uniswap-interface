@@ -1,5 +1,5 @@
 import type { TransactionRequest } from '@ethersproject/providers'
-import { type Currency, type CurrencyAmount } from '@uniswap/sdk-core'
+import { type Currency, type CurrencyAmount } from '@dyadex-finance/sdk-core'
 import {
   type GasEstimate,
   type GasFeeResult,
@@ -220,7 +220,7 @@ export function areEqualGasStrategies(a?: GasStrategy, b?: GasStrategy): boolean
 }
 
 export function getGasPrice(estimate?: GasEstimate): string | undefined {
-  return estimate && 'gasPrice' in estimate ? estimate.gasPrice : (estimate?.maxFeePerGas ?? undefined)
+  return estimate && 'gasPrice' in estimate ? estimate.gasPrice : estimate?.maxFeePerGas ?? undefined
 }
 
 export type ValidatedGasFeeResult = Prettify<GasFeeResult & { value: string; error: null }>

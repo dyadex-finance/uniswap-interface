@@ -1,4 +1,4 @@
-import { Currency, CurrencyAmount, TradeType as SdkTradeType } from '@uniswap/sdk-core'
+import { Currency, CurrencyAmount, TradeType as SdkTradeType } from '@dyadex-finance/sdk-core'
 import { TradingApi } from '@universe/api'
 import { areCurrencyIdsEqual, currencyId } from 'uniswap/src/utils/currencyId'
 

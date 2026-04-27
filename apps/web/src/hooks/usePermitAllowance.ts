@@ -1,5 +1,10 @@
-import { AllowanceTransfer, MaxAllowanceTransferAmount, PermitSingle, permit2Address } from '@uniswap/permit2-sdk'
-import { CurrencyAmount, Token } from '@uniswap/sdk-core'
+import {
+  AllowanceTransfer,
+  MaxAllowanceTransferAmount,
+  PermitSingle,
+  permit2Address,
+} from '@dyadex-finance/permit2-sdk'
+import { CurrencyAmount, Token } from '@dyadex-finance/sdk-core'
 import ms from 'ms'
 import { useCallback, useMemo, useRef } from 'react'
 import { PERMIT2_ABI } from 'uniswap/src/abis/permit2'

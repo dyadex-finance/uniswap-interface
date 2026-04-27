@@ -1,4 +1,4 @@
-import { Currency } from '@uniswap/sdk-core'
+import { Currency } from '@dyadex-finance/sdk-core'
 import { useMemo, useRef, useState } from 'react'
 import { WRAPPED_NATIVE_CURRENCY } from 'uniswap/src/constants/tokens'
 import { InterfaceEventName } from 'uniswap/src/features/telemetry/constants'
@@ -124,8 +124,8 @@ Please file a bug detailing how this happened - https://github.com/Uniswap/inter
         inputError: sufficientBalance
           ? undefined
           : hasInputAmount
-            ? WrapInputError.INSUFFICIENT_NATIVE_BALANCE
-            : WrapInputError.ENTER_NATIVE_AMOUNT,
+          ? WrapInputError.INSUFFICIENT_NATIVE_BALANCE
+          : WrapInputError.ENTER_NATIVE_AMOUNT,
       }
     } else if (weth.equals(inputCurrency) && outputCurrency.isNative) {
       return {
@@ -158,8 +158,8 @@ Please file a bug detailing how this happened - https://github.com/Uniswap/inter
         inputError: sufficientBalance
           ? undefined
           : hasInputAmount
-            ? WrapInputError.INSUFFICIENT_WRAPPED_BALANCE
-            : WrapInputError.ENTER_WRAPPED_AMOUNT,
+          ? WrapInputError.INSUFFICIENT_WRAPPED_BALANCE
+          : WrapInputError.ENTER_WRAPPED_AMOUNT,
       }
     } else {
       return NOT_APPLICABLE

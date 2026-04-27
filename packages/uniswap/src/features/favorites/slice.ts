@@ -1,5 +1,5 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit'
-import { Ether } from '@uniswap/sdk-core'
+import { Ether } from '@dyadex-finance/sdk-core'
 import { WBTC } from 'uniswap/src/constants/tokens'
 import { normalizeCurrencyIdForMapLookup } from 'uniswap/src/data/cache'
 import { UniverseChainId } from 'uniswap/src/features/chains/types'

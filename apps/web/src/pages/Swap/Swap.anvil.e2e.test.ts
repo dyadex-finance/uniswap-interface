@@ -1,5 +1,5 @@
-import { MaxUint160, MaxUint256, PERMIT2_ADDRESS } from '@uniswap/permit2-sdk'
-import { UNIVERSAL_ROUTER_ADDRESS, UniversalRouterVersion } from '@uniswap/universal-router-sdk'
+import { MaxUint160, MaxUint256, PERMIT2_ADDRESS } from '@dyadex-finance/permit2-sdk'
+import { UNIVERSAL_ROUTER_ADDRESS, UniversalRouterVersion } from '@dyadex-finance/universal-router-sdk'
 import { TradingApi } from '@universe/api'
 import { USDT } from 'uniswap/src/constants/tokens'
 import { uniswapUrls } from 'uniswap/src/constants/urls'

@@ -1,5 +1,5 @@
 import { skipToken } from '@tanstack/react-query'
-import { Currency } from '@uniswap/sdk-core'
+import { Currency } from '@dyadex-finance/sdk-core'
 import type { FORQuote, FORSupportedFiatCurrency, FORSupportedToken } from '@universe/api'
 import { RampDirection, TradingApi } from '@universe/api'
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
@@ -273,7 +273,7 @@ export function useFiatOnRampQuotes({
   const loading = quotesFetching || debouncedBaseCurrencyAmount !== baseCurrencyAmount
 
   // if user is entering base amount -> ignore previous errors
-  const error = debouncedBaseCurrencyAmount !== baseCurrencyAmount ? undefined : (quotesError ?? undefined)
+  const error = debouncedBaseCurrencyAmount !== baseCurrencyAmount ? undefined : quotesError ?? undefined
 
   return {
     loading,

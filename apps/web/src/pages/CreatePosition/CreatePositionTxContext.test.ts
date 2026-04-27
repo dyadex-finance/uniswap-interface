@@ -4,7 +4,7 @@ import {
   CreateLPPositionResponse,
 } from '@uniswap/client-liquidity/dist/uniswap/liquidity/v1/api_pb'
 import { PermitBatch, PermitBatchData } from '@uniswap/client-liquidity/dist/uniswap/liquidity/v1/types_pb'
-import { CurrencyAmount } from '@uniswap/sdk-core'
+import { CurrencyAmount } from '@dyadex-finance/sdk-core'
 import { ZERO_ADDRESS } from 'uniswap/src/constants/misc'
 import { USDT } from 'uniswap/src/constants/tokens'
 import { normalizeApprovalResponse } from 'uniswap/src/data/apiClients/liquidityService/normalizeApprovalResponse'

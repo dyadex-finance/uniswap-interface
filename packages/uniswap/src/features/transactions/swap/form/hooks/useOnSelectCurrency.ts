@@ -1,6 +1,6 @@
 import type { QueryClient } from '@tanstack/react-query'
 import { useQueryClient } from '@tanstack/react-query'
-import type { Currency } from '@uniswap/sdk-core'
+import type { Currency } from '@dyadex-finance/sdk-core'
 import { TradingApi } from '@universe/api'
 import { useMemo } from 'react'
 import { getSwappableTokensQueryData } from 'uniswap/src/data/apiClients/tradingApi/useTradingApiSwappableTokensQuery'

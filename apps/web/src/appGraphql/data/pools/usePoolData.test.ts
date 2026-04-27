@@ -1,4 +1,4 @@
-import { FeeAmount } from '@uniswap/v3-sdk'
+import { FeeAmount } from '@dyadex-finance/v3-sdk'
 import { GraphQLApi } from '@universe/api'
 import { V2_DEFAULT_FEE_TIER } from 'uniswap/src/constants/pools'
 import { GQL_MAINNET_CHAINS } from 'uniswap/src/features/chains/chainInfo'

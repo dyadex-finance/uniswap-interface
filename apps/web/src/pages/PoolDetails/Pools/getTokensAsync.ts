@@ -1,4 +1,4 @@
-import { Token } from '@uniswap/sdk-core'
+import { Token } from '@dyadex-finance/sdk-core'
 import { Interface } from 'ethers/lib/utils'
 import ERC20_ABI from 'uniswap/src/abis/erc20.json'
 import { Erc20Interface } from 'uniswap/src/abis/types/Erc20'
@@ -47,13 +47,13 @@ function tryParseToken({ address, chainId, data }: { address: string; chainId: U
     const name = nameData.success
       ? (Erc20.decodeFunctionResult('name', nameData.returnData)[0] as string)
       : nameDataBytes32.success
-        ? (Erc20Bytes32.decodeFunctionResult('name', nameDataBytes32.returnData)[0] as string)
-        : undefined
+      ? (Erc20Bytes32.decodeFunctionResult('name', nameDataBytes32.returnData)[0] as string)
+      : undefined
     const symbol = symbolData.success
       ? (Erc20.decodeFunctionResult('symbol', symbolData.returnData)[0] as string)
       : symbolDataBytes32.success
-        ? (Erc20Bytes32.decodeFunctionResult('symbol', symbolDataBytes32.returnData)[0] as string)
-        : undefined
+      ? (Erc20Bytes32.decodeFunctionResult('symbol', symbolDataBytes32.returnData)[0] as string)
+      : undefined
     const decimals = decimalsData.success ? parseInt(decimalsData.returnData) : DEFAULT_ERC20_DECIMALS
 
     return new Token(chainId, address, decimals, symbol, name)

@@ -1,5 +1,5 @@
 /* oxlint-disable max-lines */
-import { Currency, CurrencyAmount } from '@uniswap/sdk-core'
+import { Currency, CurrencyAmount } from '@dyadex-finance/sdk-core'
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { getPrimaryStablecoin } from 'uniswap/src/features/chains/utils'

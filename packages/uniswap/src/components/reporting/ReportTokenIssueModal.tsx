@@ -1,4 +1,4 @@
-import { Currency } from '@uniswap/sdk-core'
+import { Currency } from '@dyadex-finance/sdk-core'
 import { ReportAssetType, TokenReportEventType } from '@universe/api'
 import { atom } from 'jotai'
 import { useMemo } from 'react'

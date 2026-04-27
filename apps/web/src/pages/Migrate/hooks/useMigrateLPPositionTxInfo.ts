@@ -4,7 +4,7 @@ import type {
   MigrateV2ToV3LPPositionRequest,
   MigrateV3ToV4LPPositionRequest,
 } from '@uniswap/client-liquidity/dist/uniswap/liquidity/v1/api_pb'
-import { type Currency, CurrencyAmount } from '@uniswap/sdk-core'
+import { type Currency, CurrencyAmount } from '@dyadex-finance/sdk-core'
 import { FeatureFlags, useFeatureFlag } from '@universe/gating'
 import { type Dispatch, type SetStateAction, useEffect, useMemo, useState } from 'react'
 import { useSelector } from 'react-redux'

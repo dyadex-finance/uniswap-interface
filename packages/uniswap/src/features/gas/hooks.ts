@@ -1,4 +1,4 @@
-import { type Currency, type CurrencyAmount } from '@uniswap/sdk-core'
+import { type Currency, type CurrencyAmount } from '@dyadex-finance/sdk-core'
 import { type FormattedUniswapXGasFeeInfo, type GasFeeResult, type GasStrategy } from '@universe/api'
 import { type GasStrategyType, useStatsigClientStatus } from '@universe/gating'
 import { BigNumber, type providers } from 'ethers/lib/ethers'

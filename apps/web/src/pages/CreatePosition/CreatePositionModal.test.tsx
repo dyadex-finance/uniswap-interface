@@ -48,7 +48,7 @@ vi.mock('~/hooks/Tokens', () => ({
 }))
 
 import { ProtocolVersion } from '@uniswap/client-data-api/dist/data/v1/poolTypes_pb'
-import { CurrencyAmount } from '@uniswap/sdk-core'
+import { CurrencyAmount } from '@dyadex-finance/sdk-core'
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router'
 import { DAI, USDC_MAINNET } from 'uniswap/src/constants/tokens'

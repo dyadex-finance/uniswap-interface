@@ -1,4 +1,4 @@
-import { Currency } from '@uniswap/sdk-core'
+import { Currency } from '@dyadex-finance/sdk-core'
 import { useMemo } from 'react'
 import { useSupportedChainId } from 'uniswap/src/features/chains/hooks/useSupportedChainId'
 import { getPrimaryStablecoin } from 'uniswap/src/features/chains/utils'

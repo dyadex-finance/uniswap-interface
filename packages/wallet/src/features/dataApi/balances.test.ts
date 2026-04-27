@@ -1,5 +1,5 @@
 import { NetworkStatus } from '@apollo/client'
-import { Token } from '@uniswap/sdk-core'
+import { Token } from '@dyadex-finance/sdk-core'
 import {
   sortPortfolioBalances,
   usePortfolioBalances,

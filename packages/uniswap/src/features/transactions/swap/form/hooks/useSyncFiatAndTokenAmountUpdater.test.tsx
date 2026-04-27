@@ -1,5 +1,5 @@
 import { renderHook } from '@testing-library/react'
-import { Currency, CurrencyAmount } from '@uniswap/sdk-core'
+import { Currency, CurrencyAmount } from '@dyadex-finance/sdk-core'
 import { useSyncFiatAndTokenAmountUpdater } from 'uniswap/src/features/transactions/swap/form/hooks/useSyncFiatAndTokenAmountUpdater'
 import { SwapFormStoreState } from 'uniswap/src/features/transactions/swap/stores/swapFormStore/types'
 import * as useSwapFormStoreModule from 'uniswap/src/features/transactions/swap/stores/swapFormStore/useSwapFormStore'

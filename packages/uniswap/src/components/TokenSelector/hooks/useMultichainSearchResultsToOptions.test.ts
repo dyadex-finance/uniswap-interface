@@ -1,4 +1,4 @@
-import { NativeCurrency, Token } from '@uniswap/sdk-core'
+import { NativeCurrency, Token } from '@dyadex-finance/sdk-core'
 import { OnchainItemListOptionType } from 'uniswap/src/components/lists/items/types'
 import { multichainSearchResultsToOptions } from 'uniswap/src/components/TokenSelector/hooks/useMultichainSearchResultsToOptions'
 import { UniverseChainId } from 'uniswap/src/features/chains/types'

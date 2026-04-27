@@ -1,6 +1,6 @@
 import { renderHook } from '@testing-library/react'
 import { ProtocolVersion } from '@uniswap/client-data-api/dist/data/v1/poolTypes_pb'
-import { Percent } from '@uniswap/sdk-core'
+import { Percent } from '@dyadex-finance/sdk-core'
 import { useGetPoolsByTokens } from 'uniswap/src/data/rest/getPools'
 import { UniverseChainId } from 'uniswap/src/features/chains/types'
 import { afterEach, describe, expect, it, vi } from 'vitest'

@@ -1,4 +1,4 @@
-import { MULTICALL_ADDRESSES } from '@uniswap/sdk-core'
+import { MULTICALL_ADDRESSES } from '@dyadex-finance/sdk-core'
 import ms from 'ms'
 import { UniverseChainId } from 'uniswap/src/features/chains/types'
 import { useReadContract } from 'wagmi'

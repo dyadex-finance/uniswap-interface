@@ -1,4 +1,4 @@
-import { Currency, CurrencyAmount } from '@uniswap/sdk-core'
+import { Currency, CurrencyAmount } from '@dyadex-finance/sdk-core'
 import { PropsWithChildren, ReactNode } from 'react'
 import { FiatCurrency } from 'uniswap/src/features/fiatCurrency/constants'
 import { Locale } from 'uniswap/src/features/language/constants'

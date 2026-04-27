@@ -1,5 +1,5 @@
 import { ChainId } from '@uniswap/client-liquidity/dist/uniswap/liquidity/v1/types_pb'
-import { Currency, CurrencyAmount } from '@uniswap/sdk-core'
+import { Currency, CurrencyAmount } from '@dyadex-finance/sdk-core'
 import { useCallback, useRef, useState } from 'react'
 import { useSubmitBidMutation } from 'uniswap/src/data/rest/auctions/useSubmitBidMutation'
 import { TransactionStep } from 'uniswap/src/features/transactions/steps/types'

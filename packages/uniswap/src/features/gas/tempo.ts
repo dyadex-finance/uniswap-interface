@@ -1,4 +1,4 @@
-import { type Currency, type CurrencyAmount } from '@uniswap/sdk-core'
+import { type Currency, type CurrencyAmount } from '@dyadex-finance/sdk-core'
 import { logger } from 'utilities/src/logger/logger'
 
 // Conversion factor from 18-decimal native gas units to 6-decimal pathUSD

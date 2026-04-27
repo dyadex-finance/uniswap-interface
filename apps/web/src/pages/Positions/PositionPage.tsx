@@ -1,7 +1,7 @@
 /* oxlint-disable max-lines */
 import { BigNumber } from '@ethersproject/bignumber'
 import { Position, PositionStatus, ProtocolVersion } from '@uniswap/client-data-api/dist/data/v1/poolTypes_pb'
-import { Currency, CurrencyAmount, Percent, Price } from '@uniswap/sdk-core'
+import { Currency, CurrencyAmount, Percent, Price } from '@dyadex-finance/sdk-core'
 import { GraphQLApi } from '@universe/api'
 import { FeatureFlags, useFeatureFlag } from '@universe/gating'
 import { useMemo, useState } from 'react'
@@ -132,8 +132,8 @@ function PositionPage({ chainId }: { chainId: EVMUniverseChainId | undefined }) 
     protocolVersion: pathname.includes('v3')
       ? ProtocolVersion.V3
       : pathname.includes('v4')
-        ? ProtocolVersion.V4
-        : ProtocolVersion.UNSPECIFIED,
+      ? ProtocolVersion.V4
+      : ProtocolVersion.UNSPECIFIED,
     tokenId: tokenIdFromUrl,
     chainId: chainId ?? supportedAccountChainId,
   })

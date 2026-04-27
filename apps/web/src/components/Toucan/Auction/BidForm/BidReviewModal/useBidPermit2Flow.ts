@@ -1,7 +1,7 @@
 /* oxlint-disable typescript/no-unnecessary-condition */
 import { Contract } from '@ethersproject/contracts'
-import { MaxAllowanceTransferAmount, permit2Address } from '@uniswap/permit2-sdk'
-import { Currency, CurrencyAmount, MaxUint256, Token } from '@uniswap/sdk-core'
+import { MaxAllowanceTransferAmount, permit2Address } from '@dyadex-finance/permit2-sdk'
+import { Currency, CurrencyAmount, MaxUint256, Token } from '@dyadex-finance/sdk-core'
 import ms from 'ms'
 import { useMemo } from 'react'
 import ERC20_ABI from 'uniswap/src/abis/erc20.json'
@@ -86,10 +86,10 @@ export function useBidPermit2Flow({
 
   const needsPermit2Allowance = Boolean(
     !isNativeBidToken &&
-    bidTokenAmount &&
-    permitAllowance !== undefined &&
-    permitExpiration !== undefined &&
-    !isPermit2AllowanceGranted,
+      bidTokenAmount &&
+      permitAllowance !== undefined &&
+      permitExpiration !== undefined &&
+      !isPermit2AllowanceGranted,
   )
 
   const permit2ApprovalPending = useHasPendingPermit2Approval(bidTokenAmount?.currency, auctionDetails?.address)

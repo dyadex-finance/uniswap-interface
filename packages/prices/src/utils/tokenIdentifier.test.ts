@@ -1,4 +1,4 @@
-import { Ether, Token } from '@uniswap/sdk-core'
+import { Ether, Token } from '@dyadex-finance/sdk-core'
 import type { TokenIdentifier } from '@universe/prices'
 import {
   createPriceKey,

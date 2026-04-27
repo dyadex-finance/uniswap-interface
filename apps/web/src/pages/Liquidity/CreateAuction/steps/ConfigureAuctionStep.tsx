@@ -1,4 +1,4 @@
-import { type Currency, type CurrencyAmount, Fraction } from '@uniswap/sdk-core'
+import { type Currency, type CurrencyAmount, Fraction } from '@dyadex-finance/sdk-core'
 import { useCallback, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Button, Flex, Text } from 'ui/src'

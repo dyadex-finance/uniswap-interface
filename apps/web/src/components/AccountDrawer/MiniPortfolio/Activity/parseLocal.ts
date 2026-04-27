@@ -1,8 +1,8 @@
 /* oxlint-disable max-lines */
 import { BigNumber } from '@ethersproject/bignumber'
 import { queryOptions, useQuery } from '@tanstack/react-query'
-import type { Currency } from '@uniswap/sdk-core'
-import { CurrencyAmount, TradeType } from '@uniswap/sdk-core'
+import type { Currency } from '@dyadex-finance/sdk-core'
+import { CurrencyAmount, TradeType } from '@dyadex-finance/sdk-core'
 import { TradingApi } from '@universe/api'
 import { ZERO_ADDRESS } from 'uniswap/src/constants/misc'
 import { nativeOnChain } from 'uniswap/src/constants/tokens'
@@ -855,7 +855,9 @@ async function forTransactionToActivity({
     hash: transaction.externalSessionId,
     chainId,
     title,
-    descriptor: `${tokenAmount} ${transaction.sourceCurrencyCode} ${i18n.t('common.for').toLocaleLowerCase()} ${fiatAmount}`,
+    descriptor: `${tokenAmount} ${transaction.sourceCurrencyCode} ${i18n
+      .t('common.for')
+      .toLocaleLowerCase()} ${fiatAmount}`,
     currencies: [currency],
     status: forTransactionStatusToTransactionStatus(status),
     timestamp: convertToSecTimestamp(Number(transaction.createdAt)),

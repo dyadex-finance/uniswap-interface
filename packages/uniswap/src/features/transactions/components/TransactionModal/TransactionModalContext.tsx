@@ -1,4 +1,4 @@
-import { Currency } from '@uniswap/sdk-core'
+import { Currency } from '@dyadex-finance/sdk-core'
 import { createContext, PropsWithChildren, useContext, useMemo } from 'react'
 import type { StyleProp, ViewStyle } from 'react-native'
 import { AuthTrigger } from 'uniswap/src/features/auth/types'

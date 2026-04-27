@@ -1,4 +1,4 @@
-import { Currency, CurrencyAmount } from '@uniswap/sdk-core'
+import { Currency, CurrencyAmount } from '@dyadex-finance/sdk-core'
 import { useCallback } from 'react'
 import { useDispatch } from 'react-redux'
 import { call } from 'typed-redux-saga'

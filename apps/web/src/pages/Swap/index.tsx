@@ -1,4 +1,4 @@
-import type { Currency } from '@uniswap/sdk-core'
+import type { Currency } from '@dyadex-finance/sdk-core'
 import { FeatureFlags, useFeatureFlag } from '@universe/gating'
 import { useCallback, useEffect, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'

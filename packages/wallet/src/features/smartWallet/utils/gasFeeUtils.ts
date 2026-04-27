@@ -1,4 +1,4 @@
-import { Currency } from '@uniswap/sdk-core'
+import { Currency } from '@dyadex-finance/sdk-core'
 import { BigNumber } from 'ethers'
 import { nativeOnChain } from 'uniswap/src/constants/tokens'
 
@@ -14,32 +14,29 @@ export interface GroupedGasFee {
 }
 
 export function groupGasFeesBySymbol(gasFees: GasFeeData[]): Record<string, GroupedGasFee> {
-  return gasFees.reduce(
-    (acc, { chainId, gasFeeDisplayValue }) => {
-      if (!gasFeeDisplayValue) {
-        return acc
-      }
-      const currency = nativeOnChain(chainId)
-
-      const symbol = currency.symbol
-      if (!symbol) {
-        return acc
-      }
-
-      if (!acc[symbol]) {
-        acc[symbol] = {
-          currency,
-          totalFeeAmountInWei: gasFeeDisplayValue,
-          chainIds: [chainId],
-        }
-      } else if (symbol in acc) {
-        const existing = acc[symbol]
-        existing.totalFeeAmountInWei = BigNumber.from(existing.totalFeeAmountInWei).add(gasFeeDisplayValue).toString()
-        existing.chainIds.push(chainId)
-      }
-
+  return gasFees.reduce((acc, { chainId, gasFeeDisplayValue }) => {
+    if (!gasFeeDisplayValue) {
       return acc
-    },
-    {} as Record<string, GroupedGasFee>,
-  )
+    }
+    const currency = nativeOnChain(chainId)
+
+    const symbol = currency.symbol
+    if (!symbol) {
+      return acc
+    }
+
+    if (!acc[symbol]) {
+      acc[symbol] = {
+        currency,
+        totalFeeAmountInWei: gasFeeDisplayValue,
+        chainIds: [chainId],
+      }
+    } else if (symbol in acc) {
+      const existing = acc[symbol]
+      existing.totalFeeAmountInWei = BigNumber.from(existing.totalFeeAmountInWei).add(gasFeeDisplayValue).toString()
+      existing.chainIds.push(chainId)
+    }
+
+    return acc
+  }, {} as Record<string, GroupedGasFee>)
 }

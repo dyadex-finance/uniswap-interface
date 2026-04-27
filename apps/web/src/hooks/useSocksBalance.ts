@@ -1,4 +1,4 @@
-import { SOCKS_CONTROLLER_ADDRESSES, Token } from '@uniswap/sdk-core'
+import { SOCKS_CONTROLLER_ADDRESSES, Token } from '@dyadex-finance/sdk-core'
 import { useMemo } from 'react'
 import { UniverseChainId } from 'uniswap/src/features/chains/types'
 import { useAccount } from '~/hooks/useAccount'

@@ -1,5 +1,5 @@
 import { QueryResult } from '@apollo/client'
-import { Currency } from '@uniswap/sdk-core'
+import { Currency } from '@dyadex-finance/sdk-core'
 import { GraphQLApi } from '@universe/api'
 import { createContext } from 'react'
 import { GqlChainId, UniverseChainId } from 'uniswap/src/features/chains/types'

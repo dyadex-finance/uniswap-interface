@@ -19,10 +19,10 @@ import {
   PositionTickBounds,
   V2PoolParameters,
 } from '@uniswap/client-liquidity/dist/uniswap/liquidity/v2/types_pb'
-import { Currency, CurrencyAmount } from '@uniswap/sdk-core'
-import { Pair } from '@uniswap/v2-sdk'
-import { Pool as V3Pool } from '@uniswap/v3-sdk'
-import { Pool as V4Pool } from '@uniswap/v4-sdk'
+import { Currency, CurrencyAmount } from '@dyadex-finance/sdk-core'
+import { Pair } from '@dyadex-finance/v2-sdk'
+import { Pool as V3Pool } from '@dyadex-finance/v3-sdk'
+import { Pool as V4Pool } from '@dyadex-finance/v4-sdk'
 import type { NormalizedApprovalData } from 'uniswap/src/data/apiClients/liquidityService/normalizeApprovalResponse'
 import { getTradeSettingsDeadline } from 'uniswap/src/data/apiClients/tradingApi/utils/getTradeSettingsDeadline'
 import { DYNAMIC_FEE_DATA, PositionState } from '~/components/Liquidity/Create/types'

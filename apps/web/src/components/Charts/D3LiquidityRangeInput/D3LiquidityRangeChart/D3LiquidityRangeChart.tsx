@@ -1,6 +1,6 @@
 import type { ProtocolVersion } from '@uniswap/client-data-api/dist/data/v1/poolTypes_pb'
-import type { Currency } from '@uniswap/sdk-core'
-import { nearestUsableTick, TickMath } from '@uniswap/v3-sdk'
+import type { Currency } from '@dyadex-finance/sdk-core'
+import { nearestUsableTick, TickMath } from '@dyadex-finance/v3-sdk'
 import * as d3 from 'd3'
 import { useEffect, useId, useMemo, useRef } from 'react'
 import { Flex, useSporeColors } from 'ui/src'

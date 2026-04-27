@@ -1,4 +1,4 @@
-import { TradeType } from '@uniswap/sdk-core'
+import { TradeType } from '@dyadex-finance/sdk-core'
 import { useTranslation } from 'react-i18next'
 import { Flex, Text } from 'ui/src'
 import { AlertTriangleFilled } from 'ui/src/components/icons/AlertTriangleFilled'
@@ -73,7 +73,7 @@ export function SlippageInfoCaption({
   // We show an explanatory message when the user has set custom slippage so they understand this behavior.
   const isChainedTrade = isChained(trade)
   const swapStepCount = isChainedTrade
-    ? (trade.quote.quote.steps?.filter((s) => s.slippage !== undefined).length ?? 0)
+    ? trade.quote.quote.steps?.filter((s) => s.slippage !== undefined).length ?? 0
     : 0
   const showChainedMessage = isChainedTrade && isCustomSlippage && swapStepCount > 1
 

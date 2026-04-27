@@ -1,7 +1,7 @@
 /* oxlint-disable typescript/no-unnecessary-condition */
 import { BigNumber } from '@ethersproject/bignumber'
 import type { TransactionResponse } from '@ethersproject/providers'
-import type { Token } from '@uniswap/sdk-core'
+import type { Token } from '@dyadex-finance/sdk-core'
 import { useCallback, useEffect, useMemo } from 'react'
 import { useEnabledChains } from 'uniswap/src/features/chains/hooks/useEnabledChains'
 import { UniverseChainId } from 'uniswap/src/features/chains/types'

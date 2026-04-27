@@ -1,4 +1,4 @@
-import { CurrencyAmount, TradeType } from '@uniswap/sdk-core'
+import { CurrencyAmount, TradeType } from '@dyadex-finance/sdk-core'
 import { DAI, USDC_MAINNET } from 'uniswap/src/constants/tokens'
 import { LIMIT_ORDER_TRADE } from '~/test-utils/constants'
 

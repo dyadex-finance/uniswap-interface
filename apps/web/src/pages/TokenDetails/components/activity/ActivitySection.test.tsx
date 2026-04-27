@@ -1,5 +1,5 @@
 import { screen } from '@testing-library/react'
-import { Token } from '@uniswap/sdk-core'
+import { Token } from '@dyadex-finance/sdk-core'
 import * as chainsUtils from 'uniswap/src/features/platforms/utils/chains'
 import { ActivitySection } from '~/pages/TokenDetails/components/activity/ActivitySection'
 import { render } from '~/test-utils/render'

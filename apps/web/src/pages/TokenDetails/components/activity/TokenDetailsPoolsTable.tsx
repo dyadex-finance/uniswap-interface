@@ -1,5 +1,5 @@
 import { ApolloError } from '@apollo/client'
-import { type Currency } from '@uniswap/sdk-core'
+import { type Currency } from '@dyadex-finance/sdk-core'
 import { FeatureFlags, useFeatureFlag } from '@universe/gating'
 import { useMemo } from 'react'
 import { Flex } from 'ui/src'

@@ -8,7 +8,7 @@ This directory contains fixtures, mocks and utilities useful while writing tests
 
 - All test fixtures should be stored in this directory,
 - Subdirectories group fixtures based on their type declaration location:
-  - `lib` - stores library-related fixtures (e.g. for transaction types from the `ethers` library, for token types from the @uniswap/sdk-core library, etc.),
+  - `lib` - stores library-related fixtures (e.g. for transaction types from the `ethers` library, for token types from the @dyadex-finance/sdk-core library, etc.),
   - `wallet` - if the type of an object was specified somewhere in the wallet package files, its fixture should be added in this directory.
   - remaining files - `constants` (contains constants used in tests), `events` (contains event payload fixtures)
 

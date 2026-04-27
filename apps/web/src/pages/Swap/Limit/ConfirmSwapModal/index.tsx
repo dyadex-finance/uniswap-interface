@@ -1,4 +1,4 @@
-import { Currency, Percent } from '@uniswap/sdk-core'
+import { Currency, Percent } from '@dyadex-finance/sdk-core'
 import { useCallback, useEffect, useMemo } from 'react'
 import { Flex } from 'ui/src'
 // oxlint-disable-next-line no-restricted-imports -- ui constant needed for modal animation timing

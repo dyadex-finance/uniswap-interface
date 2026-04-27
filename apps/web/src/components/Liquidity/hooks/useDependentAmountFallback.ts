@@ -15,7 +15,7 @@ import {
   IncreasePositionRequest as V2IncreasePositionRequest,
   IncreasePositionResponse as V2IncreasePositionResponse,
 } from '@uniswap/client-liquidity/dist/uniswap/liquidity/v2/api_pb'
-import { Currency, CurrencyAmount } from '@uniswap/sdk-core'
+import { Currency, CurrencyAmount } from '@dyadex-finance/sdk-core'
 import { useEffect, useMemo, useState } from 'react'
 import { useCreatePositionQuery } from 'uniswap/src/data/apiClients/liquidityService/useCreatePositionQuery'
 import { useIncreasePositionQuery } from 'uniswap/src/data/apiClients/liquidityService/useIncreasePositionQuery'
@@ -53,18 +53,18 @@ export function useIncreasePositionDependentAmountFallback({
         ? // oxlint-disable-next-line typescript/no-misused-spread -- biome-parity: oxlint is stricter here
           { case: 'v4IncreaseLpPosition' as const, value: { ...increaseLpPosition.value, simulateTransaction: false } }
         : increaseLpPosition.case === 'v3IncreaseLpPosition'
-          ? {
-              case: 'v3IncreaseLpPosition' as const,
-              // oxlint-disable-next-line typescript/no-misused-spread -- biome-parity: oxlint is stricter here
-              value: { ...increaseLpPosition.value, simulateTransaction: false },
-            }
-          : increaseLpPosition.case === 'v2IncreaseLpPosition'
-            ? {
-                case: 'v2IncreaseLpPosition' as const,
-                // oxlint-disable-next-line typescript/no-misused-spread -- biome-parity: oxlint is stricter here
-                value: { ...increaseLpPosition.value, simulateTransaction: false },
-              }
-            : increaseLpPosition
+        ? {
+            case: 'v3IncreaseLpPosition' as const,
+            // oxlint-disable-next-line typescript/no-misused-spread -- biome-parity: oxlint is stricter here
+            value: { ...increaseLpPosition.value, simulateTransaction: false },
+          }
+        : increaseLpPosition.case === 'v2IncreaseLpPosition'
+        ? {
+            case: 'v2IncreaseLpPosition' as const,
+            // oxlint-disable-next-line typescript/no-misused-spread -- biome-parity: oxlint is stricter here
+            value: { ...increaseLpPosition.value, simulateTransaction: false },
+          }
+        : increaseLpPosition
     return new IncreaseLPPositionRequest({ increaseLpPosition: updatedIncreaseLpPosition })
   }, [queryParams])
 

@@ -1,5 +1,5 @@
 import { TransactionRequest } from '@ethersproject/abstract-provider'
-import { Currency, CurrencyAmount } from '@uniswap/sdk-core'
+import { Currency, CurrencyAmount } from '@dyadex-finance/sdk-core'
 import type { GasFeeResult } from '@universe/api'
 import { useWeb3React } from '@web3-react/core'
 import { useMemo } from 'react'
@@ -63,7 +63,7 @@ export function useDerivedSendInfo(state: SendState): SendInfo {
 
   // If userInput is *not* an address, do a forward lookup
   // (ENS → address). Otherwise skip.
-  const forwardLookupInput = !isRecipientAnAddress ? (userInput ?? null) : null
+  const forwardLookupInput = !isRecipientAnAddress ? userInput ?? null : null
   const { data: forwardLookupAddress } = useAddressFromEns(forwardLookupInput)
 
   // Check Unitag by name and see if it yields an address

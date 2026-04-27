@@ -1,6 +1,6 @@
 import { ProtocolVersion } from '@uniswap/client-data-api/dist/data/v1/poolTypes_pb'
-import { Price, Token } from '@uniswap/sdk-core'
-import { FeeAmount, TICK_SPACINGS } from '@uniswap/v3-sdk'
+import { Price, Token } from '@dyadex-finance/sdk-core'
+import { FeeAmount, TICK_SPACINGS } from '@dyadex-finance/v3-sdk'
 import JSBI from 'jsbi'
 import { TickData } from '~/appGraphql/data/AllV3TicksQuery'
 import computeSurroundingTicks, { TickProcessed } from '~/utils/computeSurroundingTicks'

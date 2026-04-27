@@ -1,6 +1,6 @@
 /* oxlint-disable max-lines */
-import { Currency, CurrencyAmount, Token } from '@uniswap/sdk-core'
-import { UNIVERSAL_ROUTER_ADDRESS, UniversalRouterVersion } from '@uniswap/universal-router-sdk'
+import { Currency, CurrencyAmount, Token } from '@dyadex-finance/sdk-core'
+import { UNIVERSAL_ROUTER_ADDRESS, UniversalRouterVersion } from '@dyadex-finance/universal-router-sdk'
 import { FeatureFlags, useFeatureFlag } from '@universe/gating'
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
@@ -105,8 +105,8 @@ function LimitForm({ onCurrencyChange }: LimitFormProps) {
     const newOutput = outputIsOnLimitChain
       ? outputCurrency
       : newInput?.equals(stablecoin)
-        ? nativeOnChain(defaultLimitChainId)
-        : stablecoin
+      ? nativeOnChain(defaultLimitChainId)
+      : stablecoin
 
     const newCurrencyState = { inputCurrency: newInput, outputCurrency: newOutput }
     onCurrencyChange?.(newCurrencyState)

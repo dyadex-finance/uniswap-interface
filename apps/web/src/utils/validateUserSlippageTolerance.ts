@@ -1,4 +1,4 @@
-import { Percent } from '@uniswap/sdk-core'
+import { Percent } from '@dyadex-finance/sdk-core'
 
 export enum SlippageValidationResult {
   TooLow = 0,

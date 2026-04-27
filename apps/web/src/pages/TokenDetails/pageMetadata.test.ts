@@ -1,4 +1,4 @@
-import { Token } from '@uniswap/sdk-core'
+import { Token } from '@dyadex-finance/sdk-core'
 import { ZERO_ADDRESS } from 'uniswap/src/constants/misc'
 import { UniverseChainId } from 'uniswap/src/features/chains/types'
 import i18n from 'uniswap/src/i18n'

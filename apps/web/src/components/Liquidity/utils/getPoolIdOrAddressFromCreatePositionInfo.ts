@@ -1,8 +1,8 @@
 import { ProtocolVersion } from '@uniswap/client-data-api/dist/data/v1/poolTypes_pb'
-import { Currency, V3_CORE_FACTORY_ADDRESSES } from '@uniswap/sdk-core'
-import { Pair } from '@uniswap/v2-sdk'
-import { computePoolAddress, Pool as V3Pool } from '@uniswap/v3-sdk'
-import { Pool as V4Pool } from '@uniswap/v4-sdk'
+import { Currency, V3_CORE_FACTORY_ADDRESSES } from '@dyadex-finance/sdk-core'
+import { Pair } from '@dyadex-finance/v2-sdk'
+import { computePoolAddress, Pool as V3Pool } from '@dyadex-finance/v3-sdk'
+import { Pool as V4Pool } from '@dyadex-finance/v4-sdk'
 
 export function getPoolIdOrAddressFromCreatePositionInfo({
   protocolVersion,

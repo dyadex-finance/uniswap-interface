@@ -1,4 +1,4 @@
-import { CurrencyAmount, Token } from '@uniswap/sdk-core'
+import { CurrencyAmount, Token } from '@dyadex-finance/sdk-core'
 import type { GasStrategy } from '@universe/api'
 import { DynamicConfigs, type GasStrategies, getStatsigClient } from '@universe/gating'
 import { DAI } from 'uniswap/src/constants/tokens'

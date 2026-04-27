@@ -1,4 +1,4 @@
-import { Currency } from '@uniswap/sdk-core'
+import { Currency } from '@dyadex-finance/sdk-core'
 import { ColorTokens, GeneratedIcon } from 'ui/src'
 
 export enum WarningSeverity {

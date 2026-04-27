@@ -1,5 +1,5 @@
 /* oxlint-disable typescript/explicit-function-return-type */
-import { TradeType } from '@uniswap/sdk-core'
+import { TradeType } from '@dyadex-finance/sdk-core'
 import { useMergeLocalAndRemoteTransactions } from 'uniswap/src/features/activity/hooks/useMergeLocalAndRemoteTransactions'
 import { UniverseChainId } from 'uniswap/src/features/chains/types'
 import { ValueType } from 'uniswap/src/features/tokens/getCurrencyAmount'

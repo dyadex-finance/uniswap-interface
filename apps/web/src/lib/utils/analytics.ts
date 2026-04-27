@@ -1,4 +1,4 @@
-import { Currency, CurrencyAmount, Percent, Price, Token } from '@uniswap/sdk-core'
+import { Currency, CurrencyAmount, Percent, Price, Token } from '@dyadex-finance/sdk-core'
 import { TradingApi } from '@universe/api'
 import { SwapTradeBaseProperties } from 'uniswap/src/features/telemetry/types'
 import { getRouteAnalyticsData, tradeRoutingToFillType } from 'uniswap/src/features/transactions/swap/analytics'
@@ -102,15 +102,15 @@ export function formatCommonPropertiesForTrade({
     ura_request_id: isUniversalSwapFlow
       ? trade.quote.requestId
       : isSubmittableTrade(trade)
-        ? trade.requestId
-        : undefined,
+      ? trade.requestId
+      : undefined,
     ura_quote_block_number: isUniversalSwapFlow
       ? isClassic(trade)
         ? trade.quote.quote.blockNumber
         : undefined
       : isClassicTrade(trade)
-        ? (trade.blockNumber ?? undefined)
-        : undefined,
+      ? trade.blockNumber ?? undefined
+      : undefined,
     token_in_address: getTokenAddress(trade.inputAmount.currency),
     token_out_address: getTokenAddress(trade.outputAmount.currency),
     token_in_symbol: trade.inputAmount.currency.symbol,
@@ -136,8 +136,8 @@ export function formatCommonPropertiesForTrade({
       trade instanceof ClassicTrade
         ? trade.minAmountOut.toSignificant(6)
         : !isUniversalSwapFlow && isClassicTrade(trade)
-          ? trade.minimumAmountOut(allowedSlippage).toSignificant(6)
-          : undefined,
+        ? trade.minimumAmountOut(allowedSlippage).toSignificant(6)
+        : undefined,
     allowed_slippage: formatPercentNumber(allowedSlippage),
     method: isUniversalSwapFlow ? undefined : getQuoteMethod(trade),
     fee_usd: outputFeeFiatValue,
@@ -146,8 +146,8 @@ export function formatCommonPropertiesForTrade({
     offchain_order_type: isUniversalSwapFlow
       ? tradeRoutingToOffchainOrderType(trade.routing)
       : isUniswapXTrade(trade)
-        ? trade.offchainOrderType
-        : undefined,
+      ? trade.offchainOrderType
+      : undefined,
     transactionOriginType: TransactionOriginType.Internal,
     is_batch: isBatched,
     batch_id: batchId,

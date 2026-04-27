@@ -1,4 +1,4 @@
-import { Percent } from '@uniswap/sdk-core'
+import { Percent } from '@dyadex-finance/sdk-core'
 import { GraphQLApi } from '@universe/api'
 import { BIPS_BASE } from 'uniswap/src/constants/misc'
 import { OrderDirection } from '~/appGraphql/data/util'
@@ -21,8 +21,8 @@ export function sortPools(pools: TablePool[], sortState: PoolTableSortState) {
             ? 1
             : -1
           : a.apr.greaterThan(b.apr)
-            ? 1
-            : -1
+          ? 1
+          : -1
       default:
         return sortState.sortDirection === OrderDirection.Desc ? b.tvl - a.tvl : a.tvl - b.tvl
     }

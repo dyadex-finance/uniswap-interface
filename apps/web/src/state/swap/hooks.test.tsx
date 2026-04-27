@@ -1,4 +1,4 @@
-import { UNI_ADDRESSES } from '@uniswap/sdk-core'
+import { UNI_ADDRESSES } from '@dyadex-finance/sdk-core'
 import { parse } from 'qs'
 import { ReactNode } from 'react'
 import { DAI, nativeOnChain, UNI, USDC_OPTIMISM } from 'uniswap/src/constants/tokens'
@@ -241,7 +241,9 @@ describe('hooks', () => {
       })
 
       expect(result).toBe(
-        `?chain=mainnet&inputCurrency=${UNI_ADDRESSES[UniverseChainId.Mainnet]}&outputCurrency=${NATIVE_CHAIN_ID}&value=100&field=${CurrencyField.OUTPUT}`,
+        `?chain=mainnet&inputCurrency=${
+          UNI_ADDRESSES[UniverseChainId.Mainnet]
+        }&outputCurrency=${NATIVE_CHAIN_ID}&value=100&field=${CurrencyField.OUTPUT}`,
       )
     })
 
@@ -330,7 +332,7 @@ describe('hooks', () => {
         isSwapTokenSelectorOpen: false,
         setIsSwapTokenSelectorOpen: () => {},
         setSwapOutputChainId: () => {},
-        useAccountsStoreContextHook: () => ({}) as AccountsStore,
+        useAccountsStoreContextHook: () => ({} as AccountsStore),
       })
     })
 

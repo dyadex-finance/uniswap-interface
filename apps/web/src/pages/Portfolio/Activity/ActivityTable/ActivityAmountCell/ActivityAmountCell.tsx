@@ -1,4 +1,4 @@
-import { TradeType } from '@uniswap/sdk-core'
+import { TradeType } from '@dyadex-finance/sdk-core'
 import { memo, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Flex, Text } from 'ui/src'
@@ -78,7 +78,7 @@ function ActivityAmountCellInner({ transaction, variant = 'full' }: ActivityAmou
   // Use slow polling (5 minutes) for historical activity data to reduce unnecessary network requests
   const inputFormattedData = useFormattedCurrencyAmountAndUSDValue({
     currency: inputCurrencyInfo?.currency,
-    currencyAmountRaw: amount?.kind === 'pair' ? (amount.inputAmountRaw ?? '') : '',
+    currencyAmountRaw: amount?.kind === 'pair' ? amount.inputAmountRaw ?? '' : '',
     formatter,
     isApproximateAmount: amount?.kind === 'pair' ? swapPairApproximateFlags.input : false,
     pollInterval: PollingInterval.Slow,
@@ -86,7 +86,7 @@ function ActivityAmountCellInner({ transaction, variant = 'full' }: ActivityAmou
 
   const outputFormattedData = useFormattedCurrencyAmountAndUSDValue({
     currency: outputCurrencyInfo?.currency,
-    currencyAmountRaw: amount?.kind === 'pair' ? (amount.outputAmountRaw ?? '') : '',
+    currencyAmountRaw: amount?.kind === 'pair' ? amount.outputAmountRaw ?? '' : '',
     formatter,
     isApproximateAmount: amount?.kind === 'pair' ? swapPairApproximateFlags.output : false,
     pollInterval: PollingInterval.Slow,
@@ -94,13 +94,13 @@ function ActivityAmountCellInner({ transaction, variant = 'full' }: ActivityAmou
 
   const singleFormattedData = useFormattedCurrencyAmountAndUSDValue({
     currency: singleCurrencyInfo?.currency,
-    currencyAmountRaw: amount?.kind === 'single' ? (amount.amountRaw ?? '') : '',
+    currencyAmountRaw: amount?.kind === 'single' ? amount.amountRaw ?? '' : '',
     formatter,
     isApproximateAmount: false,
     pollInterval: PollingInterval.Slow,
   })
 
-  const wrapAmountRaw = amount?.kind === 'wrap' ? (amount.amountRaw ?? '') : ''
+  const wrapAmountRaw = amount?.kind === 'wrap' ? amount.amountRaw ?? '' : ''
   const wrapInputCurrency = amount?.kind === 'wrap' && amount.unwrapped ? wrappedCurrencyInfo : nativeCurrencyInfo
   const wrapOutputCurrency = amount?.kind === 'wrap' && amount.unwrapped ? nativeCurrencyInfo : wrappedCurrencyInfo
 
@@ -130,7 +130,7 @@ function ActivityAmountCellInner({ transaction, variant = 'full' }: ActivityAmou
 
   const currency1FormattedData = useFormattedCurrencyAmountAndUSDValue({
     currency: currency1Info?.currency,
-    currencyAmountRaw: amount?.kind === 'liquidity-pair' ? (amount.currency1AmountRaw ?? '') : '',
+    currencyAmountRaw: amount?.kind === 'liquidity-pair' ? amount.currency1AmountRaw ?? '' : '',
     formatter,
     isApproximateAmount: false,
     pollInterval: PollingInterval.Slow,
@@ -138,7 +138,7 @@ function ActivityAmountCellInner({ transaction, variant = 'full' }: ActivityAmou
 
   const nftPurchaseFormattedData = useFormattedCurrencyAmountAndUSDValue({
     currency: nftPurchaseCurrencyInfo?.currency,
-    currencyAmountRaw: amount?.kind === 'nft' ? (amount.purchaseAmountRaw ?? '') : '',
+    currencyAmountRaw: amount?.kind === 'nft' ? amount.purchaseAmountRaw ?? '' : '',
     formatter,
     isApproximateAmount: false,
     pollInterval: PollingInterval.Slow,

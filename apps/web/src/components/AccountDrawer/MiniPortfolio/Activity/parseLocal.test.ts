@@ -1,6 +1,6 @@
 import '~/test-utils/tokens/mocks'
-import type { Token } from '@uniswap/sdk-core'
-import { TradeType as MockTradeType } from '@uniswap/sdk-core'
+import type { Token } from '@dyadex-finance/sdk-core'
+import { TradeType as MockTradeType } from '@dyadex-finance/sdk-core'
 import { TradingApi } from '@universe/api'
 import { DAI as MockDAI, USDC_MAINNET as MockUSDC_MAINNET } from 'uniswap/src/constants/tokens'
 import { UniverseChainId } from 'uniswap/src/features/chains/types'

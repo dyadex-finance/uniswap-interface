@@ -1,4 +1,4 @@
-import { Token } from '@uniswap/sdk-core'
+import { Token } from '@dyadex-finance/sdk-core'
 import { GraphQLApi } from '@universe/api'
 import i18next from 'i18next'
 import { WarningAction, WarningLabel, WarningSeverity } from 'uniswap/src/components/modals/WarningModal/types'

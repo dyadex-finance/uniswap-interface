@@ -1,5 +1,5 @@
 import { ProtocolVersion } from '@uniswap/client-data-api/dist/data/v1/poolTypes_pb'
-import { type Currency, CurrencyAmount } from '@uniswap/sdk-core'
+import { type Currency, CurrencyAmount } from '@dyadex-finance/sdk-core'
 import { FeatureFlags, useFeatureFlag } from '@universe/gating'
 import JSBI from 'jsbi'
 import { useMemo } from 'react'

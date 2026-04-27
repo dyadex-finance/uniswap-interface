@@ -1,5 +1,5 @@
 /* oxlint-disable typescript/no-unnecessary-condition */
-import { Token } from '@uniswap/sdk-core'
+import { Token } from '@dyadex-finance/sdk-core'
 import { type PersistState } from 'redux-persist'
 import { UniverseChainId } from 'uniswap/src/features/chains/types'
 import { createPersistState, createSafeMigration } from 'uniswap/src/state/createSafeMigration'
@@ -65,5 +65,5 @@ export const migration3 = createSafeMigration({
         tokens: {},
       },
       _persist: createPersistState(state, 3),
-    }) as PersistAppStateV3,
+    } as PersistAppStateV3),
 })

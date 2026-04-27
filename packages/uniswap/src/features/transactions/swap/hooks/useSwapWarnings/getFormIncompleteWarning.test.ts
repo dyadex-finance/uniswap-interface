@@ -1,4 +1,4 @@
-import { Currency, CurrencyAmount } from '@uniswap/sdk-core'
+import { Currency, CurrencyAmount } from '@dyadex-finance/sdk-core'
 import { WarningAction, WarningLabel, WarningSeverity } from 'uniswap/src/components/modals/WarningModal/types'
 import { nativeOnChain, USDC } from 'uniswap/src/constants/tokens'
 import { UniverseChainId } from 'uniswap/src/features/chains/types'
@@ -31,7 +31,7 @@ describe('getFormIncompleteWarning', () => {
       },
       exactCurrencyField: CurrencyField.INPUT,
       ...overrides,
-    }) as DerivedSwapInfo
+    } as DerivedSwapInfo)
 
   it('returns undefined when form is complete', () => {
     const derivedSwapInfo = createMockDerivedSwapInfo()

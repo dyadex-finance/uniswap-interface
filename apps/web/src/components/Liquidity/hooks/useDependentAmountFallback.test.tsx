@@ -14,7 +14,7 @@ import {
   IncreasePositionResponse as V2IncreasePositionResponse,
 } from '@uniswap/client-liquidity/dist/uniswap/liquidity/v2/api_pb'
 import { LPToken } from '@uniswap/client-liquidity/dist/uniswap/liquidity/v2/types_pb'
-import { Currency, CurrencyAmount } from '@uniswap/sdk-core'
+import { Currency, CurrencyAmount } from '@dyadex-finance/sdk-core'
 import JSBI from 'jsbi'
 import { USDC_MAINNET } from 'uniswap/src/constants/tokens'
 import { ReactQueryCacheKey } from 'utilities/src/reactQuery/cache'

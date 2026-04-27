@@ -4,7 +4,7 @@ import { useQueryClient } from '@tanstack/react-query'
 import { GetPortfolioResponse } from '@uniswap/client-data-api/dist/data/v1/api_pb.d'
 import { Balance } from '@uniswap/client-data-api/dist/data/v1/types_pb'
 import { PortfolioValueModifier as RestPortfolioValueModifier } from '@uniswap/client-data-api/dist/data/v1/types_pb.d'
-import { Currency } from '@uniswap/sdk-core'
+import { Currency } from '@dyadex-finance/sdk-core'
 import { useMemo } from 'react'
 import { PollingInterval } from 'uniswap/src/constants/misc'
 import { normalizeTokenAddressForCache } from 'uniswap/src/data/cache'
@@ -400,7 +400,7 @@ export const createPortfolioCacheUpdater =
               balances: updatedBalances,
               totalValueUsd: newTotal,
             },
-          }) as GetPortfolioResponse,
+          } as GetPortfolioResponse),
       )
     }
   }
@@ -467,7 +467,7 @@ export function usePortfolioTotalValue({
   })
 
   // TODO(SWAP-388): GetPortfolio REST endpoint does not yet support modifier array; it will take 1 evm/svm address, but will apply the modifications across the board
-  const modifier = useRestPortfolioValueModifier(enabled ? (evmAddress ?? svmAddress) : undefined)
+  const modifier = useRestPortfolioValueModifier(enabled ? evmAddress ?? svmAddress : undefined)
 
   const {
     data: formattedData,

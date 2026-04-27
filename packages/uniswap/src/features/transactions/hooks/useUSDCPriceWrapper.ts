@@ -5,7 +5,7 @@
  * which switches between legacy and centralized based on a feature flag.
  * Only the selected implementation is called — no overfetching.
  */
-import type { Currency, CurrencyAmount, Price } from '@uniswap/sdk-core'
+import type { Currency, CurrencyAmount, Price } from '@dyadex-finance/sdk-core'
 import { PollingInterval } from 'uniswap/src/constants/misc'
 import { useTokenPriceHooks } from 'uniswap/src/features/prices/TokenPriceContext'
 

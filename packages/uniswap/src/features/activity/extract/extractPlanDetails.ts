@@ -1,5 +1,5 @@
 import { PlanActivity, PlanTransaction, TokenAmount } from '@uniswap/client-data-api/dist/data/v1/types_pb'
-import { TradeType } from '@uniswap/sdk-core'
+import { TradeType } from '@dyadex-finance/sdk-core'
 import { TradingApi } from '@universe/api'
 import { createTransactionDetails } from 'uniswap/src/features/activity/extract/extractPlanUtils'
 import {

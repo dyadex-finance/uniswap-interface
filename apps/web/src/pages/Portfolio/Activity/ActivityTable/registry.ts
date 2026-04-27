@@ -1,4 +1,4 @@
-import { UNI_ADDRESSES } from '@uniswap/sdk-core'
+import { UNI_ADDRESSES } from '@dyadex-finance/sdk-core'
 import { AssetType } from 'uniswap/src/entities/assets'
 import { mapTAPIPlanStatusToTXStatus } from 'uniswap/src/features/activity/extract/statusMappers'
 import { getAmountsFromTrade } from 'uniswap/src/features/transactions/swap/utils/getAmountsFromTrade'

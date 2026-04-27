@@ -1,5 +1,5 @@
 // oxlint-disable-next-line no-restricted-imports -- legacy import will be migrated
-import { CurrencyAmount, Token, ChainId as UniswapSDKChainId } from '@uniswap/sdk-core'
+import { CurrencyAmount, Token, ChainId as UniswapSDKChainId } from '@dyadex-finance/sdk-core'
 import type { GraphQLApi } from '@universe/api'
 import { SwapConfigKey } from '@universe/gating'
 import type { ImageSourcePropType } from 'react-native'

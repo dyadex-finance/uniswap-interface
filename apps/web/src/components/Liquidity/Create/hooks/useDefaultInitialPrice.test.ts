@@ -1,4 +1,4 @@
-import { CurrencyAmount, TradeType } from '@uniswap/sdk-core'
+import { CurrencyAmount, TradeType } from '@dyadex-finance/sdk-core'
 import JSBI from 'jsbi'
 import { PollingInterval } from 'uniswap/src/constants/misc'
 import { USDC } from 'uniswap/src/constants/tokens'

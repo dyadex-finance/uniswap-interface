@@ -1,4 +1,4 @@
-import { Currency, Price } from '@uniswap/sdk-core'
+import { Currency, Price } from '@dyadex-finance/sdk-core'
 import { Text, TextProps } from 'ui/src'
 import { useLocalizationContext } from 'uniswap/src/features/language/LocalizationContext'
 import { useUSDCValue } from 'uniswap/src/features/transactions/hooks/useUSDCPriceWrapper'
@@ -30,8 +30,12 @@ export function BaseQuoteFiatAmount({
     <Text>
       <Text variant={variant ?? 'body3'} color="$neutral1">
         {condenseConversion
-          ? `${formatNumberOrString({ value: price.toSignificant(), type: NumberType.TokenTx })} ${quote.symbol}/${base.symbol}`
-          : `${formatNumberOrString({ value: price.toSignificant(), type: NumberType.TokenTx })} ${quote.symbol} = 1 ${base.symbol}`}
+          ? `${formatNumberOrString({ value: price.toSignificant(), type: NumberType.TokenTx })} ${quote.symbol}/${
+              base.symbol
+            }`
+          : `${formatNumberOrString({ value: price.toSignificant(), type: NumberType.TokenTx })} ${quote.symbol} = 1 ${
+              base.symbol
+            }`}
       </Text>{' '}
       <Text variant={variant ?? 'body3'} color="$neutral2">
         ({convertFiatAmountFormatted(usdPrice?.toExact(), NumberType.FiatTokenPrice)})

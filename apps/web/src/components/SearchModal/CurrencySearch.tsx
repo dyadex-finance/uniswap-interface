@@ -1,4 +1,4 @@
-import { Currency } from '@uniswap/sdk-core'
+import { Currency } from '@dyadex-finance/sdk-core'
 import { useCallback, useEffect } from 'react'
 import { Flex } from 'ui/src'
 import { TokenSelectorContent } from 'uniswap/src/components/TokenSelector/TokenSelector'
@@ -75,8 +75,8 @@ export function CurrencySearch({
   const resolvedChainId = isSingleChainContext
     ? chainIds[0]
     : !isMultichainContext || isUserSelectedToken
-      ? chainId
-      : undefined
+    ? chainId
+    : undefined
 
   return (
     <Trace logImpression eventOnTrigger={InterfaceEventName.TokenSelectorOpened} modal={ModalName.TokenSelectorWeb}>

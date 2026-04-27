@@ -1,4 +1,4 @@
-import { CurrencyAmount, NativeCurrency } from '@uniswap/sdk-core'
+import { CurrencyAmount, NativeCurrency } from '@dyadex-finance/sdk-core'
 import { TradingApi } from '@universe/api'
 import { WarningLabel } from 'uniswap/src/components/modals/WarningModal/types'
 import { nativeOnChain } from 'uniswap/src/constants/tokens'

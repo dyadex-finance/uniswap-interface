@@ -1,4 +1,4 @@
-import { Token } from '@uniswap/sdk-core'
+import { Token } from '@dyadex-finance/sdk-core'
 import { GraphQLApi } from '@universe/api'
 import { OnchainItemListOptionType } from 'uniswap/src/components/lists/items/types'
 import { UniverseChainId } from 'uniswap/src/features/chains/types'
@@ -189,7 +189,7 @@ function setupDefaultMocks({
   xLayerLoading?: boolean
 }): void {
   mockUseAllCommonBaseCurrencies.mockReturnValue({
-    data: commonBase === null ? undefined : (commonBase ?? allCommonBaseCurrencies),
+    data: commonBase === null ? undefined : commonBase ?? allCommonBaseCurrencies,
     error: commonBaseError,
     loading: commonBaseLoading,
     refetch: vi.fn(),

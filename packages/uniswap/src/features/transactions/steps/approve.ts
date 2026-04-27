@@ -1,4 +1,4 @@
-import { Currency } from '@uniswap/sdk-core'
+import { Currency } from '@dyadex-finance/sdk-core'
 import { RevokeApproveFields, TransactionStepType } from 'uniswap/src/features/transactions/steps/types'
 import { ValidatedTransactionRequest } from 'uniswap/src/features/transactions/types/transactionRequests'
 import { parseERC20ApproveCalldata } from 'uniswap/src/utils/approvals'

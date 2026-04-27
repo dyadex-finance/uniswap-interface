@@ -1,4 +1,4 @@
-import { Currency, Token } from '@uniswap/sdk-core'
+import { Currency, Token } from '@dyadex-finance/sdk-core'
 import invariant from 'tiny-invariant'
 import type { UniverseChainId } from 'uniswap/src/features/chains/types'
 import { isSVMAddress } from 'utilities/src/addresses/svm/svm'

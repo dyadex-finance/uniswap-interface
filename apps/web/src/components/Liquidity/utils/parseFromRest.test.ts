@@ -9,10 +9,10 @@ import {
   V4Position as RestV4Position,
 } from '@uniswap/client-data-api/dist/data/v1/poolTypes_pb'
 import { ChainId, PoolInformation } from '@uniswap/client-liquidity/dist/uniswap/liquidity/v1/types_pb'
-import { CurrencyAmount, Token } from '@uniswap/sdk-core'
-import { Pair } from '@uniswap/v2-sdk'
-import { FeeAmount, TICK_SPACINGS, Pool as V3Pool, Position as V3Position } from '@uniswap/v3-sdk'
-import { Pool as V4Pool, Position as V4Position } from '@uniswap/v4-sdk'
+import { CurrencyAmount, Token } from '@dyadex-finance/sdk-core'
+import { Pair } from '@dyadex-finance/v2-sdk'
+import { FeeAmount, TICK_SPACINGS, Pool as V3Pool, Position as V3Position } from '@dyadex-finance/v3-sdk'
+import { Pool as V4Pool, Position as V4Position } from '@dyadex-finance/v4-sdk'
 import { ZERO_ADDRESS } from 'uniswap/src/constants/misc'
 import { DAI, USDT } from 'uniswap/src/constants/tokens'
 import { UniverseChainId } from 'uniswap/src/features/chains/types'
@@ -56,10 +56,7 @@ class MockPoolPosition extends PoolPosition {
   apr = 6.627231195792673
   owner = '0xe298932899e883372428bf9cc403d80061d66026'
 
-  constructor(
-    readonly protocolVersion: ProtocolVersion,
-    readonly feeTier = '500',
-  ) {
+  constructor(readonly protocolVersion: ProtocolVersion, readonly feeTier = '500') {
     super()
   }
 }

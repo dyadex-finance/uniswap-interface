@@ -1,4 +1,4 @@
-import { CurrencyAmount } from '@uniswap/sdk-core'
+import { CurrencyAmount } from '@dyadex-finance/sdk-core'
 import { GraphQLApi } from '@universe/api'
 import { WarningLabel } from 'uniswap/src/components/modals/WarningModal/types'
 import { DAI, nativeOnChain, USDC } from 'uniswap/src/constants/tokens'

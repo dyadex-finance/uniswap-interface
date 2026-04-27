@@ -1,4 +1,4 @@
-import { TradeType } from '@uniswap/sdk-core'
+import { TradeType } from '@dyadex-finance/sdk-core'
 import {
   BridgeTransactionInfo,
   ConfirmedSwapTransactionInfo,

@@ -1,4 +1,4 @@
-import { TradeType } from '@uniswap/sdk-core'
+import { TradeType } from '@dyadex-finance/sdk-core'
 import { FetchError, type JupiterOrderUrlParams } from '@universe/api'
 import { JupiterApiClient } from 'uniswap/src/data/apiClients/jupiterApi/JupiterFetchClient'
 import { isSVMChain } from 'uniswap/src/features/platforms/utils/chains'

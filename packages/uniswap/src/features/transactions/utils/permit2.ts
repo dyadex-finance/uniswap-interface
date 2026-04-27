@@ -1,4 +1,4 @@
-import { PERMIT2_ADDRESS, permit2Address } from '@uniswap/permit2-sdk'
+import { PERMIT2_ADDRESS, permit2Address } from '@dyadex-finance/permit2-sdk'
 import { Contract, providers } from 'ethers/lib/ethers'
 import PERMIT2_ABI from 'uniswap/src/abis/permit2.json'
 import { Permit2 } from 'uniswap/src/abis/types'

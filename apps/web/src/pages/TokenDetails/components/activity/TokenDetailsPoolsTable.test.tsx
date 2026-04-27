@@ -1,6 +1,6 @@
 import '~/test-utils/tokens/mocks'
 import { ApolloError } from '@apollo/client'
-import { type Currency, Percent, Token } from '@uniswap/sdk-core'
+import { type Currency, Percent, Token } from '@dyadex-finance/sdk-core'
 import { GraphQLApi } from '@universe/api'
 import { DEFAULT_TICK_SPACING } from 'uniswap/src/constants/pools'
 import { UniverseChainId } from 'uniswap/src/features/chains/types'

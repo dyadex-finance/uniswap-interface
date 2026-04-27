@@ -1,5 +1,5 @@
 import { TransactionRequest } from '@ethersproject/providers'
-import { TradeType } from '@uniswap/sdk-core'
+import { TradeType } from '@dyadex-finance/sdk-core'
 import { TradingApi } from '@universe/api'
 import { DAI, USDC_MAINNET } from 'uniswap/src/constants/tokens'
 import { AssetType } from 'uniswap/src/entities/assets'

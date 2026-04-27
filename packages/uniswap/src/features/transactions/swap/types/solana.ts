@@ -1,5 +1,5 @@
-import { ZERO_PERCENT } from '@uniswap/router-sdk'
-import { Currency, CurrencyAmount, Percent, Price, TradeType } from '@uniswap/sdk-core'
+import { ZERO_PERCENT } from '@dyadex-finance/router-sdk'
+import { Currency, CurrencyAmount, Percent, Price, TradeType } from '@dyadex-finance/sdk-core'
 import { JupiterOrderResponse, TradingApi } from '@universe/api'
 import { BIPS_BASE } from 'uniswap/src/constants/misc'
 import { BlockingTradeError } from 'uniswap/src/features/transactions/swap/types/BlockingTradeError'

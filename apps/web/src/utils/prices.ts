@@ -1,7 +1,7 @@
-import { Trade } from '@uniswap/router-sdk'
-import { Currency, CurrencyAmount, Fraction, Percent, TradeType } from '@uniswap/sdk-core'
-import { Pair } from '@uniswap/v2-sdk'
-import { FeeAmount } from '@uniswap/v3-sdk'
+import { Trade } from '@dyadex-finance/router-sdk'
+import { Currency, CurrencyAmount, Fraction, Percent, TradeType } from '@dyadex-finance/sdk-core'
+import { Pair } from '@dyadex-finance/v2-sdk'
+import { FeeAmount } from '@dyadex-finance/v3-sdk'
 import { PriceChartData } from '~/components/Charts/PriceChart'
 import {
   ALLOWED_PRICE_IMPACT_HIGH,

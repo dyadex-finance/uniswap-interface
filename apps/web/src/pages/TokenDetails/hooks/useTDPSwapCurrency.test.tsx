@@ -1,5 +1,5 @@
 import { renderHook } from '@testing-library/react'
-import { Currency, Token } from '@uniswap/sdk-core'
+import { Currency, Token } from '@dyadex-finance/sdk-core'
 import { GraphQLApi } from '@universe/api'
 import { FeatureFlags, useFeatureFlag } from '@universe/gating'
 import type { PropsWithChildren, ReactElement } from 'react'

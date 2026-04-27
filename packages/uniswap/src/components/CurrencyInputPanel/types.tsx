@@ -1,4 +1,4 @@
-import { Currency, CurrencyAmount } from '@uniswap/sdk-core'
+import { Currency, CurrencyAmount } from '@dyadex-finance/sdk-core'
 import { ReactNode, RefObject } from 'react'
 import type { TextInput, TextInputProps } from 'react-native'
 import { FlexProps, TextProps } from 'ui/src'

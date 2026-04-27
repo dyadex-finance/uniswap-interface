@@ -1,5 +1,5 @@
 import { AddressZero } from '@ethersproject/constants'
-import { type Currency, CurrencyAmount, Percent, Token } from '@uniswap/sdk-core'
+import { type Currency, CurrencyAmount, Percent, Token } from '@dyadex-finance/sdk-core'
 import type { StoreApi, UseBoundStore } from 'zustand'
 import { create } from 'zustand'
 import { devtools } from 'zustand/middleware'

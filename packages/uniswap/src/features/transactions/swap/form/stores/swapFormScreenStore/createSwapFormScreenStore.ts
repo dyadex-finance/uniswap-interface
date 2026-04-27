@@ -1,4 +1,4 @@
-import type { Currency, CurrencyAmount } from '@uniswap/sdk-core'
+import type { Currency, CurrencyAmount } from '@dyadex-finance/sdk-core'
 import type { MutableRefObject } from 'react'
 import type { PresetPercentage } from 'uniswap/src/components/CurrencyInputPanel/AmountInputPresets/types'
 import type { CurrencyInputPanelRef } from 'uniswap/src/components/CurrencyInputPanel/types'

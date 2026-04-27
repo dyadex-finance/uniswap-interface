@@ -1,5 +1,5 @@
 /* oxlint-disable no-new */
-import { TradeType } from '@uniswap/sdk-core'
+import { TradeType } from '@dyadex-finance/sdk-core'
 import { TradingApi } from '@universe/api'
 import { UnwrapTrade, WrapTrade } from 'uniswap/src/features/transactions/swap/types/trade'
 import { ETH, WETH } from 'uniswap/src/test/fixtures/lib/sdk'

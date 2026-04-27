@@ -1,4 +1,4 @@
-import type { Currency, CurrencyAmount } from '@uniswap/sdk-core'
+import type { Currency, CurrencyAmount } from '@dyadex-finance/sdk-core'
 import { Text, type TextProps } from 'ui/src'
 import { useConnectionStatus } from 'uniswap/src/features/accounts/store/hooks'
 import type { CurrencyInfo } from 'uniswap/src/features/dataApi/types'

@@ -9,8 +9,9 @@ vi.mock('uniswap/src/features/telemetry/send', () => ({
 }))
 
 vi.mock('uniswap/src/features/transactions/swap/utils/SwapEventTimestampTracker', async (importOriginal) => {
-  const actual =
-    await importOriginal<typeof import('uniswap/src/features/transactions/swap/utils/SwapEventTimestampTracker')>()
+  const actual = await importOriginal<
+    typeof import('uniswap/src/features/transactions/swap/utils/SwapEventTimestampTracker')
+  >()
   return {
     ...actual,
     timestampTracker: {
@@ -21,17 +22,17 @@ vi.mock('uniswap/src/features/transactions/swap/utils/SwapEventTimestampTracker'
   }
 })
 
-// Mock the @uniswap/v2-sdk package to provide Pair.getAddress
-vi.mock('@uniswap/v2-sdk', async (importOriginal) => {
-  const originalModule = await importOriginal<typeof import('@uniswap/v2-sdk')>()
+// Mock the @dyadex-finance/v2-sdk package to provide Pair.getAddress
+vi.mock('@dyadex-finance/v2-sdk', async (importOriginal) => {
+  const originalModule = await importOriginal<typeof import('@dyadex-finance/v2-sdk')>()
   originalModule.Pair.getAddress = (): string => {
     return `0xv2PoolAddress`
   }
   return originalModule
 })
 
-vi.mock('@uniswap/v3-sdk', async (importOriginal) => {
-  const originalModule = await importOriginal<typeof import('@uniswap/v3-sdk')>()
+vi.mock('@dyadex-finance/v3-sdk', async (importOriginal) => {
+  const originalModule = await importOriginal<typeof import('@dyadex-finance/v3-sdk')>()
   originalModule.Pool.getAddress = (): string => {
     return `0xv3PoolAddress`
   }
@@ -43,7 +44,7 @@ const mockV2Pool = {
   token0: { address: 'token0Address' },
   token1: { address: 'token1Address' },
 }
-const { Pair: V2Pool } = await vi.importActual<typeof import('@uniswap/v2-sdk')>('@uniswap/v2-sdk')
+const { Pair: V2Pool } = await vi.importActual<typeof import('@dyadex-finance/v2-sdk')>('@dyadex-finance/v2-sdk')
 Object.setPrototypeOf(mockV2Pool, V2Pool.prototype)
 
 const mockV3Pool = {
@@ -51,11 +52,11 @@ const mockV3Pool = {
   token1: { address: 'token1Address' },
   fee: 0,
 }
-const { Pool: V3Pool } = await vi.importActual<typeof import('@uniswap/v3-sdk')>('@uniswap/v3-sdk')
+const { Pool: V3Pool } = await vi.importActual<typeof import('@dyadex-finance/v3-sdk')>('@dyadex-finance/v3-sdk')
 Object.setPrototypeOf(mockV3Pool, V3Pool.prototype)
 //
 const mockV4Pool = { poolId: '0xpool1', v4: true }
-const { Pool: V4Pool } = await vi.importActual<typeof import('@uniswap/v4-sdk')>('@uniswap/v4-sdk')
+const { Pool: V4Pool } = await vi.importActual<typeof import('@dyadex-finance/v4-sdk')>('@dyadex-finance/v4-sdk')
 Object.setPrototypeOf(mockV4Pool, V4Pool.prototype)
 
 // Helper to cast isClassic as a Mock

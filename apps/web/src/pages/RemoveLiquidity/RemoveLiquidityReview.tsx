@@ -1,5 +1,5 @@
 import { ProtocolVersion } from '@uniswap/client-data-api/dist/data/v1/poolTypes_pb'
-import { CurrencyAmount } from '@uniswap/sdk-core'
+import { CurrencyAmount } from '@dyadex-finance/sdk-core'
 import { useMemo, useState } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
 import { useDispatch } from 'react-redux'
@@ -224,7 +224,9 @@ export function RemoveLiquidityReview({ onClose }: { onClose: () => void }) {
                   </Text>
                 ),
                 Value: () => (
-                  <Text variant="body3">{`1 ${currentPrice?.baseCurrency.symbol} = ${currentPrice?.toFixed()} ${currentPrice?.quoteCurrency.symbol}`}</Text>
+                  <Text variant="body3">{`1 ${currentPrice?.baseCurrency.symbol} = ${currentPrice?.toFixed()} ${
+                    currentPrice?.quoteCurrency.symbol
+                  }`}</Text>
                 ),
               }}
             />

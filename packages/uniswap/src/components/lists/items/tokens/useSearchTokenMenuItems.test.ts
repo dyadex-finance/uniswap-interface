@@ -1,4 +1,4 @@
-import { Currency, Token } from '@uniswap/sdk-core'
+import { Currency, Token } from '@dyadex-finance/sdk-core'
 import {
   TokenContextMenuAction,
   UseSearchTokenMenuItemsParams,

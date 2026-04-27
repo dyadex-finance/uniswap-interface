@@ -1,6 +1,6 @@
 /* oxlint-disable max-lines */
-import { Protocol } from '@uniswap/router-sdk'
-import { Currency, CurrencyAmount, TradeType } from '@uniswap/sdk-core'
+import { Protocol } from '@dyadex-finance/router-sdk'
+import { Currency, CurrencyAmount, TradeType } from '@dyadex-finance/sdk-core'
 import { GasEstimate, GraphQLApi, TradingApi } from '@universe/api'
 import { providers } from 'ethers/lib/ethers'
 import { AssetType } from 'uniswap/src/entities/assets'

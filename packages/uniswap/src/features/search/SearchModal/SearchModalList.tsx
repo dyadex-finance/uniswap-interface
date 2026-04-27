@@ -1,6 +1,6 @@
 import { ContentStyle } from '@shopify/flash-list'
 import { ProtocolVersion } from '@uniswap/client-data-api/dist/data/v1/poolTypes_pb'
-import { Currency } from '@uniswap/sdk-core'
+import { Currency } from '@dyadex-finance/sdk-core'
 import { memo, useState } from 'react'
 import { Flex } from 'ui/src'
 import { PoolOptionItem } from 'uniswap/src/components/lists/items/pools/PoolOptionItem'

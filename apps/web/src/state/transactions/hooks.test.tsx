@@ -1,6 +1,6 @@
 import { BigNumber } from '@ethersproject/bignumber'
-import { permit2Address } from '@uniswap/permit2-sdk'
-import { TradeType } from '@uniswap/sdk-core'
+import { permit2Address } from '@dyadex-finance/permit2-sdk'
+import { TradeType } from '@dyadex-finance/sdk-core'
 import { USDC_MAINNET } from 'uniswap/src/constants/tokens'
 import { UniverseChainId } from 'uniswap/src/features/chains/types'
 import {

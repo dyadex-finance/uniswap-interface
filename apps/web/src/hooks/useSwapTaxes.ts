@@ -1,5 +1,5 @@
-import { Percent } from '@uniswap/sdk-core'
-import { WETH_ADDRESS as getWethAddress } from '@uniswap/universal-router-sdk'
+import { Percent } from '@dyadex-finance/sdk-core'
+import { WETH_ADDRESS as getWethAddress } from '@dyadex-finance/universal-router-sdk'
 import { useEffect, useState } from 'react'
 import FOT_DETECTOR_ABI from 'uniswap/src/abis/fee-on-transfer-detector.json'
 import { FeeOnTransferDetector } from 'uniswap/src/abis/types'

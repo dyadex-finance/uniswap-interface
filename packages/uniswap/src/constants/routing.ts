@@ -1,4 +1,4 @@
-import { Currency, Token, WETH9 } from '@uniswap/sdk-core'
+import { Currency, Token, WETH9 } from '@dyadex-finance/sdk-core'
 import { GraphQLApi } from '@universe/api'
 import type { ImageSourcePropType } from 'react-native'
 import { CELO_LOGO, ETH_LOGO } from 'ui/src/assets'

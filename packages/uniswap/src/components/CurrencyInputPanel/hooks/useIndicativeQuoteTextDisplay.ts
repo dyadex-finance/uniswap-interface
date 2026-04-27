@@ -1,4 +1,4 @@
-import { Currency, CurrencyAmount } from '@uniswap/sdk-core'
+import { Currency, CurrencyAmount } from '@dyadex-finance/sdk-core'
 import { useEffect, useMemo, useRef } from 'react'
 import { CurrencyInputPanelProps } from 'uniswap/src/components/CurrencyInputPanel/types'
 

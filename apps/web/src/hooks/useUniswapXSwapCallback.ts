@@ -1,7 +1,7 @@
 import { TypedDataDomain, TypedDataField } from '@ethersproject/abstract-signer'
 import { BigNumber } from '@ethersproject/bignumber'
-import { PermitTransferFrom } from '@uniswap/permit2-sdk'
-import { Percent } from '@uniswap/sdk-core'
+import { PermitTransferFrom } from '@dyadex-finance/permit2-sdk'
+import { Percent } from '@dyadex-finance/sdk-core'
 import {
   DutchOrder,
   DutchOrderBuilder,
@@ -11,7 +11,7 @@ import {
   UnsignedV3DutchOrder,
   V2DutchOrderBuilder,
   V3DutchOrderBuilder,
-} from '@uniswap/uniswapx-sdk'
+} from '@dyadex-finance/uniswapx-sdk'
 import { useCallback, useRef } from 'react'
 import { useTranslation } from 'react-i18next'
 import { InterfaceEventName, SwapEventName } from 'uniswap/src/features/telemetry/constants'
@@ -71,7 +71,11 @@ async function getUpdatedNonce(swapper: string, chainId: number): Promise<BigNum
   try {
     // endpoint fetches current nonce
     const res = await fetch(
-      `${UNISWAP_GATEWAY_DNS_URL}/nonce?address=${getValidAddress({ address: swapper, chainId, withEVMChecksum: false })}&chainId=${chainId}`,
+      `${UNISWAP_GATEWAY_DNS_URL}/nonce?address=${getValidAddress({
+        address: swapper,
+        chainId,
+        withEVMChecksum: false,
+      })}&chainId=${chainId}`,
     )
 
     const { nonce } = await res.json()

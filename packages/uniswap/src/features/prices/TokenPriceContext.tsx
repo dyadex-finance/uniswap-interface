@@ -1,4 +1,4 @@
-import type { Currency, CurrencyAmount, Price } from '@uniswap/sdk-core'
+import type { Currency, CurrencyAmount, Price } from '@dyadex-finance/sdk-core'
 import { FeatureFlags, useFeatureFlag } from '@universe/gating'
 import { createContext, type ReactNode, useContext } from 'react'
 import type { PollingInterval } from 'uniswap/src/constants/misc'

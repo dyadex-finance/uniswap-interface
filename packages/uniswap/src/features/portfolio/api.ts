@@ -1,6 +1,6 @@
 import { PublicKey } from '@solana/web3.js'
 import { skipToken, useQuery } from '@tanstack/react-query'
-import { Currency, CurrencyAmount, NativeCurrency as NativeCurrencyClass } from '@uniswap/sdk-core'
+import { Currency, CurrencyAmount, NativeCurrency as NativeCurrencyClass } from '@dyadex-finance/sdk-core'
 import { SharedQueryClient } from '@universe/api'
 import { DynamicConfigs, getDynamicConfigValue, SyncTransactionSubmissionChainIdsConfigKey } from '@universe/gating'
 import { Contract } from 'ethers/lib/ethers'

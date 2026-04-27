@@ -1,6 +1,6 @@
 import { ProtocolVersion } from '@uniswap/client-data-api/dist/data/v1/poolTypes_pb'
-import { Percent } from '@uniswap/sdk-core'
-import { FeeAmount } from '@uniswap/v3-sdk'
+import { Percent } from '@dyadex-finance/sdk-core'
+import { FeeAmount } from '@dyadex-finance/v3-sdk'
 import { UniverseChainId } from 'uniswap/src/features/chains/types'
 import i18n from 'uniswap/src/i18n'
 import { PercentNumberDecimals } from 'utilities/src/format/types'
@@ -132,13 +132,10 @@ function getDefaultFeeTiersForChain(
     })
     .map((feeTier) => feeTier.feeData)
 
-  return feeData.reduce(
-    (acc, fee) => {
-      acc[getFeeTierKey({ feeTier: fee.feeAmount, tickSpacing: fee.tickSpacing, isDynamicFee: fee.isDynamic })] = fee
-      return acc
-    },
-    {} as Record<string, { isDynamic: boolean; feeAmount: FeeAmount; tickSpacing: number }>,
-  )
+  return feeData.reduce((acc, fee) => {
+    acc[getFeeTierKey({ feeTier: fee.feeAmount, tickSpacing: fee.tickSpacing, isDynamicFee: fee.isDynamic })] = fee
+    return acc
+  }, {} as Record<string, { isDynamic: boolean; feeAmount: FeeAmount; tickSpacing: number }>)
 }
 
 export function getDefaultFeeTiersForChainWithDynamicFeeTier({

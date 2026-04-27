@@ -1,7 +1,7 @@
 import { PartialMessage } from '@bufbuild/protobuf'
 import { GetPortfolioResponse } from '@uniswap/client-data-api/dist/data/v1/api_pb.d'
 import { Balance } from '@uniswap/client-data-api/dist/data/v1/types_pb'
-import { CurrencyAmount, NativeCurrency, Token } from '@uniswap/sdk-core'
+import { CurrencyAmount, NativeCurrency, Token } from '@dyadex-finance/sdk-core'
 import { TradingApi } from '@universe/api'
 import { getNativeAddress } from 'uniswap/src/constants/addresses'
 import { fetchTokenByAddress, searchTokenToCurrencyInfo } from 'uniswap/src/data/rest/searchTokensAndPools'

@@ -1,4 +1,4 @@
-import { Currency, CurrencyAmount } from '@uniswap/sdk-core'
+import { Currency, CurrencyAmount } from '@dyadex-finance/sdk-core'
 import { GasStrategy, TradingApi } from '@universe/api'
 import { getActiveGasStrategy } from 'uniswap/src/features/gas/utils'
 import {

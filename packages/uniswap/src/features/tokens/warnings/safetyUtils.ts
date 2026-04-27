@@ -1,5 +1,5 @@
 /* oxlint-disable consistent-return */
-import { Currency, NativeCurrency } from '@uniswap/sdk-core'
+import { Currency, NativeCurrency } from '@dyadex-finance/sdk-core'
 import { GraphQLApi } from '@universe/api'
 import { useTranslation } from 'react-i18next'
 import { ColorTokens } from 'ui/src'
@@ -300,18 +300,18 @@ export function useModalSubtitleText({
               sellFeePercent: formattedSellFeePercent,
             })
           : formattedBuyFeePercent
-            ? t('token.safety.warning.tokenChargesFee.buy.message', {
-                tokenSymbol: tokenSymbolWithFallback,
-                feePercent: formattedBuyFeePercent,
-              })
-            : formattedSellFeePercent
-              ? t('token.safety.warning.tokenChargesFee.sell.message', {
-                  tokenSymbol: tokenSymbolWithFallback,
-                  feePercent: formattedSellFeePercent,
-                })
-              : t('token.safety.warning.tokenChargesFee.unknownFee.message', {
-                  tokenSymbol: tokenSymbolWithFallback,
-                })
+          ? t('token.safety.warning.tokenChargesFee.buy.message', {
+              tokenSymbol: tokenSymbolWithFallback,
+              feePercent: formattedBuyFeePercent,
+            })
+          : formattedSellFeePercent
+          ? t('token.safety.warning.tokenChargesFee.sell.message', {
+              tokenSymbol: tokenSymbolWithFallback,
+              feePercent: formattedSellFeePercent,
+            })
+          : t('token.safety.warning.tokenChargesFee.unknownFee.message', {
+              tokenSymbol: tokenSymbolWithFallback,
+            })
       return (
         feePercentCopy +
         ' ' +
@@ -429,18 +429,18 @@ export function useCardSubtitleText({
               sellFeePercent: formattedSellFeePercent,
             })
           : formattedBuyFeePercent
-            ? t('token.safety.warning.tokenChargesFee.buy.message', {
-                tokenSymbol: tokenSymbolWithFallback,
-                feePercent: formattedBuyFeePercent,
-              })
-            : formattedSellFeePercent
-              ? t('token.safety.warning.tokenChargesFee.sell.message', {
-                  tokenSymbol: tokenSymbolWithFallback,
-                  feePercent: formattedSellFeePercent,
-                })
-              : t('token.safety.warning.tokenChargesFee.unknownFee.message', {
-                  tokenSymbol: tokenSymbolWithFallback,
-                })
+          ? t('token.safety.warning.tokenChargesFee.buy.message', {
+              tokenSymbol: tokenSymbolWithFallback,
+              feePercent: formattedBuyFeePercent,
+            })
+          : formattedSellFeePercent
+          ? t('token.safety.warning.tokenChargesFee.sell.message', {
+              tokenSymbol: tokenSymbolWithFallback,
+              feePercent: formattedSellFeePercent,
+            })
+          : t('token.safety.warning.tokenChargesFee.unknownFee.message', {
+              tokenSymbol: tokenSymbolWithFallback,
+            })
       return feePercentCopy
     }
     case TokenProtectionWarning.NonDefault:

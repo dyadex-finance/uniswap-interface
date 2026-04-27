@@ -1,4 +1,4 @@
-import { CurrencyAmount, Price, Token } from '@uniswap/sdk-core'
+import { CurrencyAmount, Price, Token } from '@dyadex-finance/sdk-core'
 import { DAI, USDC_MAINNET } from 'uniswap/src/constants/tokens'
 import { UniverseChainId } from 'uniswap/src/features/chains/types'
 import {

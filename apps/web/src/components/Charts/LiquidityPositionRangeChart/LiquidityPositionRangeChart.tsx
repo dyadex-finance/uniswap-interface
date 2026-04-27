@@ -1,9 +1,9 @@
 /* oxlint-disable max-lines */
 import { PositionStatus, ProtocolVersion } from '@uniswap/client-data-api/dist/data/v1/poolTypes_pb'
-import { Currency, Price } from '@uniswap/sdk-core'
-import { Pair } from '@uniswap/v2-sdk'
-import { FeeAmount, Pool as V3Pool } from '@uniswap/v3-sdk'
-import { Pool as V4Pool } from '@uniswap/v4-sdk'
+import { Currency, Price } from '@dyadex-finance/sdk-core'
+import { Pair } from '@dyadex-finance/v2-sdk'
+import { FeeAmount, Pool as V3Pool } from '@dyadex-finance/v3-sdk'
+import { Pool as V4Pool } from '@dyadex-finance/v4-sdk'
 import { GraphQLApi } from '@universe/api'
 import { CrosshairMode, ISeriesApi, LineStyle, LineType, UTCTimestamp } from 'lightweight-charts'
 import { useMemo, useState } from 'react'

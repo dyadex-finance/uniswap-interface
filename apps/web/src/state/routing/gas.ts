@@ -1,5 +1,5 @@
-import { MaxUint256, permit2Address } from '@uniswap/permit2-sdk'
-import { Currency } from '@uniswap/sdk-core'
+import { MaxUint256, permit2Address } from '@dyadex-finance/permit2-sdk'
+import { Currency } from '@dyadex-finance/sdk-core'
 import ERC20_ABI from 'uniswap/src/abis/erc20.json'
 import { Erc20, Weth } from 'uniswap/src/abis/types'
 import WETH_ABI from 'uniswap/src/abis/weth.json'

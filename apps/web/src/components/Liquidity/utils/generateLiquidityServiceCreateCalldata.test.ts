@@ -10,10 +10,10 @@ import {
   V3CreateLPPosition,
   V4CreateLPPosition,
 } from '@uniswap/client-liquidity/dist/uniswap/liquidity/v1/types_pb'
-import { CurrencyAmount } from '@uniswap/sdk-core'
-import { Pair } from '@uniswap/v2-sdk'
-import { FeeAmount, nearestUsableTick, TICK_SPACINGS, TickMath, Pool as V3Pool } from '@uniswap/v3-sdk'
-import { Pool as V4Pool } from '@uniswap/v4-sdk'
+import { CurrencyAmount } from '@dyadex-finance/sdk-core'
+import { Pair } from '@dyadex-finance/v2-sdk'
+import { FeeAmount, nearestUsableTick, TICK_SPACINGS, TickMath, Pool as V3Pool } from '@dyadex-finance/v3-sdk'
+import { Pool as V4Pool } from '@dyadex-finance/v4-sdk'
 import { ZERO_ADDRESS } from 'uniswap/src/constants/misc'
 import { USDT } from 'uniswap/src/constants/tokens'
 import { normalizeApprovalResponse } from 'uniswap/src/data/apiClients/liquidityService/normalizeApprovalResponse'

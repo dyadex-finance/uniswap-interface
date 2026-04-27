@@ -27,9 +27,9 @@
             "message": "Avoid importing directly from uniswap/src from within the uniswap package which causes circular imports."
           },
           {
-            "name": "@uniswap/sdk-core",
+            "name": "@dyadex-finance/sdk-core",
             "importNames": ["ChainId"],
-            "message": "Don't use ChainId from @uniswap/sdk-core. Use the UniverseChainId from universe/uniswap."
+            "message": "Don't use ChainId from @dyadex-finance/sdk-core. Use the UniverseChainId from universe/uniswap."
           },
           {
             "name": "uniswap/src/features/chains/hooks/useOrderedChainIds",

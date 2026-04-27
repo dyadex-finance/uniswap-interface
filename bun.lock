@@ -56,6 +56,10 @@
       "dependencies": {
         "@apollo/client": "3.11.10",
         "@datadog/browser-rum": "5.23.3",
+        "@dyadex-finance/sdk-core": "7.13.0",
+        "@dyadex-finance/universal-router-sdk": "5.1.0",
+        "@dyadex-finance/v3-sdk": "3.30.0",
+        "@dyadex-finance/v4-sdk": "2.0.0",
         "@ethersproject/bignumber": "5.7.0",
         "@ethersproject/providers": "5.7.2",
         "@ethersproject/strings": "5.7.0",
@@ -68,10 +72,6 @@
         "@types/uuid": "9.0.1",
         "@uniswap/analytics-events": "2.43.0",
         "@uniswap/client-notification-service": "0.0.11",
-        "@uniswap/sdk-core": "7.12.1",
-        "@uniswap/universal-router-sdk": "4.33.0",
-        "@uniswap/v3-sdk": "3.29.1",
-        "@uniswap/v4-sdk": "1.29.1",
         "@universe/api": "workspace:^",
         "@universe/gating": "workspace:^",
         "@universe/notifications": "workspace:^",
@@ -161,6 +161,7 @@
         "@apollo/client": "3.11.10",
         "@datadog/mobile-react-native": "2.12.2",
         "@datadog/mobile-react-navigation": "2.12.2",
+        "@dyadex-finance/sdk-core": "7.13.0",
         "@ethersproject/bignumber": "5.7.0",
         "@ethersproject/shims": "5.6.0",
         "@expo/fingerprint": "0.15.3",
@@ -200,7 +201,6 @@
         "@uniswap/client-explore": "0.0.17",
         "@uniswap/client-notification-service": "0.0.11",
         "@uniswap/ethers-rs-mobile": "0.0.5",
-        "@uniswap/sdk-core": "7.12.1",
         "@universe/api": "workspace:^",
         "@universe/gating": "workspace:^",
         "@universe/hashcash-native": "workspace:^",
@@ -351,6 +351,14 @@
         "@datadog/browser-logs": "5.20.0",
         "@datadog/browser-rum": "5.23.3",
         "@datadog/browser-rum-react": "6.10.1",
+        "@dyadex-finance/permit2-sdk": "1.4.0",
+        "@dyadex-finance/router-sdk": "2.9.0",
+        "@dyadex-finance/sdk-core": "7.13.0",
+        "@dyadex-finance/uniswapx-sdk": "3.0.2",
+        "@dyadex-finance/universal-router-sdk": "5.1.0",
+        "@dyadex-finance/v2-sdk": "4.20.0",
+        "@dyadex-finance/v3-sdk": "3.30.0",
+        "@dyadex-finance/v4-sdk": "2.0.0",
         "@graphql-codegen/cli": "3.3.1",
         "@graphql-codegen/client-preset": "3.0.1",
         "@graphql-codegen/typescript": "3.0.4",
@@ -386,17 +394,9 @@
         "@uniswap/client-notification-service": "0.0.11",
         "@uniswap/client-search": "0.0.11",
         "@uniswap/merkle-distributor": "1.0.1",
-        "@uniswap/permit2-sdk": "1.3.0",
-        "@uniswap/router-sdk": "2.7.1",
-        "@uniswap/sdk-core": "7.12.1",
         "@uniswap/token-lists": "1.0.0-beta.33",
-        "@uniswap/uniswapx-sdk": "3.0.0-beta.7",
-        "@uniswap/universal-router-sdk": "4.33.0",
-        "@uniswap/v2-sdk": "4.19.1",
         "@uniswap/v3-core": "1.0.1",
         "@uniswap/v3-periphery": "1.4.4",
-        "@uniswap/v3-sdk": "3.29.1",
-        "@uniswap/v4-sdk": "1.29.1",
         "@universe/api": "workspace:^",
         "@universe/gating": "workspace:^",
         "@universe/notifications": "workspace:^",
@@ -797,8 +797,8 @@
       "name": "@universe/prices",
       "version": "0.0.0",
       "dependencies": {
+        "@dyadex-finance/sdk-core": "7.13.0",
         "@tanstack/react-query": "5.90.20",
-        "@uniswap/sdk-core": "7.12.1",
         "@universe/api": "workspace:^",
         "@universe/websocket": "workspace:^",
         "utilities": "workspace:^",
@@ -959,6 +959,14 @@
         "@connectrpc/connect-web": "1.5.0",
         "@datadog/browser-logs": "5.20.0",
         "@datadog/browser-rum": "5.23.3",
+        "@dyadex-finance/permit2-sdk": "1.4.0",
+        "@dyadex-finance/router-sdk": "2.9.0",
+        "@dyadex-finance/sdk-core": "7.13.0",
+        "@dyadex-finance/uniswapx-sdk": "3.0.2",
+        "@dyadex-finance/universal-router-sdk": "5.1.0",
+        "@dyadex-finance/v2-sdk": "4.20.0",
+        "@dyadex-finance/v3-sdk": "3.30.0",
+        "@dyadex-finance/v4-sdk": "2.0.0",
         "@ethersproject/abstract-provider": "5.7.0",
         "@ethersproject/abstract-signer": "5.7.0",
         "@ethersproject/address": "5.7.0",
@@ -992,14 +1000,6 @@
         "@uniswap/client-privy-embedded-wallet": "0.0.6",
         "@uniswap/client-search": "0.0.11",
         "@uniswap/client-unirpc-v2": "0.0.2",
-        "@uniswap/permit2-sdk": "1.3.0",
-        "@uniswap/router-sdk": "2.7.1",
-        "@uniswap/sdk-core": "7.12.1",
-        "@uniswap/uniswapx-sdk": "3.0.0-beta.7",
-        "@uniswap/universal-router-sdk": "4.33.0",
-        "@uniswap/v2-sdk": "4.19.1",
-        "@uniswap/v3-sdk": "3.29.1",
-        "@uniswap/v4-sdk": "1.29.1",
         "@universe/api": "workspace:^",
         "@universe/config": "workspace:^",
         "@universe/gating": "workspace:^",
@@ -1102,6 +1102,7 @@
         "@datadog/browser-logs": "5.20.0",
         "@datadog/browser-rum": "5.23.3",
         "@datadog/mobile-react-native": "2.12.2",
+        "@dyadex-finance/sdk-core": "7.13.0",
         "@ethersproject/abstract-provider": "5.7.0",
         "@ethersproject/abstract-signer": "5.7.0",
         "@ethersproject/address": "5.7.0",
@@ -1115,7 +1116,6 @@
         "@tanstack/react-query": "5.90.20",
         "@uniswap/analytics": "1.7.2",
         "@uniswap/analytics-events": "2.43.0",
-        "@uniswap/sdk-core": "7.12.1",
         "dayjs": "1.11.7",
         "expo-clipboard": "7.1.5",
         "expo-localization": "16.1.6",
@@ -1149,6 +1149,10 @@
       "dependencies": {
         "@apollo/client": "3.11.10",
         "@bufbuild/protobuf": "1.10.0",
+        "@dyadex-finance/permit2-sdk": "1.4.0",
+        "@dyadex-finance/router-sdk": "2.9.0",
+        "@dyadex-finance/sdk-core": "7.13.0",
+        "@dyadex-finance/uniswapx-sdk": "3.0.2",
         "@ethersproject/abstract-signer": "5.7.0",
         "@ethersproject/bignumber": "5.7.0",
         "@ethersproject/contracts": "5.7.0",
@@ -1162,10 +1166,6 @@
         "@tanstack/react-query": "5.90.20",
         "@uniswap/analytics-events": "2.43.0",
         "@uniswap/client-data-api": "0.0.65",
-        "@uniswap/permit2-sdk": "1.3.0",
-        "@uniswap/router-sdk": "2.7.1",
-        "@uniswap/sdk-core": "7.12.1",
-        "@uniswap/uniswapx-sdk": "3.0.0-beta.7",
         "@universe/api": "workspace:^",
         "@universe/gating": "workspace:^",
         "@universe/sessions": "workspace:^",
@@ -1279,6 +1279,9 @@
     "@babel/preset-env": "7.26.0",
     "@babel/runtime": "7.26.0",
     "@coinbase/wallet-sdk": "4.3.2",
+    "@dyadex-finance/router-sdk": "2.9.0",
+    "@dyadex-finance/sdk-core": "7.13.0",
+    "@dyadex-finance/v2-sdk": "4.20.0",
     "@ethersproject/hash": "5.7.0",
     "@expo/config-plugins": "10.1.1",
     "@expo/uuid": "3.4.0",
@@ -1292,9 +1295,6 @@
     "@swc/helpers": "0.5.11",
     "@tanstack/query-core": "5.90.20",
     "@types/react": "19.0.10",
-    "@uniswap/router-sdk": "2.7.1",
-    "@uniswap/sdk-core": "7.12.1",
-    "@uniswap/v2-sdk": "4.19.1",
     "@vitejs/plugin-react": "4.7.0",
     "@wxt-dev/browser": "0.1.4",
     "@xmldom/xmldom": "0.7.7",
@@ -1907,6 +1907,22 @@
     "@devicefarmer/adbkit-monkey": ["@devicefarmer/adbkit-monkey@1.2.1", "", {}, "sha512-ZzZY/b66W2Jd6NHbAhLyDWOEIBWC11VizGFk7Wx7M61JZRz7HR9Cq5P+65RKWUU7u6wgsE8Lmh9nE4Mz+U2eTg=="],
 
     "@discoveryjs/json-ext": ["@discoveryjs/json-ext@0.5.7", "", {}, "sha512-dBVuXR082gk3jsFp7Rd/JI4kytwGHecnCoTtXFb7DB6CNHp4rg5k1bhg0nWdLGLnOV71lmDzGQaLMy8iPLY0pw=="],
+
+    "@dyadex-finance/permit2-sdk": ["@dyadex-finance/permit2-sdk@1.4.0", "", { "dependencies": { "@ethersproject/abstract-signer": "^5.7.0", "@ethersproject/bignumber": "^5.5.0", "@ethersproject/contracts": "^5.7.0", "@ethersproject/hash": "^5.7.0", "@ethersproject/providers": "^5.7.0", "ethers": "^5.7.0", "tiny-invariant": "^1.1.0" } }, "sha512-WOByfzZN8ZlrXT4pdJqpo/2kyqRJUVBOgFu2INJ/TqDvVeU2DCRH0jb6NZ+J/4gfbh90dsXEPtwP5V4U0lk8EQ=="],
+
+    "@dyadex-finance/router-sdk": ["@dyadex-finance/router-sdk@2.9.0", "", { "dependencies": { "@dyadex-finance/sdk-core": "^7.13.0", "@dyadex-finance/v2-sdk": "^4.20.0", "@dyadex-finance/v3-sdk": "^3.30.0", "@dyadex-finance/v4-sdk": "^2.0.0", "@ethersproject/abi": "^5.5.0", "@ethersproject/solidity": "^5.0.9", "@uniswap/swap-router-contracts": "^1.3.0", "jsbi": "^3.1.4", "tiny-invariant": "^1.1.0", "tslib": "^2.3.0" } }, "sha512-I/VOGhJn2PSTILAvow5IhcFRNTRbE2dHZbQ0Fwf47sLZzHxkfJ+2/5jmo5Gyfx1TZzj3r4MBLn2mbgspl8MTVA=="],
+
+    "@dyadex-finance/sdk-core": ["@dyadex-finance/sdk-core@7.13.0", "", { "dependencies": { "@ethersproject/address": "^5.0.2", "@ethersproject/bignumber": "^5.5.0", "@ethersproject/bytes": "^5.7.0", "@ethersproject/keccak256": "5.7.0", "@ethersproject/strings": "5.7.0", "big.js": "^5.2.2", "decimal.js-light": "^2.5.0", "jsbi": "^3.1.4", "tiny-invariant": "^1.1.0", "toformat": "^2.0.0", "tslib": "^2.3.0" } }, "sha512-2ozGdTVS3xi6wR4uCTSvNNy8jqBs33it8K+iX9iy8r/drFHdsrYwbYq3frTCLL6BuaQwkebpK1eYfuKqKbWEjw=="],
+
+    "@dyadex-finance/uniswapx-sdk": ["@dyadex-finance/uniswapx-sdk@3.0.2", "", { "dependencies": { "@dyadex-finance/permit2-sdk": "^1.4.0", "@dyadex-finance/sdk-core": "^7.13.0", "@ethersproject/abi": "^5.5.0", "@ethersproject/bytes": "^5.7.0", "@ethersproject/providers": "^5.7.0", "ethers": "^5.7.0", "tiny-invariant": "^1.1.0" } }, "sha512-a2BKxs1UQsSoRn1tfFXDCrteZtqaso17Pq7rsqvbr5RuJaOuHK7P8VQ3QTST2ctkxKkZVhZphV4XpFEreM6IWA=="],
+
+    "@dyadex-finance/universal-router-sdk": ["@dyadex-finance/universal-router-sdk@5.1.0", "", { "dependencies": { "@dyadex-finance/permit2-sdk": "^1.4.0", "@dyadex-finance/router-sdk": "^2.9.0", "@dyadex-finance/sdk-core": "^7.13.0", "@dyadex-finance/v2-sdk": "^4.20.0", "@dyadex-finance/v3-sdk": "^3.30.0", "@dyadex-finance/v4-sdk": "^2.0.0", "@ethersproject/abi": "^5.5.0", "@ethersproject/abstract-signer": "^5.7.0", "@openzeppelin/contracts": "4.7.0", "@uniswap/universal-router": "2.1.0", "@uniswap/v2-core": "^1.0.1", "@uniswap/v3-core": "1.0.0", "bignumber.js": "^9.0.2", "ethers": "^5.7.0", "jsbi": "^3.1.4", "tiny-invariant": "^1.1.0", "tslib": "^2.3.0" } }, "sha512-P8a760QhzVQFnRWQLGnE1cCnMvSYk4O2KxW3k5PHPcSQnKWgh969oTKjZMBKkJGXf/odtzXbE4d2DpjtiWrloQ=="],
+
+    "@dyadex-finance/v2-sdk": ["@dyadex-finance/v2-sdk@4.20.0", "", { "dependencies": { "@dyadex-finance/sdk-core": "^7.13.0", "@ethersproject/address": "^5.0.2", "@ethersproject/bignumber": "^5.5.0", "@ethersproject/solidity": "^5.0.9", "jsbi": "^3.1.4", "tiny-invariant": "^1.1.0", "tiny-warning": "^1.0.3", "tslib": "^2.3.0" } }, "sha512-G4bEuynznBsvEvQWAPkwNOOiGyeInOx6cuzKs+Kc56cKWPYdi0LeXyBJndLBSP3V9Ih5hCsD58fswTl8BQFrdQ=="],
+
+    "@dyadex-finance/v3-sdk": ["@dyadex-finance/v3-sdk@3.30.0", "", { "dependencies": { "@dyadex-finance/sdk-core": "^7.13.0", "@ethersproject/abi": "^5.5.0", "@ethersproject/abstract-signer": "^5.7.0", "@ethersproject/address": "^5.0.2", "@ethersproject/solidity": "^5.0.9", "@uniswap/swap-router-contracts": "^1.3.0", "@uniswap/v3-periphery": "^1.1.1", "@uniswap/v3-staker": "1.0.0", "jsbi": "^3.1.4", "tiny-invariant": "^1.1.0", "tiny-warning": "^1.0.3", "tslib": "^2.3.0" } }, "sha512-Hl1lCmaI0CGPAfesPLm3QTiOe2NXtWpSTXaxe1FaarLp9Gxk5ntKNxxQzoq3JQrAEkHl/fSOoOpw3C4UnQ5E/w=="],
+
+    "@dyadex-finance/v4-sdk": ["@dyadex-finance/v4-sdk@2.0.0", "", { "dependencies": { "@dyadex-finance/sdk-core": "^7.13.0", "@dyadex-finance/v3-sdk": "^3.30.0", "@ethersproject/abi": "^5.5.0", "@ethersproject/abstract-signer": "^5.7.0", "@ethersproject/solidity": "^5.0.9", "@uniswap/v3-periphery": "^1.1.1", "ethers": "^5.7.0", "jsbi": "^3.1.4", "tiny-invariant": "^1.1.0", "tiny-warning": "^1.0.3", "tslib": "^2.3.0" } }, "sha512-2moYdJla0+84mB+pRGPYBLDruil3SvGPzqRztbHvLcq1xWRZLQT6Y1LDGdQzlnY+3fNX3ZVH2ubtchtqP87Rlg=="],
 
     "@ecies/ciphers": ["@ecies/ciphers@0.2.5", "", { "peerDependencies": { "@noble/ciphers": "^1.0.0" } }, "sha512-GalEZH4JgOMHYYcYmVqnFirFsjZHeoGMDt9IxEnM9F7GRUUyUksJ7Ou53L83WHJq3RWKD3AcBpo0iQh0oMpf8A=="],
 
@@ -2607,24 +2623,6 @@
     "@multiformats/base-x": ["@multiformats/base-x@4.0.1", "", {}, "sha512-eMk0b9ReBbV23xXU693TAIrLyeO5iTgBZGSJfpqriG8UkYvr/hC9u9pyMlAakDNHWmbhMZCDs6KQO0jzKD8OTw=="],
 
     "@napi-rs/wasm-runtime": ["@napi-rs/wasm-runtime@0.2.4", "", { "dependencies": { "@emnapi/core": "^1.1.0", "@emnapi/runtime": "^1.1.0", "@tybys/wasm-util": "^0.9.0" } }, "sha512-9zESzOO5aDByvhIAsOy9TbpZ0Ur2AJbUI7UT73kcUTS2mxAMHOBaa1st/jAymNoCtvrit99kkzT1FZuXVcgfIQ=="],
-
-    "@next/env": ["@next/env@16.1.7", "", {}, "sha512-rJJbIdJB/RQr2F1nylZr/PJzamvNNhfr3brdKP6s/GW850jbtR70QlSfFselvIBbcPUOlQwBakexjFzqLzF6pg=="],
-
-    "@next/swc-darwin-arm64": ["@next/swc-darwin-arm64@16.1.7", "", { "os": "darwin", "cpu": "arm64" }, "sha512-b2wWIE8sABdyafc4IM8r5Y/dS6kD80JRtOGrUiKTsACFQfWWgUQ2NwoUX1yjFMXVsAwcQeNpnucF2ZrujsBBPg=="],
-
-    "@next/swc-darwin-x64": ["@next/swc-darwin-x64@16.1.7", "", { "os": "darwin", "cpu": "x64" }, "sha512-zcnVaaZulS1WL0Ss38R5Q6D2gz7MtBu8GZLPfK+73D/hp4GFMrC2sudLky1QibfV7h6RJBJs/gOFvYP0X7UVlQ=="],
-
-    "@next/swc-linux-arm64-gnu": ["@next/swc-linux-arm64-gnu@16.1.7", "", { "os": "linux", "cpu": "arm64" }, "sha512-2ant89Lux/Q3VyC8vNVg7uBaFVP9SwoK2jJOOR0L8TQnX8CAYnh4uctAScy2Hwj2dgjVHqHLORQZJ2wH6VxhSQ=="],
-
-    "@next/swc-linux-arm64-musl": ["@next/swc-linux-arm64-musl@16.1.7", "", { "os": "linux", "cpu": "arm64" }, "sha512-uufcze7LYv0FQg9GnNeZ3/whYfo+1Q3HnQpm16o6Uyi0OVzLlk2ZWoY7j07KADZFY8qwDbsmFnMQP3p3+Ftprw=="],
-
-    "@next/swc-linux-x64-gnu": ["@next/swc-linux-x64-gnu@16.1.7", "", { "os": "linux", "cpu": "x64" }, "sha512-KWVf2gxYvHtvuT+c4MBOGxuse5TD7DsMFYSxVxRBnOzok/xryNeQSjXgxSv9QpIVlaGzEn/pIuI6Koosx8CGWA=="],
-
-    "@next/swc-linux-x64-musl": ["@next/swc-linux-x64-musl@16.1.7", "", { "os": "linux", "cpu": "x64" }, "sha512-HguhaGwsGr1YAGs68uRKc4aGWxLET+NevJskOcCAwXbwj0fYX0RgZW2gsOCzr9S11CSQPIkxmoSbuVaBp4Z3dA=="],
-
-    "@next/swc-win32-arm64-msvc": ["@next/swc-win32-arm64-msvc@16.1.7", "", { "os": "win32", "cpu": "arm64" }, "sha512-S0n3KrDJokKTeFyM/vGGGR8+pCmXYrjNTk2ZozOL1C/JFdfUIL9O1ATaJOl5r2POe56iRChbsszrjMAdWSv7kQ=="],
-
-    "@next/swc-win32-x64-msvc": ["@next/swc-win32-x64-msvc@16.1.7", "", { "os": "win32", "cpu": "x64" }, "sha512-mwgtg8CNZGYm06LeEd+bNnOUfwOyNem/rOiP14Lsz+AnUY92Zq/LXwtebtUiaeVkhbroRCQ0c8GlR4UT1U+0yg=="],
 
     "@nicolo-ribaudo/eslint-scope-5-internals": ["@nicolo-ribaudo/eslint-scope-5-internals@5.1.1-v1", "", { "dependencies": { "eslint-scope": "5.1.1" } }, "sha512-54/JRvkLIzzDWshCWfuhadfrfZVPiElY8Fcgmg1HroEly/EDSszzhBAsarCux+D/kOslTRquNzuyGSmUSTTHGg=="],
 
@@ -4398,35 +4396,19 @@
 
     "@uniswap/mobile": ["@uniswap/mobile@workspace:apps/mobile"],
 
-    "@uniswap/permit2-sdk": ["@uniswap/permit2-sdk@1.3.0", "", { "dependencies": { "ethers": "^5.7.0", "tiny-invariant": "^1.1.0" } }, "sha512-LstYQWP47dwpQrgqBJ+ysFstne9LgI5FGiKHc2ewjj91MTY8Mq1reocu6U/VDncdR5ef30TUOcZ7gPExRY8r6Q=="],
-
-    "@uniswap/router-sdk": ["@uniswap/router-sdk@2.7.1", "", { "dependencies": { "@ethersproject/abi": "^5.5.0", "@uniswap/sdk-core": "^7.12.1", "@uniswap/swap-router-contracts": "^1.3.0", "@uniswap/v2-sdk": "^4.19.1", "@uniswap/v3-sdk": "^3.29.1", "@uniswap/v4-sdk": "^1.29.1" } }, "sha512-d2+P+761vchusTTC019bSh8dqCUOEZ+JQzgOXXuMkbcxzs81bOIL0WAeKO4azhZhcRQpxCrRqQYEeSX8dE/Oww=="],
-
-    "@uniswap/sdk-core": ["@uniswap/sdk-core@7.12.1", "", { "dependencies": { "@ethersproject/address": "^5.0.2", "@ethersproject/bytes": "^5.7.0", "@ethersproject/keccak256": "5.7.0", "@ethersproject/strings": "5.7.0", "big.js": "^5.2.2", "decimal.js-light": "^2.5.0", "jsbi": "^3.1.4", "tiny-invariant": "^1.1.0", "toformat": "^2.0.0" } }, "sha512-qQG6dVFIgk9x+WRQBDZms/abi+aM6J6YFLhaMnrvTSFIIL4hOjf74SpOep5wPEDZGx3iw3LqofRq+ijeVwLLBQ=="],
-
     "@uniswap/swap-router-contracts": ["@uniswap/swap-router-contracts@1.3.1", "", { "dependencies": { "@openzeppelin/contracts": "3.4.2-solc-0.7", "@uniswap/v2-core": "^1.0.1", "@uniswap/v3-core": "^1.0.0", "@uniswap/v3-periphery": "^1.4.4", "dotenv": "^14.2.0", "hardhat-watcher": "^2.1.1" } }, "sha512-mh/YNbwKb7Mut96VuEtL+Z5bRe0xVIbjjiryn+iMMrK2sFKhR4duk/86mEz0UO5gSx4pQIw9G5276P5heY/7Rg=="],
 
     "@uniswap/token-lists": ["@uniswap/token-lists@1.0.0-beta.33", "", {}, "sha512-JQkXcpRI3jFG8y3/CGC4TS8NkDgcxXaOQuYW8Qdvd6DcDiIyg2vVYCG9igFEzF0G6UvxgHkBKC7cWCgzZNYvQg=="],
 
-    "@uniswap/uniswapx-sdk": ["@uniswap/uniswapx-sdk@3.0.0-beta.7", "", { "dependencies": { "@ethersproject/bytes": "^5.7.0", "@ethersproject/providers": "^5.7.0", "@uniswap/permit2-sdk": "^1.2.1", "@uniswap/sdk-core": "^7.5.0", "ethers": "^5.7.0" } }, "sha512-rfdI7/8WsvKKdnfswEESsvTdyBmHEPuBir+dYWxbFLqa9FYaHAGELwE8gh2yvuxEiGTOwWFHrr/MDAx5WSP2WQ=="],
-
     "@uniswap/universal-router": ["@uniswap/universal-router@2.1.0", "", { "dependencies": { "@openzeppelin/contracts": "5.0.2", "@uniswap/v2-core": "1.0.1", "@uniswap/v3-core": "1.0.0" } }, "sha512-rt18RUsZd9xDfyVfIONJo+TEQ8w+olOYxu9+A1g4Thil1R7IMa+8mnyVQjdLPK2REhejScDwjYbOGpeaAce0hg=="],
 
-    "@uniswap/universal-router-sdk": ["@uniswap/universal-router-sdk@4.33.0", "", { "dependencies": { "@openzeppelin/contracts": "4.7.0", "@uniswap/permit2-sdk": "^1.3.0", "@uniswap/router-sdk": "^2.7.1", "@uniswap/sdk-core": "^7.12.1", "@uniswap/universal-router": "2.1.0", "@uniswap/v2-core": "^1.0.1", "@uniswap/v2-sdk": "^4.19.1", "@uniswap/v3-core": "1.0.0", "@uniswap/v3-sdk": "^3.29.1", "@uniswap/v4-sdk": "^1.29.1", "bignumber.js": "^9.0.2", "ethers": "^5.7.0" } }, "sha512-Vd1hWDijDAI5AafPfyZN7/YUF1GYP30qURQPhCsfAS92b0cdvBngGSeFl1QNzjISZgGvhiZItrOFH53i7AMmCA=="],
-
     "@uniswap/v2-core": ["@uniswap/v2-core@1.0.1", "", {}, "sha512-MtybtkUPSyysqLY2U210NBDeCHX+ltHt3oADGdjqoThZaFRDKwM6k1Nb3F0A3hk5hwuQvytFWhrWHOEq6nVJ8Q=="],
-
-    "@uniswap/v2-sdk": ["@uniswap/v2-sdk@4.19.1", "", { "dependencies": { "@ethersproject/address": "^5.0.2", "@ethersproject/solidity": "^5.0.9", "@uniswap/sdk-core": "^7.12.1", "tiny-invariant": "^1.1.0", "tiny-warning": "^1.0.3" } }, "sha512-c89H6S8YNI7tGSsk5wWXLxnXUe/jT+BewKSXtJ/w0WXEV8r4dl18R80YfOtwajnYbt8jYrUVVdPgPLaX0CdDEg=="],
 
     "@uniswap/v3-core": ["@uniswap/v3-core@1.0.1", "", {}, "sha512-7pVk4hEm00j9tc71Y9+ssYpO6ytkeI0y7WE9P6UcmNzhxPePwyAxImuhVsTqWK9YFvzgtvzJHi64pBl4jUzKMQ=="],
 
     "@uniswap/v3-periphery": ["@uniswap/v3-periphery@1.4.4", "", { "dependencies": { "@openzeppelin/contracts": "3.4.2-solc-0.7", "@uniswap/lib": "^4.0.1-alpha", "@uniswap/v2-core": "^1.0.1", "@uniswap/v3-core": "^1.0.0", "base64-sol": "1.0.1" } }, "sha512-S4+m+wh8HbWSO3DKk4LwUCPZJTpCugIsHrWR86m/OrUyvSqGDTXKFfc2sMuGXCZrD1ZqO3rhQsKgdWg3Hbb2Kw=="],
 
-    "@uniswap/v3-sdk": ["@uniswap/v3-sdk@3.29.1", "", { "dependencies": { "@ethersproject/abi": "^5.5.0", "@ethersproject/solidity": "^5.0.9", "@uniswap/sdk-core": "^7.12.1", "@uniswap/swap-router-contracts": "^1.3.0", "@uniswap/v3-periphery": "^1.1.1", "@uniswap/v3-staker": "1.0.0", "tiny-invariant": "^1.1.0", "tiny-warning": "^1.0.3" } }, "sha512-EYCzrfCCxc9DqUguw5rX+9774jvpVIvvrnyraJenZ371JiX/VC09/6OToKReu3gJfgITaH1BynMATwGkmOb2SQ=="],
-
     "@uniswap/v3-staker": ["@uniswap/v3-staker@1.0.0", "", { "dependencies": { "@openzeppelin/contracts": "3.4.1-solc-0.7-2", "@uniswap/v3-core": "1.0.0", "@uniswap/v3-periphery": "^1.0.1" } }, "sha512-JV0Qc46Px5alvg6YWd+UIaGH9lDuYG/Js7ngxPit1SPaIP30AlVer1UYB7BRYeUVVxE+byUyIeN5jeQ7LLDjIw=="],
-
-    "@uniswap/v4-sdk": ["@uniswap/v4-sdk@1.29.1", "", { "dependencies": { "@ethersproject/solidity": "^5.0.9", "@uniswap/sdk-core": "^7.12.1", "@uniswap/v3-sdk": "3.29.1", "tiny-invariant": "^1.1.0", "tiny-warning": "^1.0.3" } }, "sha512-JYAnNmTGhbl5G4Xl+fUsew/ic8VwKofJxZ2uQjMkGMkzkCMT70Sht7E2ysZD+znLWQ9cCB0AAQWZqTlryiEfhA=="],
 
     "@universe/analytics": ["@universe/analytics@workspace:packages/analytics"],
 
@@ -5213,8 +5195,6 @@
     "cli-truncate": ["cli-truncate@3.1.0", "", { "dependencies": { "slice-ansi": "^5.0.0", "string-width": "^5.0.0" } }, "sha512-wfOBkjXteqSnI59oPcJkcPl/ZmwvMMOj340qUIY1SKZCv0B9Cf4D4fAucRkIKQmsIuYK3x1rrgU7MeGRruiuiA=="],
 
     "cli-width": ["cli-width@3.0.0", "", {}, "sha512-FxqpkPPwu1HjuN93Omfm4h8uIanXofW0RxVEW3k5RKx+mJJYSthzNhp32Kzxxy3YAEZ/Dc/EWN1vZRY0+kOhbw=="],
-
-    "client-only": ["client-only@0.0.1", "", {}, "sha512-IV3Ou0jSMzZrd3pZ48nLkT9DA7Ag1pnPzaiQhpW7c3RbcqqzvzzVu+L8gfqMp/8IM2MQtSiqaCxrrcfu8I8rMA=="],
 
     "clipanion": ["clipanion@3.2.1", "", { "dependencies": { "typanion": "^3.8.0" } }, "sha512-dYFdjLb7y1ajfxQopN05mylEpK9ZX0sO1/RfMXdfmwjlIsPkbh4p7A682x++zFPLDCo1x3p82dtljHf5cW2LKA=="],
 
@@ -7334,8 +7314,6 @@
 
     "netmask": ["netmask@2.0.2", "", {}, "sha512-dBpDMdxv9Irdq66304OLfEmQ9tbNRFnFTuZiLo+bD+r332bBmMJ8GBLXklIXXgxd3+v9+KUnZaUR5PJMa75Gsg=="],
 
-    "next": ["next@16.1.7", "", { "dependencies": { "@next/env": "16.1.7", "@swc/helpers": "0.5.15", "baseline-browser-mapping": "^2.9.19", "caniuse-lite": "^1.0.30001579", "postcss": "8.4.31", "styled-jsx": "5.1.6" }, "optionalDependencies": { "@next/swc-darwin-arm64": "16.1.7", "@next/swc-darwin-x64": "16.1.7", "@next/swc-linux-arm64-gnu": "16.1.7", "@next/swc-linux-arm64-musl": "16.1.7", "@next/swc-linux-x64-gnu": "16.1.7", "@next/swc-linux-x64-musl": "16.1.7", "@next/swc-win32-arm64-msvc": "16.1.7", "@next/swc-win32-x64-msvc": "16.1.7", "sharp": "^0.34.4" }, "peerDependencies": { "@opentelemetry/api": "^1.1.0", "@playwright/test": "^1.51.1", "babel-plugin-react-compiler": "*", "react": "^18.2.0 || 19.0.0-rc-de68d2f4-20241204 || ^19.0.0", "react-dom": "^18.2.0 || 19.0.0-rc-de68d2f4-20241204 || ^19.0.0", "sass": "^1.3.0" }, "optionalPeers": ["@opentelemetry/api", "@playwright/test", "babel-plugin-react-compiler", "sass"], "bin": { "next": "dist/bin/next" } }, "sha512-WM0L7WrSvKwoLegLYr6V+mz+RIofqQgVAfHhMp9a88ms0cFX8iX9ew+snpWlSBwpkURJOUdvCEt3uLl3NNzvWg=="],
-
     "nitrogen": ["nitrogen@0.31.10", "", { "dependencies": { "chalk": "^5.3.0", "react-native-nitro-modules": "^0.31.10", "ts-morph": "^27.0.0", "yargs": "^18.0.0", "zod": "^4.0.5" }, "bin": { "nitrogen": "lib/index.js" } }, "sha512-Z77c1lj4IeyCigxiO59fW4fnHgfvOZvksTTwfESAJBnHG2DnS28VQ2oCAWL+fPIEvMozLFi+cRyTQu63eJMCSA=="],
 
     "no-case": ["no-case@3.0.4", "", { "dependencies": { "lower-case": "^2.0.2", "tslib": "^2.0.3" } }, "sha512-fgAN3jGAh+RoxUGZHTSOLJIqUc2wmoBwGR4tbpNAKmmovFoWq0OdRkb0VkldReO2a2iBT/OEulG9XSUc10r3zg=="],
@@ -8722,8 +8700,6 @@
 
     "styled-components": ["styled-components@6.1.19", "", { "dependencies": { "@emotion/is-prop-valid": "1.2.2", "@emotion/unitless": "0.8.1", "@types/stylis": "4.2.5", "css-to-react-native": "3.2.0", "csstype": "3.1.3", "postcss": "8.4.49", "shallowequal": "1.1.0", "stylis": "4.3.2", "tslib": "2.6.2" }, "peerDependencies": { "react": ">= 16.8.0", "react-dom": ">= 16.8.0" } }, "sha512-1v/e3Dl1BknC37cXMhwGomhO8AkYmN41CqyX9xhUDxry1ns3BFQy2lLDRQXJRdVVWB9OHemv/53xaStimvWyuA=="],
 
-    "styled-jsx": ["styled-jsx@5.1.6", "", { "dependencies": { "client-only": "0.0.1" }, "peerDependencies": { "react": ">= 16.8.0 || 17.x.x || ^18.0.0-0 || ^19.0.0-0" } }, "sha512-qSVyDTeMotdvQYoHWLNGwRFJHC+i+ZvdBRYosOFgC+Wg1vx4frN2/RG/NA7SYqqvKNLf39P2LSRA2pu6n0XYZA=="],
-
     "styled-system": ["styled-system@5.1.5", "", { "dependencies": { "@styled-system/background": "^5.1.2", "@styled-system/border": "^5.1.5", "@styled-system/color": "^5.1.2", "@styled-system/core": "^5.1.2", "@styled-system/flexbox": "^5.1.2", "@styled-system/grid": "^5.1.2", "@styled-system/layout": "^5.1.2", "@styled-system/position": "^5.1.2", "@styled-system/shadow": "^5.1.2", "@styled-system/space": "^5.1.2", "@styled-system/typography": "^5.1.2", "@styled-system/variant": "^5.1.5", "object-assign": "^4.1.1" } }, "sha512-7VoD0o2R3RKzOzPK0jYrVnS8iJdfkKsQJNiLRDjikOpQVqQHns/DXWaPZOH4tIKkhAT7I6wIsy9FWTWh2X3q+A=="],
 
     "stylehacks": ["stylehacks@5.1.1", "", { "dependencies": { "browserslist": "^4.21.4", "postcss-selector-parser": "^6.0.4" }, "peerDependencies": { "postcss": "^8.2.15" } }, "sha512-sBpcd5Hx7G6seo7b1LkpttvTz7ikD0LlH5RmdcBNb6fFR0Fl7LQwHDFr300q4cwUqi+IYrFGmsIHieMBfnN/Bw=="],
@@ -9673,6 +9649,48 @@
     "@devicefarmer/adbkit/commander": ["commander@9.5.0", "", {}, "sha512-KRs7WVDKg86PWiuAqhDrAQnTXZKraVcCc6vFdL14qrZ/DcWwuRo7VoiYXalXO7S5GKpqYiVEwCbgFDfxNHKJBQ=="],
 
     "@devicefarmer/adbkit/debug": ["debug@4.3.4", "", { "dependencies": { "ms": "2.1.2" } }, "sha512-PRWFHuSU3eDtQJPvnNY7Jcket1j0t5OuOsFzPPzsekD52Zl8qUfFIPEiswXqIvHWGVHOgX+7G/vCNNhehwxfkQ=="],
+
+    "@dyadex-finance/permit2-sdk/@ethersproject/bignumber": ["@ethersproject/bignumber@5.8.0", "", { "dependencies": { "@ethersproject/bytes": "^5.8.0", "@ethersproject/logger": "^5.8.0", "bn.js": "^5.2.1" } }, "sha512-ZyaT24bHaSeJon2tGPKIiHszWjD/54Sz8t57Toch475lCLljC6MgPmxk7Gtzz+ddNN5LuHea9qhAe0x3D+uYPA=="],
+
+    "@dyadex-finance/permit2-sdk/tiny-invariant": ["tiny-invariant@1.3.3", "", {}, "sha512-+FbBPE1o9QAYvviau/qC5SE3caw21q3xkvWKBtja5vgqOWIHHJ3ioaq1VPfn/Szqctz2bU/oYeKd9/z5BL+PVg=="],
+
+    "@dyadex-finance/router-sdk/tiny-invariant": ["tiny-invariant@1.3.3", "", {}, "sha512-+FbBPE1o9QAYvviau/qC5SE3caw21q3xkvWKBtja5vgqOWIHHJ3ioaq1VPfn/Szqctz2bU/oYeKd9/z5BL+PVg=="],
+
+    "@dyadex-finance/router-sdk/tslib": ["tslib@2.8.1", "", {}, "sha512-oJFu94HQb+KVduSUQL7wnpmqnfmLsOA/nAh6b6EH0wCEoK0/mPeXU6c3wKDV83MkOuHPRHtSXKKU99IBazS/2w=="],
+
+    "@dyadex-finance/sdk-core/@ethersproject/address": ["@ethersproject/address@5.8.0", "", { "dependencies": { "@ethersproject/bignumber": "^5.8.0", "@ethersproject/bytes": "^5.8.0", "@ethersproject/keccak256": "^5.8.0", "@ethersproject/logger": "^5.8.0", "@ethersproject/rlp": "^5.8.0" } }, "sha512-GhH/abcC46LJwshoN+uBNoKVFPxUuZm6dA257z0vZkKmU1+t8xTn8oK7B9qrj8W2rFRMch4gbJl6PmVxjxBEBA=="],
+
+    "@dyadex-finance/sdk-core/@ethersproject/bignumber": ["@ethersproject/bignumber@5.8.0", "", { "dependencies": { "@ethersproject/bytes": "^5.8.0", "@ethersproject/logger": "^5.8.0", "bn.js": "^5.2.1" } }, "sha512-ZyaT24bHaSeJon2tGPKIiHszWjD/54Sz8t57Toch475lCLljC6MgPmxk7Gtzz+ddNN5LuHea9qhAe0x3D+uYPA=="],
+
+    "@dyadex-finance/sdk-core/tiny-invariant": ["tiny-invariant@1.3.3", "", {}, "sha512-+FbBPE1o9QAYvviau/qC5SE3caw21q3xkvWKBtja5vgqOWIHHJ3ioaq1VPfn/Szqctz2bU/oYeKd9/z5BL+PVg=="],
+
+    "@dyadex-finance/sdk-core/tslib": ["tslib@2.8.1", "", {}, "sha512-oJFu94HQb+KVduSUQL7wnpmqnfmLsOA/nAh6b6EH0wCEoK0/mPeXU6c3wKDV83MkOuHPRHtSXKKU99IBazS/2w=="],
+
+    "@dyadex-finance/uniswapx-sdk/tiny-invariant": ["tiny-invariant@1.3.3", "", {}, "sha512-+FbBPE1o9QAYvviau/qC5SE3caw21q3xkvWKBtja5vgqOWIHHJ3ioaq1VPfn/Szqctz2bU/oYeKd9/z5BL+PVg=="],
+
+    "@dyadex-finance/universal-router-sdk/@uniswap/v3-core": ["@uniswap/v3-core@1.0.0", "", {}, "sha512-kSC4djMGKMHj7sLMYVnn61k9nu+lHjMIxgg9CDQT+s2QYLoA56GbSK9Oxr+qJXzzygbkrmuY6cwgP6cW2JXPFA=="],
+
+    "@dyadex-finance/universal-router-sdk/tiny-invariant": ["tiny-invariant@1.3.3", "", {}, "sha512-+FbBPE1o9QAYvviau/qC5SE3caw21q3xkvWKBtja5vgqOWIHHJ3ioaq1VPfn/Szqctz2bU/oYeKd9/z5BL+PVg=="],
+
+    "@dyadex-finance/universal-router-sdk/tslib": ["tslib@2.8.1", "", {}, "sha512-oJFu94HQb+KVduSUQL7wnpmqnfmLsOA/nAh6b6EH0wCEoK0/mPeXU6c3wKDV83MkOuHPRHtSXKKU99IBazS/2w=="],
+
+    "@dyadex-finance/v2-sdk/@ethersproject/address": ["@ethersproject/address@5.8.0", "", { "dependencies": { "@ethersproject/bignumber": "^5.8.0", "@ethersproject/bytes": "^5.8.0", "@ethersproject/keccak256": "^5.8.0", "@ethersproject/logger": "^5.8.0", "@ethersproject/rlp": "^5.8.0" } }, "sha512-GhH/abcC46LJwshoN+uBNoKVFPxUuZm6dA257z0vZkKmU1+t8xTn8oK7B9qrj8W2rFRMch4gbJl6PmVxjxBEBA=="],
+
+    "@dyadex-finance/v2-sdk/@ethersproject/bignumber": ["@ethersproject/bignumber@5.8.0", "", { "dependencies": { "@ethersproject/bytes": "^5.8.0", "@ethersproject/logger": "^5.8.0", "bn.js": "^5.2.1" } }, "sha512-ZyaT24bHaSeJon2tGPKIiHszWjD/54Sz8t57Toch475lCLljC6MgPmxk7Gtzz+ddNN5LuHea9qhAe0x3D+uYPA=="],
+
+    "@dyadex-finance/v2-sdk/tiny-invariant": ["tiny-invariant@1.3.3", "", {}, "sha512-+FbBPE1o9QAYvviau/qC5SE3caw21q3xkvWKBtja5vgqOWIHHJ3ioaq1VPfn/Szqctz2bU/oYeKd9/z5BL+PVg=="],
+
+    "@dyadex-finance/v2-sdk/tslib": ["tslib@2.8.1", "", {}, "sha512-oJFu94HQb+KVduSUQL7wnpmqnfmLsOA/nAh6b6EH0wCEoK0/mPeXU6c3wKDV83MkOuHPRHtSXKKU99IBazS/2w=="],
+
+    "@dyadex-finance/v3-sdk/@ethersproject/address": ["@ethersproject/address@5.8.0", "", { "dependencies": { "@ethersproject/bignumber": "^5.8.0", "@ethersproject/bytes": "^5.8.0", "@ethersproject/keccak256": "^5.8.0", "@ethersproject/logger": "^5.8.0", "@ethersproject/rlp": "^5.8.0" } }, "sha512-GhH/abcC46LJwshoN+uBNoKVFPxUuZm6dA257z0vZkKmU1+t8xTn8oK7B9qrj8W2rFRMch4gbJl6PmVxjxBEBA=="],
+
+    "@dyadex-finance/v3-sdk/tiny-invariant": ["tiny-invariant@1.3.3", "", {}, "sha512-+FbBPE1o9QAYvviau/qC5SE3caw21q3xkvWKBtja5vgqOWIHHJ3ioaq1VPfn/Szqctz2bU/oYeKd9/z5BL+PVg=="],
+
+    "@dyadex-finance/v3-sdk/tslib": ["tslib@2.8.1", "", {}, "sha512-oJFu94HQb+KVduSUQL7wnpmqnfmLsOA/nAh6b6EH0wCEoK0/mPeXU6c3wKDV83MkOuHPRHtSXKKU99IBazS/2w=="],
+
+    "@dyadex-finance/v4-sdk/tiny-invariant": ["tiny-invariant@1.3.3", "", {}, "sha512-+FbBPE1o9QAYvviau/qC5SE3caw21q3xkvWKBtja5vgqOWIHHJ3ioaq1VPfn/Szqctz2bU/oYeKd9/z5BL+PVg=="],
+
+    "@dyadex-finance/v4-sdk/tslib": ["tslib@2.8.1", "", {}, "sha512-oJFu94HQb+KVduSUQL7wnpmqnfmLsOA/nAh6b6EH0wCEoK0/mPeXU6c3wKDV83MkOuHPRHtSXKKU99IBazS/2w=="],
 
     "@ecies/ciphers/@noble/ciphers": ["@noble/ciphers@1.3.0", "", {}, "sha512-2I0gnIVPtfnMw9ee9h1dJG7tp81+8Ob3OJb3Mv37rx5L40/b0i7djjCVvGOVqc9AEIQyvyu1i6ypKdFw8R8gQw=="],
 
@@ -10841,8 +10859,6 @@
     "@uniswap/universal-router/@openzeppelin/contracts": ["@openzeppelin/contracts@5.0.2", "", {}, "sha512-ytPc6eLGcHHnapAZ9S+5qsdomhjo6QBHTDRRBFfTxXIpsicMhVPouPgmUPebZZZGX7vt9USA+Z+0M0dSVtSUEA=="],
 
     "@uniswap/universal-router/@uniswap/v3-core": ["@uniswap/v3-core@1.0.0", "", {}, "sha512-kSC4djMGKMHj7sLMYVnn61k9nu+lHjMIxgg9CDQT+s2QYLoA56GbSK9Oxr+qJXzzygbkrmuY6cwgP6cW2JXPFA=="],
-
-    "@uniswap/universal-router-sdk/@uniswap/v3-core": ["@uniswap/v3-core@1.0.0", "", {}, "sha512-kSC4djMGKMHj7sLMYVnn61k9nu+lHjMIxgg9CDQT+s2QYLoA56GbSK9Oxr+qJXzzygbkrmuY6cwgP6cW2JXPFA=="],
 
     "@uniswap/v3-periphery/@openzeppelin/contracts": ["@openzeppelin/contracts@3.4.2-solc-0.7", "", {}, "sha512-W6QmqgkADuFcTLzHL8vVoNBtkwjvQRpYIAom7KiUNoLKghyx3FgH0GBjt8NRvigV1ZmMOBllvE1By1C+bi8WpA=="],
 
@@ -12032,8 +12048,6 @@
 
     "multimatch/minimatch": ["minimatch@3.1.5", "", { "dependencies": { "brace-expansion": "^1.1.7" } }, "sha512-VgjWUsnnT6n+NUk6eZq77zeFdpW2LWDzP6zFGrCbHXiYNul5Dzqk2HHQ5uFH2DNW5Xbp8+jVzaeNt94ssEEl4w=="],
 
-    "next/postcss": ["postcss@8.4.31", "", { "dependencies": { "nanoid": "^3.3.6", "picocolors": "^1.0.0", "source-map-js": "^1.0.2" } }, "sha512-PS08Iboia9mts/2ygV3eLpY5ghnUcfLV/EXTOW1E2qYxJKGGBUtNjN76FYHnMs36RmARn41bC0AZmn+rR0OVpQ=="],
-
     "nitrogen/chalk": ["chalk@5.6.2", "", {}, "sha512-7NzBL0rN6fMUW+f7A6Io4h40qQlG+xGmtMxfbnH/K7TAtt8JQWVQK+6g0UXKMeVJoyV5EkkNsErQ8pVD3bLHbA=="],
 
     "nitrogen/yargs": ["yargs@18.0.0", "", { "dependencies": { "cliui": "^9.0.1", "escalade": "^3.1.1", "get-caller-file": "^2.0.5", "string-width": "^7.2.0", "y18n": "^5.0.5", "yargs-parser": "^22.0.0" } }, "sha512-4UEqdc2RYGHZc7Doyqkrqiln3p9X2DZVxaGbwhn2pi7MrRagKaOcIKe8L3OxYcbhXLgLFUS3zAYuQjKBQgmuNg=="],
@@ -12913,6 +12927,14 @@
     "@datadog/datadog-ci/js-yaml/argparse": ["argparse@1.0.10", "", { "dependencies": { "sprintf-js": "~1.0.2" } }, "sha512-o5Roy6tNG4SL/FOkCAN6RzjiakZS25RLYFrcMttJqbdd8BWrnA+fGz57iN5Pb06pvBGvl5gQ0B48dJlslXvoTg=="],
 
     "@devicefarmer/adbkit/debug/ms": ["ms@2.1.2", "", {}, "sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w=="],
+
+    "@dyadex-finance/sdk-core/@ethersproject/address/@ethersproject/keccak256": ["@ethersproject/keccak256@5.8.0", "", { "dependencies": { "@ethersproject/bytes": "^5.8.0", "js-sha3": "0.8.0" } }, "sha512-A1pkKLZSz8pDaQ1ftutZoaN46I6+jvuqugx5KYNeQOPqq+JZ0Txm7dlWesCHB5cndJSu5vP2VKptKf7cksERng=="],
+
+    "@dyadex-finance/v2-sdk/@ethersproject/address/@ethersproject/keccak256": ["@ethersproject/keccak256@5.8.0", "", { "dependencies": { "@ethersproject/bytes": "^5.8.0", "js-sha3": "0.8.0" } }, "sha512-A1pkKLZSz8pDaQ1ftutZoaN46I6+jvuqugx5KYNeQOPqq+JZ0Txm7dlWesCHB5cndJSu5vP2VKptKf7cksERng=="],
+
+    "@dyadex-finance/v3-sdk/@ethersproject/address/@ethersproject/bignumber": ["@ethersproject/bignumber@5.8.0", "", { "dependencies": { "@ethersproject/bytes": "^5.8.0", "@ethersproject/logger": "^5.8.0", "bn.js": "^5.2.1" } }, "sha512-ZyaT24bHaSeJon2tGPKIiHszWjD/54Sz8t57Toch475lCLljC6MgPmxk7Gtzz+ddNN5LuHea9qhAe0x3D+uYPA=="],
+
+    "@dyadex-finance/v3-sdk/@ethersproject/address/@ethersproject/keccak256": ["@ethersproject/keccak256@5.8.0", "", { "dependencies": { "@ethersproject/bytes": "^5.8.0", "js-sha3": "0.8.0" } }, "sha512-A1pkKLZSz8pDaQ1ftutZoaN46I6+jvuqugx5KYNeQOPqq+JZ0Txm7dlWesCHB5cndJSu5vP2VKptKf7cksERng=="],
 
     "@eslint/eslintrc/ajv/json-schema-traverse": ["json-schema-traverse@0.4.1", "", {}, "sha512-xbbCH5dCYU5T8LcEhhuh7HJ88HXuW3qsI3Y0zOZFKfZEHcpWiHU/Jxzk629Brsab/mMiHQti9wMP+845RPe3Vg=="],
 

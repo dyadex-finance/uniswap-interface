@@ -1,9 +1,9 @@
 /* oxlint-disable max-lines */
 import { BigNumber } from '@ethersproject/bignumber'
 import { AddressZero } from '@ethersproject/constants'
-import { PermitTransferFromData } from '@uniswap/permit2-sdk'
-import { MixedRouteSDK, ONE, Protocol, Trade } from '@uniswap/router-sdk'
-import { Currency, CurrencyAmount, Fraction, Percent, Price, Token, TradeType } from '@uniswap/sdk-core'
+import { PermitTransferFromData } from '@dyadex-finance/permit2-sdk'
+import { MixedRouteSDK, ONE, Protocol, Trade } from '@dyadex-finance/router-sdk'
+import { Currency, CurrencyAmount, Fraction, Percent, Price, Token, TradeType } from '@dyadex-finance/sdk-core'
 import {
   DutchOrderInfo,
   DutchOrderInfoJSON,
@@ -17,9 +17,9 @@ import {
   UnsignedV2DutchOrderInfoJSON,
   UnsignedV3DutchOrderInfo,
   UnsignedV3DutchOrderInfoJSON,
-} from '@uniswap/uniswapx-sdk'
-import { Route as V2Route } from '@uniswap/v2-sdk'
-import { Route as V3Route } from '@uniswap/v3-sdk'
+} from '@dyadex-finance/uniswapx-sdk'
+import { Route as V2Route } from '@dyadex-finance/v2-sdk'
+import { Route as V3Route } from '@dyadex-finance/v3-sdk'
 import { UniverseChainId } from 'uniswap/src/features/chains/types'
 import { ZERO_PERCENT } from '~/constants/misc'
 

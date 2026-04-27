@@ -1,6 +1,6 @@
 import { ProtocolVersion } from '@uniswap/client-data-api/dist/data/v1/poolTypes_pb'
-import { Currency, CurrencyAmount } from '@uniswap/sdk-core'
-import { FeeAmount } from '@uniswap/v3-sdk'
+import { Currency, CurrencyAmount } from '@dyadex-finance/sdk-core'
+import { FeeAmount } from '@dyadex-finance/v3-sdk'
 import { LiquidityEventName } from 'uniswap/src/features/telemetry/constants'
 import { LiquidityAnalyticsProperties } from 'uniswap/src/features/telemetry/types'
 import { TransactionStepType } from 'uniswap/src/features/transactions/steps/types'

@@ -1,4 +1,4 @@
-import { Currency } from '@uniswap/sdk-core'
+import { Currency } from '@dyadex-finance/sdk-core'
 import { useMemo } from 'react'
 import { getChainInfo } from 'uniswap/src/features/chains/chainInfo'
 import { useSupportedChainId } from 'uniswap/src/features/chains/hooks/useSupportedChainId'
@@ -124,7 +124,7 @@ function useCurrencyInfoWithLoading(
 export function checkIsNative(addressOrCurrency?: string | Currency): boolean {
   return typeof addressOrCurrency === 'string'
     ? [NATIVE_CHAIN_ID, 'native', 'eth'].includes(normalizeAddress(addressOrCurrency, AddressStringFormat.Lowercase))
-    : (addressOrCurrency?.isNative ?? false)
+    : addressOrCurrency?.isNative ?? false
 }
 
 function getAddress({

@@ -1,4 +1,4 @@
-import { Percent } from '@uniswap/sdk-core'
+import { Percent } from '@dyadex-finance/sdk-core'
 import { type DiscriminatedQuoteResponse } from '@universe/api'
 import { SwapFee } from 'uniswap/src/features/transactions/swap/types/trade'
 import { isWrap } from 'uniswap/src/features/transactions/swap/utils/routing'

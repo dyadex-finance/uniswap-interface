@@ -1,4 +1,4 @@
-import { Token } from '@uniswap/sdk-core'
+import { Token } from '@dyadex-finance/sdk-core'
 import { GraphQLApi } from '@universe/api'
 import { Flex } from 'ui/src'
 import { UNI, WBTC } from 'uniswap/src/constants/tokens'

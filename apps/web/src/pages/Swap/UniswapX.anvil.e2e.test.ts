@@ -1,5 +1,5 @@
 import { listTransactions } from '@uniswap/client-data-api/dist/data/v1/api-DataApiService_connectquery'
-import { WETH9 } from '@uniswap/sdk-core'
+import { WETH9 } from '@dyadex-finance/sdk-core'
 import { ZERO_ADDRESS } from 'uniswap/src/constants/misc'
 import { DAI, USDC_MAINNET } from 'uniswap/src/constants/tokens'
 import { uniswapUrls } from 'uniswap/src/constants/urls'

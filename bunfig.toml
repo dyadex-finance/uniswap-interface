@@ -15,6 +15,19 @@ save = "exact"
 # To bypass for specific packages: minimumReleaseAgeExcludes = ["package-name"]
 minimumReleaseAge = 259200
 
+# Exclude trusted packages from the age gate
+minimumReleaseAgeExcludes = [
+    "@dyadex-finance/sdk-core",
+    "@dyadex-finance/universal-router-sdk",
+    "@dyadex-finance/router-sdk",
+    "@dyadex-finance/uniswapx-sdk",
+    "@dyadex-finance/v2-sdk",
+    "@dyadex-finance/v3-sdk",
+    "@dyadex-finance/v4-sdk",
+    "@dyadex-finance/permit2-sdk",
+    "@dyadex-finance/v4-sdk",
+]
+
 # Pin the default registry explicitly to prevent registry confusion attacks
 registry = "https://registry.npmjs.org"
 

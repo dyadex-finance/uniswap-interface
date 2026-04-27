@@ -1,4 +1,4 @@
-import { Currency } from '@uniswap/sdk-core'
+import { Currency } from '@dyadex-finance/sdk-core'
 import { PropsWithChildren, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Anchor, Flex, getTokenValue, Text, useSporeColors } from 'ui/src'
@@ -76,7 +76,7 @@ export function StepRowSkeleton(props: StepRowSkeletonProps): JSX.Element {
               outputCurrencyInfo={currency1Info}
             />
           ) : (
-            (icon ?? <CurrencyLogo currencyInfo={currencyInfo} size={iconSize} />)
+            icon ?? <CurrencyLogo currencyInfo={currencyInfo} size={iconSize} />
           )}
         </StepIconWrapper>
         <Flex flexShrink={1}>

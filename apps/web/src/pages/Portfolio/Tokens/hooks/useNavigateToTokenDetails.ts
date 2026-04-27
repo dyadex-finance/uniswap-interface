@@ -1,4 +1,4 @@
-import { Currency } from '@uniswap/sdk-core'
+import { Currency } from '@dyadex-finance/sdk-core'
 import { useNavigate } from 'react-router'
 import { toGraphQLChain } from 'uniswap/src/features/chains/utils'
 import { useEvent } from 'utilities/src/react/hooks'

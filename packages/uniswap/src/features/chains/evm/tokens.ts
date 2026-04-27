@@ -1,4 +1,4 @@
-import { Token } from '@uniswap/sdk-core'
+import { Token } from '@dyadex-finance/sdk-core'
 import { getNonEmptyArrayOrThrow, NonEmptyArray } from 'utilities/src/primitives/array'
 import { Prettify } from 'viem'
 

@@ -1,5 +1,5 @@
 /* oxlint-disable max-lines */
-import { Currency, CurrencyAmount } from '@uniswap/sdk-core'
+import { Currency, CurrencyAmount } from '@dyadex-finance/sdk-core'
 import { useEffect, useMemo, useState } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
 import { Flex, Text } from 'ui/src'
@@ -209,14 +209,14 @@ export function BidReviewModal({
   const reviewButtonLabel = isSubmitting
     ? t('common.confirmWallet')
     : isSimulating
-      ? t('toucan.bidReview.simulating')
-      : isPreparing || isRefreshingCheckpoint
-        ? t('common.loading')
-        : isApprovalLoading
-          ? t('common.loading')
-          : isPriceBelowClearing
-            ? t('toucan.bidReview.priceExceededCta')
-            : t('toucan.bidReview.placeBid')
+    ? t('toucan.bidReview.simulating')
+    : isPreparing || isRefreshingCheckpoint
+    ? t('common.loading')
+    : isApprovalLoading
+    ? t('common.loading')
+    : isPriceBelowClearing
+    ? t('toucan.bidReview.priceExceededCta')
+    : t('toucan.bidReview.placeBid')
 
   const handleSubmit = useEvent(async () => {
     if (!preparedBid || isConfirmDisabled || isApprovalLoading || !isReviewing || isSimulating) {

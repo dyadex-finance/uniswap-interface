@@ -1,5 +1,5 @@
 import { renderHook } from '@testing-library/react'
-import { Token } from '@uniswap/sdk-core'
+import { Token } from '@dyadex-finance/sdk-core'
 import { act } from 'react'
 import { UniverseChainId } from 'uniswap/src/features/chains/types'
 import { useUserPreservedCurrencies } from '~/pages/TokenDetails/hooks/useUserPreservedCurrencies'

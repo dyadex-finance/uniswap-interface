@@ -1,4 +1,4 @@
-import { Currency } from '@uniswap/sdk-core'
+import { Currency } from '@dyadex-finance/sdk-core'
 import { memo } from 'react'
 import { Flex, useColorSchemeFromSeed } from 'ui/src'
 import { zIndexes } from 'ui/src/theme'
@@ -76,7 +76,7 @@ export const DoubleCurrencyLogo = memo(function DoubleCurrencyLogo({
   const currencyInfos = [useCurrencyInfo(currencyId0), useCurrencyInfo(currencyId1)]
   const invalidCurrencyLogo0 = !currencyInfos[0]?.logoUrl
   const invalidCurrencyLogo1 = !currencyInfos[1]?.logoUrl
-  const chainId = includeNetwork ? (currencyInfos[0]?.currency.chainId ?? null) : null
+  const chainId = includeNetwork ? currencyInfos[0]?.currency.chainId ?? null : null
 
   if (invalidCurrencyLogo0 && invalidCurrencyLogo1) {
     return <LogolessPlaceholder currency={currencies[0]} size={size} includeNetwork={Boolean(chainId)} />

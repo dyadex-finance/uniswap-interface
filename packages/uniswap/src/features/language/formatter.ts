@@ -1,4 +1,4 @@
-import { Currency, CurrencyAmount } from '@uniswap/sdk-core'
+import { Currency, CurrencyAmount } from '@dyadex-finance/sdk-core'
 import { useCallback, useMemo } from 'react'
 import { useCurrentLocale } from 'uniswap/src/features/language/hooks'
 import {

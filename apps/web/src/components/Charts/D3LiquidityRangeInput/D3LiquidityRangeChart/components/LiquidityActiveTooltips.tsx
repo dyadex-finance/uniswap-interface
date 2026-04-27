@@ -1,5 +1,5 @@
 import { ProtocolVersion } from '@uniswap/client-data-api/dist/data/v1/poolTypes_pb'
-import { Currency } from '@uniswap/sdk-core'
+import { Currency } from '@dyadex-finance/sdk-core'
 import { TickTooltip } from '~/components/Charts/ActiveLiquidityChart/TickTooltip'
 import { CHART_DIMENSIONS } from '~/components/Charts/D3LiquidityChartShared/constants'
 import { PriceDifferenceTooltips } from '~/components/Charts/D3LiquidityRangeInput/D3LiquidityRangeChart/components/PriceDifferenceTooltips'

@@ -1,8 +1,8 @@
 /* oxlint-disable react-hooks/rules-of-hooks -- Playwright fixtures use `use()` which is not a React hook */
 // oxlint-disable-next-line no-restricted-imports -- Anvil test fixtures need direct ethers imports
 import { test as base } from '@playwright/test'
-import { MaxUint160, MaxUint256, permit2Address } from '@uniswap/permit2-sdk'
-import { WETH_ADDRESS } from '@uniswap/universal-router-sdk'
+import { MaxUint160, MaxUint256, permit2Address } from '@dyadex-finance/permit2-sdk'
+import { WETH_ADDRESS } from '@dyadex-finance/universal-router-sdk'
 import PERMIT2_ABI from 'uniswap/src/abis/permit2'
 import { ZERO_ADDRESS } from 'uniswap/src/constants/misc'
 import { DAI, USDT } from 'uniswap/src/constants/tokens'

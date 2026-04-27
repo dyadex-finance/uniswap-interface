@@ -1,4 +1,4 @@
-import { type Currency, type CurrencyAmount, TradeType as SdkTradeType } from '@uniswap/sdk-core'
+import { type Currency, type CurrencyAmount, TradeType as SdkTradeType } from '@dyadex-finance/sdk-core'
 import { type DiscriminatedQuoteResponse, type GasEstimate, TradingApi } from '@universe/api'
 import { type QuoteCurrencyData } from 'uniswap/src/features/transactions/swap/hooks/useTrade/parseQuoteCurrencies'
 import { getGasEstimate } from 'uniswap/src/features/transactions/swap/services/tradeService/transformations/estimateGas'

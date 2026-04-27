@@ -1,5 +1,5 @@
 import { PositionStatus } from '@uniswap/client-data-api/dist/data/v1/poolTypes_pb'
-import { FeeAmount, TICK_SPACINGS } from '@uniswap/v3-sdk'
+import { FeeAmount, TICK_SPACINGS } from '@dyadex-finance/v3-sdk'
 import { UniverseChainId } from 'uniswap/src/features/chains/types'
 
 interface FeeDataWithChain {

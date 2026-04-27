@@ -1,4 +1,4 @@
-import { WETH_ADDRESS } from '@uniswap/universal-router-sdk'
+import { WETH_ADDRESS } from '@dyadex-finance/universal-router-sdk'
 import { uniswapUrls } from 'uniswap/src/constants/urls'
 import { UniverseChainId } from 'uniswap/src/features/chains/types'
 import { TestID } from 'uniswap/src/test/fixtures/testIDs'

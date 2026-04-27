@@ -143,10 +143,10 @@ export default defineConfig({
     const EXTENSION_NAME_POSTFIX = isDevelopment
       ? 'LOCAL'
       : BUILD_ENV === 'dev'
-        ? 'DEV'
-        : BUILD_ENV === 'beta'
-          ? 'BETA'
-          : ''
+      ? 'DEV'
+      : BUILD_ENV === 'beta'
+      ? 'BETA'
+      : ''
 
     // Name logic: some builds don't have names (when postfix is empty)
     const name = EXTENSION_NAME_POSTFIX ? `${BASE_NAME} ${EXTENSION_NAME_POSTFIX}` : BASE_NAME
@@ -271,14 +271,14 @@ export default defineConfig({
         preserveSymlinks: true,
         modules: [path.resolve(__dirname, 'node_modules')],
         dedupe: [
-          '@uniswap/sdk-core',
-          '@uniswap/v2-sdk',
-          '@uniswap/v3-sdk',
-          '@uniswap/v4-sdk',
-          '@uniswap/router-sdk',
-          '@uniswap/universal-router-sdk',
-          '@uniswap/uniswapx-sdk',
-          '@uniswap/permit2-sdk',
+          '@dyadex-finance/sdk-core',
+          '@dyadex-finance/v2-sdk',
+          '@dyadex-finance/v3-sdk',
+          '@dyadex-finance/v4-sdk',
+          '@dyadex-finance/router-sdk',
+          '@dyadex-finance/universal-router-sdk',
+          '@dyadex-finance/uniswapx-sdk',
+          '@dyadex-finance/permit2-sdk',
           'jsbi',
           'ethers',
           'react',
@@ -389,14 +389,14 @@ export default defineConfig({
           'tamagui',
           '@tamagui/web',
           'ui',
-          '@uniswap/sdk-core',
-          '@uniswap/v2-sdk',
-          '@uniswap/v3-sdk',
-          '@uniswap/v4-sdk',
-          '@uniswap/router-sdk',
-          '@uniswap/universal-router-sdk',
-          '@uniswap/uniswapx-sdk',
-          '@uniswap/permit2-sdk',
+          '@dyadex-finance/sdk-core',
+          '@dyadex-finance/v2-sdk',
+          '@dyadex-finance/v3-sdk',
+          '@dyadex-finance/v4-sdk',
+          '@dyadex-finance/router-sdk',
+          '@dyadex-finance/universal-router-sdk',
+          '@dyadex-finance/uniswapx-sdk',
+          '@dyadex-finance/permit2-sdk',
           'jsbi',
           'ethers',
           'react-router',

@@ -1,4 +1,4 @@
-import { Token } from '@uniswap/sdk-core'
+import { Token } from '@dyadex-finance/sdk-core'
 import { GraphQLApi } from '@universe/api'
 import { SwapConfigKey } from '@universe/gating'
 import { AVALANCHE_LOGO } from 'ui/src/assets'

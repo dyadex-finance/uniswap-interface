@@ -1,7 +1,7 @@
 /* oxlint-disable max-lines */
 import { ProtocolVersion } from '@uniswap/client-data-api/dist/data/v1/poolTypes_pb'
-import { Currency, CurrencyAmount, Price, Token } from '@uniswap/sdk-core'
-import { Pair } from '@uniswap/v2-sdk'
+import { Currency, CurrencyAmount, Price, Token } from '@dyadex-finance/sdk-core'
+import { Pair } from '@dyadex-finance/v2-sdk'
 import {
   encodeSqrtRatioX96,
   FeeAmount,
@@ -9,8 +9,8 @@ import {
   priceToClosestTick as priceToClosestV3Tick,
   TickMath,
   Pool as V3Pool,
-} from '@uniswap/v3-sdk'
-import { priceToClosestTick as priceToClosestV4Tick, Pool as V4Pool } from '@uniswap/v4-sdk'
+} from '@dyadex-finance/v3-sdk'
+import { priceToClosestTick as priceToClosestV4Tick, Pool as V4Pool } from '@dyadex-finance/v4-sdk'
 import JSBI from 'jsbi'
 import { ZERO_ADDRESS } from 'uniswap/src/constants/misc'
 import {
@@ -317,14 +317,14 @@ export function getV3PriceRangeInfo({
     baseRangeInput === undefined || state.fullRange
       ? tickSpaceLimits[0]
       : state.priceInverted
-        ? -baseRangeInput
-        : baseRangeInput
+      ? -baseRangeInput
+      : baseRangeInput
   const upperTick =
     quoteRangeInput === undefined || state.fullRange
       ? tickSpaceLimits[1]
       : state.priceInverted
-        ? -quoteRangeInput
-        : quoteRangeInput
+      ? -quoteRangeInput
+      : quoteRangeInput
   const ticks: [Maybe<number>, Maybe<number>] = [lowerTick, upperTick]
 
   return {
@@ -442,14 +442,14 @@ export function getV4PriceRangeInfo({
     baseRangeInput === undefined || initialPosition?.isOutOfRange || state.fullRange
       ? tickSpaceLimits[0]
       : state.priceInverted
-        ? -baseRangeInput
-        : baseRangeInput
+      ? -baseRangeInput
+      : baseRangeInput
   const upperTick =
     quoteRangeInput === undefined || initialPosition?.isOutOfRange || state.fullRange
       ? tickSpaceLimits[1]
       : state.priceInverted
-        ? -quoteRangeInput
-        : quoteRangeInput
+      ? -quoteRangeInput
+      : quoteRangeInput
   const ticks: [Maybe<number>, Maybe<number>] = [lowerTick, upperTick]
 
   return {

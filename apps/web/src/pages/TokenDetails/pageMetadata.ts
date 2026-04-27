@@ -1,4 +1,4 @@
-import { Currency } from '@uniswap/sdk-core'
+import { Currency } from '@dyadex-finance/sdk-core'
 import { GraphQLApi } from '@universe/api'
 import { TFunction } from 'i18next'
 import { uniswapUrls } from 'uniswap/src/constants/urls'
@@ -21,7 +21,9 @@ export function getTokenStructuredData({
   }
 
   const chainUrlParam = getChainInfo(fromGraphQLChain(tokenQueryData.chain) ?? UniverseChainId.Mainnet).urlParam
-  const tokenDetailsUrl = `${uniswapUrls.webInterfaceTokensUrl}/${chainUrlParam}/${tokenQueryData.address ?? NATIVE_CHAIN_ID}`
+  const tokenDetailsUrl = `${uniswapUrls.webInterfaceTokensUrl}/${chainUrlParam}/${
+    tokenQueryData.address ?? NATIVE_CHAIN_ID
+  }`
   return [
     {
       '@context': 'https://schema.org/',
@@ -95,7 +97,7 @@ export const getTokenPageDescription = ({
   const tokenPageName =
     currency?.name && currency.symbol
       ? `${currency.name} (${currency.symbol})`
-      : (currency?.name ?? currency?.symbol ?? 'tokens')
+      : currency?.name ?? currency?.symbol ?? 'tokens'
   const chainSuffix = chainId && chainId !== UniverseChainId.Mainnet ? ` on ${getChainLabel(chainId)}` : ''
 
   const priceText = price ? ` Current price: ${price}` : ''

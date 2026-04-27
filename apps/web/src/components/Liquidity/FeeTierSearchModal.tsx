@@ -1,5 +1,5 @@
 import { ProtocolVersion } from '@uniswap/client-data-api/dist/data/v1/poolTypes_pb'
-import type { Currency } from '@uniswap/sdk-core'
+import type { Currency } from '@dyadex-finance/sdk-core'
 import { FeatureFlags, useFeatureFlag } from '@universe/gating'
 import ms from 'ms'
 import { useEffect, useState } from 'react'

@@ -1,4 +1,4 @@
-import { Currency } from '@uniswap/sdk-core'
+import { Currency } from '@dyadex-finance/sdk-core'
 import { GasFeeResult } from '@universe/api'
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'

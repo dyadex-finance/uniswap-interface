@@ -1,5 +1,5 @@
 import { NetworkStatus } from '@apollo/client'
-import { NativeCurrency, Token } from '@uniswap/sdk-core'
+import { NativeCurrency, Token } from '@dyadex-finance/sdk-core'
 import { DAI, USDC } from 'uniswap/src/constants/tokens'
 import { normalizeTokenAddressForCache } from 'uniswap/src/data/cache'
 import { usePortfolioBalances } from 'uniswap/src/features/dataApi/balances/balances'

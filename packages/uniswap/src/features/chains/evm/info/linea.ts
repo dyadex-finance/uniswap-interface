@@ -1,4 +1,4 @@
-import { Token } from '@uniswap/sdk-core'
+import { Token } from '@dyadex-finance/sdk-core'
 import { GraphQLApi } from '@universe/api'
 import { ETH_LOGO, LINEA_LOGO } from 'ui/src/assets'
 import {

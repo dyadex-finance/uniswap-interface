@@ -1,5 +1,5 @@
 import type { TransactionResponse } from '@ethersproject/abstract-provider'
-import type { Currency } from '@uniswap/sdk-core'
+import type { Currency } from '@dyadex-finance/sdk-core'
 import type { UniverseChainId } from 'uniswap/src/features/chains/types'
 import type { CollectFeesSteps } from 'uniswap/src/features/transactions/liquidity/steps/collectFeesSteps'
 import type { CollectLpIncentiveRewardsSteps } from 'uniswap/src/features/transactions/liquidity/steps/collectIncentiveRewardsSteps'
@@ -130,10 +130,8 @@ export type HandleApprovalStepParams<TExtra extends object = object> = Omit<
 
 export type HandleOnChainPermit2TransactionStep = Omit<HandleOnChainStepParams<Permit2TransactionStep>, 'info'>
 
-export interface HandleSwapStepParams<TExtra extends object = object> extends Omit<
-  HandleOnChainStepParams<OnChainTransactionStep, TExtra>,
-  'step' | 'info'
-> {
+export interface HandleSwapStepParams<TExtra extends object = object>
+  extends Omit<HandleOnChainStepParams<OnChainTransactionStep, TExtra>, 'step' | 'info'> {
   step: (SwapTransactionStep | SwapTransactionStepAsync) & TExtra
   signature?: string
   trade: ClassicTrade | BridgeTrade | ChainedActionTrade

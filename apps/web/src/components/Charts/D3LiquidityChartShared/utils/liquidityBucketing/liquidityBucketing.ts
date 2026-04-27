@@ -1,6 +1,6 @@
 import { ProtocolVersion } from '@uniswap/client-data-api/dist/data/v1/poolTypes_pb'
-import { Currency } from '@uniswap/sdk-core'
-import { nearestUsableTick } from '@uniswap/v3-sdk'
+import { Currency } from '@dyadex-finance/sdk-core'
+import { nearestUsableTick } from '@dyadex-finance/v3-sdk'
 import { logger } from 'utilities/src/logger/logger'
 import { TickData } from '~/appGraphql/data/AllV3TicksQuery'
 import { ChartEntry } from '~/components/Charts/LiquidityRangeInput/types'

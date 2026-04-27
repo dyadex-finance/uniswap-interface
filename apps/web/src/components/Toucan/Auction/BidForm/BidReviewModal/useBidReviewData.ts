@@ -1,4 +1,4 @@
-import { Currency, CurrencyAmount } from '@uniswap/sdk-core'
+import { Currency, CurrencyAmount } from '@dyadex-finance/sdk-core'
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { UniverseChainId } from 'uniswap/src/features/chains/types'
 import { useLocalizationContext } from 'uniswap/src/features/language/LocalizationContext'
@@ -148,7 +148,6 @@ export function useBidReviewData({
     }
 
     setIsPreparing(true)
-
     ;(async () => {
       try {
         const result = await submitState.prepareTransaction()

@@ -1,4 +1,4 @@
-import { Token } from '@uniswap/sdk-core'
+import { Token } from '@dyadex-finance/sdk-core'
 import { DAI } from 'uniswap/src/constants/tokens'
 import { tryParsePrice } from '~/state/mint/v3/utils'
 

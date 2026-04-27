@@ -2,7 +2,7 @@ import { ProtocolVersion } from '@uniswap/client-data-api/dist/data/v1/poolTypes
 import { ClaimLPFeesRequest } from '@uniswap/client-liquidity/dist/uniswap/liquidity/v1/api_pb'
 import { V3Pool, V3Position, V4Pool, V4Position } from '@uniswap/client-liquidity/dist/uniswap/liquidity/v1/types_pb'
 import { ClaimFeesRequest } from '@uniswap/client-liquidity/dist/uniswap/liquidity/v2/api_pb'
-import { type Currency, CurrencyAmount } from '@uniswap/sdk-core'
+import { type Currency, CurrencyAmount } from '@dyadex-finance/sdk-core'
 import { FeatureFlags, useFeatureFlag } from '@universe/gating'
 import { type Dispatch, type SetStateAction, useMemo, useState } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
@@ -420,8 +420,8 @@ export function ClaimFeeModal() {
                 ? t('swap.button.submitting.passkey')
                 : t('common.confirmWallet')
               : isSessionAuthenticated
-                ? t('common.confirm')
-                : t('common.collect.button')}
+              ? t('common.confirm')
+              : t('common.collect.button')}
           </Button>
         </Flex>
       </Flex>

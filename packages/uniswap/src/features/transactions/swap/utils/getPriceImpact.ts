@@ -1,4 +1,4 @@
-import { type Currency, CurrencyAmount, Percent } from '@uniswap/sdk-core'
+import { type Currency, CurrencyAmount, Percent } from '@dyadex-finance/sdk-core'
 import { getCurrencyAmount, ValueType } from 'uniswap/src/features/tokens/getCurrencyAmount'
 import type { DerivedSwapInfo } from 'uniswap/src/features/transactions/swap/types/derivedSwapInfo'
 import { getSwapFeeUsdFromDerivedSwapInfo } from 'uniswap/src/features/transactions/swap/utils/getSwapFeeUsd'

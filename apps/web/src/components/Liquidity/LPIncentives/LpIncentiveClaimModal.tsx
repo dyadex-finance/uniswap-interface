@@ -1,7 +1,7 @@
 import { useQuery } from '@tanstack/react-query'
 import { ClaimLPRewardsRequest } from '@uniswap/client-liquidity/dist/uniswap/liquidity/v1/api_pb'
 import { Distributor } from '@uniswap/client-liquidity/dist/uniswap/liquidity/v1/types_pb'
-import { Token } from '@uniswap/sdk-core'
+import { Token } from '@dyadex-finance/sdk-core'
 import { useEffect, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useDispatch } from 'react-redux'

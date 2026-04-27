@@ -1,4 +1,4 @@
-import { Currency, Price } from '@uniswap/sdk-core'
+import { Currency, Price } from '@dyadex-finance/sdk-core'
 import { WarningSeverity } from 'uniswap/src/components/modals/WarningModal/types'
 import { PriceDifference } from '~/components/Liquidity/Create/types'
 

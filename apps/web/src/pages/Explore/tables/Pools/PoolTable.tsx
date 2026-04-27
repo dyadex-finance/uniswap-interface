@@ -4,7 +4,7 @@
 import { ApolloError } from '@apollo/client'
 import { createColumnHelper, Row } from '@tanstack/react-table'
 import { TokenStats } from '@uniswap/client-explore/dist/uniswap/explore/v1/service_pb'
-import { Percent, Token } from '@uniswap/sdk-core'
+import { Percent, Token } from '@dyadex-finance/sdk-core'
 import { GraphQLApi } from '@universe/api'
 import { FeatureFlags, useFeatureFlag } from '@universe/gating'
 import { memo, ReactElement, useCallback, useEffect, useMemo } from 'react'
@@ -386,7 +386,11 @@ export function PoolsTable({
           <Cell loading={showLoadingSkeleton}>
             <TableText>
               {feeTier.getValue?.()
-                ? `${isDynamicFeeTier(feeTier.getValue()!) ? t('common.dynamic') : formatPercent(feeTier.getValue()!.feeAmount / BIPS_BASE, 4)}`
+                ? `${
+                    isDynamicFeeTier(feeTier.getValue()!)
+                      ? t('common.dynamic')
+                      : formatPercent(feeTier.getValue()!.feeAmount / BIPS_BASE, 4)
+                  }`
                 : '-'}
             </TableText>
           </Cell>

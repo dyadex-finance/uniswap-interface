@@ -4,7 +4,7 @@ import {
   IncreasePositionResponse,
 } from '@uniswap/client-liquidity/dist/uniswap/liquidity/v2/api_pb'
 import { LPAction, LPToken } from '@uniswap/client-liquidity/dist/uniswap/liquidity/v2/types_pb'
-import type { Currency, CurrencyAmount } from '@uniswap/sdk-core'
+import type { Currency, CurrencyAmount } from '@dyadex-finance/sdk-core'
 import { FeatureFlags, useFeatureFlag } from '@universe/gating'
 import {
   createContext,
@@ -170,11 +170,11 @@ export function IncreaseLiquidityTxContextProvider({ children }: PropsWithChildr
     !approvalLoading &&
     Boolean(
       permitData ||
-      token0Approval ||
-      token1Approval ||
-      positionTokenApproval ||
-      token0PermitTransaction ||
-      token1PermitTransaction,
+        token0Approval ||
+        token1Approval ||
+        positionTokenApproval ||
+        token0PermitTransaction ||
+        token1PermitTransaction,
     )
 
   const token0 = currencyAmounts?.TOKEN0?.currency

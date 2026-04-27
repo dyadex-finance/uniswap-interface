@@ -1,4 +1,4 @@
-import { Currency } from '@uniswap/sdk-core'
+import { Currency } from '@dyadex-finance/sdk-core'
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router'
@@ -189,16 +189,16 @@ function useSwapInitialCurrencies(swapCurrency: Currency) {
     return typeof parsedQs.inputCurrency === 'string'
       ? parsedQs.inputCurrency
       : swapCurrency.isNative
-        ? undefined
-        : getNativeAddress(swapCurrency.chainId)
+      ? undefined
+      : getNativeAddress(swapCurrency.chainId)
   }, [swapCurrency.chainId, swapCurrency.isNative, parsedQs.inputCurrency])
 
   const outputTokenAddress = useMemo(() => {
     return typeof parsedQs.outputCurrency === 'string'
       ? parsedQs.outputCurrency
       : swapCurrency.isNative
-        ? undefined
-        : getNativeAddress(swapCurrency.chainId)
+      ? undefined
+      : getNativeAddress(swapCurrency.chainId)
   }, [swapCurrency.chainId, swapCurrency.isNative, parsedQs.outputCurrency])
 
   return {

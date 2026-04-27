@@ -10,7 +10,7 @@ import {
   type CreateLPPositionRequest,
   type IncreaseLPPositionRequest,
 } from '@uniswap/client-liquidity/dist/uniswap/liquidity/v1/api_pb'
-import { type Currency, type TradeType } from '@uniswap/sdk-core'
+import { type Currency, type TradeType } from '@dyadex-finance/sdk-core'
 import { type TradingApi } from '@universe/api'
 import { type Experiments } from '@universe/gating'
 import type { PresetPercentage } from 'uniswap/src/components/CurrencyInputPanel/AmountInputPresets/types'
@@ -229,7 +229,7 @@ type BaseSwapTransactionResultProperties = {
   route?: string
   quoteId?: string
   submitViaPrivateRpc?: boolean
-  /** For Uniswap data sources, this should be of type Protocol from @uniswap/router-sdk. For other sources like Jupiter, this could be unknown values from their orderResponse.router field.*/
+  /** For Uniswap data sources, this should be of type Protocol from @dyadex-finance/router-sdk. For other sources like Jupiter, this could be unknown values from their orderResponse.router field.*/
   protocol?: string
   transactedUSDValue?: number
   simulation_failure_reasons?: TradingApi.TransactionFailureReason[]

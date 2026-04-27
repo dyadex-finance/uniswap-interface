@@ -1,6 +1,6 @@
 import type { DecreasePositionResponse as V2DecreasePositionResponse } from '@uniswap/client-liquidity/dist/uniswap/liquidity/v2/api_pb'
-import type { Currency } from '@uniswap/sdk-core'
-import { CurrencyAmount } from '@uniswap/sdk-core'
+import type { Currency } from '@dyadex-finance/sdk-core'
+import { CurrencyAmount } from '@dyadex-finance/sdk-core'
 import { TradingApi } from '@universe/api'
 import type { PropsWithChildren } from 'react'
 import { createContext, useContext, useEffect, useMemo } from 'react'

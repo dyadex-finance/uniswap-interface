@@ -1,4 +1,4 @@
-import { Currency, Percent } from '@uniswap/sdk-core'
+import { Currency, Percent } from '@dyadex-finance/sdk-core'
 import { useCallback, useEffect, useState } from 'react'
 import invariant from 'tiny-invariant'
 import { useLocalizationContext } from 'uniswap/src/features/language/LocalizationContext'

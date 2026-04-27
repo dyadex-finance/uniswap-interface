@@ -1,4 +1,4 @@
-import { Currency, NativeCurrency, Token } from '@uniswap/sdk-core'
+import { Currency, NativeCurrency, Token } from '@dyadex-finance/sdk-core'
 import { GraphQLApi } from '@universe/api'
 import { WarningSeverity } from 'uniswap/src/components/modals/WarningModal/types'
 import { AttackType, CurrencyInfo, SafetyInfo, TokenList } from 'uniswap/src/features/dataApi/types'

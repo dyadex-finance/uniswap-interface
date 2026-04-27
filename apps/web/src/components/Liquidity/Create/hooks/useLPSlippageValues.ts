@@ -1,6 +1,6 @@
 import { ProtocolVersion } from '@uniswap/client-data-api/dist/data/v1/poolTypes_pb'
 import { CreateLPPositionResponse } from '@uniswap/client-liquidity/dist/uniswap/liquidity/v1/api_pb'
-import { Currency } from '@uniswap/sdk-core'
+import { Currency } from '@dyadex-finance/sdk-core'
 import { DynamicConfigs, LPConfigKey, useDynamicConfigValue } from '@universe/gating'
 import { useEffect } from 'react'
 import {

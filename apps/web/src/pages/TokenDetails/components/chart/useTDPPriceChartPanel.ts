@@ -1,4 +1,4 @@
-import type { Currency } from '@uniswap/sdk-core'
+import type { Currency } from '@dyadex-finance/sdk-core'
 import { useLayoutEffect, useMemo } from 'react'
 import { fromGraphQLChain } from 'uniswap/src/features/chains/utils'
 import { useTokenPriceChange } from 'uniswap/src/features/dataApi/tokenDetails/useTokenDetailsData'

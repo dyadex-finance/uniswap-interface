@@ -1,4 +1,4 @@
-import { Currency } from '@uniswap/sdk-core'
+import { Currency } from '@dyadex-finance/sdk-core'
 import { ReactNode } from 'react'
 import { Trans } from 'react-i18next'
 import { nativeOnChain } from 'uniswap/src/constants/tokens'

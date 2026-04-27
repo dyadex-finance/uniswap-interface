@@ -1,4 +1,4 @@
-import { CurrencyAmount } from '@uniswap/sdk-core'
+import { CurrencyAmount } from '@dyadex-finance/sdk-core'
 import type { ClassicQuoteResponse, GasFeeResult } from '@universe/api'
 import { FeeType, TradingApi } from '@universe/api'
 import type { providers } from 'ethers/lib/ethers'
@@ -74,11 +74,13 @@ describe('processWrapResponse (smart contract unwrap fallback)', () => {
     })
 
     // Use dynamic imports to get modules with the mock applied
-    const { processWrapResponse: mockedProcessWrapResponse } =
-      await import('uniswap/src/features/transactions/swap/review/services/swapTxAndGasInfoService/utils')
+    const { processWrapResponse: mockedProcessWrapResponse } = await import(
+      'uniswap/src/features/transactions/swap/review/services/swapTxAndGasInfoService/utils'
+    )
 
-    const { WRAP_FALLBACK_GAS_LIMIT_IN_GWEI } =
-      await import('uniswap/src/features/transactions/swap/review/services/swapTxAndGasInfoService/constants')
+    const { WRAP_FALLBACK_GAS_LIMIT_IN_GWEI } = await import(
+      'uniswap/src/features/transactions/swap/review/services/swapTxAndGasInfoService/constants'
+    )
 
     const gasFeeResult: GasFeeResult = {
       value: '1000',

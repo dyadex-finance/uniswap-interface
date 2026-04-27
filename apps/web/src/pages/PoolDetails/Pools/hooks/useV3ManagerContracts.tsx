@@ -1,4 +1,4 @@
-import { NONFUNGIBLE_POSITION_MANAGER_ADDRESSES as V3NFT_ADDRESSES } from '@uniswap/sdk-core'
+import { NONFUNGIBLE_POSITION_MANAGER_ADDRESSES as V3NFT_ADDRESSES } from '@dyadex-finance/sdk-core'
 import NFTPositionManagerJSON from '@uniswap/v3-periphery/artifacts/contracts/NonfungiblePositionManager.sol/NonfungiblePositionManager.json'
 import { NonfungiblePositionManager } from 'uniswap/src/abis/types/v3'
 import { UniverseChainId } from 'uniswap/src/features/chains/types'

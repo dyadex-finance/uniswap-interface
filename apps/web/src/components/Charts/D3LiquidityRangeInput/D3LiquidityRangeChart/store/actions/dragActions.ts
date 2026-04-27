@@ -1,4 +1,4 @@
-import { TickMath } from '@uniswap/v3-sdk'
+import { TickMath } from '@dyadex-finance/v3-sdk'
 import * as d3 from 'd3'
 import { CHART_DIMENSIONS } from '~/components/Charts/D3LiquidityChartShared/constants'
 import type { ChartStoreState } from '~/components/Charts/D3LiquidityRangeInput/D3LiquidityRangeChart/store/types'

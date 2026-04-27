@@ -1,7 +1,7 @@
 import { BigNumber } from '@ethersproject/bignumber'
-import { CurrencyAmount, Token, V3_CORE_FACTORY_ADDRESSES } from '@uniswap/sdk-core'
+import { CurrencyAmount, Token, V3_CORE_FACTORY_ADDRESSES } from '@dyadex-finance/sdk-core'
 import IUniswapV3PoolStateJSON from '@uniswap/v3-core/artifacts/contracts/interfaces/pool/IUniswapV3PoolState.sol/IUniswapV3PoolState.json'
-import { computePoolAddress, Pool, Position } from '@uniswap/v3-sdk'
+import { computePoolAddress, Pool, Position } from '@dyadex-finance/v3-sdk'
 import { Interface } from 'ethers/lib/utils'
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { NonfungiblePositionManager, UniswapInterfaceMulticall } from 'uniswap/src/abis/types/v3'
@@ -125,7 +125,7 @@ export default function useMultiChainPositions(account: string): UseMultiChainPo
           // oxlint-disable-next-line typescript/no-misused-spread -- biome-parity: oxlint is stricter here
           ...pm.interface.decodeFunctionResult('positions', positionBytes),
           tokenId: positionIds[index],
-        }) as unknown as PositionDetails,
+        } as unknown as PositionDetails),
     )
   }, [])
 

@@ -1,4 +1,4 @@
-import { Currency, CurrencyAmount } from '@uniswap/sdk-core'
+import { Currency, CurrencyAmount } from '@dyadex-finance/sdk-core'
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { UniverseChainId } from 'uniswap/src/features/chains/types'
 import { useNativeCurrencyInfo } from 'uniswap/src/features/tokens/useCurrencyInfo'
@@ -70,7 +70,6 @@ export function useWithdrawBidAndClaimTokensReviewData({
     }
 
     setIsPreparing(true)
-
     ;(async () => {
       try {
         const result = await submitState.prepareTransaction()

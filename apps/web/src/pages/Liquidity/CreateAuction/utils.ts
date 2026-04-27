@@ -1,4 +1,4 @@
-import { type Currency, type CurrencyAmount, Fraction, Percent } from '@uniswap/sdk-core'
+import { type Currency, type CurrencyAmount, Fraction, Percent } from '@dyadex-finance/sdk-core'
 import { nativeOnChain } from 'uniswap/src/constants/tokens'
 import { getChainInfo } from 'uniswap/src/features/chains/chainInfo'
 import type { UniverseChainId } from 'uniswap/src/features/chains/types'

@@ -1,5 +1,5 @@
 import { type ApolloClient, type NormalizedCacheObject } from '@apollo/client'
-import { TradeType } from '@uniswap/sdk-core'
+import { TradeType } from '@dyadex-finance/sdk-core'
 import { SharedQueryClient } from '@universe/api'
 import { Experiments, getExperimentValue, PrivateRpcProperties } from '@universe/gating'
 import { BigNumber } from 'ethers'
@@ -336,7 +336,7 @@ function maybeLogGasEstimateAccuracy(transaction: TransactionDetails): void {
     max_priority_fee_per_gas:
       gasEstimate && 'maxPriorityFeePerGas' in gasEstimate ? gasEstimate.maxPriorityFeePerGas : undefined,
     out_of_gas,
-    private_rpc: isClassic(transaction) ? (transaction.options.submitViaPrivateRpc ?? false) : false,
+    private_rpc: isClassic(transaction) ? transaction.options.submitViaPrivateRpc ?? false : false,
     is_shadow: false,
     name: localGasStrategy?.conditions.name,
     display_limit_inflation_factor: localGasStrategy?.strategy.displayLimitInflationFactor,

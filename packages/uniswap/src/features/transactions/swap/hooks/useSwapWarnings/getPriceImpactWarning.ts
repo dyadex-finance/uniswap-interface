@@ -1,4 +1,4 @@
-import { Percent } from '@uniswap/sdk-core'
+import { Percent } from '@dyadex-finance/sdk-core'
 import { TFunction } from 'i18next'
 import { AlertTriangleFilled } from 'ui/src/components/icons'
 import { Warning, WarningAction, WarningLabel, WarningSeverity } from 'uniswap/src/components/modals/WarningModal/types'

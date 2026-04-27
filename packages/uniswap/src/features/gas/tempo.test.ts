@@ -1,4 +1,4 @@
-import { CurrencyAmount, Token } from '@uniswap/sdk-core'
+import { CurrencyAmount, Token } from '@dyadex-finance/sdk-core'
 import { UniverseChainId } from 'uniswap/src/features/chains/types'
 import { convertTempoGasFeeForDisplay, hasSufficientFundsIncludingTempoGas } from 'uniswap/src/features/gas/tempo'
 

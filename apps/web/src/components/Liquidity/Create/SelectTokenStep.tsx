@@ -1,7 +1,7 @@
 /* oxlint-disable max-lines */
 
 import { ProtocolVersion } from '@uniswap/client-data-api/dist/data/v1/poolTypes_pb'
-import type { Currency } from '@uniswap/sdk-core'
+import type { Currency } from '@dyadex-finance/sdk-core'
 import {
   AllowedV4WethHookAddressesConfigKey,
   DynamicConfigs,
@@ -261,8 +261,8 @@ export function SelectTokensStep({
     return protocolVersion === ProtocolVersion.V4
       ? chains.filter((chain) => !isV4UnsupportedChain(chain))
       : protocolVersion === ProtocolVersion.V2
-        ? chains.filter((chain) => SUPPORTED_V2POOL_CHAIN_IDS.includes(chain))
-        : undefined
+      ? chains.filter((chain) => SUPPORTED_V2POOL_CHAIN_IDS.includes(chain))
+      : undefined
   }, [protocolVersion, chains])
 
   const handleOnContinue = () => {
@@ -604,8 +604,8 @@ function SelectStepError({
           unsupportedChainId === UniverseChainId.Solana
             ? t('position.create.unsupportedSolana')
             : protocolVersion === ProtocolVersion.V2
-              ? t('position.create.v2unsupportedChain')
-              : t('position.migrate.v4unsupportedChain')
+            ? t('position.create.v2unsupportedChain')
+            : t('position.migrate.v4unsupportedChain')
         }
         description={
           unsupportedChainId === UniverseChainId.Solana

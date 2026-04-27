@@ -1,7 +1,7 @@
-import { Currency, CurrencyAmount } from '@uniswap/sdk-core'
-import { Pair } from '@uniswap/v2-sdk'
-import { Pool as V3Pool, Position as V3Position } from '@uniswap/v3-sdk'
-import { Pool as V4Pool, Position as V4Position } from '@uniswap/v4-sdk'
+import { Currency, CurrencyAmount } from '@dyadex-finance/sdk-core'
+import { Pair } from '@dyadex-finance/v2-sdk'
+import { Pool as V3Pool, Position as V3Position } from '@dyadex-finance/v3-sdk'
+import { Pool as V4Pool, Position as V4Position } from '@dyadex-finance/v4-sdk'
 import { PositionField } from '~/types/position'
 
 export function getDependentAmountFromV2Pair({

@@ -1,4 +1,4 @@
-import { Currency, Percent } from '@uniswap/sdk-core'
+import { Currency, Percent } from '@dyadex-finance/sdk-core'
 import { SwapPriceUpdateUserResponse } from 'uniswap/src/features/telemetry/types'
 import { TransactionOriginType } from 'uniswap/src/features/transactions/types/transactionDetails'
 import { SwapResult } from '~/hooks/useSwapCallback'
@@ -84,6 +84,6 @@ export const formatSwapButtonClickEventProperties = ({
       trade.inputAmount.currency.chainId === trade.outputAmount.currency.chainId
         ? trade.inputAmount.currency.chainId
         : undefined,
-    swap_quote_block_number: isClassicTrade(trade) ? (trade.blockNumber ?? undefined) : undefined,
+    swap_quote_block_number: isClassicTrade(trade) ? trade.blockNumber ?? undefined : undefined,
   }
 }

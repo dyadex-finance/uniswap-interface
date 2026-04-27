@@ -1,4 +1,4 @@
-import type { Currency, CurrencyAmount } from '@uniswap/sdk-core'
+import type { Currency, CurrencyAmount } from '@dyadex-finance/sdk-core'
 import { useCallback } from 'react'
 import { Flex, Text } from 'ui/src'
 import { spacing } from 'ui/src/theme/spacing'

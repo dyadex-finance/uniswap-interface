@@ -6,7 +6,7 @@ import {
   DutchOrder,
   getCancelMultipleParams,
   getCancelSingleParams,
-} from '@uniswap/uniswapx-sdk'
+} from '@dyadex-finance/uniswapx-sdk'
 import { TradingApi } from '@universe/api'
 import { providers } from 'ethers/lib/ethers'
 import { UniverseChainId } from 'uniswap/src/features/chains/types'

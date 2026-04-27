@@ -1,4 +1,4 @@
-import { Currency, TradeType } from '@uniswap/sdk-core'
+import { Currency, TradeType } from '@dyadex-finance/sdk-core'
 import { AssetType, CurrencyAsset } from 'uniswap/src/entities/assets'
 import { getCurrencyAmount, ValueType } from 'uniswap/src/features/tokens/getCurrencyAmount'
 import { getAmountsFromTrade } from 'uniswap/src/features/transactions/swap/utils/getAmountsFromTrade'
@@ -55,8 +55,8 @@ export function createSwapFormFromTxDetails({
     const exactCurrencyField = isBridging
       ? CurrencyField.INPUT
       : typeInfo.tradeType === TradeType.EXACT_OUTPUT
-        ? CurrencyField.OUTPUT
-        : CurrencyField.INPUT
+      ? CurrencyField.OUTPUT
+      : CurrencyField.INPUT
 
     const { value, currency } =
       exactCurrencyField === CurrencyField.INPUT

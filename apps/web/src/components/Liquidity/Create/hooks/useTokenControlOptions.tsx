@@ -1,4 +1,4 @@
-import { Currency } from '@uniswap/sdk-core'
+import { Currency } from '@dyadex-finance/sdk-core'
 import { useMemo } from 'react'
 import { Flex, Text } from 'ui/src'
 import { TestID } from 'uniswap/src/test/fixtures/testIDs'

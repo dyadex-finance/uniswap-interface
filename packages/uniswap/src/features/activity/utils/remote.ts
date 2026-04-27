@@ -1,5 +1,5 @@
 import { SpamCode as RestSpamCode, TokenType } from '@uniswap/client-data-api/dist/data/v1/types_pb'
-import { Token as SdkToken } from '@uniswap/sdk-core'
+import { Token as SdkToken } from '@dyadex-finance/sdk-core'
 import { GraphQLApi } from '@universe/api'
 import { getNativeAddress } from 'uniswap/src/constants/addresses'
 import { nativeOnChain } from 'uniswap/src/constants/tokens'
@@ -66,7 +66,7 @@ export function isRestTokenSpam(spamCode?: RestSpamCode): boolean {
  * @returns parsed USD value as a number if currency is of type USD
  */
 export function parseUSDValueFromAssetChange(transactedValue: Maybe<Partial<GraphQLApi.Amount>>): number | undefined {
-  return transactedValue?.currency === GraphQLApi.Currency.Usd ? (transactedValue.value ?? undefined) : undefined
+  return transactedValue?.currency === GraphQLApi.Currency.Usd ? transactedValue.value ?? undefined : undefined
 }
 
 /**
@@ -99,8 +99,8 @@ export function deriveCurrencyAmountFromAssetResponse({
     tokenStandard === GraphQLApi.TokenStandard.Native
       ? nativeOnChain(chainId)
       : address && decimals
-        ? new SdkToken(chainId, address, decimals)
-        : undefined
+      ? new SdkToken(chainId, address, decimals)
+      : undefined
 
   const currencyAmount = getCurrencyAmount({
     value: quantity,

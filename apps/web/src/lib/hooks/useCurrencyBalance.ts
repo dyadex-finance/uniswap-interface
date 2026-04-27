@@ -1,4 +1,4 @@
-import { Currency, CurrencyAmount, Token } from '@uniswap/sdk-core'
+import { Currency, CurrencyAmount, Token } from '@dyadex-finance/sdk-core'
 import JSBI from 'jsbi'
 import { useMemo } from 'react'
 import { getCurrencyAmount, ValueType } from 'uniswap/src/features/tokens/getCurrencyAmount'
@@ -27,8 +27,7 @@ function useRpcTokenBalancesWithLoadingIndicator({
     () =>
       skip
         ? []
-        : (tokens?.filter((t?: Token): t is Token => isEVMAddress(t?.address) !== false && t.chainId === chainId) ??
-          []),
+        : tokens?.filter((t?: Token): t is Token => isEVMAddress(t?.address) !== false && t.chainId === chainId) ?? [],
     [chainId, tokens, skip],
   )
 
@@ -43,7 +42,7 @@ function useRpcTokenBalancesWithLoadingIndicator({
               abi: erc20Abi,
               functionName: 'balanceOf',
               args: [address],
-            }) as const,
+            } as const),
         ),
       [address, chainId, validatedTokens],
     ),

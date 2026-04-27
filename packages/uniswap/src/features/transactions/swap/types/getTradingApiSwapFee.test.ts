@@ -1,4 +1,4 @@
-import { Percent } from '@uniswap/sdk-core'
+import { Percent } from '@dyadex-finance/sdk-core'
 import { ClassicQuoteResponse, DiscriminatedQuoteResponse, TradingApi } from '@universe/api'
 import { getTradingApiSwapFee } from 'uniswap/src/features/transactions/swap/types/getTradingApiSwapFee'
 import { CurrencyField } from 'uniswap/src/types/currency'

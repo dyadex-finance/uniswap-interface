@@ -1,5 +1,5 @@
 import { act } from '@testing-library/react'
-import { Percent } from '@uniswap/sdk-core'
+import { Percent } from '@dyadex-finance/sdk-core'
 import { USDC_MAINNET } from 'uniswap/src/constants/tokens'
 import { deserializeToken, serializeToken } from 'uniswap/src/utils/currency'
 import store from '~/state'

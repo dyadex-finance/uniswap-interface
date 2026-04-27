@@ -1,4 +1,4 @@
-import { Currency } from '@uniswap/sdk-core'
+import { Currency } from '@dyadex-finance/sdk-core'
 import type { MultichainTokenEntry } from 'uniswap/src/components/MultichainTokenDetails/useOrderedMultichainEntries'
 import { getChainInfo } from 'uniswap/src/features/chains/chainInfo'
 import { buildCurrency } from 'uniswap/src/features/dataApi/utils/buildCurrency'

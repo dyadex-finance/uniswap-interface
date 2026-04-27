@@ -1,4 +1,4 @@
-import { Currency } from '@uniswap/sdk-core'
+import { Currency } from '@dyadex-finance/sdk-core'
 import { TradingApi } from '@universe/api'
 import {
   getNativeAddress,

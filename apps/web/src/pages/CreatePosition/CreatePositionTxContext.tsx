@@ -11,8 +11,8 @@ import {
   CreatePositionResponse,
 } from '@uniswap/client-liquidity/dist/uniswap/liquidity/v2/api_pb'
 import { LPAction } from '@uniswap/client-liquidity/dist/uniswap/liquidity/v2/types_pb'
-import { Currency, CurrencyAmount } from '@uniswap/sdk-core'
-import { Pair } from '@uniswap/v2-sdk'
+import { Currency, CurrencyAmount } from '@dyadex-finance/sdk-core'
+import { Pair } from '@dyadex-finance/v2-sdk'
 import { FeatureFlags, useFeatureFlag } from '@universe/gating'
 import {
   createContext,
@@ -203,8 +203,8 @@ export function CreatePositionTxContextProvider({ children }: PropsWithChildren)
       address: evmAddress,
       token0: TOKEN0,
       token1: TOKEN1,
-      tickLower: protocolVersion !== ProtocolVersion.V2 ? (tickLower ?? undefined) : undefined,
-      tickUpper: protocolVersion !== ProtocolVersion.V2 ? (tickUpper ?? undefined) : undefined,
+      tickLower: protocolVersion !== ProtocolVersion.V2 ? tickLower ?? undefined : undefined,
+      tickUpper: protocolVersion !== ProtocolVersion.V2 ? tickUpper ?? undefined : undefined,
       exactField,
       exactAmounts: depositState.exactAmounts,
       skipDependentAmount: protocolVersion === ProtocolVersion.V2 ? false : outOfRange || invalidRange,
@@ -405,13 +405,13 @@ export function CreatePositionTxContextProvider({ children }: PropsWithChildren)
   } = approvalCalldata ?? {}
   const needsApprovals = Boolean(
     permitData ||
-    token0Approval ||
-    token1Approval ||
-    positionTokenApproval ||
-    token0Cancel ||
-    token1Cancel ||
-    token0PermitTransaction ||
-    token1PermitTransaction,
+      token0Approval ||
+      token1Approval ||
+      positionTokenApproval ||
+      token0Cancel ||
+      token1Cancel ||
+      token0PermitTransaction ||
+      token1PermitTransaction,
   )
   const { value: calculatedGasFee } = useTransactionGasFee({
     tx: createCalldata?.create,

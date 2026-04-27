@@ -1,4 +1,4 @@
-import type { Currency } from '@uniswap/sdk-core'
+import type { Currency } from '@dyadex-finance/sdk-core'
 import { useTranslation } from 'react-i18next'
 import { TimePeriod, toHistoryDuration } from '~/appGraphql/data/util'
 import { ChartSkeleton } from '~/components/Charts/LoadingState'

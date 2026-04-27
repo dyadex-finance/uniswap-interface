@@ -1,4 +1,4 @@
-import type { Currency } from '@uniswap/sdk-core'
+import type { Currency } from '@dyadex-finance/sdk-core'
 import { useCallback, useRef } from 'react'
 
 interface UserPreservedCurrencies {

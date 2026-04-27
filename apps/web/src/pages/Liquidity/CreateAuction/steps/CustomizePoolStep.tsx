@@ -1,6 +1,6 @@
 import { isAddress } from '@ethersproject/address'
 import { ProtocolVersion } from '@uniswap/client-data-api/dist/data/v1/poolTypes_pb'
-import { type Currency, Token } from '@uniswap/sdk-core'
+import { type Currency, Token } from '@dyadex-finance/sdk-core'
 import { useCallback, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Button, Flex, Separator, Text } from 'ui/src'
@@ -77,7 +77,7 @@ export function CustomizePoolStep() {
   const chainId: UniverseChainId =
     tokenForm.mode === TokenMode.CREATE_NEW
       ? tokenForm.network
-      : (tokenForm.existingTokenCurrencyInfo?.currency.chainId ?? UniverseChainId.Unichain)
+      : tokenForm.existingTokenCurrencyInfo?.currency.chainId ?? UniverseChainId.Unichain
 
   const token0: Currency | undefined = useMemo(() => {
     if (tokenForm.mode === TokenMode.CREATE_NEW) {
@@ -119,7 +119,7 @@ export function CustomizePoolStep() {
     customizePool
 
   const feesRecipientPlaceholder = useMemo(
-    () => (isAddress(customizePool.poolOwner) ? customizePool.poolOwner : (activeAddress ?? '')),
+    () => (isAddress(customizePool.poolOwner) ? customizePool.poolOwner : activeAddress ?? ''),
     [customizePool.poolOwner, activeAddress],
   )
 

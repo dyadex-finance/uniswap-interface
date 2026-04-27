@@ -6,7 +6,7 @@ import {
 } from '@uniswap/client-liquidity/dist/uniswap/liquidity/v1/types_pb'
 import { type LPApprovalResponse } from '@uniswap/client-liquidity/dist/uniswap/liquidity/v2/api_pb'
 import { type ApprovalTransactionRequest } from '@uniswap/client-liquidity/dist/uniswap/liquidity/v2/types_pb'
-import { permit2Address } from '@uniswap/permit2-sdk'
+import { permit2Address } from '@dyadex-finance/permit2-sdk'
 import { Platform } from 'uniswap/src/features/platforms/types/Platform'
 import { areAddressesEqual } from 'uniswap/src/utils/addresses'
 

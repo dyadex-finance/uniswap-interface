@@ -1,4 +1,4 @@
-import type { Percent } from '@uniswap/sdk-core'
+import type { Percent } from '@dyadex-finance/sdk-core'
 import type { ReactNode } from 'react'
 import { useReducer } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -136,8 +136,8 @@ export function FeeTierSelector({
                 {!selectedFee
                   ? t('fee.tier.default')
                   : isDynamicFeeTier(selectedFee)
-                    ? t('fee.tier.dynamic')
-                    : t('fee.tierExact', { fee: formatPercent(selectedFee.feeAmount / BIPS_BASE, 4) })}
+                  ? t('fee.tier.dynamic')
+                  : t('fee.tierExact', { fee: formatPercent(selectedFee.feeAmount / BIPS_BASE, 4) })}
               </Text>
               {headerInlineContent}
             </Flex>

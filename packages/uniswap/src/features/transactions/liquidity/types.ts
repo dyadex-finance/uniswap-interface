@@ -8,7 +8,7 @@ import {
   type CreatePositionRequest,
   type IncreasePositionRequest,
 } from '@uniswap/client-liquidity/dist/uniswap/liquidity/v2/api_pb'
-import { type Currency, type CurrencyAmount, type Token } from '@uniswap/sdk-core'
+import { type Currency, type CurrencyAmount, type Token } from '@dyadex-finance/sdk-core'
 import {
   type PermitTransaction,
   type PermitTypedData,

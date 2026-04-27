@@ -1,7 +1,7 @@
 /* oxlint-disable typescript/no-unnecessary-condition */
 
-import { Percent } from '@uniswap/sdk-core'
-import { Pair } from '@uniswap/v2-sdk'
+import { Percent } from '@dyadex-finance/sdk-core'
+import { Pair } from '@dyadex-finance/v2-sdk'
 import JSBI from 'jsbi'
 import { useCallback, useMemo } from 'react'
 import { useGetPositionsForPairs } from 'uniswap/src/data/rest/getPositions'

@@ -1,4 +1,4 @@
-import { Currency, Token, TradeType } from '@uniswap/sdk-core'
+import { Currency, Token, TradeType } from '@dyadex-finance/sdk-core'
 import { nativeOnChain } from 'uniswap/src/constants/tokens'
 import { UniverseChainId } from 'uniswap/src/features/chains/types'
 import { GetQuoteArgs, PoolType, RouterPreference, TokenInRoute, URAQuoteType } from '~/state/routing/types'

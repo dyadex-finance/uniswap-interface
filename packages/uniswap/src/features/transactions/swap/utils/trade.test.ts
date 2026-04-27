@@ -1,5 +1,5 @@
-import { type Currency, CurrencyAmount, TradeType } from '@uniswap/sdk-core'
-import { FeeAmount, Pool, Route } from '@uniswap/v3-sdk'
+import { type Currency, CurrencyAmount, TradeType } from '@dyadex-finance/sdk-core'
+import { FeeAmount, Pool, Route } from '@dyadex-finance/v3-sdk'
 import { type ClassicQuoteResponse, TradingApi } from '@universe/api'
 import { UNI, WBTC } from 'uniswap/src/constants/tokens'
 import { UniverseChainId } from 'uniswap/src/features/chains/types'

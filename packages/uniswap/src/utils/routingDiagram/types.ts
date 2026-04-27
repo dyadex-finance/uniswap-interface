@@ -1,4 +1,4 @@
-import { Percent } from '@uniswap/sdk-core'
+import { Percent } from '@dyadex-finance/sdk-core'
 import type { GeneratedIcon } from 'ui/src'
 import { Trade } from 'uniswap/src/features/transactions/swap/types/trade'
 

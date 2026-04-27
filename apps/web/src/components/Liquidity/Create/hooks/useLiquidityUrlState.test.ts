@@ -1,4 +1,4 @@
-import { WETH9 } from '@uniswap/sdk-core'
+import { WETH9 } from '@dyadex-finance/sdk-core'
 import { useQueryState, useQueryStates } from 'nuqs'
 import { nativeOnChain, USDC, USDC_UNICHAIN } from 'uniswap/src/constants/tokens'
 import { UniverseChainId } from 'uniswap/src/features/chains/types'

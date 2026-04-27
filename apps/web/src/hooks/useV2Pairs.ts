@@ -1,5 +1,5 @@
-import { Currency, CurrencyAmount, V2_FACTORY_ADDRESSES } from '@uniswap/sdk-core'
-import { computePairAddress, Pair } from '@uniswap/v2-sdk'
+import { Currency, CurrencyAmount, V2_FACTORY_ADDRESSES } from '@dyadex-finance/sdk-core'
+import { computePairAddress, Pair } from '@dyadex-finance/v2-sdk'
 import { useMemo } from 'react'
 import { useReadContracts } from 'wagmi'
 import { assume0xAddress } from '~/utils/wagmi'
@@ -67,7 +67,7 @@ function useV2Pairs(currencies: [Maybe<Currency>, Maybe<Currency>][]): [PairStat
             ],
             functionName: 'getReserves',
             chainId,
-          }) as const,
+          } as const),
       )
     }, [pairAddresses, chainId]),
   })

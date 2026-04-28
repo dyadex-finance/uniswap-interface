@@ -62,7 +62,6 @@ export function isMainnetChainId(chainId?: UniverseChainId): boolean {
 }
 
 export function toGraphQLChain(chainId: UniverseChainId): GqlChainId {
-  console.log(`toGraphQLChain`, chainId, getChainInfo(chainId))
   return getChainInfo(UniverseChainId.Monad).backendChain.chain
 }
 

@@ -32,9 +32,9 @@ export function useListTokensService(
   const { chains: enabledChainIds } = useEnabledChains()
   const backendSorting = useExploreBackendSortingEnabled()
   const multichainTokenUxEnabled = useFeatureFlag(FeatureFlags.MultichainTokenUx)
-
+  console.log({ enabledChainIds })
   const chainIds = useMemo(() => (chainId !== undefined ? [chainId] : enabledChainIds), [chainId, enabledChainIds])
-
+  console.log({ chainIds })
   // Stable keys so pagination/query state is preserved and we avoid refetches on load-state changes
   const optionsKeySegment = useMemo(
     () =>
@@ -125,7 +125,7 @@ export function useListTokensService(
   const { topTokens, tokenSortRank } = useMemo(() => {
     const flat = backendSorting
       ? (data?.pages ?? []).flatMap((p) => p.multichainTokens)
-      : (legacyData?.multichainTokens ?? [])
+      : legacyData?.multichainTokens ?? []
     return processMultichainTokensForDisplay(flat, {
       ...effectiveOptions,
       chainId: multichainTokenUxEnabled && chainId !== undefined ? chainId : undefined,

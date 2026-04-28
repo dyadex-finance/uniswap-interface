@@ -67,18 +67,7 @@ export function gqlToCurrency(token: DeepPartial<GraphQLApi.Token | TokenStat>):
     return undefined
   }
   if (token.standard === GraphQLApi.TokenStandard.Native || token.address === NATIVE_CHAIN_ID || !token.address) {
-    // Tempo has no displayable native currency — the virtual "USD" is a placeholder.
-    // When the backend returns Native standard for Tempo with a real address (e.g. pathUSD),
-    // fall through to buildCurrency so the token is constructed normally.
-    // Only return undefined when there's truly no address to build from.
-    if (chainId === UniverseChainId.Tempo) {
-      if (!token.address || token.address === NATIVE_CHAIN_ID) {
-        return undefined
-      }
-      // Fall through to buildCurrency below
-    } else {
-      return nativeOnChain(chainId)
-    }
+    return nativeOnChain(chainId)
   }
 
   return buildCurrency({

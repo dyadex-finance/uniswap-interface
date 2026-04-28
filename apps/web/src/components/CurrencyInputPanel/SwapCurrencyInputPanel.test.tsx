@@ -34,7 +34,7 @@ describe('SwapCurrencyInputPanel balance formatting', () => {
     vi.clearAllMocks()
 
     mockUseMultichainContext.mockReturnValue({
-      chainId: UniverseChainId.Mainnet,
+      chainId: UniverseChainId.Monad,
       isUserSelectedToken: false,
     })
 
@@ -56,7 +56,7 @@ describe('SwapCurrencyInputPanel balance formatting', () => {
 
   describe('native ETH balance formatting', () => {
     it('should format large ETH balance with thousands separator and decimals', () => {
-      const ETH = nativeOnChain(UniverseChainId.Mainnet)
+      const ETH = nativeOnChain(UniverseChainId.Monad)
       const balance = CurrencyAmount.fromRawAmount(ETH, '10000000000000000000000') // 10,000 ETH
 
       mockUseCurrencyBalance.mockReturnValue(balance)
@@ -69,7 +69,7 @@ describe('SwapCurrencyInputPanel balance formatting', () => {
     })
 
     it('should format small ETH balance correctly', () => {
-      const ETH = nativeOnChain(UniverseChainId.Mainnet)
+      const ETH = nativeOnChain(UniverseChainId.Monad)
       const balance = CurrencyAmount.fromRawAmount(ETH, '1500000000000000000') // 1.5 ETH
 
       mockUseCurrencyBalance.mockReturnValue(balance)

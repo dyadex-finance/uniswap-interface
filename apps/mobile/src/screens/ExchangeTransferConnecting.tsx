@@ -39,7 +39,7 @@ export function ExchangeTransferConnecting({
 
   const { externalTransactionId, dispatchAddTransaction } = useFiatOnRampTransactionCreator({
     ownerAddress: activeAccountAddress,
-    chainId: UniverseChainId.Mainnet,
+    chainId: UniverseChainId.Monad,
     serviceProvider: serviceProvider.serviceProvider,
   })
 

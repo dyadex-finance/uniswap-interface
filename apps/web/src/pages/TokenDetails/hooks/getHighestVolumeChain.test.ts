@@ -17,11 +17,11 @@ const makeToken = (chain: GraphQLApi.Chain, volume?: number): ProjectTokens[numb
     chain,
     address: '0x1',
     market: volume !== undefined ? { volume24H: { value: volume } } : undefined,
-  }) as unknown as ProjectTokens[number]
+  } as unknown as ProjectTokens[number])
 
 describe('getHighestVolumeChain', () => {
   const entries: MultichainTokenEntry[] = [
-    makeEntry(UniverseChainId.Mainnet, '0xeth'),
+    makeEntry(UniverseChainId.Monad, '0xeth'),
     makeEntry(UniverseChainId.Base, '0xbase'),
     makeEntry(UniverseChainId.Polygon, '0xpoly'),
   ]

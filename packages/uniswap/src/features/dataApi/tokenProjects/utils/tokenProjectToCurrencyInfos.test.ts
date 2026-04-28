@@ -22,7 +22,7 @@ describe(tokenProjectToCurrencyInfos, () => {
       }),
       isBridged: token.isBridged,
       bridgedWithdrawalInfo: token.bridgedWithdrawalInfo,
-    }) as CurrencyInfo
+    } as CurrencyInfo)
 
   it('converts tokenProject to CurrencyInfo', () => {
     const result = tokenProjectToCurrencyInfos([project]).map(removeSafetyInfo)
@@ -50,9 +50,7 @@ describe(tokenProjectToCurrencyInfos, () => {
       ],
     } as GraphQLApi.TokenProject
 
-    const result = tokenProjectToCurrencyInfos([projectWithInvalidTokens], UniverseChainId.Mainnet).map(
-      removeSafetyInfo,
-    )
+    const result = tokenProjectToCurrencyInfos([projectWithInvalidTokens], UniverseChainId.Monad).map(removeSafetyInfo)
 
     expect(result).toEqual([getExpectedResult(project.tokens[0] as GraphQLApi.Token)])
   })

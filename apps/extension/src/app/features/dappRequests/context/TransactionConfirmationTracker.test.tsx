@@ -18,13 +18,13 @@ function TestHookConsumer(): JSX.Element {
 
   return (
     <div>
-      <button data-testid="mark-confirmed-btn" onClick={() => markTransactionConfirmed(UniverseChainId.Mainnet)}>
+      <button data-testid="mark-confirmed-btn" onClick={() => markTransactionConfirmed(UniverseChainId.Monad)}>
         Mark Confirmed
       </button>
       <button
         data-testid="get-delay-btn"
         onClick={() => {
-          const delay = getDelayForChainId(UniverseChainId.Mainnet, 5000)
+          const delay = getDelayForChainId(UniverseChainId.Monad, 5000)
           const element = document.createElement('div')
           element.setAttribute('data-testid', 'delay-result')
           element.textContent = delay.toString()
@@ -86,7 +86,7 @@ describe('TransactionConfirmationTracker', () => {
         wrapper: TestComponent,
       })
 
-      const delay = result.current.getDelayForChainId(UniverseChainId.Mainnet, 5000)
+      const delay = result.current.getDelayForChainId(UniverseChainId.Monad, 5000)
       expect(delay).toBe(0)
     })
 
@@ -95,7 +95,7 @@ describe('TransactionConfirmationTracker', () => {
         wrapper: TestComponent,
       })
 
-      expect(result.current.getDelayForChainId(UniverseChainId.Mainnet, 5000)).toBe(0)
+      expect(result.current.getDelayForChainId(UniverseChainId.Monad, 5000)).toBe(0)
       expect(result.current.getDelayForChainId(UniverseChainId.Polygon, 5000)).toBe(0)
       expect(result.current.getDelayForChainId(UniverseChainId.ArbitrumOne, 5000)).toBe(0)
     })
@@ -108,15 +108,15 @@ describe('TransactionConfirmationTracker', () => {
       })
 
       // Initially no delay
-      expect(result.current.getDelayForChainId(UniverseChainId.Mainnet, 5000)).toBe(0)
+      expect(result.current.getDelayForChainId(UniverseChainId.Monad, 5000)).toBe(0)
 
       // Mark transaction confirmed
       act(() => {
-        result.current.markTransactionConfirmed(UniverseChainId.Mainnet)
+        result.current.markTransactionConfirmed(UniverseChainId.Monad)
       })
 
       // Now should have full delay
-      expect(result.current.getDelayForChainId(UniverseChainId.Mainnet, 5000)).toBe(5000)
+      expect(result.current.getDelayForChainId(UniverseChainId.Monad, 5000)).toBe(5000)
     })
 
     it('should update the confirmation timestamp when called multiple times', () => {
@@ -126,7 +126,7 @@ describe('TransactionConfirmationTracker', () => {
 
       // Mark first transaction
       act(() => {
-        result.current.markTransactionConfirmed(UniverseChainId.Mainnet)
+        result.current.markTransactionConfirmed(UniverseChainId.Monad)
       })
 
       // Advance time by 2 seconds
@@ -136,11 +136,11 @@ describe('TransactionConfirmationTracker', () => {
 
       // Mark second transaction (should reset the timestamp)
       act(() => {
-        result.current.markTransactionConfirmed(UniverseChainId.Mainnet)
+        result.current.markTransactionConfirmed(UniverseChainId.Monad)
       })
 
       // Should have full delay again (not reduced by the previous 2 seconds)
-      expect(result.current.getDelayForChainId(UniverseChainId.Mainnet, 5000)).toBe(5000)
+      expect(result.current.getDelayForChainId(UniverseChainId.Monad, 5000)).toBe(5000)
     })
 
     it('should handle marking confirmations on different chains independently', () => {
@@ -150,11 +150,11 @@ describe('TransactionConfirmationTracker', () => {
 
       // Mark transaction on Mainnet
       act(() => {
-        result.current.markTransactionConfirmed(UniverseChainId.Mainnet)
+        result.current.markTransactionConfirmed(UniverseChainId.Monad)
       })
 
       // Mainnet should have delay, Polygon should not
-      expect(result.current.getDelayForChainId(UniverseChainId.Mainnet, 5000)).toBe(5000)
+      expect(result.current.getDelayForChainId(UniverseChainId.Monad, 5000)).toBe(5000)
       expect(result.current.getDelayForChainId(UniverseChainId.Polygon, 5000)).toBe(0)
 
       // Mark transaction on Polygon
@@ -163,7 +163,7 @@ describe('TransactionConfirmationTracker', () => {
       })
 
       // Now both chains should have their own independent delays (no overwriting)
-      expect(result.current.getDelayForChainId(UniverseChainId.Mainnet, 5000)).toBe(5000)
+      expect(result.current.getDelayForChainId(UniverseChainId.Monad, 5000)).toBe(5000)
       expect(result.current.getDelayForChainId(UniverseChainId.Polygon, 5000)).toBe(5000)
     })
 
@@ -174,7 +174,7 @@ describe('TransactionConfirmationTracker', () => {
 
       // Mark transaction on Mainnet at T=0
       act(() => {
-        result.current.markTransactionConfirmed(UniverseChainId.Mainnet)
+        result.current.markTransactionConfirmed(UniverseChainId.Monad)
       })
 
       // Advance time by 2 seconds
@@ -193,7 +193,7 @@ describe('TransactionConfirmationTracker', () => {
       })
 
       // At T=3000: Mainnet should have 2000ms delay (5000-3000), Polygon should have 4000ms delay (5000-1000)
-      expect(result.current.getDelayForChainId(UniverseChainId.Mainnet, 5000)).toBe(2000)
+      expect(result.current.getDelayForChainId(UniverseChainId.Monad, 5000)).toBe(2000)
       expect(result.current.getDelayForChainId(UniverseChainId.Polygon, 5000)).toBe(4000)
 
       // Advance time by 3 more seconds (total 6 seconds from start)
@@ -202,7 +202,7 @@ describe('TransactionConfirmationTracker', () => {
       })
 
       // At T=6000: Mainnet should have 0 delay (elapsed), Polygon should have 1000ms delay remaining
-      expect(result.current.getDelayForChainId(UniverseChainId.Mainnet, 5000)).toBe(0)
+      expect(result.current.getDelayForChainId(UniverseChainId.Monad, 5000)).toBe(0)
       expect(result.current.getDelayForChainId(UniverseChainId.Polygon, 5000)).toBe(1000)
     })
   })
@@ -215,7 +215,7 @@ describe('TransactionConfirmationTracker', () => {
 
       // Mark transaction on Mainnet
       act(() => {
-        result.current.markTransactionConfirmed(UniverseChainId.Mainnet)
+        result.current.markTransactionConfirmed(UniverseChainId.Monad)
       })
 
       // Check delay for different chain
@@ -228,12 +228,12 @@ describe('TransactionConfirmationTracker', () => {
       })
 
       act(() => {
-        result.current.markTransactionConfirmed(UniverseChainId.Mainnet)
+        result.current.markTransactionConfirmed(UniverseChainId.Monad)
       })
 
-      expect(result.current.getDelayForChainId(UniverseChainId.Mainnet, 5000)).toBe(5000)
-      expect(result.current.getDelayForChainId(UniverseChainId.Mainnet, 3000)).toBe(3000)
-      expect(result.current.getDelayForChainId(UniverseChainId.Mainnet, 10000)).toBe(10000)
+      expect(result.current.getDelayForChainId(UniverseChainId.Monad, 5000)).toBe(5000)
+      expect(result.current.getDelayForChainId(UniverseChainId.Monad, 3000)).toBe(3000)
+      expect(result.current.getDelayForChainId(UniverseChainId.Monad, 10000)).toBe(10000)
     })
 
     it('should return reduced delay as time passes on same chain', () => {
@@ -242,7 +242,7 @@ describe('TransactionConfirmationTracker', () => {
       })
 
       act(() => {
-        result.current.markTransactionConfirmed(UniverseChainId.Mainnet)
+        result.current.markTransactionConfirmed(UniverseChainId.Monad)
       })
 
       // Advance time by 2 seconds
@@ -250,7 +250,7 @@ describe('TransactionConfirmationTracker', () => {
         jest.advanceTimersByTime(2000)
       })
 
-      expect(result.current.getDelayForChainId(UniverseChainId.Mainnet, 5000)).toBe(3000)
+      expect(result.current.getDelayForChainId(UniverseChainId.Monad, 5000)).toBe(3000)
     })
 
     it('should return 0 when delay period has fully elapsed', () => {
@@ -259,7 +259,7 @@ describe('TransactionConfirmationTracker', () => {
       })
 
       act(() => {
-        result.current.markTransactionConfirmed(UniverseChainId.Mainnet)
+        result.current.markTransactionConfirmed(UniverseChainId.Monad)
       })
 
       // Advance time beyond the delay period
@@ -268,12 +268,12 @@ describe('TransactionConfirmationTracker', () => {
       })
 
       act(() => {
-        expect(result.current.getDelayForChainId(UniverseChainId.Mainnet, 5000)).toBe(0)
+        expect(result.current.getDelayForChainId(UniverseChainId.Monad, 5000)).toBe(0)
       })
 
       // Subsequent calls should still return 0 (delay period has elapsed)
       act(() => {
-        expect(result.current.getDelayForChainId(UniverseChainId.Mainnet, 5000)).toBe(0)
+        expect(result.current.getDelayForChainId(UniverseChainId.Monad, 5000)).toBe(0)
       })
     })
 
@@ -283,7 +283,7 @@ describe('TransactionConfirmationTracker', () => {
       })
 
       act(() => {
-        result.current.markTransactionConfirmed(UniverseChainId.Mainnet)
+        result.current.markTransactionConfirmed(UniverseChainId.Monad)
       })
 
       // Advance time exactly to the delay period
@@ -292,7 +292,7 @@ describe('TransactionConfirmationTracker', () => {
       })
 
       act(() => {
-        expect(result.current.getDelayForChainId(UniverseChainId.Mainnet, 5000)).toBe(0)
+        expect(result.current.getDelayForChainId(UniverseChainId.Monad, 5000)).toBe(0)
       })
     })
 
@@ -302,10 +302,10 @@ describe('TransactionConfirmationTracker', () => {
       })
 
       act(() => {
-        result.current.markTransactionConfirmed(UniverseChainId.Mainnet)
+        result.current.markTransactionConfirmed(UniverseChainId.Monad)
       })
 
-      expect(result.current.getDelayForChainId(UniverseChainId.Mainnet, 0)).toBe(0)
+      expect(result.current.getDelayForChainId(UniverseChainId.Monad, 0)).toBe(0)
     })
 
     it('should handle negative max delay correctly', () => {
@@ -314,10 +314,10 @@ describe('TransactionConfirmationTracker', () => {
       })
 
       act(() => {
-        result.current.markTransactionConfirmed(UniverseChainId.Mainnet)
+        result.current.markTransactionConfirmed(UniverseChainId.Monad)
       })
 
-      expect(result.current.getDelayForChainId(UniverseChainId.Mainnet, -1000)).toBe(0)
+      expect(result.current.getDelayForChainId(UniverseChainId.Monad, -1000)).toBe(0)
     })
   })
 
@@ -329,9 +329,9 @@ describe('TransactionConfirmationTracker', () => {
 
       // Mark transaction and verify delay
       act(() => {
-        result.current.markTransactionConfirmed(UniverseChainId.Mainnet)
+        result.current.markTransactionConfirmed(UniverseChainId.Monad)
       })
-      expect(result.current.getDelayForChainId(UniverseChainId.Mainnet, 5000)).toBe(5000)
+      expect(result.current.getDelayForChainId(UniverseChainId.Monad, 5000)).toBe(5000)
 
       // Clear tracking
       act(() => {
@@ -339,7 +339,7 @@ describe('TransactionConfirmationTracker', () => {
       })
 
       // Should now return 0 delay
-      expect(result.current.getDelayForChainId(UniverseChainId.Mainnet, 5000)).toBe(0)
+      expect(result.current.getDelayForChainId(UniverseChainId.Monad, 5000)).toBe(0)
     })
 
     it('should work correctly when called multiple times', () => {
@@ -352,11 +352,11 @@ describe('TransactionConfirmationTracker', () => {
         result.current.clearConfirmationTracking()
       })
 
-      expect(result.current.getDelayForChainId(UniverseChainId.Mainnet, 5000)).toBe(0)
+      expect(result.current.getDelayForChainId(UniverseChainId.Monad, 5000)).toBe(0)
 
       // Mark transaction, clear, and clear again
       act(() => {
-        result.current.markTransactionConfirmed(UniverseChainId.Mainnet)
+        result.current.markTransactionConfirmed(UniverseChainId.Monad)
       })
       act(() => {
         result.current.clearConfirmationTracking()
@@ -365,7 +365,7 @@ describe('TransactionConfirmationTracker', () => {
         result.current.clearConfirmationTracking()
       })
 
-      expect(result.current.getDelayForChainId(UniverseChainId.Mainnet, 5000)).toBe(0)
+      expect(result.current.getDelayForChainId(UniverseChainId.Monad, 5000)).toBe(0)
     })
 
     it('should not affect subsequent markTransactionConfirmed calls', () => {
@@ -375,7 +375,7 @@ describe('TransactionConfirmationTracker', () => {
 
       // Mark, clear, then mark again
       act(() => {
-        result.current.markTransactionConfirmed(UniverseChainId.Mainnet)
+        result.current.markTransactionConfirmed(UniverseChainId.Monad)
       })
       act(() => {
         result.current.clearConfirmationTracking()
@@ -384,7 +384,7 @@ describe('TransactionConfirmationTracker', () => {
         result.current.markTransactionConfirmed(UniverseChainId.Polygon)
       })
 
-      expect(result.current.getDelayForChainId(UniverseChainId.Mainnet, 5000)).toBe(0)
+      expect(result.current.getDelayForChainId(UniverseChainId.Monad, 5000)).toBe(0)
       expect(result.current.getDelayForChainId(UniverseChainId.Polygon, 5000)).toBe(5000)
     })
 
@@ -395,7 +395,7 @@ describe('TransactionConfirmationTracker', () => {
 
       // Mark transactions on multiple chains
       act(() => {
-        result.current.markTransactionConfirmed(UniverseChainId.Mainnet)
+        result.current.markTransactionConfirmed(UniverseChainId.Monad)
       })
       act(() => {
         result.current.markTransactionConfirmed(UniverseChainId.Polygon)
@@ -405,7 +405,7 @@ describe('TransactionConfirmationTracker', () => {
       })
 
       // Verify all chains have delays
-      expect(result.current.getDelayForChainId(UniverseChainId.Mainnet, 5000)).toBe(5000)
+      expect(result.current.getDelayForChainId(UniverseChainId.Monad, 5000)).toBe(5000)
       expect(result.current.getDelayForChainId(UniverseChainId.Polygon, 5000)).toBe(5000)
       expect(result.current.getDelayForChainId(UniverseChainId.ArbitrumOne, 5000)).toBe(5000)
 
@@ -415,7 +415,7 @@ describe('TransactionConfirmationTracker', () => {
       })
 
       // All chains should now return 0 delay
-      expect(result.current.getDelayForChainId(UniverseChainId.Mainnet, 5000)).toBe(0)
+      expect(result.current.getDelayForChainId(UniverseChainId.Monad, 5000)).toBe(0)
       expect(result.current.getDelayForChainId(UniverseChainId.Polygon, 5000)).toBe(0)
       expect(result.current.getDelayForChainId(UniverseChainId.ArbitrumOne, 5000)).toBe(0)
     })

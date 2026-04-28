@@ -194,7 +194,7 @@ describe('Redux state migrations', () => {
   it('migrates from v1 to v2', () => {
     const TEST_ADDRESS = '0xTestAddress'
     const txDetails0 = {
-      chainId: UniverseChainId.Mainnet,
+      chainId: UniverseChainId.Monad,
       id: '0',
       from: '0xTestAddress',
       options: {
@@ -225,7 +225,7 @@ describe('Redux state migrations', () => {
 
     const transactions = {
       [TEST_ADDRESS]: {
-        [UniverseChainId.Mainnet]: {
+        [UniverseChainId.Monad]: {
           '0': txDetails0,
         },
         [UniverseChainId.Optimism]: {
@@ -238,7 +238,7 @@ describe('Redux state migrations', () => {
 
     const v64 = migrations[2](v0stub)
 
-    expect(v64.transactions[TEST_ADDRESS][UniverseChainId.Mainnet]['0'].routing).toBe('CLASSIC')
+    expect(v64.transactions[TEST_ADDRESS][UniverseChainId.Monad]['0'].routing).toBe('CLASSIC')
     expect(v64.transactions[TEST_ADDRESS][UniverseChainId.Optimism]['1'].routing).toBe('CLASSIC')
   })
 
@@ -366,9 +366,9 @@ describe('Redux state migrations', () => {
       ...v29Schema,
       tokens: {
         dismissedTokenWarnings: {
-          [UniverseChainId.Mainnet]: {
+          [UniverseChainId.Monad]: {
             [USDC.address]: {
-              chainId: UniverseChainId.Mainnet,
+              chainId: UniverseChainId.Monad,
               address: USDC.address,
             },
           },

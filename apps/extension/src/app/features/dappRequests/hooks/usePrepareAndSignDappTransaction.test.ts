@@ -59,7 +59,7 @@ describe('usePrepareAndSignDappTransaction', () => {
     pushNotificationsEnabled: false,
   }
 
-  const mockChainId = UniverseChainId.Mainnet
+  const mockChainId = UniverseChainId.Monad
 
   const mockRequest: ValidatedTransactionRequest = {
     to: '0xabcdef1234567890123456789012345678901234',

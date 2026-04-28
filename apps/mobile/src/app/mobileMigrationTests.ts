@@ -24,7 +24,7 @@ import { SwapProtectionSetting } from 'wallet/src/features/wallet/slice'
 
 export function testRestructureTransactionsAndNotifications(migration: (state: any) => any, prevSchema: any): void {
   const txDetails0 = {
-    chainId: UniverseChainId.Mainnet,
+    chainId: UniverseChainId.Monad,
     id: '0',
     from: '0xShadowySuperCoder',
     options: {
@@ -75,7 +75,7 @@ export function testRestructureTransactionsAndNotifications(migration: (state: a
     ...prevSchema,
     transactions: {
       byChainId: {
-        [UniverseChainId.Mainnet]: {
+        [UniverseChainId.Monad]: {
           '0': txDetails0,
         },
         [UniverseChainId.Optimism]: {
@@ -90,18 +90,18 @@ export function testRestructureTransactionsAndNotifications(migration: (state: a
   }
 
   const newSchema = migration(initialSchemaStub)
-  expect(newSchema.transactions[UniverseChainId.Mainnet]).toBeUndefined()
+  expect(newSchema.transactions[UniverseChainId.Monad]).toBeUndefined()
   expect(newSchema.transactions.lastTxHistoryUpdate).toBeUndefined()
 
-  expect(newSchema.transactions['0xShadowySuperCoder'][UniverseChainId.Mainnet]['0'].status).toEqual(
+  expect(newSchema.transactions['0xShadowySuperCoder'][UniverseChainId.Monad]['0'].status).toEqual(
     TransactionStatus.Pending,
   )
-  expect(newSchema.transactions['0xKingHodler'][UniverseChainId.Mainnet]).toBeUndefined()
+  expect(newSchema.transactions['0xKingHodler'][UniverseChainId.Monad]).toBeUndefined()
   expect(newSchema.transactions['0xKingHodler'][UniverseChainId.Optimism]['0']).toBeUndefined()
   expect(newSchema.transactions['0xKingHodler'][UniverseChainId.Optimism]['1'].from).toEqual('0xKingHodler')
 
   expect(newSchema.notifications.lastTxNotificationUpdate).toBeDefined()
-  expect(newSchema.notifications.lastTxNotificationUpdate['0xShadowySuperCoder'][UniverseChainId.Mainnet]).toEqual(
+  expect(newSchema.notifications.lastTxNotificationUpdate['0xShadowySuperCoder'][UniverseChainId.Monad]).toEqual(
     12345678912345,
   )
 }
@@ -301,18 +301,15 @@ export function testRemoveDemoAccount(migration: (state: any) => any, prevSchema
   const TEST_ADDRESSES = ['0xTest', OLD_DEMO_ACCOUNT_ADDRESS, '0xTest2', '0xTest3']
   const TEST_IMPORT_TIME_MS = 12345678912345
 
-  const accounts = TEST_ADDRESSES.reduce(
-    (acc, address) => {
-      acc[address] = {
-        address,
-        timeImportedMs: TEST_IMPORT_TIME_MS,
-        type: 'native',
-      } as unknown as Account
+  const accounts = TEST_ADDRESSES.reduce((acc, address) => {
+    acc[address] = {
+      address,
+      timeImportedMs: TEST_IMPORT_TIME_MS,
+      type: 'native',
+    } as unknown as Account
 
-      return acc
-    },
-    {} as { [address: string]: Account },
-  )
+    return acc
+  }, {} as { [address: string]: Account })
 
   const v9SchemaStub = {
     ...prevSchema,
@@ -472,7 +469,7 @@ export function testFilterToSupportedChains(migration: (state: any) => any, prev
 
   const TEST_ADDRESS = '0xShadowySuperCoder'
   const txDetails0 = {
-    chainId: UniverseChainId.Mainnet,
+    chainId: UniverseChainId.Monad,
     id: '0',
     from: TEST_ADDRESS,
     options: {
@@ -522,7 +519,7 @@ export function testFilterToSupportedChains(migration: (state: any) => any, prev
 
   const transactions = {
     [TEST_ADDRESS]: {
-      [UniverseChainId.Mainnet]: {
+      [UniverseChainId.Monad]: {
         '0': txDetails0,
       },
       [UniverseChainId.Base]: {
@@ -567,7 +564,7 @@ export function testFilterToSupportedChains(migration: (state: any) => any, prev
 
   const blocks = {
     byChainId: {
-      [UniverseChainId.Mainnet]: { latestBlockNumber: 123456789 },
+      [UniverseChainId.Monad]: { latestBlockNumber: 123456789 },
       [UniverseChainId.Optimism]: { latestBlockNumber: 123456789 },
       [UniverseChainId.ArbitrumOne]: { latestBlockNumber: 123456789 },
       [UniverseChainId.Base]: { latestBlockNumber: 123456789 },
@@ -580,7 +577,7 @@ export function testFilterToSupportedChains(migration: (state: any) => any, prev
 
   const chains = {
     byChainId: {
-      [UniverseChainId.Mainnet]: { isActive: true },
+      [UniverseChainId.Monad]: { isActive: true },
       [UniverseChainId.Optimism]: { isActive: true },
       [UniverseChainId.ArbitrumOne]: { isActive: true },
       [UniverseChainId.Base]: { isActive: true },
@@ -600,7 +597,7 @@ export function testFilterToSupportedChains(migration: (state: any) => any, prev
 
   const v19 = migration(v18Stub)
 
-  expect(v19.transactions[TEST_ADDRESS][UniverseChainId.Mainnet]).toBeDefined()
+  expect(v19.transactions[TEST_ADDRESS][UniverseChainId.Monad]).toBeDefined()
   expect(v19.transactions[TEST_ADDRESS][UniverseChainId.Base]).toBeDefined()
   expect(v19.transactions[TEST_ADDRESS][GOERLI]).toBeUndefined()
   expect(v19.transactions[TEST_ADDRESS][ROPSTEN]).toBeUndefined()
@@ -613,7 +610,7 @@ export function testFilterToSupportedChains(migration: (state: any) => any, prev
   expect(v19.transactions[TEST_ADDRESS_2][RINKEBY]).toBeUndefined()
   expect(v19.transactions[TEST_ADDRESS_2][KOVAN]).toBeUndefined()
 
-  expect(v19.blocks.byChainId[UniverseChainId.Mainnet]).toBeDefined()
+  expect(v19.blocks.byChainId[UniverseChainId.Monad]).toBeDefined()
   expect(v19.blocks.byChainId[UniverseChainId.Optimism]).toBeDefined()
   expect(v19.blocks.byChainId[UniverseChainId.ArbitrumOne]).toBeDefined()
   expect(v19.blocks.byChainId[UniverseChainId.Base]).toBeDefined()
@@ -622,7 +619,7 @@ export function testFilterToSupportedChains(migration: (state: any) => any, prev
   expect(v19.blocks.byChainId[RINKEBY]).toBeUndefined()
   expect(v19.blocks.byChainId[KOVAN]).toBeUndefined()
 
-  expect(v19.chains.byChainId[UniverseChainId.Mainnet]).toBeDefined()
+  expect(v19.chains.byChainId[UniverseChainId.Monad]).toBeDefined()
   expect(v19.chains.byChainId[UniverseChainId.Optimism]).toBeDefined()
   expect(v19.chains.byChainId[UniverseChainId.ArbitrumOne]).toBeDefined()
   expect(v19.chains.byChainId[UniverseChainId.Base]).toBeDefined()
@@ -740,7 +737,7 @@ export function testMigrateFiatPurchaseTransactionInfo(
   txDetailsConfirmed: any,
 ): void {
   const oldFiatOnRampTxDetails = {
-    chainId: UniverseChainId.Mainnet,
+    chainId: UniverseChainId.Monad,
     id: '0',
     from: account.address,
     options: {
@@ -776,7 +773,7 @@ export function testMigrateFiatPurchaseTransactionInfo(
   }
   const transactions = {
     [account.address]: {
-      [UniverseChainId.Mainnet]: {
+      [UniverseChainId.Monad]: {
         '0': oldFiatOnRampTxDetails,
         '1': txDetailsConfirmed,
       },
@@ -800,7 +797,7 @@ export function testMigrateFiatPurchaseTransactionInfo(
       },
     },
     '0xdeleteMe': {
-      [UniverseChainId.Mainnet]: {
+      [UniverseChainId.Monad]: {
         '0': { ...oldFiatOnRampTxDetails, status: TransactionStatus.Failed },
       },
     },
@@ -810,7 +807,7 @@ export function testMigrateFiatPurchaseTransactionInfo(
   const v30 = migration(v29Stub)
 
   // expect fiat onramp txdetails to change
-  expect(v30.transactions[account.address][UniverseChainId.Mainnet]['0'].typeInfo).toEqual(expectedTypeInfo)
+  expect(v30.transactions[account.address][UniverseChainId.Monad]['0'].typeInfo).toEqual(expectedTypeInfo)
   expect(v30.transactions[account.address][UniverseChainId.Base]['0']).toBeUndefined()
   expect(v30.transactions[account.address][UniverseChainId.ArbitrumOne]).toBeUndefined() // does not create an object for chain
   expect(v30.transactions['0xshadowySuperCoder'][UniverseChainId.ArbitrumOne]['0'].typeInfo).toEqual(expectedTypeInfo)
@@ -818,7 +815,7 @@ export function testMigrateFiatPurchaseTransactionInfo(
   expect(v30.transactions['0xshadowySuperCoder'][UniverseChainId.Optimism]['1'].typeInfo).toEqual(expectedTypeInfo)
   expect(v30.transactions['0xdeleteMe']).toBe(undefined)
   // expect non-for txDetails to not change
-  expect(v30.transactions[account.address][UniverseChainId.Mainnet]['1']).toEqual(txDetailsConfirmed)
+  expect(v30.transactions[account.address][UniverseChainId.Monad]['1']).toEqual(txDetailsConfirmed)
   expect(v30.transactions[account.address][UniverseChainId.Base]['1']).toEqual(txDetailsConfirmed)
   expect(v30.transactions['0xshadowySuperCoder'][UniverseChainId.ArbitrumOne]['1']).toEqual(txDetailsConfirmed)
   expect(v30.transactions['0xshadowySuperCoder'][UniverseChainId.Optimism]['2']).toEqual(txDetailsConfirmed)
@@ -877,7 +874,7 @@ export function testCorrectFailedFiatOnRampTxIds(
   const id3 = '789'
   const transactions = {
     [account.address]: {
-      [UniverseChainId.Mainnet]: {
+      [UniverseChainId.Monad]: {
         [id1]: {
           ...fiatOnRampTxDetailsFailed,
           typeInfo: {
@@ -900,16 +897,16 @@ export function testCorrectFailedFiatOnRampTxIds(
 
   const v36Stub = { ...prevSchema, transactions }
 
-  expect(v36Stub.transactions[account.address]?.[UniverseChainId.Mainnet][id1].typeInfo.id).toBeUndefined()
-  expect(v36Stub.transactions[account.address]?.[UniverseChainId.Mainnet][id2].typeInfo.id).toBeUndefined()
+  expect(v36Stub.transactions[account.address]?.[UniverseChainId.Monad][id1].typeInfo.id).toBeUndefined()
+  expect(v36Stub.transactions[account.address]?.[UniverseChainId.Monad][id2].typeInfo.id).toBeUndefined()
 
   const v37 = migration(v36Stub)
 
-  expect(v37.transactions[account.address]?.[UniverseChainId.Mainnet][id1].typeInfo.id).toEqual(
+  expect(v37.transactions[account.address]?.[UniverseChainId.Monad][id1].typeInfo.id).toEqual(
     fiatOnRampTxDetailsFailed.typeInfo.id,
   )
-  expect(v36Stub.transactions[account.address]?.[UniverseChainId.Mainnet][id2].typeInfo.id).toBeUndefined()
-  expect(v36Stub.transactions[account.address]?.[UniverseChainId.Mainnet][id3]).toEqual(txDetailsConfirmed)
+  expect(v36Stub.transactions[account.address]?.[UniverseChainId.Monad][id2].typeInfo.id).toBeUndefined()
+  expect(v36Stub.transactions[account.address]?.[UniverseChainId.Monad][id3]).toEqual(txDetailsConfirmed)
 }
 
 export function testRemoveReplaceAccountOptions(migration: (state: any) => any, prevSchema: any): void {
@@ -1192,7 +1189,7 @@ export function testDeleteOldOnRampTxData(
   txDetailsConfirmed: any,
 ): void {
   const oldFiatOnRampTxDetails = {
-    chainId: UniverseChainId.Mainnet,
+    chainId: UniverseChainId.Monad,
     id: '0',
     from: account.address,
     options: {
@@ -1210,7 +1207,7 @@ export function testDeleteOldOnRampTxData(
   }
   const transactions = {
     [account.address]: {
-      [UniverseChainId.Mainnet]: {
+      [UniverseChainId.Monad]: {
         '0': oldFiatOnRampTxDetails,
         '1': txDetailsConfirmed,
       },
@@ -1238,8 +1235,8 @@ export function testDeleteOldOnRampTxData(
 
   const v74 = migration(v73Stub)
 
-  expect(v74.transactions[account.address][UniverseChainId.Mainnet]['0']).toBe(undefined)
-  expect(v74.transactions[account.address][UniverseChainId.Mainnet]['1']).toEqual(txDetailsConfirmed)
+  expect(v74.transactions[account.address][UniverseChainId.Monad]['0']).toBe(undefined)
+  expect(v74.transactions[account.address][UniverseChainId.Monad]['1']).toEqual(txDetailsConfirmed)
 
   expect(v74.transactions[account.address][UniverseChainId.Optimism]['0']).toBe(undefined)
   expect(v74.transactions[account.address][UniverseChainId.Optimism]['1'].typeInfo).toEqual({

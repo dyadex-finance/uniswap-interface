@@ -91,7 +91,7 @@ export function PoolDetailsTransactionsTable({
 }) {
   const { t } = useTranslation()
   const multichainTokenUxEnabled = useFeatureFlag(FeatureFlags.MultichainTokenUx)
-  const chainId = useChainIdFromUrlParam() ?? UniverseChainId.Mainnet
+  const chainId = useChainIdFromUrlParam() ?? UniverseChainId.Monad
   const activeLocalCurrency = useAppFiatCurrency()
   const { convertFiatAmountFormatted, formatNumberOrString } = useLocalizationContext()
   const [filterModalIsOpen, toggleFilterModal] = useReducer((s) => !s, false)

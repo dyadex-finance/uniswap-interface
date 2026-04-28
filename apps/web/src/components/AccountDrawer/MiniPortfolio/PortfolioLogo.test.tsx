@@ -6,7 +6,7 @@ import { render } from '~/test-utils/render'
 
 describe('PortfolioLogo', () => {
   it('renders without L2 icon', () => {
-    const { container } = render(<PortfolioLogo chainId={UniverseChainId.Mainnet} currencies={[DAI, USDC_MAINNET]} />)
+    const { container } = render(<PortfolioLogo chainId={UniverseChainId.Monad} currencies={[DAI, USDC_MAINNET]} />)
     expect(container).toMatchSnapshot()
   })
 

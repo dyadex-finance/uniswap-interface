@@ -197,7 +197,7 @@ export function useParsedActivePlanWarnings(): ParsedWarnings {
   const currency = currencyInfo?.currency
 
   // Hooks must always be called — use Mainnet as a safe fallback when no plan is active.
-  const chainIdForHooks = stepChainId ?? UniverseChainId.Mainnet
+  const chainIdForHooks = stepChainId ?? UniverseChainId.Monad
   const accountAddress = useActiveAddress(chainIdForHooks)
 
   const { balance: tokenInBalance } = useOnChainCurrencyBalance(currency, accountAddress)

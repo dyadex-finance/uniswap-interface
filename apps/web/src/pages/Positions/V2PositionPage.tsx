@@ -82,7 +82,7 @@ function V2PositionPage() {
   const chainId = useChainIdFromUrlParam()
   const account = useAccount()
   const supportedAccountChainId = useSupportedChainId(account.chainId)
-  const chainInfo = getChainInfo(chainId ?? UniverseChainId.Mainnet)
+  const chainInfo = getChainInfo(chainId ?? UniverseChainId.Monad)
 
   const {
     data,

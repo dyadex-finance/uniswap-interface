@@ -6,9 +6,8 @@ import { iconSizes } from 'ui/src/theme'
 import { NetworkLogo } from 'uniswap/src/components/CurrencyLogo/NetworkLogo'
 import { InfoTooltip } from 'uniswap/src/components/tooltip/InfoTooltip'
 import { useUnitagsAddressQuery } from 'uniswap/src/data/apiClients/unitagsApi/useUnitagsAddressQuery'
-import { MAINNET_CHAIN_INFO } from 'uniswap/src/features/chains/evm/info/mainnet'
+import { MONAD_CHAIN_INFO } from 'uniswap/src/features/chains/evm/info/monad'
 import { useEnabledChains } from 'uniswap/src/features/chains/hooks/useEnabledChains'
-import { SOLANA_CHAIN_INFO } from 'uniswap/src/features/chains/svm/info/solana'
 import { UniverseChainId } from 'uniswap/src/features/chains/types'
 import { useENSName } from 'uniswap/src/features/ens/api'
 import { Platform } from 'uniswap/src/features/platforms/types/Platform'
@@ -122,15 +121,11 @@ function TooltipAccountRow({ account }: { account: AccountItem }) {
             <Text variant="body4" color="$neutral1">
               {shortenAddress({ address: account.address })}
             </Text>
-            <NetworkLogo
-              chainId={account.platform === Platform.SVM ? UniverseChainId.Solana : UniverseChainId.Mainnet}
-              size={iconSizes.icon12}
-            />
+            <NetworkLogo chainId={UniverseChainId.Monad} size={iconSizes.icon12} />
           </Flex>
           <Text variant="body4" color="$neutral2">
-            {account.platform === Platform.SVM
-              ? SOLANA_CHAIN_INFO.name
-              : MAINNET_CHAIN_INFO.name +
+            {account.platform ===
+              MONAD_CHAIN_INFO.name +
                 ` +${numberOfSupportedEVMChains - 1} ${t('extension.connection.networks').toLowerCase()}`}
           </Text>
         </Flex>
@@ -177,17 +172,11 @@ export function MultiBlockchainAddressDisplay({
     if (evmAddress) {
       accountsList.push({
         address: evmAddress,
-        label: MAINNET_CHAIN_INFO.name,
+        label: MONAD_CHAIN_INFO.name,
         platform: Platform.EVM,
       })
     }
-    if (svmAddress) {
-      accountsList.push({
-        address: svmAddress,
-        label: SOLANA_CHAIN_INFO.name,
-        platform: Platform.SVM,
-      })
-    }
+
     return accountsList
   }, [evmAddress, svmAddress])
 

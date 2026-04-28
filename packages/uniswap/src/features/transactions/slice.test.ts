@@ -63,7 +63,7 @@ const approveTxRequest: TransactionOptions = {
 
 const baseApproveTx: TransactionDetails = {
   id: 'tx1',
-  chainId: UniverseChainId.Mainnet,
+  chainId: UniverseChainId.Monad,
   from: address,
   status: TransactionStatus.Pending,
   hash: undefined,
@@ -81,7 +81,7 @@ const baseInterfaceApproveTx: InterfaceTransactionDetails = {
 
 const baseBridgeTx: TransactionDetails = {
   id: 'tx1',
-  chainId: UniverseChainId.Mainnet,
+  chainId: UniverseChainId.Monad,
   from: address,
   status: TransactionStatus.Pending,
   hash: '0xhash',
@@ -100,7 +100,7 @@ const baseBridgeTx: TransactionDetails = {
 
 const baseSwapTx: TransactionDetails = {
   id: 'tx1',
-  chainId: UniverseChainId.Mainnet,
+  chainId: UniverseChainId.Monad,
   from: address,
   status: TransactionStatus.Pending,
   hash: '0xhash',
@@ -130,9 +130,9 @@ describe('transaction reducer', () => {
         }),
       )
       const txs = store.getState()[address]
-      expect(txs?.[UniverseChainId.Mainnet]).toBeTruthy()
-      expect(txs?.[UniverseChainId.Mainnet]?.['0']).toBeTruthy()
-      const tx = txs?.[UniverseChainId.Mainnet]?.['0']
+      expect(txs?.[UniverseChainId.Monad]).toBeTruthy()
+      expect(txs?.[UniverseChainId.Monad]?.['0']).toBeTruthy()
+      const tx = txs?.[UniverseChainId.Monad]?.['0']
       expect(tx).toBeTruthy()
       expect(tx?.hash).toEqual('0x0')
       expect(tx?.from).toEqual(address)
@@ -142,7 +142,7 @@ describe('transaction reducer', () => {
 
     it('throws if attempting to add a transaction that already exists', () => {
       const id = '5'
-      const chainId = UniverseChainId.Mainnet
+      const chainId = UniverseChainId.Monad
       store.dispatch(
         addTransaction({
           ...baseApproveTx,
@@ -248,13 +248,13 @@ describe('transaction reducer', () => {
           quantity: '1000000000000000000',
           tokenSymbol: 'ETH',
           tokenAddress: '0x0000000000000000000000000000000000000000',
-          chainId: UniverseChainId.Mainnet,
+          chainId: UniverseChainId.Monad,
           valueType: ValueType.Exact,
         }
 
         store.dispatch(addTransaction(baseInterfaceApproveTx))
         const finalized: FinalizedTransactionDetails = {
-          chainId: UniverseChainId.Mainnet,
+          chainId: UniverseChainId.Monad,
           id: 'tx1',
           from: address,
           status: TransactionStatus.Success,
@@ -267,7 +267,7 @@ describe('transaction reducer', () => {
         } as unknown as FinalizedTransactionDetails
         store.dispatch(finalizeTransaction(finalized))
 
-        const tx = store.getState()[address]?.[UniverseChainId.Mainnet]?.['tx1'] as InterfaceTransactionDetails
+        const tx = store.getState()[address]?.[UniverseChainId.Monad]?.['tx1'] as InterfaceTransactionDetails
         expect(tx.status).toEqual(TransactionStatus.Success)
         expect(tx.networkFee).toEqual(networkFee)
         expect(tx.receipt?.confirmedTime).toBeDefined()
@@ -276,7 +276,7 @@ describe('transaction reducer', () => {
       it('finalizes an interface transaction without network fee', () => {
         store.dispatch(addTransaction(baseInterfaceApproveTx))
         const finalizedNoFee: FinalizedTransactionDetails = {
-          chainId: UniverseChainId.Mainnet,
+          chainId: UniverseChainId.Monad,
           id: 'tx1',
           from: address,
           status: TransactionStatus.Success,
@@ -288,7 +288,7 @@ describe('transaction reducer', () => {
         } as unknown as FinalizedTransactionDetails
         store.dispatch(finalizeTransaction(finalizedNoFee))
 
-        const tx = store.getState()[address]?.[UniverseChainId.Mainnet]?.['tx1'] as InterfaceTransactionDetails
+        const tx = store.getState()[address]?.[UniverseChainId.Monad]?.['tx1'] as InterfaceTransactionDetails
         expect(tx.status).toEqual(TransactionStatus.Success)
         expect(tx.networkFee).toBeUndefined()
         expect(tx.receipt?.confirmedTime).toBeDefined()
@@ -375,7 +375,7 @@ describe('transaction reducer', () => {
     it('should clear all transactions for a specific chain and address', () => {
       const initialState: TransactionsState = {
         [address]: {
-          [UniverseChainId.Mainnet]: {
+          [UniverseChainId.Monad]: {
             tx1: baseInterfaceApproveTx,
             tx2: {
               ...baseInterfaceApproveTx,
@@ -395,9 +395,9 @@ describe('transaction reducer', () => {
       }
 
       store = createStore(transactionReducer, initialState)
-      store.dispatch(interfaceClearAllTransactions({ chainId: UniverseChainId.Mainnet, address }))
+      store.dispatch(interfaceClearAllTransactions({ chainId: UniverseChainId.Monad, address }))
 
-      expect(store.getState()[address]?.[UniverseChainId.Mainnet]).toEqual({})
+      expect(store.getState()[address]?.[UniverseChainId.Monad]).toEqual({})
       expect(store.getState()[address]?.[UniverseChainId.Optimism]).toEqual(
         initialState[address]?.[UniverseChainId.Optimism],
       ) // Should remain unchanged
@@ -406,7 +406,7 @@ describe('transaction reducer', () => {
     it('should do nothing if chain does not exist', () => {
       const initialState: TransactionsState = {
         [address]: {
-          [UniverseChainId.Mainnet]: {
+          [UniverseChainId.Monad]: {
             tx1: baseInterfaceApproveTx,
           },
         },
@@ -428,14 +428,14 @@ describe('transaction reducer', () => {
       const nonExistentAddress = '0xnonexistentaddress'
       const initialState: TransactionsState = {
         [address]: {
-          [UniverseChainId.Mainnet]: {
+          [UniverseChainId.Monad]: {
             tx1: baseApproveTx,
           },
         },
       }
       store = createStore(transactionReducer, initialState)
       try {
-        store.dispatch(interfaceClearAllTransactions({ chainId: UniverseChainId.Mainnet, address: nonExistentAddress }))
+        store.dispatch(interfaceClearAllTransactions({ chainId: UniverseChainId.Monad, address: nonExistentAddress }))
       } catch (error) {
         expect(error).toEqual(
           Error(`interfaceClearAllTransactions: Attempted to access a missing transaction with id tx1`),
@@ -449,7 +449,7 @@ describe('transaction reducer', () => {
     it('should update lastCheckedBlockNumber for pending transaction', () => {
       const initialState: TransactionsState = {
         [address]: {
-          [UniverseChainId.Mainnet]: {
+          [UniverseChainId.Monad]: {
             tx1: {
               ...baseApproveTx,
               lastCheckedBlockNumber: 100,
@@ -461,7 +461,7 @@ describe('transaction reducer', () => {
       store = createStore(transactionReducer, initialState)
       store.dispatch(
         checkedTransaction({
-          chainId: UniverseChainId.Mainnet,
+          chainId: UniverseChainId.Monad,
           id: 'tx1',
           address,
           blockNumber: 150,
@@ -469,14 +469,14 @@ describe('transaction reducer', () => {
       )
 
       expect(
-        (store.getState()[address]?.[UniverseChainId.Mainnet]?.['tx1'] as TransactionDetails).lastCheckedBlockNumber,
+        (store.getState()[address]?.[UniverseChainId.Monad]?.['tx1'] as TransactionDetails).lastCheckedBlockNumber,
       ).toBe(150)
     })
 
     it('should set lastCheckedBlockNumber if not already set', () => {
       const initialState: TransactionsState = {
         [address]: {
-          [UniverseChainId.Mainnet]: {
+          [UniverseChainId.Monad]: {
             tx1: baseApproveTx,
           },
         },
@@ -485,7 +485,7 @@ describe('transaction reducer', () => {
       store = createStore(transactionReducer, initialState)
       store.dispatch(
         checkedTransaction({
-          chainId: UniverseChainId.Mainnet,
+          chainId: UniverseChainId.Monad,
           id: 'tx1',
           address,
           blockNumber: 100,
@@ -493,14 +493,14 @@ describe('transaction reducer', () => {
       )
 
       expect(
-        (store.getState()[address]?.[UniverseChainId.Mainnet]?.['tx1'] as TransactionDetails).lastCheckedBlockNumber,
+        (store.getState()[address]?.[UniverseChainId.Monad]?.['tx1'] as TransactionDetails).lastCheckedBlockNumber,
       ).toBe(100)
     })
 
     it('should update lastCheckedBlockNumber to max value when called multiple times', () => {
       const initialState: TransactionsState = {
         [address]: {
-          [UniverseChainId.Mainnet]: {
+          [UniverseChainId.Monad]: {
             tx1: baseApproveTx,
           },
         },
@@ -509,7 +509,7 @@ describe('transaction reducer', () => {
       store = createStore(transactionReducer, initialState)
       store.dispatch(
         checkedTransaction({
-          chainId: UniverseChainId.Mainnet,
+          chainId: UniverseChainId.Monad,
           id: 'tx1',
           address,
           blockNumber: 100,
@@ -517,7 +517,7 @@ describe('transaction reducer', () => {
       )
       store.dispatch(
         checkedTransaction({
-          chainId: UniverseChainId.Mainnet,
+          chainId: UniverseChainId.Monad,
           id: 'tx1',
           address,
           blockNumber: 150,
@@ -525,14 +525,14 @@ describe('transaction reducer', () => {
       )
 
       expect(
-        (store.getState()[address]?.[UniverseChainId.Mainnet]?.['tx1'] as TransactionDetails).lastCheckedBlockNumber,
+        (store.getState()[address]?.[UniverseChainId.Monad]?.['tx1'] as TransactionDetails).lastCheckedBlockNumber,
       ).toBe(150)
     })
 
     it('should not update non-pending transaction', () => {
       const initialState: TransactionsState = {
         [address]: {
-          [UniverseChainId.Mainnet]: {
+          [UniverseChainId.Monad]: {
             tx1: {
               ...baseApproveTx,
               status: TransactionStatus.Success,
@@ -546,7 +546,7 @@ describe('transaction reducer', () => {
       expect(() => {
         store.dispatch(
           checkedTransaction({
-            chainId: UniverseChainId.Mainnet,
+            chainId: UniverseChainId.Monad,
             id: 'tx1',
             address,
             blockNumber: 150,
@@ -555,14 +555,14 @@ describe('transaction reducer', () => {
       }).toThrow('checkedTransaction: Attempted to check a non-pending transaction with id tx1')
 
       expect(
-        (store.getState()[address]?.[UniverseChainId.Mainnet]?.['tx1'] as TransactionDetails).lastCheckedBlockNumber,
+        (store.getState()[address]?.[UniverseChainId.Monad]?.['tx1'] as TransactionDetails).lastCheckedBlockNumber,
       ).toBe(100) // Should remain unchanged
     })
 
     it('should do nothing if transaction does not exist', () => {
       const initialState: TransactionsState = {
         [address]: {
-          [UniverseChainId.Mainnet]: {
+          [UniverseChainId.Monad]: {
             tx1: baseApproveTx,
           },
         },
@@ -572,7 +572,7 @@ describe('transaction reducer', () => {
       try {
         store.dispatch(
           checkedTransaction({
-            chainId: UniverseChainId.Mainnet,
+            chainId: UniverseChainId.Monad,
             id: 'nonexistent',
             address,
             blockNumber: 150,
@@ -592,7 +592,7 @@ describe('transaction reducer', () => {
     it('should mark bridge transaction as deposit confirmed', () => {
       const initialState: TransactionsState = {
         [address]: {
-          [UniverseChainId.Mainnet]: {
+          [UniverseChainId.Monad]: {
             tx1: baseBridgeTx,
           },
         },
@@ -601,14 +601,14 @@ describe('transaction reducer', () => {
       store = createStore(transactionReducer, initialState)
       store.dispatch(
         interfaceConfirmBridgeDeposit({
-          chainId: UniverseChainId.Mainnet,
+          chainId: UniverseChainId.Monad,
           id: 'tx1',
           address,
         }),
       )
 
       expect(
-        (store.getState()[address]?.[UniverseChainId.Mainnet]?.['tx1']?.typeInfo as BridgeTransactionInfo)
+        (store.getState()[address]?.[UniverseChainId.Monad]?.['tx1']?.typeInfo as BridgeTransactionInfo)
           .depositConfirmed,
       ).toBe(true)
     })
@@ -616,7 +616,7 @@ describe('transaction reducer', () => {
     it('should not update non-bridge transaction', () => {
       const initialState: TransactionsState = {
         [address]: {
-          [UniverseChainId.Mainnet]: {
+          [UniverseChainId.Monad]: {
             tx1: baseSwapTx,
           },
         },
@@ -626,7 +626,7 @@ describe('transaction reducer', () => {
       try {
         store.dispatch(
           interfaceConfirmBridgeDeposit({
-            chainId: UniverseChainId.Mainnet,
+            chainId: UniverseChainId.Monad,
             id: 'tx1',
             address,
           }),
@@ -638,7 +638,7 @@ describe('transaction reducer', () => {
       }
 
       expect(
-        (store.getState()[address]?.[UniverseChainId.Mainnet]?.['tx1']?.typeInfo as BridgeTransactionInfo)
+        (store.getState()[address]?.[UniverseChainId.Monad]?.['tx1']?.typeInfo as BridgeTransactionInfo)
           .depositConfirmed,
       ).toBeUndefined()
     })
@@ -646,7 +646,7 @@ describe('transaction reducer', () => {
     it('should do nothing if transaction does not exist', () => {
       const initialState: TransactionsState = {
         [address]: {
-          [UniverseChainId.Mainnet]: {
+          [UniverseChainId.Monad]: {
             tx1: baseBridgeTx,
           },
         },
@@ -656,7 +656,7 @@ describe('transaction reducer', () => {
       try {
         store.dispatch(
           interfaceConfirmBridgeDeposit({
-            chainId: UniverseChainId.Mainnet,
+            chainId: UniverseChainId.Monad,
             id: 'nonexistent',
             address,
           }),
@@ -675,7 +675,7 @@ describe('transaction reducer', () => {
     it('should update transaction typeInfo', () => {
       const initialState: TransactionsState = {
         [address]: {
-          [UniverseChainId.Mainnet]: {
+          [UniverseChainId.Monad]: {
             tx1: {
               ...baseSwapTx,
               typeInfo: {
@@ -695,20 +695,20 @@ describe('transaction reducer', () => {
       store = createStore(transactionReducer, initialState)
       store.dispatch(
         interfaceUpdateTransactionInfo({
-          chainId: UniverseChainId.Mainnet,
+          chainId: UniverseChainId.Monad,
           id: 'tx1',
           address,
           typeInfo: newTypeInfo,
         }),
       )
 
-      expect(store.getState()[address]?.[UniverseChainId.Mainnet]?.['tx1']?.typeInfo).toEqual(newTypeInfo)
+      expect(store.getState()[address]?.[UniverseChainId.Monad]?.['tx1']?.typeInfo).toEqual(newTypeInfo)
     })
 
     it('should not update if transaction type does not match', () => {
       const initialState: TransactionsState = {
         [address]: {
-          [UniverseChainId.Mainnet]: {
+          [UniverseChainId.Monad]: {
             tx1: baseSwapTx,
           },
         },
@@ -724,7 +724,7 @@ describe('transaction reducer', () => {
       try {
         store.dispatch(
           interfaceUpdateTransactionInfo({
-            chainId: UniverseChainId.Mainnet,
+            chainId: UniverseChainId.Monad,
             id: 'tx1',
             address,
             typeInfo: newTypeInfo,
@@ -736,15 +736,15 @@ describe('transaction reducer', () => {
         )
       }
 
-      expect(store.getState()[address]?.[UniverseChainId.Mainnet]?.['tx1']?.typeInfo).toEqual(
-        initialState[address]?.[UniverseChainId.Mainnet]?.['tx1']?.typeInfo,
+      expect(store.getState()[address]?.[UniverseChainId.Monad]?.['tx1']?.typeInfo).toEqual(
+        initialState[address]?.[UniverseChainId.Monad]?.['tx1']?.typeInfo,
       ) // Should remain unchanged
     })
 
     it('should do nothing if transaction does not exist', () => {
       const initialState: TransactionsState = {
         [address]: {
-          [UniverseChainId.Mainnet]: {
+          [UniverseChainId.Monad]: {
             tx1: baseSwapTx,
           },
         },
@@ -759,7 +759,7 @@ describe('transaction reducer', () => {
       try {
         store.dispatch(
           interfaceUpdateTransactionInfo({
-            chainId: UniverseChainId.Mainnet,
+            chainId: UniverseChainId.Monad,
             id: 'nonexistent',
             address,
             typeInfo: newTypeInfo,
@@ -777,7 +777,7 @@ describe('transaction reducer', () => {
     it('should do nothing if address does not exist in state', () => {
       const initialState: TransactionsState = {
         [address]: {
-          [UniverseChainId.Mainnet]: {
+          [UniverseChainId.Monad]: {
             tx1: baseSwapTx,
           },
         },
@@ -792,7 +792,7 @@ describe('transaction reducer', () => {
       try {
         store.dispatch(
           interfaceUpdateTransactionInfo({
-            chainId: UniverseChainId.Mainnet,
+            chainId: UniverseChainId.Monad,
             id: 'tx1',
             address: '0xnonexistent',
             typeInfo: newTypeInfo,
@@ -810,7 +810,7 @@ describe('transaction reducer', () => {
     it('should do nothing if chainId does not exist for address', () => {
       const initialState: TransactionsState = {
         [address]: {
-          [UniverseChainId.Mainnet]: {
+          [UniverseChainId.Monad]: {
             tx1: baseSwapTx,
           },
         },
@@ -845,7 +845,7 @@ describe('transaction reducer', () => {
     it('should replace batch transaction with hash transaction', () => {
       const initialState = {
         [address]: {
-          [UniverseChainId.Mainnet]: {
+          [UniverseChainId.Monad]: {
             batch1: {
               ...baseApproveTx,
               id: 'batch1',
@@ -860,20 +860,20 @@ describe('transaction reducer', () => {
         interfaceApplyTransactionHashToBatch({
           batchId: 'batch1',
           hash: '0xhash',
-          chainId: UniverseChainId.Mainnet,
+          chainId: UniverseChainId.Monad,
           address,
         }),
       )
 
-      expect(store.getState()[address]?.[UniverseChainId.Mainnet]?.['0xhash']).toBeDefined()
-      expect(store.getState()[address]?.[UniverseChainId.Mainnet]?.['0xhash']?.hash).toBe('0xhash')
-      expect(store.getState()[address]?.[UniverseChainId.Mainnet]?.['batch1']).toBeUndefined()
+      expect(store.getState()[address]?.[UniverseChainId.Monad]?.['0xhash']).toBeDefined()
+      expect(store.getState()[address]?.[UniverseChainId.Monad]?.['0xhash']?.hash).toBe('0xhash')
+      expect(store.getState()[address]?.[UniverseChainId.Monad]?.['batch1']).toBeUndefined()
     })
 
     it('should do nothing if batch transaction does not exist', () => {
       const initialState: TransactionsState = {
         [address]: {
-          [UniverseChainId.Mainnet]: {
+          [UniverseChainId.Monad]: {
             tx1: baseApproveTx,
           },
         },
@@ -884,7 +884,7 @@ describe('transaction reducer', () => {
         interfaceApplyTransactionHashToBatch({
           batchId: 'nonexistent',
           hash: '0xhash',
-          chainId: UniverseChainId.Mainnet,
+          chainId: UniverseChainId.Monad,
           address,
         }),
       )
@@ -897,7 +897,7 @@ describe('transaction reducer', () => {
     it('should update existing transaction with cancelled status and new hash', () => {
       const initialState: TransactionsState = {
         [address]: {
-          [UniverseChainId.Mainnet]: {
+          [UniverseChainId.Monad]: {
             tx1: {
               ...baseApproveTx,
               hash: '0xold',
@@ -909,7 +909,7 @@ describe('transaction reducer', () => {
       store = createStore(transactionReducer, initialState)
       store.dispatch(
         interfaceCancelTransaction({
-          chainId: UniverseChainId.Mainnet,
+          chainId: UniverseChainId.Monad,
           id: 'tx1',
           address,
           cancelHash: '0xnew',
@@ -918,7 +918,7 @@ describe('transaction reducer', () => {
 
       // The transaction should still exist under the same ID
       const cancelledTx: InterfaceTransactionDetails | undefined =
-        store.getState()[address]?.[UniverseChainId.Mainnet]?.['tx1']
+        store.getState()[address]?.[UniverseChainId.Monad]?.['tx1']
       expect(cancelledTx).toBeDefined()
       expect(cancelledTx?.id).toBe('tx1')
       expect(cancelledTx?.hash).toBe('0xnew')
@@ -928,7 +928,7 @@ describe('transaction reducer', () => {
     it('should not modify state when transaction does not exist', () => {
       const initialState: TransactionsState = {
         [address]: {
-          [UniverseChainId.Mainnet]: {
+          [UniverseChainId.Monad]: {
             tx1: {
               ...baseApproveTx,
               hash: '0xold',
@@ -941,7 +941,7 @@ describe('transaction reducer', () => {
       try {
         store.dispatch(
           interfaceCancelTransaction({
-            chainId: UniverseChainId.Mainnet,
+            chainId: UniverseChainId.Monad,
             id: 'nonexistent',
             address,
             cancelHash: '0xnew',

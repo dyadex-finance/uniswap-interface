@@ -12,9 +12,8 @@ import { useUniswapContext } from 'uniswap/src/contexts/UniswapContext'
 import { AccountIcon } from 'uniswap/src/features/accounts/AccountIcon'
 import { DisplayNameType } from 'uniswap/src/features/accounts/types'
 import { useAddressColorProps } from 'uniswap/src/features/address/color'
-import { MAINNET_CHAIN_INFO } from 'uniswap/src/features/chains/evm/info/mainnet'
+import { MONAD_CHAIN_INFO } from 'uniswap/src/features/chains/evm/info/monad'
 import { useEnabledChains } from 'uniswap/src/features/chains/hooks/useEnabledChains'
-import { SOLANA_CHAIN_INFO } from 'uniswap/src/features/chains/svm/info/solana'
 import { UniverseChainId } from 'uniswap/src/features/chains/types'
 import { pushNotification } from 'uniswap/src/features/notifications/slice/slice'
 import { AppNotificationType, CopyNotificationType } from 'uniswap/src/features/notifications/slice/types'
@@ -33,7 +32,7 @@ export function ReceiveQRCode({ address }: { address: Address }): JSX.Element | 
   const dispatch = useDispatch()
   const addressColor = useAddressColorProps(address)
   const { chains: enabledChainIds } = useEnabledChains({
-    platform: isEVMAddress(address) ? Platform.EVM : Platform.SVM,
+    platform: Platform.EVM,
   })
   const isShortMobileDevice = useIsShortMobileDevice()
 
@@ -45,7 +44,7 @@ export function ReceiveQRCode({ address }: { address: Address }): JSX.Element | 
   const displayHeaderAddress = displayName?.type === DisplayNameType.Address
   const platformAddressLabel = isWebApp
     ? t('common.address.chain', {
-        chainName: isEVMAddress(address) ? MAINNET_CHAIN_INFO.name : SOLANA_CHAIN_INFO.name,
+        chainName: MONAD_CHAIN_INFO.name,
       })
     : t('common.walletAddress')
 
@@ -161,19 +160,10 @@ export function ReceiveQRCode({ address }: { address: Address }): JSX.Element | 
             <Text variant="body3">{t('fiatOnRamp.receiveCrypto.useThisAddress')}</Text>
           </Flex>
           <Flex row centered gap="$gap4">
-            {isEVMAddress(address) ? (
-              <>
-                <NetworkLogo chainId={null} size={iconSizes.icon20} />
-                <Text variant="buttonLabel3">
-                  {enabledChainIds.length} {t('extension.connection.networks').toLowerCase()}
-                </Text>
-              </>
-            ) : (
-              <>
-                <NetworkLogo chainId={UniverseChainId.Solana} size={iconSizes.icon20} />
-                <Text variant="buttonLabel3">{SOLANA_CHAIN_INFO.name}</Text>
-              </>
-            )}
+            <NetworkLogo chainId={null} size={iconSizes.icon20} />
+            <Text variant="buttonLabel3">
+              {enabledChainIds.length} {t('extension.connection.networks').toLowerCase()}
+            </Text>
             <InfoCircleFilled color="$neutral3" size="$icon.12" />
           </Flex>
         </TouchableArea>

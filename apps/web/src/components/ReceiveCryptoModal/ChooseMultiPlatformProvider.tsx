@@ -4,9 +4,8 @@ import { Flex, Text, TouchableArea, useIsDarkMode, useSporeColors } from 'ui/src
 import { iconSizes } from 'ui/src/theme'
 import { NetworkLogo } from 'uniswap/src/components/CurrencyLogo/NetworkLogo'
 import { UNISWAP_WEB_URL } from 'uniswap/src/constants/urls'
-import { MAINNET_CHAIN_INFO } from 'uniswap/src/features/chains/evm/info/mainnet'
+import { MONAD_CHAIN_INFO } from 'uniswap/src/features/chains/evm/info/monad'
 import { useEnabledChains } from 'uniswap/src/features/chains/hooks/useEnabledChains'
-import { SOLANA_CHAIN_INFO } from 'uniswap/src/features/chains/svm/info/solana'
 import { UniverseChainId } from 'uniswap/src/features/chains/types'
 import { ServiceProviderLogoStyles } from 'uniswap/src/features/fiatOnRamp/constants'
 import { useFiatOnRampAggregatorTransferWidgetQuery } from 'uniswap/src/features/fiatOnRamp/hooks/useFiatOnRampQueries'
@@ -117,26 +116,17 @@ function ProviderPlatform({
         style={{ transition: 'background-color 0.2s ease-in-out' }}
       >
         <Flex row alignItems="center" gap="$spacing12" width="100%" justifyContent="space-between">
-          {platform === Platform.EVM ? (
-            <Flex row alignItems="center" gap="$spacing12">
-              <NetworkLogo chainId={null} size={iconSizes.icon36} animation="100ms" />
-              <Flex row centered gap="$spacing4">
-                <Text color="$neutral1" variant="body2">
-                  {MAINNET_CHAIN_INFO.name}
-                </Text>
-                <Text color="$neutral2" variant="body4">
-                  {`+${evmChains.length - 1} ${t('extension.connection.networks').toLowerCase()}`}
-                </Text>
-              </Flex>
-            </Flex>
-          ) : (
-            <Flex row alignItems="center" gap="$spacing12">
-              <NetworkLogo chainId={UniverseChainId.Solana} size={iconSizes.icon36} animation="100ms" />
+          <Flex row alignItems="center" gap="$spacing12">
+            <NetworkLogo chainId={null} size={iconSizes.icon36} animation="100ms" />
+            <Flex row centered gap="$spacing4">
               <Text color="$neutral1" variant="body2">
-                {SOLANA_CHAIN_INFO.name}
+                {MONAD_CHAIN_INFO.name}
+              </Text>
+              <Text color="$neutral2" variant="body4">
+                {`+${evmChains.length - 1} ${t('extension.connection.networks').toLowerCase()}`}
               </Text>
             </Flex>
-          )}
+          </Flex>
 
           <Text animation="100ms" color="$neutral2" variant="body4">
             {shortenAddress({ address })}

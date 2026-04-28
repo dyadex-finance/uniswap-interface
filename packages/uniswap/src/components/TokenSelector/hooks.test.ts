@@ -98,7 +98,7 @@ const favoriteTokens = [eth, dai, usdc_base]
 const favoriteTokenBalances = [ethBalance, daiBalance, usdcBaseBalance]
 
 const favoriteCurrencyIds = favoriteTokens.map((t) =>
-  buildCurrencyId(fromGraphQLChain(t.chain) ?? UniverseChainId.Mainnet, t.address),
+  buildCurrencyId(fromGraphQLChain(t.chain) ?? UniverseChainId.Monad, t.address),
 )
 
 const preloadedState: PreloadedState<UniswapState> = {
@@ -714,12 +714,12 @@ describe(useTrendingTokensOptions, () => {
     // Mock the currency info conversion function
     mockTokenRankingsStatToCurrencyInfo.mockImplementation((tokenRankingsStat: TokenRankingsStat) => ({
       currencyId: buildCurrencyId(
-        fromGraphQLChain(tokenRankingsStat.chain) ?? UniverseChainId.Mainnet,
+        fromGraphQLChain(tokenRankingsStat.chain) ?? UniverseChainId.Monad,
         tokenRankingsStat.address,
       ),
       currency: {
         address: tokenRankingsStat.address,
-        chainId: fromGraphQLChain(tokenRankingsStat.chain) ?? UniverseChainId.Mainnet,
+        chainId: fromGraphQLChain(tokenRankingsStat.chain) ?? UniverseChainId.Monad,
         name: tokenRankingsStat.name,
         symbol: tokenRankingsStat.symbol,
         decimals: tokenRankingsStat.decimals,
@@ -910,7 +910,7 @@ describe(useCommonTokensOptionsWithFallback, () => {
       test: 'returns balances for tokens in the tokenProject filtered by chain',
       portfolioInput: tokenBalances,
       tokenProjectsInput: [tokenProject({ tokens })],
-      chainFilter: UniverseChainId.Mainnet as UniverseChainId,
+      chainFilter: UniverseChainId.Monad as UniverseChainId,
       output: {
         data: expect.toIncludeSameMembers([
           // DAI and ETH have Mainnet chain
@@ -992,7 +992,7 @@ describe(useFavoriteTokensOptions, () => {
       test: 'returns balances for favorite tokens in the tokenProject filtered by chain',
       portfolioInput: tokenBalances,
       tokenProjectsInput: [tokenProject({ tokens: favoriteTokens })],
-      chainFilter: UniverseChainId.Mainnet as UniverseChainId,
+      chainFilter: UniverseChainId.Monad as UniverseChainId,
       output: {
         data: expect.toIncludeSameMembers([
           // DAI and ETH have Mainnet chain
@@ -1051,7 +1051,7 @@ describe(useRecentlySearchedTokens, () => {
           },
           {
             type: SearchHistoryResultType.Token,
-            chainId: UniverseChainId.Mainnet, // Valid
+            chainId: UniverseChainId.Monad, // Valid
             address: '0x2260fac5e5542a773aa44fbcfedf7c193bc2c599',
             searchId: 'token-1-0x2260fac5e5542a773aa44fbcfedf7c193bc2c599',
           },
@@ -1079,7 +1079,7 @@ describe(useRecentlySearchedTokens, () => {
           },
           {
             type: SearchHistoryResultType.Token,
-            chainId: UniverseChainId.Mainnet, // Valid
+            chainId: UniverseChainId.Monad, // Valid
             address: '0x2260fac5e5542a773aa44fbcfedf7c193bc2c599',
             searchId: 'token-1-0x2260fac5e5542a773aa44fbcfedf7c193bc2c599',
           },

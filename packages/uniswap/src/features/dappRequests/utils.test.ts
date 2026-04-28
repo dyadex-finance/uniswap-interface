@@ -73,7 +73,7 @@ describe('isSelfCallWithData', () => {
         from: testCase.from,
         to: testCase.to,
         data: testCase.data,
-        chainId: UniverseChainId.Mainnet,
+        chainId: UniverseChainId.Monad,
       })
       expect(result).toBe(testCase.expected)
     })

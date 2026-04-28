@@ -10,7 +10,7 @@ describe('getChainFilterFromSearchParams', () => {
     const params = new URLSearchParams(`${CHAIN_SEARCH_PARAM}=ethereum`)
     expect(getChainFilterFromSearchParams(params)).toEqual({
       chainUrlParam: 'ethereum',
-      chainId: UniverseChainId.Mainnet,
+      chainId: UniverseChainId.Monad,
     })
   })
 

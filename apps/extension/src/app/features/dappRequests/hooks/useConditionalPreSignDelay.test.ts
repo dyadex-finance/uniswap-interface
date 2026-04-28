@@ -60,11 +60,11 @@ describe('useConditionalPreSignDelay', () => {
       renderHook(() =>
         useConditionalPreSignDelay({
           callback: mockCallback,
-          chainId: UniverseChainId.Mainnet,
+          chainId: UniverseChainId.Monad,
         }),
       )
 
-      expect(mockGetDelayForChainId).toHaveBeenCalledWith(UniverseChainId.Mainnet, 1500)
+      expect(mockGetDelayForChainId).toHaveBeenCalledWith(UniverseChainId.Monad, 1500)
       expect(setTimeoutSpy).toHaveBeenCalledWith(expect.any(Function), 0)
 
       // Fast-forward timers to execute the callback
@@ -99,11 +99,11 @@ describe('useConditionalPreSignDelay', () => {
       renderHook(() =>
         useConditionalPreSignDelay({
           callback: mockCallback,
-          chainId: UniverseChainId.Mainnet,
+          chainId: UniverseChainId.Monad,
         }),
       )
 
-      expect(mockGetDelayForChainId).toHaveBeenCalledWith(UniverseChainId.Mainnet, 1500)
+      expect(mockGetDelayForChainId).toHaveBeenCalledWith(UniverseChainId.Monad, 1500)
       expect(setTimeoutSpy).toHaveBeenCalledWith(expect.any(Function), 500)
 
       // Callback should not be called immediately
@@ -122,7 +122,7 @@ describe('useConditionalPreSignDelay', () => {
       const { unmount } = renderHook(() =>
         useConditionalPreSignDelay({
           callback: mockCallback,
-          chainId: UniverseChainId.Mainnet,
+          chainId: UniverseChainId.Monad,
         }),
       )
 
@@ -155,7 +155,7 @@ describe('useConditionalPreSignDelay', () => {
             chainId,
           }),
         {
-          initialProps: { chainId: UniverseChainId.Mainnet },
+          initialProps: { chainId: UniverseChainId.Monad },
         },
       )
 
@@ -180,7 +180,7 @@ describe('useConditionalPreSignDelay', () => {
         ({ callback }) =>
           useConditionalPreSignDelay({
             callback,
-            chainId: UniverseChainId.Mainnet,
+            chainId: UniverseChainId.Monad,
           }),
         {
           initialProps: { callback: mockCallback },
@@ -213,7 +213,7 @@ describe('useConditionalPreSignDelay', () => {
       const { unmount } = renderHook(() =>
         useConditionalPreSignDelay({
           callback: mockCallback,
-          chainId: UniverseChainId.Mainnet,
+          chainId: UniverseChainId.Monad,
         }),
       )
 
@@ -233,7 +233,7 @@ describe('useConditionalPreSignDelay', () => {
         ({ callback }) =>
           useConditionalPreSignDelay({
             callback,
-            chainId: UniverseChainId.Mainnet,
+            chainId: UniverseChainId.Monad,
           }),
         {
           initialProps: { callback: mockCallback },
@@ -259,7 +259,7 @@ describe('useConditionalPreSignDelay', () => {
       renderHook(() =>
         useConditionalPreSignDelay({
           callback: asyncCallback,
-          chainId: UniverseChainId.Mainnet,
+          chainId: UniverseChainId.Monad,
         }),
       )
 
@@ -280,7 +280,7 @@ describe('useConditionalPreSignDelay', () => {
         renderHook(() =>
           useConditionalPreSignDelay({
             callback: errorCallback,
-            chainId: UniverseChainId.Mainnet,
+            chainId: UniverseChainId.Monad,
           }),
         )
 

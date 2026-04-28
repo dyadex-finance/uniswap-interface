@@ -31,7 +31,7 @@ const KNOWN_BALANCE_SLOTS: Record<string, number> = {
 const allowedErc20BalanceAddresses = [
   USDT.address,
   DAI.address,
-  WETH_ADDRESS(UniverseChainId.Mainnet),
+  WETH_ADDRESS(UniverseChainId.Monad),
   ...Object.keys(KNOWN_BALANCE_SLOTS),
 ]
 
@@ -110,7 +110,7 @@ const createAnvilClient = () => {
     },
     async getPermit2Allowance({ owner, token, spender }: { owner?: Address; token: Address; spender: Address }) {
       const data = await client.readContract({
-        address: assume0xAddress(permit2Address(UniverseChainId.Mainnet)),
+        address: assume0xAddress(permit2Address(UniverseChainId.Monad)),
         abi: PERMIT2_ABI,
         functionName: 'allowance',
         args: [owner ?? TEST_WALLET_ADDRESS, token, spender],
@@ -133,7 +133,7 @@ const createAnvilClient = () => {
       expiration?: number
     }) {
       await client.writeContract({
-        address: assume0xAddress(permit2Address(UniverseChainId.Mainnet)),
+        address: assume0xAddress(permit2Address(UniverseChainId.Monad)),
         abi: PERMIT2_ABI,
         functionName: 'approve',
         args: [token, spender, amount, expiration],

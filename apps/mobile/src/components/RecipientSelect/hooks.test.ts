@@ -219,7 +219,7 @@ describe(useRecipients, () => {
           transactions: {
             [activeAccount.address]: {
               [UniverseChainId.Base as UniverseChainId]: [sendTxDetailsPending, sendTxDetailsConfirmed],
-              [UniverseChainId.Mainnet as UniverseChainId]: [sendTxDetailsConfirmed, sendTxDetailsFailed],
+              [UniverseChainId.Monad as UniverseChainId]: [sendTxDetailsConfirmed, sendTxDetailsFailed],
               [UniverseChainId.Bnb as UniverseChainId]: [sendTxDetailsPending, sendTxDetailsConfirmed],
             },
           },
@@ -271,7 +271,7 @@ describe(useRecipients, () => {
           transactions: {
             [activeAccount.address]: {
               [UniverseChainId.Base as UniverseChainId]: [sendTxDetailsPending, sendTxDetailsConfirmed],
-              [UniverseChainId.Mainnet as UniverseChainId]: [sendTxDetailsConfirmed, sendTxDetailsFailed],
+              [UniverseChainId.Monad as UniverseChainId]: [sendTxDetailsConfirmed, sendTxDetailsFailed],
               [UniverseChainId.Bnb as UniverseChainId]: [sendTxDetailsPending, sendTxDetailsConfirmed],
             },
           },
@@ -363,7 +363,7 @@ describe(useRecipients, () => {
           transactions: {
             [activeAccount.address]: {
               [UniverseChainId.Base as UniverseChainId]: [sendTxDetailsPending, sendTxDetailsConfirmed],
-              [UniverseChainId.Mainnet as UniverseChainId]: [sendTxDetailsConfirmed, sendTxDetailsFailed],
+              [UniverseChainId.Monad as UniverseChainId]: [sendTxDetailsConfirmed, sendTxDetailsFailed],
               [UniverseChainId.Bnb as UniverseChainId]: [sendTxDetailsPending, sendTxDetailsConfirmed],
             },
           },
@@ -393,7 +393,7 @@ describe(useRecipients, () => {
           transactions: {
             [activeAccount.address]: {
               [UniverseChainId.Base as UniverseChainId]: [sendTxDetailsPending, sendTxDetailsConfirmed],
-              [UniverseChainId.Mainnet as UniverseChainId]: [sendTxDetailsConfirmed, sendTxDetailsFailed],
+              [UniverseChainId.Monad as UniverseChainId]: [sendTxDetailsConfirmed, sendTxDetailsFailed],
               [UniverseChainId.Bnb as UniverseChainId]: [sendTxDetailsPending, sendTxDetailsConfirmed],
             },
           },

@@ -9,19 +9,19 @@ describe(NetworkIconList, () => {
   })
 
   it('renders single network logo', () => {
-    const tree = render(<NetworkIconList chainIds={[UniverseChainId.Mainnet]} />)
+    const tree = render(<NetworkIconList chainIds={[UniverseChainId.Monad]} />)
     expect(tree).toMatchSnapshot()
   })
 
   it('renders stacked network logos', () => {
     const tree = render(
-      <NetworkIconList chainIds={[UniverseChainId.Mainnet, UniverseChainId.ArbitrumOne, UniverseChainId.Optimism]} />,
+      <NetworkIconList chainIds={[UniverseChainId.Monad, UniverseChainId.ArbitrumOne, UniverseChainId.Optimism]} />,
     )
     expect(tree).toMatchSnapshot()
   })
 
   it('renders multiple network logos in list', () => {
-    const tree = render(<NetworkIconList chainIds={[UniverseChainId.Mainnet, UniverseChainId.Polygon]} />)
+    const tree = render(<NetworkIconList chainIds={[UniverseChainId.Monad, UniverseChainId.Polygon]} />)
     expect(tree).toMatchSnapshot()
   })
 })

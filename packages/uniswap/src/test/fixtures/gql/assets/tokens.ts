@@ -168,7 +168,7 @@ const ethProject = tokenProject({
 
 export const ethToken = createFixture<GraphQLApi.Token>()(() => token({ sdkToken: ETH, project: ethProject }))
 export const wethToken = createFixture<GraphQLApi.Token>()(() =>
-  token({ sdkToken: WRAPPED_NATIVE_CURRENCY[UniverseChainId.Mainnet], project: ethProject }),
+  token({ sdkToken: WRAPPED_NATIVE_CURRENCY[UniverseChainId.Monad], project: ethProject }),
 )
 
 const daiProject = tokenProject({

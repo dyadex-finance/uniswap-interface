@@ -26,7 +26,7 @@ const state = {
   },
   transactions: {
     [account.address]: {
-      [UniverseChainId.Mainnet]: {
+      [UniverseChainId.Monad]: {
         '0x123': {
           addedTime: MOCK_DATE_PROMPTED + 1000,
           typeInfo: { type: TransactionType.Swap },
@@ -71,7 +71,7 @@ describe('consecutiveSwapsSelector', () => {
       ...state,
       transactions: {
         [account.address]: {
-          [UniverseChainId.Mainnet]: {
+          [UniverseChainId.Monad]: {
             '0x123': {
               addedTime: MOCK_DATE_PROMPTED,
               typeInfo: { type: TransactionType.Swap },
@@ -100,7 +100,7 @@ describe('consecutiveSwapsSelector', () => {
       ...state,
       transactions: {
         [account.address]: {
-          [UniverseChainId.Mainnet]: {
+          [UniverseChainId.Monad]: {
             '0x123': {
               addedTime: MOCK_DATE_PROMPTED + 1000,
               typeInfo: { type: TransactionType.Swap },
@@ -124,7 +124,7 @@ describe('consecutiveSwapsSelector', () => {
       ...state,
       transactions: {
         [account.address]: {
-          [UniverseChainId.Mainnet]: {
+          [UniverseChainId.Monad]: {
             '0x123': {
               addedTime: MOCK_DATE_PROMPTED - ONE_HOUR_MS,
               typeInfo: { type: TransactionType.Swap },

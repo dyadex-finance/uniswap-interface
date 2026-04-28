@@ -25,7 +25,7 @@ const MOCK_BALANCE_4_ETH = '4000000000000000000'
 const MOCK_BALANCE_5_ETH = '5000000000000000000'
 
 describe('mergeOnChainBalances', () => {
-  const mockChainId = UniverseChainId.Mainnet
+  const mockChainId = UniverseChainId.Monad
   const mockCurrencyId = buildCurrencyId(mockChainId, MOCK_TOKEN_ADDRESS).toLowerCase()
 
   it('should return undefined when portfolioData is undefined', () => {

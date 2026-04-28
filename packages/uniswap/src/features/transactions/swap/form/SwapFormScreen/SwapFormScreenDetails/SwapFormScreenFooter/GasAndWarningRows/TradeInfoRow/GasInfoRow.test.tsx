@@ -18,7 +18,7 @@ describe('GasInfoRow', () => {
     fiatPriceFormatted: '$2.50',
     isHighRelativeToValue: false,
     isLoading: false,
-    chainId: UniverseChainId.Mainnet,
+    chainId: UniverseChainId.Monad,
     ...overrides,
   })
 
@@ -123,7 +123,7 @@ describe('GasInfoRow', () => {
   })
 
   describe('different chain support', () => {
-    it.each([UniverseChainId.Mainnet, UniverseChainId.ArbitrumOne, UniverseChainId.Base])(
+    it.each([UniverseChainId.Monad, UniverseChainId.ArbitrumOne, UniverseChainId.Base])(
       'should render for chain %s',
       (chainId) => {
         const gasInfo = createGasInfo({ chainId })

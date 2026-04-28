@@ -9,7 +9,6 @@ import { normalizeCurrencyIdForMapLookup, normalizeTokenAddressForCache } from '
 import { TradeableAsset } from 'uniswap/src/entities/assets'
 import { getChainInfo } from 'uniswap/src/features/chains/chainInfo'
 import { DEFAULT_NATIVE_ADDRESS, DEFAULT_NATIVE_ADDRESS_LEGACY } from 'uniswap/src/features/chains/evm/defaults'
-import { DEFAULT_NATIVE_ADDRESS_SOLANA } from 'uniswap/src/features/chains/svm/defaults'
 import { UniverseChainId } from 'uniswap/src/features/chains/types'
 import { isUniverseChainId, toSupportedChainId } from 'uniswap/src/features/chains/utils'
 import { Platform } from 'uniswap/src/features/platforms/types/Platform'
@@ -126,15 +125,6 @@ export const isNativeCurrencyAddress = (chainId: UniverseChainId, address: Maybe
 
   const nativeAddress = getNativeAddress(chainId)
 
-  if (isSVMChain(chainId)) {
-    // For Solana, only consider DEFAULT_NATIVE_ADDRESS_SOLANA (11111...) as native
-    // WSOL (So111...) should be treated as a regular token, not native
-    return areAddressesEqual({
-      addressInput1: { address, platform },
-      addressInput2: { address: DEFAULT_NATIVE_ADDRESS_SOLANA, platform },
-    })
-  }
-
   // allow both native address formats until all backend endpoints return the new one
   if (nativeAddress === DEFAULT_NATIVE_ADDRESS_LEGACY) {
     return (
@@ -163,14 +153,6 @@ export function currencyIdToAddress(_currencyId: string): Address {
   return currencyIdParts[1]
 }
 
-function isPolygonChain(chainId: number): chainId is UniverseChainId.Polygon {
-  return chainId === UniverseChainId.Polygon
-}
-
-function isCeloChain(chainId: number): chainId is UniverseChainId.Celo {
-  return chainId === UniverseChainId.Celo
-}
-
 // Similar to `currencyIdToAddress`, except native addresses are `null`.
 export function currencyIdToGraphQLAddress(_currencyId?: string): Address | null {
   if (!_currencyId) {
@@ -185,7 +167,7 @@ export function currencyIdToGraphQLAddress(_currencyId?: string): Address | null
   }
 
   // backend only expects `null` for the native asset, except Polygon & Celo
-  if (isNativeCurrencyAddress(chainId, address) && !isPolygonChain(chainId) && !isCeloChain(chainId)) {
+  if (isNativeCurrencyAddress(chainId, address)) {
     return null
   }
 

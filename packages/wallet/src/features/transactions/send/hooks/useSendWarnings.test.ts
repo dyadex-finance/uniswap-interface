@@ -10,7 +10,7 @@ import { uniCurrencyInfo } from 'uniswap/src/test/fixtures'
 import { CurrencyField } from 'uniswap/src/types/currency'
 import { getSendWarnings } from 'wallet/src/features/transactions/send/hooks/useSendWarnings'
 
-const ETH = nativeOnChain(UniverseChainId.Mainnet)
+const ETH = nativeOnChain(UniverseChainId.Monad)
 
 const emptySendInfo: Pick<
   DerivedSendInfo,
@@ -36,7 +36,7 @@ const sendState: DerivedSendInfo = {
   currencyBalances: {
     [CurrencyField.INPUT]: CurrencyAmount.fromRawAmount(ETH, '20000'),
   },
-  chainId: UniverseChainId.Mainnet,
+  chainId: UniverseChainId.Monad,
   currencyInInfo: uniCurrencyInfo(),
   nftIn: undefined,
 }
@@ -50,7 +50,7 @@ const sendState2: DerivedSendInfo = {
     [CurrencyField.INPUT]: CurrencyAmount.fromRawAmount(ETH, '20000'),
   },
   recipient: '0x0eae044f00b0af300500f090ea00027097d03000',
-  chainId: UniverseChainId.Mainnet,
+  chainId: UniverseChainId.Monad,
   currencyInInfo: uniCurrencyInfo(),
   nftIn: undefined,
 }
@@ -87,7 +87,7 @@ const sendNFT: DerivedSendInfo = {
     [CurrencyField.INPUT]: undefined,
   },
   recipient: '0x0eae044f00b0af300500f090ea00027097d03000',
-  chainId: UniverseChainId.Mainnet,
+  chainId: UniverseChainId.Monad,
   currencyInInfo: undefined,
   nftIn: mockNFT,
 }
@@ -101,7 +101,7 @@ const sendCurrency: DerivedSendInfo = {
     [CurrencyField.INPUT]: CurrencyAmount.fromRawAmount(ETH, '10000'),
   },
   recipient: '0x0eae044f00b0af300500f090ea00027097d03000',
-  chainId: UniverseChainId.Mainnet,
+  chainId: UniverseChainId.Monad,
   currencyInInfo: uniCurrencyInfo(),
   nftIn: undefined,
 }
@@ -115,7 +115,7 @@ const insufficientBalanceState: DerivedSendInfo = {
     [CurrencyField.INPUT]: CurrencyAmount.fromRawAmount(ETH, '1000'),
   },
   recipient: '0x0eae044f00b0af300500f090ea00027097d03000',
-  chainId: UniverseChainId.Mainnet,
+  chainId: UniverseChainId.Monad,
   currencyInInfo: uniCurrencyInfo(),
   nftIn: undefined,
 }

@@ -22,7 +22,7 @@ export function createTransactionConfigService(ctx: {
   const TEN_MINUTES_MS = 10 * ONE_MINUTE_MS
 
   // Default timeouts by chain
-  const chainTimeouts = new Map<UniverseChainId, number>([[UniverseChainId.Mainnet, TEN_MINUTES_MS]])
+  const chainTimeouts = new Map<UniverseChainId, number>([[UniverseChainId.Monad, TEN_MINUTES_MS]])
 
   return {
     /**

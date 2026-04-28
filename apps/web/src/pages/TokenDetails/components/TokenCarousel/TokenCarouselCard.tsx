@@ -35,7 +35,7 @@ function TokenCarouselCardContent({ displayToken, sparklines }: TokenCarouselCar
   const { formatPercent, convertFiatAmountFormatted } = useLocalizationContext()
   const navigateToTokenDetails = useNavigateToTokenDetails()
   const currencyInfo = useCurrencyInfo(
-    buildCurrencyId(fromGraphQLChain(displayToken.chain) ?? UniverseChainId.Mainnet, displayToken.address),
+    buildCurrencyId(fromGraphQLChain(displayToken.chain) ?? UniverseChainId.Monad, displayToken.address),
   )
   const delta1d = displayToken.pricePercentChange1Day?.value
 

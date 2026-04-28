@@ -8,7 +8,7 @@ describe('createGetRoutingAPIArguments', () => {
   // Minimal fixtures
   const ACCOUNT = '0x1234'
   const ARBITRUM = UniverseChainId.ArbitrumOne
-  const MAINNET = UniverseChainId.Mainnet
+  const MAINNET = UniverseChainId.Monad
   const ETH = Ether.onChain(MAINNET)
   const USDC = new Token(MAINNET, '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48', 6, 'USDC')
   const WETH = new Token(MAINNET, '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2', 18, 'WETH')

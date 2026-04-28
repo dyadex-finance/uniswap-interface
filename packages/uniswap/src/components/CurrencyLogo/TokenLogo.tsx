@@ -119,7 +119,7 @@ export function shouldShowNetworkLogo({
   }
   if (!hideNetworkLogo && !!chainId) {
     // Historically we hid the Ethereum badge on mainnet; with multichain UX we show it for clarity.
-    return chainId !== UniverseChainId.Mainnet || showMainnetNetworkLogo
+    return chainId !== UniverseChainId.Monad || showMainnetNetworkLogo
   }
   return false
 }

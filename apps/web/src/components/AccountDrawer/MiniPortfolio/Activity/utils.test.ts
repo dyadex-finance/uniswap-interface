@@ -324,7 +324,7 @@ describe('activityMapping utilities', () => {
         {
           id: 'id-1',
           hash: '0xhash1',
-          chainId: UniverseChainId.Mainnet,
+          chainId: UniverseChainId.Monad,
           status: TransactionStatus.Success,
           timestamp: 1000,
           from: '0x123',
@@ -333,7 +333,7 @@ describe('activityMapping utilities', () => {
         {
           id: 'id-2',
           hash: '0xhash2',
-          chainId: UniverseChainId.Mainnet,
+          chainId: UniverseChainId.Monad,
           status: TransactionStatus.Pending,
           timestamp: 2000,
           from: '0x123',
@@ -355,7 +355,7 @@ describe('activityMapping utilities', () => {
         {
           id: 'id-1',
           hash: '0xhash1',
-          chainId: UniverseChainId.Mainnet,
+          chainId: UniverseChainId.Monad,
           status: TransactionStatus.Success,
           timestamp: 1000,
           from: '0x123',
@@ -365,7 +365,7 @@ describe('activityMapping utilities', () => {
         {
           id: 'id-2',
           hash: '0xhash2',
-          chainId: UniverseChainId.Mainnet,
+          chainId: UniverseChainId.Monad,
           status: TransactionStatus.Pending,
           timestamp: 2000,
           from: '0x123',
@@ -390,7 +390,7 @@ describe('activityMapping utilities', () => {
         {
           id: 'fiat-onramp-id-123',
           hash: 'fiat-onramp-id-123', // Fiat on-ramp sets hash = id
-          chainId: UniverseChainId.Mainnet,
+          chainId: UniverseChainId.Monad,
           status: TransactionStatus.Success,
           timestamp: 1000,
           from: '0x123',
@@ -399,7 +399,7 @@ describe('activityMapping utilities', () => {
         {
           id: 'fiat-offramp-id-456',
           hash: 'fiat-offramp-id-456', // Fiat off-ramp sets hash = id
-          chainId: UniverseChainId.Mainnet,
+          chainId: UniverseChainId.Monad,
           status: TransactionStatus.Success,
           timestamp: 2000,
           from: '0x123',
@@ -421,7 +421,7 @@ describe('activityMapping utilities', () => {
         {
           id: 'id-1',
           hash: '0xduplicatehash',
-          chainId: UniverseChainId.Mainnet,
+          chainId: UniverseChainId.Monad,
           status: TransactionStatus.Pending,
           timestamp: 1000,
           from: '0x123',
@@ -430,7 +430,7 @@ describe('activityMapping utilities', () => {
         {
           id: 'id-2',
           hash: '0xduplicatehash',
-          chainId: UniverseChainId.Mainnet,
+          chainId: UniverseChainId.Monad,
           status: TransactionStatus.Success,
           timestamp: 2000,
           from: '0x123',
@@ -458,7 +458,7 @@ describe('getCurrencyAddress', () => {
       standard: GraphQLApi.TokenStandard.Erc20,
     } as any
 
-    const result = getCurrencyAddress(token, UniverseChainId.Mainnet)
+    const result = getCurrencyAddress(token, UniverseChainId.Monad)
     expect(result).toBe('0x1234567890123456789012345678901234567890')
   })
 
@@ -472,7 +472,7 @@ describe('getCurrencyAddress', () => {
       standard: GraphQLApi.TokenStandard.Native,
     } as any
 
-    const result = getCurrencyAddress(token, UniverseChainId.Mainnet)
+    const result = getCurrencyAddress(token, UniverseChainId.Monad)
     // getNativeAddress for mainnet returns the NATIVE_ADDRESS constant
     expect(result).toBeTruthy()
     expect(result).not.toBe('')
@@ -488,7 +488,7 @@ describe('getCurrencyAddress', () => {
       standard: GraphQLApi.TokenStandard.Native,
     } as any
 
-    const result = getCurrencyAddress(token, UniverseChainId.Mainnet)
+    const result = getCurrencyAddress(token, UniverseChainId.Monad)
     expect(result).toBeTruthy()
     expect(result).not.toBe('')
   })

@@ -80,7 +80,7 @@ test.describe(
         await anvil.setV2PoolReserves({
           pairAddress: assume0xAddress(
             computePairAddress({
-              factoryAddress: V2_FACTORY_ADDRESSES[UniverseChainId.Mainnet],
+              factoryAddress: V2_FACTORY_ADDRESSES[UniverseChainId.Monad],
               tokenA: WETH,
               tokenB: USDT,
             }),

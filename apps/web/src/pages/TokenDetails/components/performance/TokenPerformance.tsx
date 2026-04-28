@@ -30,7 +30,7 @@ export function TokenPerformance(): JSX.Element | null {
   const { evmAddress, svmAddress } = useActiveAddresses()
   const modifier = useRestPortfolioValueModifier(evmAddress ?? svmAddress)
 
-  const chainId = fromGraphQLChain(currencyChain) ?? UniverseChainId.Mainnet
+  const chainId = fromGraphQLChain(currencyChain) ?? UniverseChainId.Monad
   const tokenAddress = address === NATIVE_CHAIN_ID ? DEFAULT_NATIVE_ADDRESS : address
   const isStablecoin = isStablecoinAddress(chainId, tokenAddress)
 

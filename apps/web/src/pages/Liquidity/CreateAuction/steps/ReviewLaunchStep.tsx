@@ -103,12 +103,12 @@ export function ReviewLaunchStep() {
   const tokenName =
     tokenForm.mode === TokenMode.CREATE_NEW
       ? tokenForm.name || t('toucan.createAuction.step.tokenInfo.namePlaceholder')
-      : (tokenForm.existingTokenCurrencyInfo?.currency.name ?? '')
+      : tokenForm.existingTokenCurrencyInfo?.currency.name ?? ''
 
   const tokenSymbol =
     tokenForm.mode === TokenMode.CREATE_NEW
       ? tokenForm.symbol
-      : (tokenForm.existingTokenCurrencyInfo?.currency.symbol ?? '')
+      : tokenForm.existingTokenCurrencyInfo?.currency.symbol ?? ''
 
   const description = tokenForm.description
 
@@ -117,7 +117,7 @@ export function ReviewLaunchStep() {
   const chainId =
     tokenForm.mode === TokenMode.CREATE_NEW
       ? tokenForm.network
-      : (tokenForm.existingTokenCurrencyInfo?.currency.chainId ?? UniverseChainId.Mainnet)
+      : tokenForm.existingTokenCurrencyInfo?.currency.chainId ?? UniverseChainId.Monad
 
   const { committed } = configureAuction
   const formattedAuctionAmount = committed
@@ -143,7 +143,7 @@ export function ReviewLaunchStep() {
 
   const feeTierDisplay = formatPercent(customizePool.fee.feeAmount / BIPS_BASE, 4)
 
-  const resolvedPoolOwner = isAddress(customizePool.poolOwner) ? customizePool.poolOwner : (activeAddress ?? '')
+  const resolvedPoolOwner = isAddress(customizePool.poolOwner) ? customizePool.poolOwner : activeAddress ?? ''
   const showPoolOwner =
     !!resolvedPoolOwner &&
     !!activeAddress &&

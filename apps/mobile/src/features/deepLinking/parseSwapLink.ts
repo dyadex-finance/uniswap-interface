@@ -191,7 +191,7 @@ function parseWebChainData(
     throw new Error(`Invalid outputChain: ${outputChain}`)
   }
 
-  const finalInputChainId = inputChainId ?? UniverseChainId.Mainnet
+  const finalInputChainId = inputChainId ?? UniverseChainId.Monad
   const finalOutputChainId = outputChainId ?? finalInputChainId
 
   // Validate chain compatibility

@@ -7,7 +7,7 @@ import { faker } from 'uniswap/src/test/shared'
 import { createFixture } from 'uniswap/src/test/utils'
 import { currencyId } from 'uniswap/src/utils/currencyId'
 
-export const MAINNET_CURRENCY = nativeOnChain(UniverseChainId.Mainnet)
+export const MAINNET_CURRENCY = nativeOnChain(UniverseChainId.Monad)
 export const BASE_CURRENCY = nativeOnChain(UniverseChainId.Base)
 export const ARBITRUM_CURRENCY = nativeOnChain(UniverseChainId.ArbitrumOne)
 export const OPTIMISM_CURRENCY = nativeOnChain(UniverseChainId.Optimism)

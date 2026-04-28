@@ -7,7 +7,7 @@ import { getFormIncompleteWarning } from 'uniswap/src/features/transactions/swap
 import { DerivedSwapInfo } from 'uniswap/src/features/transactions/swap/types/derivedSwapInfo'
 import { CurrencyField } from 'uniswap/src/types/currency'
 
-const ETH = nativeOnChain(UniverseChainId.Mainnet)
+const ETH = nativeOnChain(UniverseChainId.Monad)
 
 const mockCurrencyInfo = (currency: Currency): CurrencyInfo => ({
   currency,

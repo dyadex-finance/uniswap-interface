@@ -4,17 +4,17 @@ import { render } from 'uniswap/src/test/test-utils'
 
 describe(NetworkPill, () => {
   it('renders a NetworkPill without image', () => {
-    const tree = render(<NetworkPill chainId={UniverseChainId.Mainnet} />)
+    const tree = render(<NetworkPill chainId={UniverseChainId.Monad} />)
     expect(tree).toMatchSnapshot()
   })
 
   it('renders a NetworkPill with border', () => {
-    const tree = render(<NetworkPill chainId={UniverseChainId.Mainnet} showBorder={true} />)
+    const tree = render(<NetworkPill chainId={UniverseChainId.Monad} showBorder={true} />)
     expect(tree).toMatchSnapshot()
   })
 
   it('renders an InlineNetworkPill', () => {
-    const tree = render(<InlineNetworkPill chainId={UniverseChainId.Mainnet} />)
+    const tree = render(<InlineNetworkPill chainId={UniverseChainId.Monad} />)
     expect(tree).toMatchSnapshot()
   })
 })

@@ -135,7 +135,7 @@ describe('getTokenDataForRow', () => {
 describe('isStablecoinForChainToken', () => {
   it('returns true for USDC on mainnet', () => {
     const chainToken = createMockTokenTableChainToken({
-      chainId: UniverseChainId.Mainnet,
+      chainId: UniverseChainId.Monad,
       currencyInfo: USDC_INFO,
     })
     expect(isStablecoinForChainToken(chainToken)).toBe(true)
@@ -143,7 +143,7 @@ describe('isStablecoinForChainToken', () => {
 
   it('returns false for a non-stablecoin ERC20', () => {
     const chainToken = createMockTokenTableChainToken({
-      chainId: UniverseChainId.Mainnet,
+      chainId: UniverseChainId.Monad,
       currencyInfo: TEST_TOKEN_1_INFO,
     })
     expect(isStablecoinForChainToken(chainToken)).toBe(false)
@@ -151,11 +151,11 @@ describe('isStablecoinForChainToken', () => {
 
   it('uses DEFAULT_NATIVE_ADDRESS when currency is native (matches isStablecoinAddress on canonical native)', () => {
     const chainToken = createMockTokenTableChainToken({
-      chainId: UniverseChainId.Mainnet,
+      chainId: UniverseChainId.Monad,
       currencyInfo: NATIVE_INFO,
     })
     expect(isStablecoinForChainToken(chainToken)).toBe(
-      isStablecoinAddress(UniverseChainId.Mainnet, DEFAULT_NATIVE_ADDRESS),
+      isStablecoinAddress(UniverseChainId.Monad, DEFAULT_NATIVE_ADDRESS),
     )
   })
 })
@@ -223,13 +223,13 @@ describe('flattenTokenDataToSingleChainRows', () => {
   })
 
   it('marks stablecoin rows using chain stablecoin list', () => {
-    const primaryStable = getPrimaryStablecoin(UniverseChainId.Mainnet)
+    const primaryStable = getPrimaryStablecoin(UniverseChainId.Monad)
     const usdcInfo = { ...TEST_TOKEN_1_INFO, currency: primaryStable }
     const tokenData = createMockTokenTableData({
       id: 'st',
       tokens: [
         createMockTokenTableChainToken({
-          chainId: UniverseChainId.Mainnet,
+          chainId: UniverseChainId.Monad,
           currencyInfo: usdcInfo,
           quantity: 1,
           valueUsd: 1,

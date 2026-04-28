@@ -261,7 +261,7 @@ const ChevronRight = (): JSX.Element => <RotatableChevron direction="right" size
 /* Loading State: row component with loading bubbles */
 function TokenDetailsSkeleton() {
   const { t } = useTranslation()
-  const { id: chainId, urlParam } = getChainInfo(useChainIdFromUrlParam() ?? UniverseChainId.Mainnet)
+  const { id: chainId, urlParam } = getChainInfo(useChainIdFromUrlParam() ?? UniverseChainId.Monad)
   const { tokenAddress } = useParams<{ tokenAddress?: string }>()
   const token = useCurrency({
     address: tokenAddress === NATIVE_CHAIN_ID ? 'ETH' : tokenAddress,
@@ -318,7 +318,7 @@ const BreadcrumbWrapper = styled(Flex, {
 export function TokenDetailsPageSkeleton({ isCompact }: { isCompact: boolean }) {
   const { t } = useTranslation()
   const media = useMedia()
-  const { urlParam } = getChainInfo(useChainIdFromUrlParam() ?? UniverseChainId.Mainnet)
+  const { urlParam } = getChainInfo(useChainIdFromUrlParam() ?? UniverseChainId.Monad)
 
   return (
     <>

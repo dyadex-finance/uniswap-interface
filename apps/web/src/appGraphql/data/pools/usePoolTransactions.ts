@@ -119,8 +119,8 @@ export function usePoolTransactions({
     protocolVersion === GraphQLApi.ProtocolVersion.V4
       ? { transactions: dataV4?.v4Pool?.transactions, loading: loadingV4, fetchMore: fetchMoreV4, error: errorV4 }
       : protocolVersion === GraphQLApi.ProtocolVersion.V3
-        ? { transactions: dataV3?.v3Pool?.transactions, loading: loadingV3, fetchMore: fetchMoreV3, error: errorV3 }
-        : { transactions: dataV2?.v2Pair?.transactions, loading: loadingV2, fetchMore: fetchMoreV2, error: errorV2 }
+      ? { transactions: dataV3?.v3Pool?.transactions, loading: loadingV3, fetchMore: fetchMoreV3, error: errorV3 }
+      : { transactions: dataV2?.v2Pair?.transactions, loading: loadingV2, fetchMore: fetchMoreV2, error: errorV2 }
 
   const loadMore = useCallback(
     ({ onComplete }: { onComplete?: () => void }) => {
@@ -150,24 +150,24 @@ export function usePoolTransactions({
                   },
                 }
               : protocolVersion === GraphQLApi.ProtocolVersion.V3
-                ? {
-                    v3Pool: {
-                      ...fetchMoreResult.v3Pool,
-                      transactions: [
-                        ...((prev as GraphQLApi.V3PoolTransactionsQuery).v3Pool?.transactions ?? []),
-                        ...fetchMoreResult.v3Pool.transactions,
-                      ],
-                    },
-                  }
-                : {
-                    v2Pair: {
-                      ...fetchMoreResult.v2Pair,
-                      transactions: [
-                        ...((prev as GraphQLApi.V2PairTransactionsQuery).v2Pair?.transactions ?? []),
-                        ...fetchMoreResult.v2Pair.transactions,
-                      ],
-                    },
-                  }
+              ? {
+                  v3Pool: {
+                    ...fetchMoreResult.v3Pool,
+                    transactions: [
+                      ...((prev as GraphQLApi.V3PoolTransactionsQuery).v3Pool?.transactions ?? []),
+                      ...fetchMoreResult.v3Pool.transactions,
+                    ],
+                  },
+                }
+              : {
+                  v2Pair: {
+                    ...fetchMoreResult.v2Pair,
+                    transactions: [
+                      ...((prev as GraphQLApi.V2PairTransactionsQuery).v2Pair?.transactions ?? []),
+                      ...fetchMoreResult.v2Pair.transactions,
+                    ],
+                  },
+                }
           loadingMore.current = false
           return mergedData
         },
@@ -185,14 +185,14 @@ export function usePoolTransactions({
         const tokenIn = parseFloat(tx.token0Quantity) > 0 ? tx.token0 : tx.token1
         const token0Address =
           token0?.address === NATIVE_CHAIN_ID
-            ? WRAPPED_NATIVE_CURRENCY[chainId ?? UniverseChainId.Mainnet]?.address
+            ? WRAPPED_NATIVE_CURRENCY[chainId ?? UniverseChainId.Monad]?.address
             : token0?.address
         const isSell = areAddressesEqual({
           addressInput1: {
             address: tokenIn.address,
-            chainId: fromGraphQLChain(tokenIn.chain) ?? UniverseChainId.Mainnet,
+            chainId: fromGraphQLChain(tokenIn.chain) ?? UniverseChainId.Monad,
           },
-          addressInput2: { address: token0Address, chainId: chainId ?? UniverseChainId.Mainnet },
+          addressInput2: { address: token0Address, chainId: chainId ?? UniverseChainId.Monad },
         })
         const type =
           tx.type === GraphQLApi.PoolTransactionType.Swap
@@ -200,8 +200,8 @@ export function usePoolTransactions({
               ? PoolTableTransactionType.SELL
               : PoolTableTransactionType.BUY
             : tx.type === GraphQLApi.PoolTransactionType.Remove
-              ? PoolTableTransactionType.REMOVE
-              : PoolTableTransactionType.ADD
+            ? PoolTableTransactionType.REMOVE
+            : PoolTableTransactionType.ADD
         if (!filter.includes(type)) {
           return undefined
         }

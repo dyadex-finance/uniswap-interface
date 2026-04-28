@@ -47,7 +47,7 @@ jest.mock('wallet/src/features/transactions/swap/confirmation')
 jest.mock('wallet/src/features/transactions/swap/submitOrderSaga')
 
 const MOCK_TIMESTAMP = 1487076708000
-const CHAIN_ID = UniverseChainId.Mainnet
+const CHAIN_ID = UniverseChainId.Monad
 
 const mockGetShouldWaitBetweenTransactions = jest.mocked(getShouldWaitBetweenTransactions) as jest.MockedFunction<
   typeof getShouldWaitBetweenTransactions

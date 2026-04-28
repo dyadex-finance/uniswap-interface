@@ -26,7 +26,7 @@ export const PortfolioOverviewTables = memo(function PortfolioOverviewTables({
 }: PortfolioOverviewTablesProps) {
   const evmAddress = portfolioAddresses.evmAddress
   const showMiniPoolsTable = !!evmAddress
-  const showOpenLimitsTable = !!evmAddress && (!chainId || chainId === UniverseChainId.Mainnet)
+  const showOpenLimitsTable = !!evmAddress && (!chainId || chainId === UniverseChainId.Monad)
 
   return (
     <Flex

@@ -6,7 +6,7 @@ import { buildTradeFromPlanResponse } from 'uniswap/src/features/transactions/sw
 import { ChainedActionTrade } from 'uniswap/src/features/transactions/swap/types/trade'
 import { requireAcceptNewTrade } from 'uniswap/src/features/transactions/swap/utils/trade'
 
-const INPUT_TOKEN = UNI[UniverseChainId.Mainnet]
+const INPUT_TOKEN = UNI[UniverseChainId.Monad]
 const OUTPUT_TOKEN = WBTC
 
 const INPUT_AMOUNT = '1000000000000000000' // 1e18
@@ -40,8 +40,8 @@ function createChainedTrade(outputAmount: string): ChainedActionTrade {
         input: { amount: INPUT_AMOUNT, token: INPUT_TOKEN.address },
         output: { amount: outputAmount, token: OUTPUT_TOKEN.address, recipient: '0xrecipient' },
         swapper: '0xswapper',
-        tokenInChainId: UniverseChainId.Mainnet as unknown as TradingApi.ChainId,
-        tokenOutChainId: UniverseChainId.Mainnet as unknown as TradingApi.ChainId,
+        tokenInChainId: UniverseChainId.Monad as unknown as TradingApi.ChainId,
+        tokenOutChainId: UniverseChainId.Monad as unknown as TradingApi.ChainId,
         tradeType: TradingApi.TradeType.EXACT_INPUT,
         slippage: 0.5,
         quoteId: 'test-quote',

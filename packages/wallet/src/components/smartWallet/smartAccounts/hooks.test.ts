@@ -49,7 +49,7 @@ function setupMocks({
   activeAccount = ACCOUNT as any,
   signerAccounts = [ACCOUNT] as any[],
   hasSmartWalletConsent = false,
-  enabledChains = [UniverseChainId.Mainnet],
+  enabledChains = [UniverseChainId.Monad],
   getDelegationDetails = jest.fn().mockReturnValue(undefined),
 }: {
   activeAccount?: any
@@ -156,14 +156,14 @@ describe(useSmartWalletDelegationStatus, () => {
 
   it('returns ShowConflict if any chain has a non-Uniswap delegation', async () => {
     const getDelegationDetails = jest.fn().mockImplementation((_address: string, chainId: UniverseChainId) => {
-      if (chainId === UniverseChainId.Mainnet) {
+      if (chainId === UniverseChainId.Monad) {
         return delegation({ currentDelegationAddress: '0xUniswapContract', isWalletDelegatedToUniswap: true })
       }
       return delegation({ currentDelegationAddress: '0xOtherProtocol' })
     })
 
     setupMocks({
-      enabledChains: [UniverseChainId.Mainnet, UniverseChainId.ArbitrumOne],
+      enabledChains: [UniverseChainId.Monad, UniverseChainId.ArbitrumOne],
       getDelegationDetails,
     })
 
@@ -178,7 +178,7 @@ describe(useSmartWalletDelegationStatus, () => {
 
   it('returns PromptUpgrade when no chains have any delegation', async () => {
     setupMocks({
-      enabledChains: [UniverseChainId.Mainnet, UniverseChainId.ArbitrumOne],
+      enabledChains: [UniverseChainId.Monad, UniverseChainId.ArbitrumOne],
       getDelegationDetails: jest.fn().mockReturnValue(delegation()),
     })
 
@@ -263,7 +263,7 @@ describe(useSmartWalletDelegationStatus, () => {
   })
 
   it('checks delegation details for each enabled chain', async () => {
-    const chains = [UniverseChainId.Mainnet, UniverseChainId.ArbitrumOne, UniverseChainId.Optimism]
+    const chains = [UniverseChainId.Monad, UniverseChainId.ArbitrumOne, UniverseChainId.Optimism]
     const { getDelegationDetails } = setupMocks({ enabledChains: chains })
 
     const { result } = renderHook(() => useSmartWalletDelegationStatus())
@@ -273,7 +273,7 @@ describe(useSmartWalletDelegationStatus, () => {
     })
 
     expect(getDelegationDetails).toHaveBeenCalledTimes(chains.length)
-    expect(getDelegationDetails).toHaveBeenCalledWith(SAMPLE_SEED_ADDRESS_1, UniverseChainId.Mainnet)
+    expect(getDelegationDetails).toHaveBeenCalledWith(SAMPLE_SEED_ADDRESS_1, UniverseChainId.Monad)
     expect(getDelegationDetails).toHaveBeenCalledWith(SAMPLE_SEED_ADDRESS_1, UniverseChainId.ArbitrumOne)
     expect(getDelegationDetails).toHaveBeenCalledWith(SAMPLE_SEED_ADDRESS_1, UniverseChainId.Optimism)
   })

@@ -50,6 +50,11 @@ export function getVolumeBreakdownForPeriod(
   const sorted = sortMultichainTokenByVolume(mcToken, timePeriod)
   return sorted.chainTokens
     .filter((ct) => (ct.stats?.[volumeKey] ?? 0) > 0)
+    .filter(
+      (ct) =>
+        (ct.chainId as UniverseChainId) === UniverseChainId.Monad ||
+        (ct.chainId as UniverseChainId) === UniverseChainId.MonadTestnet,
+    )
     .map((ct) => ({ chainId: ct.chainId as UniverseChainId, volume: ct.stats?.[volumeKey] ?? 0 }))
 }
 

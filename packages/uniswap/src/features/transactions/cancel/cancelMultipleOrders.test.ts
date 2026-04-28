@@ -200,7 +200,7 @@ describe('useCancelMultipleOrders', () => {
     it('should return undefined for empty orders', async () => {
       const result = await getCancelMultipleUniswapXOrdersTransaction({
         orders: [],
-        chainId: UniverseChainId.Mainnet,
+        chainId: UniverseChainId.Monad,
         from: '0xuser',
       })
 
@@ -216,13 +216,13 @@ describe('useCancelMultipleOrders', () => {
 
       const result = await getCancelMultipleUniswapXOrdersTransaction({
         orders,
-        chainId: UniverseChainId.Mainnet,
+        chainId: UniverseChainId.Monad,
         from: '0xuser',
       })
 
       expect(result).toEqual(mockTx)
       expect(mockBuildBatchCancellation).toHaveBeenCalledWith(
-        [{ encodedOrder: '0xencoded', routing: TradingApi.Routing.DUTCH_V2, chainId: UniverseChainId.Mainnet }],
+        [{ encodedOrder: '0xencoded', routing: TradingApi.Routing.DUTCH_V2, chainId: UniverseChainId.Monad }],
         '0xuser',
       )
     })
@@ -241,7 +241,7 @@ describe('useCancelMultipleOrders', () => {
 
       const result = await getCancelMultipleUniswapXOrdersTransaction({
         orders,
-        chainId: UniverseChainId.Mainnet,
+        chainId: UniverseChainId.Monad,
         from: '0xuser',
       })
 
@@ -255,7 +255,7 @@ describe('useCancelMultipleOrders', () => {
 
       const result = await getCancelMultipleUniswapXOrdersTransaction({
         orders,
-        chainId: UniverseChainId.Mainnet,
+        chainId: UniverseChainId.Monad,
         from: '0xuser',
       })
 
@@ -293,7 +293,7 @@ describe('useCancelMultipleOrders', () => {
 
       const result = await cancelMultipleUniswapXOrders({
         orders,
-        chainId: UniverseChainId.Mainnet,
+        chainId: UniverseChainId.Monad,
         signerAddress: '0xuser',
         provider: mockProvider,
       })
@@ -320,7 +320,7 @@ describe('useCancelMultipleOrders', () => {
 
       const result = await cancelMultipleUniswapXOrders({
         orders,
-        chainId: UniverseChainId.Mainnet,
+        chainId: UniverseChainId.Monad,
         signerAddress: '0xuser',
         provider: mockProvider,
       })
@@ -338,7 +338,7 @@ describe('useCancelMultipleOrders', () => {
 
       const result = await cancelMultipleUniswapXOrders({
         orders: [{ encodedOrder: '0xencoded', routing: TradingApi.Routing.DUTCH_V2 }],
-        chainId: UniverseChainId.Mainnet,
+        chainId: UniverseChainId.Monad,
         signerAddress: '0xspecificsigner',
         provider: mockProvider,
       })
@@ -351,7 +351,7 @@ describe('useCancelMultipleOrders', () => {
     it('should return undefined if no provider available', async () => {
       const result = await cancelMultipleUniswapXOrders({
         orders: [{ encodedOrder: '0xencoded', routing: TradingApi.Routing.DUTCH_V2 }],
-        chainId: UniverseChainId.Mainnet,
+        chainId: UniverseChainId.Monad,
       })
 
       expect(result).toBeUndefined()
@@ -362,7 +362,7 @@ describe('useCancelMultipleOrders', () => {
 
       const result = await cancelMultipleUniswapXOrders({
         orders: [{ encodedOrder: '0xencoded', routing: TradingApi.Routing.DUTCH_V2 }],
-        chainId: UniverseChainId.Mainnet,
+        chainId: UniverseChainId.Monad,
         signerAddress: '0xuser',
         provider: mockProvider,
       })
@@ -375,7 +375,7 @@ describe('useCancelMultipleOrders', () => {
 
       const result = await cancelMultipleUniswapXOrders({
         orders: [{ encodedOrder: '0xencoded', routing: TradingApi.Routing.DUTCH_V2 }],
-        chainId: UniverseChainId.Mainnet,
+        chainId: UniverseChainId.Monad,
         signerAddress: '0xuser',
         provider: mockProvider,
       })

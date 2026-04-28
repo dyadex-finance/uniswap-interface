@@ -20,7 +20,7 @@ import { migration15 } from '~/state/migrations/15'
 import { migration16, PersistAppStateV16 } from '~/state/migrations/16'
 
 const tokenMap = {
-  [UniverseChainId.Mainnet]: {
+  [UniverseChainId.Monad]: {
     [USDC.address]: serializeToken(USDC),
   },
   [UniverseChainId.ArbitrumOne]: {

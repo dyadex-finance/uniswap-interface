@@ -20,6 +20,11 @@ const TableWrapper = styled(Flex, {
 
 function TopTokensTableContent(): JSX.Element {
   const chainId = useChainIdFromUrlParam()
+
+  console.log('--------------------------')
+  console.log({ chainId })
+  console.log('--------------------------')
+
   const sortMethod = useTokenTableSortStore((s) => s.sortMethod)
   const sortAscending = useTokenTableSortStore((s) => s.sortAscending)
   const filterString = useExploreTablesFilterStore((s) => s.filterString)

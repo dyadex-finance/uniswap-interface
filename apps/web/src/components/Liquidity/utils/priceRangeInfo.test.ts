@@ -24,7 +24,7 @@ import tryParseCurrencyAmount from '~/lib/utils/tryParseCurrencyAmount'
 import { ETH_MAINNET } from '~/test-utils/constants'
 import { getTickToPrice, getV4TickToPrice } from '~/utils/getTickToPrice'
 
-const WETH = nativeOnChain(UniverseChainId.Mainnet).wrapped
+const WETH = nativeOnChain(UniverseChainId.Monad).wrapped
 
 const tickSpaceLimits = [
   nearestUsableTick(TickMath.MIN_TICK, TICK_SPACINGS[FeeAmount.MEDIUM]),

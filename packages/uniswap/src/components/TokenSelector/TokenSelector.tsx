@@ -168,11 +168,6 @@ export function TokenSelectorContent({
 
   const shouldAutoFocusSearch = isWebPlatform && !media.sm
 
-  const shouldShowCrosschainPromoBanner = useMemo(
-    () => flow === TokenSelectorFlow.Swap && (!chainFilter || isChainSupportedForChainedActions(chainFilter)),
-    [flow, chainFilter],
-  )
-
   return (
     <Trace
       logImpression={isWebApp} // TODO(WEB-5161): Deduplicate shared vs interface-only trace event
@@ -234,7 +229,6 @@ export function TokenSelectorContent({
           <Flex grow>
             {isSurfaceReady ? (
               <>
-                {shouldShowCrosschainPromoBanner && <CrosschainSwapsPromoBanner />}
                 <UnsupportedChainedActionsBanner oppositeToken={oppositeToken} chainFilter={chainFilter ?? undefined} />
                 <TokenSelectorListSwitch
                   searchInFocus={searchInFocus}

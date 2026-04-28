@@ -20,7 +20,7 @@ export function getTokenStructuredData({
     return null
   }
 
-  const chainUrlParam = getChainInfo(fromGraphQLChain(tokenQueryData.chain) ?? UniverseChainId.Mainnet).urlParam
+  const chainUrlParam = getChainInfo(fromGraphQLChain(tokenQueryData.chain) ?? UniverseChainId.Monad).urlParam
   const tokenDetailsUrl = `${uniswapUrls.webInterfaceTokensUrl}/${chainUrlParam}/${
     tokenQueryData.address ?? NATIVE_CHAIN_ID
   }`
@@ -75,7 +75,7 @@ export function getTokenPageTitle({
     return baseTitle
   }
 
-  const chainSuffix = chainId && chainId !== UniverseChainId.Mainnet ? ` on ${getChainLabel(chainId)}` : ''
+  const chainSuffix = chainId && chainId !== UniverseChainId.Monad ? ` on ${getChainLabel(chainId)}` : ''
   if (!tokenName && tokenSymbol) {
     return `${tokenSymbol}${chainSuffix}: ${baseTitle}`
   }
@@ -98,7 +98,7 @@ export const getTokenPageDescription = ({
     currency?.name && currency.symbol
       ? `${currency.name} (${currency.symbol})`
       : currency?.name ?? currency?.symbol ?? 'tokens'
-  const chainSuffix = chainId && chainId !== UniverseChainId.Mainnet ? ` on ${getChainLabel(chainId)}` : ''
+  const chainSuffix = chainId && chainId !== UniverseChainId.Monad ? ` on ${getChainLabel(chainId)}` : ''
 
   const priceText = price ? ` Current price: ${price}` : ''
 

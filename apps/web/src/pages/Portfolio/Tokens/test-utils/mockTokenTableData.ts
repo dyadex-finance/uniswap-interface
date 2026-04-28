@@ -23,7 +23,7 @@ export function createMockTokenTableChainToken(
 export function createMockTokenTableData(overrides: Partial<TokenData> = {}): TokenData {
   const { tokens: overrideTokens, ...restOverrides } = overrides
   const defaultChainToken = createMockTokenTableChainToken({
-    chainId: UniverseChainId.Mainnet,
+    chainId: UniverseChainId.Monad,
     currencyInfo: TEST_TOKEN_1_INFO,
     quantity: 1,
     valueUsd: 100,
@@ -37,7 +37,7 @@ export function createMockTokenTableData(overrides: Partial<TokenData> = {}): To
     return {
       id: 'row-id',
       testId: `${TestID.TokenTableRowPrefix}row-id`,
-      chainId: UniverseChainId.Mainnet,
+      chainId: UniverseChainId.Monad,
       currencyInfo: TEST_TOKEN_1_INFO,
       quantity: 0,
       symbol: 'ABC',

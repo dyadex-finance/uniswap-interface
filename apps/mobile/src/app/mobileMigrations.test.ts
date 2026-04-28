@@ -110,7 +110,7 @@ describe('restructureTransactionsAndNotifications', () => {
     }
     const result = restructureTransactionsAndNotifications(state)
     expect(result.transactions['0x123']['1'].tx1).toEqual({ id: 'tx1', from: '0x123', chainId: 1 })
-    expect(result.notifications.lastTxNotificationUpdate['0x123'][UniverseChainId.Mainnet]).toBe(1234567890)
+    expect(result.notifications.lastTxNotificationUpdate['0x123'][UniverseChainId.Monad]).toBe(1234567890)
   })
 
   it('handles missing transaction state', () => {

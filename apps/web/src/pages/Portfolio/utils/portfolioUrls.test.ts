@@ -39,7 +39,7 @@ describe('buildPortfolioUrl', () => {
 
   describe('with chainId only', () => {
     it('should append chain query param for Ethereum', () => {
-      expect(buildPortfolioUrl({ chainId: UniverseChainId.Mainnet })).toBe('/portfolio?chain=ethereum')
+      expect(buildPortfolioUrl({ chainId: UniverseChainId.Monad })).toBe('/portfolio?chain=ethereum')
     })
 
     it('should append chain query param for Arbitrum', () => {
@@ -63,7 +63,7 @@ describe('buildPortfolioUrl', () => {
 
   describe('with tab and chainId', () => {
     it('should return tab path with chain param for Tokens on Ethereum', () => {
-      expect(buildPortfolioUrl({ tab: PortfolioTab.Tokens, chainId: UniverseChainId.Mainnet })).toBe(
+      expect(buildPortfolioUrl({ tab: PortfolioTab.Tokens, chainId: UniverseChainId.Monad })).toBe(
         '/portfolio/tokens?chain=ethereum',
       )
     })
@@ -120,7 +120,7 @@ describe('buildPortfolioUrl', () => {
       expect(
         buildPortfolioUrl({
           tab: PortfolioTab.Defi,
-          chainId: UniverseChainId.Mainnet,
+          chainId: UniverseChainId.Monad,
           externalAddress: SAMPLE_SEED_ADDRESS_4,
         }),
       ).toBe(`/portfolio/${SAMPLE_SEED_ADDRESS_4}/defi?chain=ethereum`)

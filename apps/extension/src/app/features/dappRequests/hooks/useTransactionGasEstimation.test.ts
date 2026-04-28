@@ -28,7 +28,7 @@ describe('useTransactionGasEstimation', () => {
     data: '0x',
   }
 
-  const mockChainId = UniverseChainId.Mainnet
+  const mockChainId = UniverseChainId.Monad
   const mockSmartContractDelegationAddress = '0xabcdef1234567890123456789012345678901234'
 
   beforeEach(() => {

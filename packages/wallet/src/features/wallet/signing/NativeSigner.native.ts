@@ -34,7 +34,7 @@ export class NativeSigner extends Signer {
       typeof message === 'string'
         ? Keyring.signMessageForAddress(this.address, message)
         : // chainID isn't available here, but is not needed for signing hashes so just default to Mainnet
-          Keyring.signHashForAddress(this.address, hexlify(message).slice(2), UniverseChainId.Mainnet)
+          Keyring.signHashForAddress(this.address, hexlify(message).slice(2), UniverseChainId.Monad)
     return signaturePromise.then((signature) => ensureLeading0x(signature))
   }
 
@@ -54,7 +54,7 @@ export class NativeSigner extends Signer {
       this.address,
       _TypedDataEncoder.hash(domain, types, value).slice(2),
       // TODO: WALL-4919: Remove hardcoded Mainnet
-      toSupportedChainId(domain.chainId) || UniverseChainId.Mainnet,
+      toSupportedChainId(domain.chainId) || UniverseChainId.Monad,
     )
     return signature
   }

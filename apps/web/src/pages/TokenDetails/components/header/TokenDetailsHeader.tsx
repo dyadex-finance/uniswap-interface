@@ -125,7 +125,7 @@ export function TokenDetailsHeader({ isCompact }: TokenDetailsHeaderProps) {
           chainId={!multichainTokenUxEnabled ? effectiveCurrency.chainId : null}
           size={tokenLogoSize}
           transition={HEADER_TRANSITION}
-          showMainnetNetworkLogo={multichainTokenUxEnabled && selectedChainId === UniverseChainId.Mainnet}
+          showMainnetNetworkLogo={multichainTokenUxEnabled && selectedChainId === UniverseChainId.Monad}
         />
         <Flex gap={isCompact ? '$gap4' : '$gap8'} $md={{ gap: '$none' }} transition={HEADER_TRANSITION}>
           <Flex row flex={1} alignItems="flex-end" gap="$gap8" $sm={{ width: '100%' }}>

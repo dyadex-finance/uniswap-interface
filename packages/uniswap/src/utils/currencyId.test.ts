@@ -21,7 +21,7 @@ import {
 } from 'uniswap/src/utils/currencyId'
 import { INVALID_ADDRESS_TOO_SHORT, INVALID_CHAIN_ID, VALID_ADDRESS, VALID_CHAIN_ID } from 'utilities/src/test/fixtures'
 
-const ETH = nativeOnChain(UniverseChainId.Mainnet)
+const ETH = nativeOnChain(UniverseChainId.Monad)
 
 describe('currencyId', () => {
   it.each`
@@ -37,12 +37,12 @@ describe('currencyId', () => {
   })
   it.each([
     [DAI, `1-${DAI.address}`],
-    [ETH, `${UniverseChainId.Mainnet}-${getNativeAddress(UniverseChainId.Mainnet)}`],
+    [ETH, `${UniverseChainId.Monad}-${getNativeAddress(UniverseChainId.Monad)}`],
   ])('builds correct ID for asset=$asset = $s', (asset, expectedId) => {
     expect(currencyId(asset)).toEqual(expectedId)
   })
 
-  it.each([[UniverseChainId.Mainnet, DAI.address, `${UniverseChainId.Mainnet}-${DAI.address}`]])(
+  it.each([[UniverseChainId.Monad, DAI.address, `${UniverseChainId.Monad}-${DAI.address}`]])(
     'buildCurrencyId builds correct ID for chainId=%s + address=%s = %s',
     // oxlint-disable-next-line max-params
     (chainId, address, expectedId) => {
@@ -52,7 +52,7 @@ describe('currencyId', () => {
 
   it.each([
     [currencyId(DAI), currencyId(DAI), true],
-    [currencyId(DAI), `${UniverseChainId.Mainnet}-${DAI.address.toLowerCase()}`, true],
+    [currencyId(DAI), `${UniverseChainId.Monad}-${DAI.address.toLowerCase()}`, true],
     [currencyId(DAI), currencyId(ETH), false],
   ])(
     'areCurrencyIdsEqual returns correct comparison for currencyId1=%s and currencyId2=%s = %s',
@@ -63,7 +63,7 @@ describe('currencyId', () => {
   )
 
   it.each([
-    [ETH, getNativeAddress(UniverseChainId.Mainnet)],
+    [ETH, getNativeAddress(UniverseChainId.Monad)],
     [DAI, DAI.address],
   ])('currencyAddress returns correct address for asset=%s = %s', (asset, expectedAddress) => {
     expect(currencyAddress(asset)).toEqual(expectedAddress)
@@ -77,7 +77,7 @@ describe('currencyId', () => {
   })
 
   it.each([
-    [UniverseChainId.Mainnet, `1-0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee`],
+    [UniverseChainId.Monad, `1-0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee`],
     [UniverseChainId.Polygon, `137-0x0000000000000000000000000000000000001010`],
     [UniverseChainId.Bnb, `56-0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee`],
   ])('buildNativeCurrencyId builds correct ID for chainId=%s = %s', (chainId, expectedId) => {
@@ -85,7 +85,7 @@ describe('currencyId', () => {
   })
 
   it.each([
-    [UniverseChainId.Mainnet, expect.stringContaining('-')],
+    [UniverseChainId.Monad, expect.stringContaining('-')],
     [UniverseChainId.Tempo, undefined],
   ])('buildWrappedNativeCurrencyId returns correct result for chainId=%s', (chainId, expected) => {
     expect(buildWrappedNativeCurrencyId(chainId)).toEqual(expected)
@@ -96,17 +96,17 @@ describe('currencyId', () => {
   })
 
   it('buildWrappedNativeCurrencyIdWithThrow returns string for Mainnet', () => {
-    expect(buildWrappedNativeCurrencyIdWithThrow(UniverseChainId.Mainnet)).toEqual(expect.any(String))
+    expect(buildWrappedNativeCurrencyIdWithThrow(UniverseChainId.Monad)).toEqual(expect.any(String))
   })
 
   it.each([
-    [UniverseChainId.Mainnet, getNativeAddress(UniverseChainId.Mainnet), true],
+    [UniverseChainId.Monad, getNativeAddress(UniverseChainId.Monad), true],
     [UniverseChainId.Polygon, getNativeAddress(UniverseChainId.Polygon), true],
-    [UniverseChainId.Mainnet, null, true],
-    [UniverseChainId.Mainnet, getNativeAddress(UniverseChainId.Polygon), false],
-    [UniverseChainId.Mainnet, DAI.address, false],
-    [UniverseChainId.Mainnet, 'ETH', true],
-    [UniverseChainId.Mainnet, DEFAULT_NATIVE_ADDRESS, true],
+    [UniverseChainId.Monad, null, true],
+    [UniverseChainId.Monad, getNativeAddress(UniverseChainId.Polygon), false],
+    [UniverseChainId.Monad, DAI.address, false],
+    [UniverseChainId.Monad, 'ETH', true],
+    [UniverseChainId.Monad, DEFAULT_NATIVE_ADDRESS, true],
     [UniverseChainId.Solana, getNativeAddress(UniverseChainId.Solana), true],
     [UniverseChainId.Solana, '11111', false],
     [UniverseChainId.Solana, DEFAULT_NATIVE_ADDRESS_SOLANA, true],
@@ -123,7 +123,7 @@ describe('currencyId', () => {
 
   it.each([
     [`1-${DAI.address}`, DAI.address],
-    [`1-${getNativeAddress(UniverseChainId.Mainnet)}`, getNativeAddress(UniverseChainId.Mainnet)],
+    [`1-${getNativeAddress(UniverseChainId.Monad)}`, getNativeAddress(UniverseChainId.Monad)],
   ])('currencyIdToAddress returns correct address for _currencyId=%s = %s', (_currencyId, expectedAddress) => {
     expect(currencyIdToAddress(_currencyId)).toEqual(expectedAddress)
   })
@@ -138,8 +138,8 @@ describe('currencyId', () => {
   })
 
   it.each([
-    [`1-${DAI.address}`, UniverseChainId.Mainnet],
-    [`1-${getNativeAddress(UniverseChainId.Mainnet)}`, UniverseChainId.Mainnet],
+    [`1-${DAI.address}`, UniverseChainId.Monad],
+    [`1-${getNativeAddress(UniverseChainId.Monad)}`, UniverseChainId.Monad],
     ['', null],
   ])('currencyIdToChain returns correct chain for currencyId=%s = %s', (_currencyId, expectedChain) => {
     expect(currencyIdToChain(_currencyId)).toEqual(expectedChain)

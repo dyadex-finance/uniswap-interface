@@ -50,7 +50,7 @@ jest.mock('@universe/gating', () => ({
 }))
 
 const MOCK_TIMESTAMP = 1487076708000
-const CHAIN_ID = UniverseChainId.Mainnet
+const CHAIN_ID = UniverseChainId.Monad
 
 // Mock transaction requests
 const mockSwapTxRequest = {
@@ -595,7 +595,7 @@ describe('prepareAndSignSwapSaga', () => {
 })
 
 describe('shouldSubmitViaPrivateRpc', () => {
-  const chainId = UniverseChainId.Mainnet
+  const chainId = UniverseChainId.Monad
 
   it('should return true when all conditions are met', async () => {
     const result = await expectSaga(shouldSubmitViaPrivateRpc, chainId)

@@ -56,9 +56,9 @@ function formSwapUrl({
 
 const swapUrl = formSwapUrl({
   userAddress: account.address,
-  chain: UniverseChainId.Mainnet,
+  chain: UniverseChainId.Monad,
   inputAddress: DAI.address,
-  outputAddress: UNI[UniverseChainId.Mainnet].address,
+  outputAddress: UNI[UniverseChainId.Monad].address,
   currencyField: 'input',
   amount: '100',
 })
@@ -74,7 +74,7 @@ const testnetSwapUrl = formSwapUrl({
 
 const invalidOutputCurrencySwapUrl = formSwapUrl({
   userAddress: account.address,
-  chain: UniverseChainId.Mainnet,
+  chain: UniverseChainId.Monad,
   inputAddress: DAI.address,
   outputAddress: undefined,
   currencyField: 'input',
@@ -83,9 +83,9 @@ const invalidOutputCurrencySwapUrl = formSwapUrl({
 
 const invalidInputTokenSwapURl = formSwapUrl({
   userAddress: account.address,
-  chain: UniverseChainId.Mainnet,
+  chain: UniverseChainId.Monad,
   inputAddress: '0x00',
-  outputAddress: UNI[UniverseChainId.Mainnet].address,
+  outputAddress: UNI[UniverseChainId.Monad].address,
   currencyField: 'input',
   amount: '100',
 })
@@ -94,25 +94,25 @@ const invalidChainSwapUrl = formSwapUrl({
   userAddress: account.address,
   chain: 23,
   inputAddress: DAI.address,
-  outputAddress: UNI[UniverseChainId.Mainnet].address,
+  outputAddress: UNI[UniverseChainId.Monad].address,
   currencyField: 'input',
   amount: '100',
 })
 
 const invalidAmountSwapUrl = formSwapUrl({
   userAddress: account.address,
-  chain: UniverseChainId.Mainnet,
+  chain: UniverseChainId.Monad,
   inputAddress: DAI.address,
-  outputAddress: UNI[UniverseChainId.Mainnet].address,
+  outputAddress: UNI[UniverseChainId.Monad].address,
   currencyField: 'input',
   amount: 'not a number',
 })
 
 const invalidCurrencyFieldSwapUrl = formSwapUrl({
   userAddress: account.address,
-  chain: UniverseChainId.Mainnet,
+  chain: UniverseChainId.Monad,
   inputAddress: DAI.address,
-  outputAddress: UNI[UniverseChainId.Mainnet].address,
+  outputAddress: UNI[UniverseChainId.Monad].address,
   currencyField: 'token1',
   amount: '100',
 })
@@ -132,12 +132,12 @@ describe(handleSwapLink, () => {
         expect.objectContaining({
           input: {
             address: DAI.address,
-            chainId: UniverseChainId.Mainnet,
+            chainId: UniverseChainId.Monad,
             type: AssetType.Currency,
           },
           output: {
-            address: UNI[UniverseChainId.Mainnet].address,
-            chainId: UniverseChainId.Mainnet,
+            address: UNI[UniverseChainId.Monad].address,
+            chainId: UniverseChainId.Monad,
             type: AssetType.Currency,
           },
           exactCurrencyField: 'input',

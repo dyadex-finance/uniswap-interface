@@ -351,7 +351,7 @@ describe('useDerivedPositionInfo', () => {
 })
 
 describe('getSortedCurrenciesForProtocol', () => {
-  const nativeCurrency = nativeOnChain(UniverseChainId.Mainnet)
+  const nativeCurrency = nativeOnChain(UniverseChainId.Monad)
 
   it('sorts tokens when they are undefined', () => {
     expect(getSortedCurrenciesForProtocol({ a: undefined, b: undefined, protocolVersion: ProtocolVersion.V2 })).toEqual(

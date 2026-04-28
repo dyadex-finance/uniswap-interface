@@ -24,7 +24,7 @@ const mockGetOnChainBalancesFetch = fetchOnChainCurrencyBalance as MockedFunctio
 
 const TEST_ACCOUNT = '0x1234567890123456789012345678901234567890'
 const TEST_TOKEN_ADDRESS = '0xabcdef0123456789abcdef0123456789abcdef01'
-const TEST_CHAIN_ID = UniverseChainId.Mainnet
+const TEST_CHAIN_ID = UniverseChainId.Monad
 
 const mockToken = {
   id: TEST_TOKEN_ADDRESS,

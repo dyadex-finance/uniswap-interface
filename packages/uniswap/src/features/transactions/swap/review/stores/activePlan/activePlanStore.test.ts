@@ -8,7 +8,7 @@ function createMockActivePlan(planId: string): ActivePlanData {
   return {
     response: {} as ActivePlanData['response'],
     planId,
-    inputChainId: UniverseChainId.Mainnet,
+    inputChainId: UniverseChainId.Monad,
     steps: [],
     proofPending: false,
     currentStepIndex: 0,

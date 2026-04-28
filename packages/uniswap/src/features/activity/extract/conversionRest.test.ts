@@ -40,11 +40,11 @@ const FROM_ADDRESS = SAMPLE_SEED_ADDRESS_1
 const TO_ADDRESS = SAMPLE_SEED_ADDRESS_2
 const TEST_HASH = '0x00'
 const ERC20_ASSET_ADDRESS = DAI.address
-const WRAPPED_NATIVE_ADDRESS = getWrappedNativeAddressWithThrow(UniverseChainId.Mainnet)
-const NATIVE_ADDRESS = getNativeAddress(UniverseChainId.Mainnet)
+const WRAPPED_NATIVE_ADDRESS = getWrappedNativeAddressWithThrow(UniverseChainId.Monad)
+const NATIVE_ADDRESS = getNativeAddress(UniverseChainId.Monad)
 
 const TRANSACTION_BASE: OnChainTransaction = {
-  chainId: UniverseChainId.Mainnet,
+  chainId: UniverseChainId.Monad,
   transactionHash: TEST_HASH,
   timestampMillis: BigInt(1000),
   from: FROM_ADDRESS,
@@ -62,7 +62,7 @@ const ERC20_TOKEN_MOCK = {
   symbol: 'asset_symbol',
   decimals: 18,
   type: TokenType.ERC20,
-  chainId: UniverseChainId.Mainnet,
+  chainId: UniverseChainId.Monad,
   metadata: {
     spamCode: RestSpamCode.NOT_SPAM,
   },
@@ -109,7 +109,7 @@ const FOT_TOKEN_MOCK = {
   symbol: 'FOT',
   decimals: 18,
   type: TokenType.ERC20,
-  chainId: UniverseChainId.Mainnet,
+  chainId: UniverseChainId.Monad,
   metadata: {
     spamCode: RestSpamCode.NOT_SPAM,
     feeData: {
@@ -129,7 +129,7 @@ const NFT_MOCK = {
   collectionName: 'collection_name',
   imageUrl: 'image_url',
   isSpam: false,
-  chainId: UniverseChainId.Mainnet,
+  chainId: UniverseChainId.Monad,
   type: TokenType.ERC721,
 }
 
@@ -849,7 +849,7 @@ const MOCK_ONRAMP_PURCHASE = {
   token: {
     address: ERC20_ASSET_ADDRESS,
     symbol: 'DAI',
-    chainId: UniverseChainId.Mainnet,
+    chainId: UniverseChainId.Monad,
   },
   tokenAmount: {
     amount: 100,
@@ -873,7 +873,7 @@ const MOCK_ONRAMP_TRANSFER = {
   token: {
     address: ERC20_ASSET_ADDRESS,
     symbol: 'DAI',
-    chainId: UniverseChainId.Mainnet,
+    chainId: UniverseChainId.Monad,
   },
   tokenAmount: {
     amount: 50,

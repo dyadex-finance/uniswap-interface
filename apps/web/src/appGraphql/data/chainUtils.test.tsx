@@ -5,7 +5,7 @@ import { supportedChainIdFromGQLChain } from '~/appGraphql/data/chainUtils'
 
 describe('fromGraphQLChain', () => {
   it('should return the corresponding chain ID for supported chains', () => {
-    expect(supportedChainIdFromGQLChain(GraphQLApi.Chain.Ethereum)).toBe(UniverseChainId.Mainnet)
+    expect(supportedChainIdFromGQLChain(GraphQLApi.Chain.Ethereum)).toBe(UniverseChainId.Monad)
 
     for (const chain of Object.values(GraphQLApi.Chain)) {
       if (!isBackendSupportedChain(chain)) {

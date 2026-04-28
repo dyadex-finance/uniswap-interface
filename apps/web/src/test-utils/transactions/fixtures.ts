@@ -32,7 +32,7 @@ export function createMockUniswapXOrder(overrides?: Partial<UniswapXOrderDetails
     encodedOrder: '0xdefault-encoded-order',
     id: 'default-id',
     addedTime: Date.now(),
-    chainId: UniverseChainId.Mainnet,
+    chainId: UniverseChainId.Monad,
     expiry: Date.now() + 3600000, // 1 hour from now
     from: '0x0000000000000000000000000000000000000000',
     transactionOriginType: TransactionOriginType.Internal,

@@ -28,14 +28,14 @@ vi.mock('uniswap/src/data/apiClients/tradingApi/useCheckApprovalQuery')
 const mockUseCheckApprovalQuery = useCheckApprovalQuery as Mock
 
 describe('useTokenApprovalInfo', () => {
-  const mockTokenIn = new Token(UniverseChainId.Mainnet, DAI.address, DAI.decimals, DAI.symbol, DAI.name)
-  const mockTokenOut = new Token(UniverseChainId.Mainnet, USDC.address, USDC.decimals, USDC.symbol, USDC.name)
+  const mockTokenIn = new Token(UniverseChainId.Monad, DAI.address, DAI.decimals, DAI.symbol, DAI.name)
+  const mockTokenOut = new Token(UniverseChainId.Monad, USDC.address, USDC.decimals, USDC.symbol, USDC.name)
 
   const mockCurrencyInAmount = CurrencyAmount.fromRawAmount(mockTokenIn, '1000000000000000000') // 1 TKIN
   const mockCurrencyOutAmount = CurrencyAmount.fromRawAmount(mockTokenOut, '2000000000000000000') // 2 TKOUT
 
   const mockParams: TokenApprovalInfoParams = {
-    chainId: UniverseChainId.Mainnet,
+    chainId: UniverseChainId.Monad,
     wrapType: WrapType.NotApplicable,
     currencyInAmount: mockCurrencyInAmount,
     currencyOutAmount: mockCurrencyOutAmount,
@@ -61,7 +61,7 @@ describe('useTokenApprovalInfo', () => {
       data: {
         approval: {
           to: '0x456',
-          chainId: UniverseChainId.Mainnet,
+          chainId: UniverseChainId.Monad,
           gasLimit: '100000',
           maxFeePerGas: '300000',
           maxPriorityFeePerGas: '400000',
@@ -80,7 +80,7 @@ describe('useTokenApprovalInfo', () => {
         action: ApprovalAction.Permit2Approve,
         txRequest: {
           to: '0x456',
-          chainId: UniverseChainId.Mainnet,
+          chainId: UniverseChainId.Monad,
           gasLimit: '100000',
           maxFeePerGas: '300000',
           maxPriorityFeePerGas: '400000',

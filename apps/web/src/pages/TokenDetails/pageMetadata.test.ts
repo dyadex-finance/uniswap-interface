@@ -84,8 +84,8 @@ describe('pages/TokenDetails/util', () => {
 
     it('should not include chain suffix for mainnet', () => {
       const result = getTokenPageDescription({
-        currency: new Token(UniverseChainId.Mainnet, ZERO_ADDRESS, 18, 'ETH', 'Ethereum'),
-        chainId: UniverseChainId.Mainnet,
+        currency: new Token(UniverseChainId.Monad, ZERO_ADDRESS, 18, 'ETH', 'Ethereum'),
+        chainId: UniverseChainId.Monad,
         price: '$3,500.00',
       })
       expect(result).toBe(

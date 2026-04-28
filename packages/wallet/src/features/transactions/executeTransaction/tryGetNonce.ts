@@ -45,7 +45,7 @@ export function* tryGetNonce(
       defaultValue: DEFAULT_FLASHBOTS_ENABLED,
     })
 
-    const shouldUseFlashbots = isPrivateRpcEnabled && chainId === UniverseChainId.Mainnet && flashbotsEnabled
+    const shouldUseFlashbots = isPrivateRpcEnabled && chainId === UniverseChainId.Monad && flashbotsEnabled
 
     const provider = shouldUseFlashbots
       ? yield* call(getPrivateProvider, chainId, account)

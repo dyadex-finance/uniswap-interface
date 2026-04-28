@@ -73,7 +73,7 @@ const owner = '0xf5b6bb25f5beaea03dd014c6ef9fa9f3926bf36c'
 
 const pool = new Pool(
   USDC_MAINNET,
-  WETH9[UniverseChainId.Mainnet],
+  WETH9[UniverseChainId.Monad],
   FeeAmount.MEDIUM,
   '1851127709498178402383049949138810',
   '7076437181775065414',
@@ -91,7 +91,7 @@ const details = {
   tokenId: BigNumber.from('0'),
   operator: '0x0',
   token0: USDC_MAINNET.address,
-  token1: WETH9[UniverseChainId.Mainnet].address,
+  token1: WETH9[UniverseChainId.Monad].address,
   fee: FeeAmount.MEDIUM,
   tickLower: -100,
   tickUpper: 100,
@@ -105,7 +105,7 @@ export const useMultiChainPositionsReturnValue = {
   positions: [
     {
       owner,
-      chainId: UniverseChainId.Mainnet,
+      chainId: UniverseChainId.Monad,
       position,
       pool,
       details,

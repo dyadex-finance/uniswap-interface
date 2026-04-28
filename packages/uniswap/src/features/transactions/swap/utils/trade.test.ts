@@ -8,7 +8,7 @@ import { requireAcceptNewTrade } from 'uniswap/src/features/transactions/swap/ut
 
 // oxlint-disable-next-line jest/no-export -- suppressed
 export const mockPool = new Pool(
-  UNI[UniverseChainId.Mainnet],
+  UNI[UniverseChainId.Monad],
   WBTC,
   FeeAmount.HIGH,
   '2437312313659959819381354528',
@@ -30,8 +30,8 @@ const createClassicTrade = ({
     v4Routes: [],
     v3Routes: [
       {
-        routev3: new Route<Currency, Currency>([mockPool], UNI[UniverseChainId.Mainnet], WBTC),
-        inputAmount: CurrencyAmount.fromRawAmount(UNI[UniverseChainId.Mainnet], inputAmount),
+        routev3: new Route<Currency, Currency>([mockPool], UNI[UniverseChainId.Monad], WBTC),
+        inputAmount: CurrencyAmount.fromRawAmount(UNI[UniverseChainId.Monad], inputAmount),
         outputAmount: CurrencyAmount.fromRawAmount(WBTC, outputAmount),
       },
     ],
@@ -95,7 +95,7 @@ describe(requireAcceptNewTrade, () => {
         routing: TradingApi.Routing.BRIDGE,
         permitData: null,
       },
-      currencyIn: UNI[UniverseChainId.Mainnet],
+      currencyIn: UNI[UniverseChainId.Monad],
       currencyOut: WBTC,
       tradeType: TradeType.EXACT_INPUT,
     })
@@ -115,7 +115,7 @@ describe(requireAcceptNewTrade, () => {
           routing: TradingApi.Routing.BRIDGE,
           permitData: null,
         },
-        currencyIn: UNI[UniverseChainId.Mainnet],
+        currencyIn: UNI[UniverseChainId.Monad],
         currencyOut: WBTC,
         tradeType: TradeType.EXACT_INPUT,
       })
@@ -137,7 +137,7 @@ describe(requireAcceptNewTrade, () => {
           routing: TradingApi.Routing.BRIDGE,
           permitData: null,
         },
-        currencyIn: UNI[UniverseChainId.Mainnet],
+        currencyIn: UNI[UniverseChainId.Monad],
         currencyOut: WBTC,
         tradeType: TradeType.EXACT_INPUT,
       })
@@ -159,7 +159,7 @@ describe(requireAcceptNewTrade, () => {
           routing: TradingApi.Routing.BRIDGE,
           permitData: null,
         },
-        currencyIn: UNI[UniverseChainId.Mainnet],
+        currencyIn: UNI[UniverseChainId.Monad],
         currencyOut: WBTC,
         tradeType: TradeType.EXACT_INPUT,
       })

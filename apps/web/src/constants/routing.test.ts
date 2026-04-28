@@ -4,7 +4,7 @@ import { UniverseChainId } from 'uniswap/src/features/chains/types'
 describe('Routing', () => {
   describe('COMMON_BASES', () => {
     it('contains all coins for mainnet', () => {
-      const symbols = COMMON_BASES[UniverseChainId.Mainnet].map((coin) => coin.currency.symbol)
+      const symbols = COMMON_BASES[UniverseChainId.Monad].map((coin) => coin.currency.symbol)
       expect(symbols).toEqual(['ETH', 'DAI', 'USDC', 'USDT', 'WBTC', 'WETH'])
     })
     it('contains all coins for arbitrum', () => {

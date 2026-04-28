@@ -3,7 +3,7 @@ import { UniverseChainId } from 'uniswap/src/features/chains/types'
 
 describe('getWrappedNativeAddress', () => {
   it('returns WETH address for Mainnet', () => {
-    expect(getWrappedNativeAddress(UniverseChainId.Mainnet)).toBeDefined()
+    expect(getWrappedNativeAddress(UniverseChainId.Monad)).toBeDefined()
   })
 
   it('returns undefined for Tempo', () => {
@@ -13,7 +13,7 @@ describe('getWrappedNativeAddress', () => {
 
 describe('getWrappedNativeAddressWithThrow', () => {
   it('returns address for Mainnet', () => {
-    expect(getWrappedNativeAddressWithThrow(UniverseChainId.Mainnet)).toEqual(expect.any(String))
+    expect(getWrappedNativeAddressWithThrow(UniverseChainId.Monad)).toEqual(expect.any(String))
   })
 
   it('throws for Tempo', () => {

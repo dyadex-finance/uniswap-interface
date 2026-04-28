@@ -31,7 +31,7 @@ export function RaiseCurrencySection({
     () =>
       tokenForm.mode === TokenMode.CREATE_NEW
         ? tokenForm.network
-        : (tokenForm.existingTokenCurrencyInfo?.currency.chainId ?? UniverseChainId.Mainnet),
+        : tokenForm.existingTokenCurrencyInfo?.currency.chainId ?? UniverseChainId.Monad,
     [tokenForm],
   )
 

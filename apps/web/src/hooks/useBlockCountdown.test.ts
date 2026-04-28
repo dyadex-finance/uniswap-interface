@@ -30,7 +30,7 @@ describe('useBlockCountdown', () => {
   it('should return undefined when blockTimestamp is undefined', () => {
     mockUseBlock.mockReturnValue({ data: undefined })
 
-    const { result } = renderHook(() => useBlockCountdown(UniverseChainId.Mainnet))
+    const { result } = renderHook(() => useBlockCountdown(UniverseChainId.Monad))
 
     expect(result.current).toBeUndefined()
   })
@@ -42,7 +42,7 @@ describe('useBlockCountdown', () => {
 
     mockUseBlock.mockReturnValue({ data: { timestamp: BigInt(blockTimestamp) } })
 
-    const { result } = renderHook(() => useBlockCountdown(UniverseChainId.Mainnet))
+    const { result } = renderHook(() => useBlockCountdown(UniverseChainId.Monad))
 
     // With 12s block time and 5s elapsed, should have 7s remaining
     expect(result.current).toBe(7)
@@ -68,7 +68,7 @@ describe('useBlockCountdown', () => {
 
     mockUseBlock.mockReturnValue({ data: { timestamp: BigInt(blockTimestamp) } })
 
-    const { result } = renderHook(() => useBlockCountdown(UniverseChainId.Mainnet))
+    const { result } = renderHook(() => useBlockCountdown(UniverseChainId.Monad))
 
     // Should reset to max block time (12s) when countdown would be 0
     expect(result.current).toBe(12)

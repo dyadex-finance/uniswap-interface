@@ -41,7 +41,7 @@ export function TokenDetailsContent({ isCompact }: { isCompact: boolean }) {
 
   const { direction: scrollDirection } = useScroll()
 
-  const chainId = fromGraphQLChain(currencyChain) ?? UniverseChainId.Mainnet
+  const chainId = fromGraphQLChain(currencyChain) ?? UniverseChainId.Monad
   const currencyInfo = useCurrencyInfo(
     tokenQueryData?.address ? buildCurrencyId(chainId, tokenQueryData.address) : undefined,
   )

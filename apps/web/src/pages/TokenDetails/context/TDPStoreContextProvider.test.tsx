@@ -20,7 +20,7 @@ function createDerivedState(overrides: {
 }) {
   return {
     currencyChain: GraphQLApi.Chain.Ethereum,
-    currencyChainId: UniverseChainId.Mainnet,
+    currencyChainId: UniverseChainId.Monad,
     address: overrides.address,
     tokenQuery: overrides.tokenQuery ?? {
       loading: false,

@@ -1,7 +1,6 @@
 import { useTranslation } from 'react-i18next'
 import { Button, type ButtonProps, useIsShortMobileDevice } from 'ui/src'
-import { MAINNET_CHAIN_INFO } from 'uniswap/src/features/chains/evm/info/mainnet'
-import { SOLANA_CHAIN_INFO } from 'uniswap/src/features/chains/svm/info/solana'
+import { MONAD_CHAIN_INFO } from 'uniswap/src/features/chains/evm/info/monad'
 import { isSVMChain } from 'uniswap/src/features/platforms/utils/chains'
 import { useIsMissingPlatformWallet } from 'uniswap/src/features/transactions/swap/components/SwapFormButton/hooks/useIsMissingPlatformWallet'
 import { useAccountDrawer } from '~/components/AccountDrawer/MiniPortfolio/hooks'
@@ -32,7 +31,7 @@ export function BuyFormButton({ forceDisabled }: BuyFormButtonProps) {
       <Button size={buttonSize} variant="branded" emphasis="secondary" fill onPress={accountDrawer.open}>
         {isMissingPlatformWallet
           ? t('common.connectTo', {
-              platform: chainId && isSVMChain(chainId) ? SOLANA_CHAIN_INFO.name : MAINNET_CHAIN_INFO.name,
+              platform: chainId && MONAD_CHAIN_INFO.name,
             })
           : t('common.connectWallet.button')}
       </Button>
@@ -45,8 +44,8 @@ export function BuyFormButton({ forceDisabled }: BuyFormButtonProps) {
         {notAvailableInThisRegion
           ? t('common.notAvailableInRegion.error')
           : quoteCurrency
-            ? t('common.noAmount.error')
-            : t('common.selectToken.label')}
+          ? t('common.noAmount.error')
+          : t('common.selectToken.label')}
       </Button>
     )
   }

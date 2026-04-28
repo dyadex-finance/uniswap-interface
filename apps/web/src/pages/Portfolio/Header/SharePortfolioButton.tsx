@@ -129,7 +129,7 @@ export function SharePortfolioButton({
                     <AnimatableCopyIcon isCopied size={iconSizes.icon16} textColor="$neutral1" />
                   ) : (
                     <NetworkLogo
-                      chainId={account.platform === Platform.SVM ? UniverseChainId.Solana : UniverseChainId.Mainnet}
+                      chainId={account.platform === Platform.SVM ? UniverseChainId.Solana : UniverseChainId.Monad}
                       size={iconSizes.icon16}
                     />
                   )}

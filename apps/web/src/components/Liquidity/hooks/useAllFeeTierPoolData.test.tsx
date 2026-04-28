@@ -49,7 +49,7 @@ const DEFAULT_FEE_TIER_DATA = {
 }
 
 describe('useAllFeeTierPoolData', () => {
-  const chainId = UniverseChainId.Mainnet
+  const chainId = UniverseChainId.Monad
   const protocolVersion = ProtocolVersion.V3
   const sdkCurrencies = { TOKEN0: TEST_TOKEN_1, TOKEN1: TEST_TOKEN_2 }
   const hook = ''

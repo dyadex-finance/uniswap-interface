@@ -14,7 +14,7 @@ describe('isUnsupportedLPChain', () => {
 
   describe('V2 protocol', () => {
     it('returns false for supported V2 chains', () => {
-      expect(isUnsupportedLPChain(UniverseChainId.Mainnet, ProtocolVersion.V2)).toBe(false)
+      expect(isUnsupportedLPChain(UniverseChainId.Monad, ProtocolVersion.V2)).toBe(false)
       expect(isUnsupportedLPChain(UniverseChainId.ArbitrumOne, ProtocolVersion.V2)).toBe(false)
       expect(isUnsupportedLPChain(UniverseChainId.Base, ProtocolVersion.V2)).toBe(false)
     })
@@ -31,7 +31,7 @@ describe('isUnsupportedLPChain', () => {
 
   describe('V3 protocol', () => {
     it('returns false for any EVM chain with V3 protocol', () => {
-      expect(isUnsupportedLPChain(UniverseChainId.Mainnet, ProtocolVersion.V3)).toBe(false)
+      expect(isUnsupportedLPChain(UniverseChainId.Monad, ProtocolVersion.V3)).toBe(false)
       expect(isUnsupportedLPChain(UniverseChainId.Optimism, ProtocolVersion.V3)).toBe(false)
       expect(isUnsupportedLPChain(UniverseChainId.Blast, ProtocolVersion.V3)).toBe(false)
       expect(isUnsupportedLPChain(UniverseChainId.Zora, ProtocolVersion.V3)).toBe(false)
@@ -44,7 +44,7 @@ describe('isUnsupportedLPChain', () => {
 
   describe('V4 protocol', () => {
     it('returns false for supported V4 chains', () => {
-      expect(isUnsupportedLPChain(UniverseChainId.Mainnet, ProtocolVersion.V4)).toBe(false)
+      expect(isUnsupportedLPChain(UniverseChainId.Monad, ProtocolVersion.V4)).toBe(false)
       expect(isUnsupportedLPChain(UniverseChainId.Sepolia, ProtocolVersion.V4)).toBe(false)
     })
 
@@ -59,11 +59,11 @@ describe('isUnsupportedLPChain', () => {
 
   describe('edge cases', () => {
     it('returns false for unknown protocol versions', () => {
-      expect(isUnsupportedLPChain(UniverseChainId.Mainnet, 999 as ProtocolVersion)).toBe(false)
+      expect(isUnsupportedLPChain(UniverseChainId.Monad, 999 as ProtocolVersion)).toBe(false)
     })
 
     it('handles UNSPECIFIED protocol version', () => {
-      expect(isUnsupportedLPChain(UniverseChainId.Mainnet, ProtocolVersion.UNSPECIFIED)).toBe(false)
+      expect(isUnsupportedLPChain(UniverseChainId.Monad, ProtocolVersion.UNSPECIFIED)).toBe(false)
     })
   })
 })

@@ -13,7 +13,7 @@ import { isSVMChain } from 'uniswap/src/features/platforms/utils/chains'
  */
 const PRICE_SERVICE_SUPPORT: Record<UniverseChainId, boolean> = {
   // Supported
-  [UniverseChainId.Mainnet]: true,
+  [UniverseChainId.Monad]: true,
   [UniverseChainId.ArbitrumOne]: true,
   [UniverseChainId.Avalanche]: true,
   [UniverseChainId.Base]: true,

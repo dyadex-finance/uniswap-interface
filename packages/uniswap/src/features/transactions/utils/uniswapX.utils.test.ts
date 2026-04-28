@@ -60,7 +60,7 @@ describe('UniswapX Utils', () => {
   describe('isLimitOrder', () => {
     const mockLimitOrder: UniswapXOrderDetails = {
       id: 'test-limit-order',
-      chainId: UniverseChainId.Mainnet,
+      chainId: UniverseChainId.Monad,
       routing: TradingApi.Routing.DUTCH_LIMIT,
       orderHash: '0x123',
       from: '0xabc',

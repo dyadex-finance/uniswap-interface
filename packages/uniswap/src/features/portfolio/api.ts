@@ -1,4 +1,3 @@
-import { PublicKey } from '@solana/web3.js'
 import { skipToken, useQuery } from '@tanstack/react-query'
 import { Currency, CurrencyAmount, NativeCurrency as NativeCurrencyClass } from '@dyadex-finance/sdk-core'
 import { SharedQueryClient } from '@universe/api'
@@ -18,7 +17,6 @@ import { getPollingIntervalByBlocktime } from 'uniswap/src/features/chains/utils
 import { Platform } from 'uniswap/src/features/platforms/types/Platform'
 import { chainIdToPlatform } from 'uniswap/src/features/platforms/utils/chains'
 import { createEthersProvider } from 'uniswap/src/features/providers/createEthersProvider'
-import { getSolanaConnection } from 'uniswap/src/features/providers/getSolanaConnection'
 import { getCurrencyAmount, ValueType } from 'uniswap/src/features/tokens/getCurrencyAmount'
 import { currencyAddress as getCurrencyAddress } from 'uniswap/src/utils/currencyId'
 import { logger } from 'utilities/src/logger/logger'
@@ -53,8 +51,6 @@ async function fetchOnChainCurrencyBalanceInternal(
   switch (chainIdToPlatform(params.chainId)) {
     case Platform.EVM:
       return getOnChainBalancesFetchEVM(params)
-    case Platform.SVM:
-      return getOnChainBalancesFetchSVM(params)
     default: {
       logger.error(new Error(`Unexpected chainId for balance lookup: ${params.chainId}`), {
         tags: { file: 'api.ts', function: 'getOnChainBalancesFetch' },
@@ -135,32 +131,6 @@ export async function getOnChainBalancesFetchWithPending(
 
   const decodedBalance = erc20Contract.interface.decodeFunctionResult('balanceOf', balance)[0]
   return { balance: decodedBalance.toString() }
-}
-
-async function getOnChainBalancesFetchSVM(params: BalanceLookupParams): Promise<OnchainBalanceReactQueryResponse> {
-  const { currencyAddress, chainId, accountAddress } = params
-
-  try {
-    // Native currency lookup
-    if (currencyAddress === getChainInfo(chainId).nativeCurrency.address) {
-      const connection = getSolanaConnection()
-      const balance = await connection.getBalance(new PublicKey(accountAddress), SOLANA_ONCHAIN_BALANCE_COMMITMENT)
-      return { balance: balance.toString() }
-    }
-
-    // SPL token lookup with caching
-    const tokenAccountsMap = await SharedQueryClient.fetchQuery(
-      getSolanaParsedTokenAccountsByOwnerQueryOptions({ params: { accountAddress } }),
-    )
-
-    return { balance: tokenAccountsMap[currencyAddress]?.tokenAmount ?? '0' }
-  } catch (error) {
-    logger.error(error, {
-      tags: { file: 'api.ts', function: 'getOnChainBalancesFetchSVM' },
-      extra: { params },
-    })
-    return { balance: undefined }
-  }
 }
 
 // We want this to return fresh data.

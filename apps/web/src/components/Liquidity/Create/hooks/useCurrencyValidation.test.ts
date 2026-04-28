@@ -6,7 +6,7 @@ import { NATIVE_CHAIN_ID } from '~/constants/tokens'
 import { useCurrencyWithLoading } from '~/hooks/Tokens'
 import { renderHook } from '~/test-utils/render'
 
-const ETH = nativeOnChain(UniverseChainId.Mainnet)
+const ETH = nativeOnChain(UniverseChainId.Monad)
 
 vi.mock('~/components/Liquidity/parsers/urlParsers', () => ({
   createCurrencyParsersWithValidation: vi.fn(),
@@ -20,7 +20,7 @@ const createCurrencyParsersWithValidationMock = vi.mocked(createCurrencyParsersW
 const useCurrencyWithLoadingMock = vi.mocked(useCurrencyWithLoading)
 
 describe('useCurrencyValidation', () => {
-  const mockChainId = UniverseChainId.Mainnet
+  const mockChainId = UniverseChainId.Monad
   const mockTokenAddressA = '0x123abc456def789'
   const mockTokenAddressB = '0x456def789abc123'
   const mockValidateCurrencies = vi.fn()
@@ -80,7 +80,7 @@ describe('useCurrencyValidation', () => {
           currencyA: USDC_UNICHAIN.address,
           currencyB: undefined,
           defaultInitialToken: ETH,
-          chainId: UniverseChainId.Mainnet,
+          chainId: UniverseChainId.Monad,
         }),
       )
 

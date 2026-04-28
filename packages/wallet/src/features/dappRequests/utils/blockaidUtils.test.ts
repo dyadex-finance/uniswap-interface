@@ -28,7 +28,7 @@ import {
   UNLIMITED_APPROVAL_AMOUNT,
 } from 'wallet/src/features/dappRequests/utils/blockaidUtils'
 
-const TEST_CHAIN_ID = UniverseChainId.Mainnet
+const TEST_CHAIN_ID = UniverseChainId.Monad
 
 describe('blockaidUtils', () => {
   describe('roundToDecimals', () => {

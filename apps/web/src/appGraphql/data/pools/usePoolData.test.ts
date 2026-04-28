@@ -133,8 +133,8 @@ describe('usePoolData', () => {
 
     mockUseEnabledChains.mockReturnValue({
       isTestnetModeEnabled: false,
-      defaultChainId: UniverseChainId.Mainnet,
-      chains: [UniverseChainId.Mainnet],
+      defaultChainId: UniverseChainId.Monad,
+      chains: [UniverseChainId.Monad],
       gqlChains: GQL_MAINNET_CHAINS,
     })
 
@@ -153,7 +153,7 @@ describe('usePoolData', () => {
     const { result } = renderHook(() =>
       usePoolData({
         poolIdOrAddress: '0xv4pool123',
-        chainId: UniverseChainId.Mainnet,
+        chainId: UniverseChainId.Monad,
         isPoolAddress: false,
       }),
     )
@@ -196,7 +196,7 @@ describe('usePoolData', () => {
     const { result } = renderHook(() =>
       usePoolData({
         poolIdOrAddress: '0xv3pool456',
-        chainId: UniverseChainId.Mainnet,
+        chainId: UniverseChainId.Monad,
         isPoolAddress: true,
       }),
     )
@@ -235,7 +235,7 @@ describe('usePoolData', () => {
     const { result } = renderHook(() =>
       usePoolData({
         poolIdOrAddress: '0xv2pair789',
-        chainId: UniverseChainId.Mainnet,
+        chainId: UniverseChainId.Monad,
         isPoolAddress: true,
       }),
     )

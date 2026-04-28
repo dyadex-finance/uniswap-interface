@@ -26,7 +26,7 @@ function mockPortfolioData(balances: PortfolioBalance[]): Record<string, Portfol
 }
 
 const TEST_CHAINS = [
-  UniverseChainId.Mainnet,
+  UniverseChainId.Monad,
   UniverseChainId.ArbitrumOne,
   UniverseChainId.Base,
   UniverseChainId.Optimism,
@@ -55,7 +55,7 @@ describe('useNetworkSelectorOptions', () => {
     setupMock(
       mockPortfolioData([
         mockBalance(UniverseChainId.Base, 500),
-        mockBalance(UniverseChainId.Mainnet, 1200),
+        mockBalance(UniverseChainId.Monad, 1200),
         mockBalance(UniverseChainId.ArbitrumOne, 50),
       ]),
     )
@@ -68,7 +68,7 @@ describe('useNetworkSelectorOptions', () => {
     )
 
     expect(result.current?.withBalances.map((o) => o.chainId)).toEqual([
-      UniverseChainId.Mainnet,
+      UniverseChainId.Monad,
       UniverseChainId.Base,
       UniverseChainId.ArbitrumOne,
     ])
@@ -78,7 +78,7 @@ describe('useNetworkSelectorOptions', () => {
   })
 
   it('preserves input chainIds order for otherNetworks', () => {
-    setupMock(mockPortfolioData([mockBalance(UniverseChainId.Mainnet, 100)]))
+    setupMock(mockPortfolioData([mockBalance(UniverseChainId.Monad, 100)]))
 
     const { result } = renderHookWithProviders(() =>
       useNetworkSelectorOptions({
@@ -88,7 +88,7 @@ describe('useNetworkSelectorOptions', () => {
     )
 
     // otherNetworks should match the order of TEST_CHAINS minus the chain with balance (Mainnet)
-    const expectedOrder = TEST_CHAINS.filter((c) => c !== UniverseChainId.Mainnet)
+    const expectedOrder = TEST_CHAINS.filter((c) => c !== UniverseChainId.Monad)
     expect(result.current?.otherNetworks.map((o) => o.chainId)).toEqual(expectedOrder)
   })
 
@@ -106,7 +106,7 @@ describe('useNetworkSelectorOptions', () => {
   })
 
   it('returns undefined when enabled is false', () => {
-    setupMock(mockPortfolioData([mockBalance(UniverseChainId.Mainnet, 1000)]))
+    setupMock(mockPortfolioData([mockBalance(UniverseChainId.Monad, 1000)]))
 
     const { result } = renderHookWithProviders(() =>
       useNetworkSelectorOptions({
@@ -120,7 +120,7 @@ describe('useNetworkSelectorOptions', () => {
   })
 
   it('partitions chains correctly between withBalances and otherNetworks', () => {
-    setupMock(mockPortfolioData([mockBalance(UniverseChainId.Mainnet, 500), mockBalance(UniverseChainId.Base, 200)]))
+    setupMock(mockPortfolioData([mockBalance(UniverseChainId.Monad, 500), mockBalance(UniverseChainId.Base, 200)]))
 
     const { result } = renderHookWithProviders(() =>
       useNetworkSelectorOptions({
@@ -132,15 +132,15 @@ describe('useNetworkSelectorOptions', () => {
     const withBalanceIds = result.current?.withBalances.map((o) => o.chainId)
     const otherIds = result.current?.otherNetworks.map((o) => o.chainId)
 
-    expect(withBalanceIds).toContain(UniverseChainId.Mainnet)
+    expect(withBalanceIds).toContain(UniverseChainId.Monad)
     expect(withBalanceIds).toContain(UniverseChainId.Base)
-    expect(otherIds).not.toContain(UniverseChainId.Mainnet)
+    expect(otherIds).not.toContain(UniverseChainId.Monad)
     expect(otherIds).not.toContain(UniverseChainId.Base)
     expect((withBalanceIds?.length ?? 0) + (otherIds?.length ?? 0)).toBe(TEST_CHAINS.length)
   })
 
   it('puts zero-balance chains in otherNetworks', () => {
-    setupMock(mockPortfolioData([mockBalance(UniverseChainId.Mainnet, 0), mockBalance(UniverseChainId.Base, 100)]))
+    setupMock(mockPortfolioData([mockBalance(UniverseChainId.Monad, 0), mockBalance(UniverseChainId.Base, 100)]))
 
     const { result } = renderHookWithProviders(() =>
       useNetworkSelectorOptions({
@@ -152,16 +152,16 @@ describe('useNetworkSelectorOptions', () => {
     const withBalanceIds = result.current?.withBalances.map((o) => o.chainId)
     const otherIds = result.current?.otherNetworks.map((o) => o.chainId)
 
-    expect(withBalanceIds).not.toContain(UniverseChainId.Mainnet)
-    expect(otherIds).toContain(UniverseChainId.Mainnet)
+    expect(withBalanceIds).not.toContain(UniverseChainId.Monad)
+    expect(otherIds).toContain(UniverseChainId.Monad)
     expect(withBalanceIds).toContain(UniverseChainId.Base)
   })
 
   it('aggregates multiple token balances on the same chain', () => {
     setupMock(
       mockPortfolioData([
-        mockBalance(UniverseChainId.Mainnet, 300),
-        { ...mockBalance(UniverseChainId.Mainnet, 200), id: 'eth-token-2', cacheId: 'eth-token-2' },
+        mockBalance(UniverseChainId.Monad, 300),
+        { ...mockBalance(UniverseChainId.Monad, 200), id: 'eth-token-2', cacheId: 'eth-token-2' },
       ]),
     )
 
@@ -172,7 +172,7 @@ describe('useNetworkSelectorOptions', () => {
       }),
     )
 
-    const ethOption = result.current?.withBalances.find((o) => o.chainId === UniverseChainId.Mainnet)
+    const ethOption = result.current?.withBalances.find((o) => o.chainId === UniverseChainId.Monad)
     expect(ethOption?.balanceUSD).toBe(500)
   })
 
@@ -180,9 +180,9 @@ describe('useNetworkSelectorOptions', () => {
     setupMock(
       mockPortfolioData([
         {
-          ...mockBalance(UniverseChainId.Mainnet, 500),
+          ...mockBalance(UniverseChainId.Monad, 500),
           currencyInfo: {
-            ...mockBalance(UniverseChainId.Mainnet, 500).currencyInfo,
+            ...mockBalance(UniverseChainId.Monad, 500).currencyInfo,
             isSpam: true,
           } as PortfolioBalance['currencyInfo'],
         },
@@ -196,12 +196,12 @@ describe('useNetworkSelectorOptions', () => {
       }),
     )
 
-    expect(result.current?.withBalances.map((o) => o.chainId)).not.toContain(UniverseChainId.Mainnet)
-    expect(result.current?.otherNetworks.map((o) => o.chainId)).toContain(UniverseChainId.Mainnet)
+    expect(result.current?.withBalances.map((o) => o.chainId)).not.toContain(UniverseChainId.Monad)
+    expect(result.current?.otherNetworks.map((o) => o.chainId)).toContain(UniverseChainId.Monad)
   })
 
   it('excludes hidden tokens from balance aggregation', () => {
-    setupMock(mockPortfolioData([{ ...mockBalance(UniverseChainId.Mainnet, 500), isHidden: true }]))
+    setupMock(mockPortfolioData([{ ...mockBalance(UniverseChainId.Monad, 500), isHidden: true }]))
 
     const { result } = renderHookWithProviders(() =>
       useNetworkSelectorOptions({
@@ -210,12 +210,12 @@ describe('useNetworkSelectorOptions', () => {
       }),
     )
 
-    expect(result.current?.withBalances.map((o) => o.chainId)).not.toContain(UniverseChainId.Mainnet)
-    expect(result.current?.otherNetworks.map((o) => o.chainId)).toContain(UniverseChainId.Mainnet)
+    expect(result.current?.withBalances.map((o) => o.chainId)).not.toContain(UniverseChainId.Monad)
+    expect(result.current?.otherNetworks.map((o) => o.chainId)).toContain(UniverseChainId.Monad)
   })
 
   it('coalesces null balanceUSD to 0', () => {
-    setupMock(mockPortfolioData([mockBalance(UniverseChainId.Mainnet, null)]))
+    setupMock(mockPortfolioData([mockBalance(UniverseChainId.Monad, null)]))
 
     const { result } = renderHookWithProviders(() =>
       useNetworkSelectorOptions({
@@ -225,7 +225,7 @@ describe('useNetworkSelectorOptions', () => {
     )
 
     const otherIds = result.current?.otherNetworks.map((o) => o.chainId)
-    expect(otherIds).toContain(UniverseChainId.Mainnet)
-    expect(result.current?.withBalances.map((o) => o.chainId)).not.toContain(UniverseChainId.Mainnet)
+    expect(otherIds).toContain(UniverseChainId.Monad)
+    expect(result.current?.withBalances.map((o) => o.chainId)).not.toContain(UniverseChainId.Monad)
   })
 })

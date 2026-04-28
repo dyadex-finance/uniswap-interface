@@ -33,8 +33,8 @@ const MAINNET_NATIVE_GQL_TOKEN = {
 } as GraphQLApi.Token
 
 const MAINNET_NATIVE_CURRENCY_INFO = {
-  currency: nativeOnChain(UniverseChainId.Mainnet),
-  currencyId: currencyId(nativeOnChain(UniverseChainId.Mainnet)),
+  currency: nativeOnChain(UniverseChainId.Monad),
+  currencyId: currencyId(nativeOnChain(UniverseChainId.Monad)),
   isSpam: false,
   logoUrl: 'eth_url',
   safetyInfo: {

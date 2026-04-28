@@ -22,7 +22,7 @@ describe(transactionWatcher, () => {
       status: TransactionStatus.Pending,
       hash: faker.datatype.uuid(),
       from: ACTIVE_ACCOUNT_ADDRESS,
-      chainId: UniverseChainId.Mainnet,
+      chainId: UniverseChainId.Monad,
     })
 
     const hash1 = faker.datatype.uuid()
@@ -32,7 +32,7 @@ describe(transactionWatcher, () => {
       .withState({
         transactions: {
           byChainId: {
-            [UniverseChainId.Mainnet]: {
+            [UniverseChainId.Monad]: {
               '0': approveTxDetailsPending,
             },
           },
@@ -41,7 +41,7 @@ describe(transactionWatcher, () => {
         userSettings: { isTestnetModeEnabled: false },
       })
       .provide([
-        [call(getProvider, UniverseChainId.Mainnet), mockProvider],
+        [call(getProvider, UniverseChainId.Monad), mockProvider],
         [call(getProviderManager), mockProviderManager],
       ])
       .fork(watchTransaction, {

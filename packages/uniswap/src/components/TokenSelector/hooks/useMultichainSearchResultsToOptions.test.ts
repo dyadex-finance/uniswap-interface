@@ -5,16 +5,10 @@ import { UniverseChainId } from 'uniswap/src/features/chains/types'
 import { CurrencyInfo, MultichainSearchResult } from 'uniswap/src/features/dataApi/types'
 
 function createCurrencyInfo(overrides?: Partial<CurrencyInfo>): CurrencyInfo {
-  const currency = new Token(
-    UniverseChainId.Mainnet,
-    '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48',
-    6,
-    'USDC',
-    'USD Coin',
-  )
+  const currency = new Token(UniverseChainId.Monad, '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48', 6, 'USDC', 'USD Coin')
   return {
     currency,
-    currencyId: `${UniverseChainId.Mainnet}-0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48`,
+    currencyId: `${UniverseChainId.Monad}-0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48`,
     logoUrl: 'https://example.com/usdc.png',
     safetyLevel: undefined,
     safetyInfo: undefined,
@@ -69,7 +63,7 @@ describe('multichainSearchResultsToOptions', () => {
     const results = [createMultichainSearchResult()]
     const options = multichainSearchResultsToOptions(results)
 
-    expect(options![0]!.primaryCurrencyInfo.currency.chainId).toBe(UniverseChainId.Mainnet)
+    expect(options![0]!.primaryCurrencyInfo.currency.chainId).toBe(UniverseChainId.Monad)
   })
 
   it('should filter out results with no tokens', () => {

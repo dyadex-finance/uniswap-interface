@@ -148,7 +148,7 @@ describe('TokenLogo', () => {
 
     it('does not render network logo on Mainnet when showMainnetNetworkLogo is omitted', () => {
       const { queryByTestId } = render(
-        <TokenLogo chainId={UniverseChainId.Mainnet} symbol="DAI" url="https://example.com" />,
+        <TokenLogo chainId={UniverseChainId.Monad} symbol="DAI" url="https://example.com" />,
       )
 
       expect(queryByTestId('network-logo')).toBeFalsy()
@@ -157,7 +157,7 @@ describe('TokenLogo', () => {
     it('does not render network logo on Mainnet when showMainnetNetworkLogo is false', () => {
       const { queryByTestId } = render(
         <TokenLogo
-          chainId={UniverseChainId.Mainnet}
+          chainId={UniverseChainId.Monad}
           showMainnetNetworkLogo={false}
           symbol="DAI"
           url="https://example.com"
@@ -169,7 +169,7 @@ describe('TokenLogo', () => {
 
     it('renders network logo when chainId is Mainnet and showMainnetNetworkLogo is true', () => {
       const { queryByTestId } = render(
-        <TokenLogo showMainnetNetworkLogo chainId={UniverseChainId.Mainnet} symbol="DAI" url="https://example.com" />,
+        <TokenLogo showMainnetNetworkLogo chainId={UniverseChainId.Monad} symbol="DAI" url="https://example.com" />,
       )
 
       const networkLogo = queryByTestId('network-logo')

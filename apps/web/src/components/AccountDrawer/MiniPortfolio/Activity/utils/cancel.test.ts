@@ -115,7 +115,7 @@ describe('useCancelMultipleOrdersCallback', () => {
 
     ;(validateOrdersForCancellation as any).mockReturnValue({
       error: null,
-      chainId: UniverseChainId.Mainnet,
+      chainId: UniverseChainId.Monad,
     })
     mockSelectChain.mockResolvedValue(true)
     ;(cancelMultipleUniswapXOrders as any).mockResolvedValue(mockTxs)
@@ -127,7 +127,7 @@ describe('useCancelMultipleOrdersCallback', () => {
     expect(txs).toEqual(mockTxs)
     expect(cancelMultipleUniswapXOrders).toHaveBeenCalledWith({
       orders: [{ encodedOrder: '0xencoded1', routing: TradingApi.Routing.DUTCH_V2 }],
-      chainId: UniverseChainId.Mainnet,
+      chainId: UniverseChainId.Monad,
       provider: mockProvider,
       signerAddress: '0x1234567890123456789012345678901234567890',
     })
@@ -143,7 +143,7 @@ describe('useCancelMultipleOrdersCallback', () => {
 
     ;(validateOrdersForCancellation as any).mockReturnValue({
       error: null,
-      chainId: UniverseChainId.Mainnet,
+      chainId: UniverseChainId.Monad,
     })
     mockSelectChain.mockResolvedValue(false)
 
@@ -166,7 +166,7 @@ describe('useCancelMultipleOrdersCallback', () => {
 
     ;(validateOrdersForCancellation as any).mockReturnValue({
       error: null,
-      chainId: UniverseChainId.Mainnet,
+      chainId: UniverseChainId.Monad,
     })
 
     // No local encoded orders
@@ -193,7 +193,7 @@ describe('useCancelMultipleOrdersCallback', () => {
     expect(fetchLimitOrdersEncodedOrderData).toHaveBeenCalledWith(orders, expect.any(Function))
     expect(cancelMultipleUniswapXOrders).toHaveBeenCalledWith({
       orders: [{ encodedOrder: '0xremoteEncoded', routing: TradingApi.Routing.DUTCH_V2 }],
-      chainId: UniverseChainId.Mainnet,
+      chainId: UniverseChainId.Monad,
       provider: mockProvider,
       signerAddress: '0x1234567890123456789012345678901234567890',
     })
@@ -210,7 +210,7 @@ describe('useCancelMultipleOrdersCallback', () => {
 
     ;(validateOrdersForCancellation as any).mockReturnValue({
       error: null,
-      chainId: UniverseChainId.Mainnet,
+      chainId: UniverseChainId.Monad,
     })
     mockSelectChain.mockResolvedValue(true)
     ;(cancelMultipleUniswapXOrders as any).mockResolvedValue(undefined)

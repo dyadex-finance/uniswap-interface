@@ -16,10 +16,7 @@ import { Keyring } from 'wallet/src/features/wallet/Keyring/Keyring'
  */
 
 export class NativeSigner extends Signer implements SignsTypedData {
-  constructor(
-    private readonly address: string,
-    provider?: providers.Provider,
-  ) {
+  constructor(private readonly address: string, provider?: providers.Provider) {
     super()
 
     if (provider && !providers.Provider.isProvider(provider)) {
@@ -60,7 +57,7 @@ export class NativeSigner extends Signer implements SignsTypedData {
       this.address,
       _TypedDataEncoder.hash(domain, types, value),
       // TODO: WALL-4919: Remove hardcoded Mainnet
-      toSupportedChainId(domain.chainId) || UniverseChainId.Mainnet,
+      toSupportedChainId(domain.chainId) || UniverseChainId.Monad,
     )
     return signature
   }
@@ -90,7 +87,7 @@ export class NativeSigner extends Signer implements SignsTypedData {
       this.address,
       hashedTx,
       // TODO: WALL-4919: Remove hardcoded Mainnet
-      tx.chainId || UniverseChainId.Mainnet,
+      tx.chainId || UniverseChainId.Monad,
     )
 
     const signedTx = utils.serializeTransaction(ut, signature)

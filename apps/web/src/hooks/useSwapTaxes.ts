@@ -14,7 +14,7 @@ import { useContract } from '~/hooks/useContract'
 // TODO(WEB-4058): Move all of these contract addresses into the top-level wagmi config
 function getFeeOnTransferAddress(chainId?: UniverseChainId) {
   switch (chainId) {
-    case UniverseChainId.Mainnet:
+    case UniverseChainId.Monad:
       return '0x19C97dc2a25845C7f9d1d519c8C2d4809c58b43f'
     case UniverseChainId.Optimism:
       return '0xa7c17505B43955A474fb6AFE61E093907a7567c9'

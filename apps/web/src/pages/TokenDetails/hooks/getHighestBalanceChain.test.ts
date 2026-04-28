@@ -11,7 +11,7 @@ const makeEntry = (chainId: UniverseChainId, address = '0x1'): MultichainTokenEn
 })
 
 const entries: MultichainTokenEntry[] = [
-  makeEntry(UniverseChainId.Mainnet, '0xeth'),
+  makeEntry(UniverseChainId.Monad, '0xeth'),
   makeEntry(UniverseChainId.Base, '0xbase'),
   makeEntry(UniverseChainId.Polygon, '0xpoly'),
 ]

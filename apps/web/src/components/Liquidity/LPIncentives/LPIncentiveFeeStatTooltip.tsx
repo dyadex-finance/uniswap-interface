@@ -23,7 +23,7 @@ function LPIncentiveFeeStatTooltip({
   poolApr,
   lpIncentiveRewardApr,
   totalApr,
-  chainId = UniverseChainId.Mainnet,
+  chainId = UniverseChainId.Monad,
 }: LPIncentiveFeeStatTooltipProps) {
   const { t } = useTranslation()
   const { formatPercent } = useLocalizationContext()

@@ -40,29 +40,29 @@ describe('getPossibleChainMatchFromSearch', () => {
 
   describe('when search query is empty or invalid', () => {
     it('should return null chainId when search query is empty string', () => {
-      const result = getPossibleChainMatchFromSearch('', [UniverseChainId.Mainnet])
+      const result = getPossibleChainMatchFromSearch('', [UniverseChainId.Monad])
 
       expect(result).toEqual({ chainId: null, searchQuery: '' })
     })
 
     it('should return null chainId when search query is null', () => {
-      const result = getPossibleChainMatchFromSearch(null as any, [UniverseChainId.Mainnet])
+      const result = getPossibleChainMatchFromSearch(null as any, [UniverseChainId.Monad])
 
       expect(result).toEqual({ chainId: null, searchQuery: null })
     })
 
     it('should return null chainId when search query is undefined', () => {
-      const result = getPossibleChainMatchFromSearch(undefined as any, [UniverseChainId.Mainnet])
+      const result = getPossibleChainMatchFromSearch(undefined as any, [UniverseChainId.Monad])
 
       expect(result).toEqual({ chainId: null, searchQuery: undefined })
     })
 
     it('should return null chainId when search query is only whitespace', () => {
       setupChains({
-        [UniverseChainId.Mainnet]: { nativeName: 'Ethereum', interfaceName: 'mainnet' },
+        [UniverseChainId.Monad]: { nativeName: 'Ethereum', interfaceName: 'mainnet' },
       })
 
-      const result = getPossibleChainMatchFromSearch('   ', [UniverseChainId.Mainnet])
+      const result = getPossibleChainMatchFromSearch('   ', [UniverseChainId.Monad])
 
       expect(result).toEqual({ chainId: null, searchQuery: '   ' })
     })
@@ -71,12 +71,12 @@ describe('getPossibleChainMatchFromSearch', () => {
   describe('when chain name appears at the start of the query', () => {
     it('should match native currency name at start and return remaining query', () => {
       setupChains({
-        [UniverseChainId.Mainnet]: { nativeName: 'Ethereum', interfaceName: 'mainnet' },
+        [UniverseChainId.Monad]: { nativeName: 'Ethereum', interfaceName: 'mainnet' },
       })
 
-      const result = getPossibleChainMatchFromSearch('ethereum usdc', [UniverseChainId.Mainnet])
+      const result = getPossibleChainMatchFromSearch('ethereum usdc', [UniverseChainId.Monad])
 
-      expect(result).toEqual({ chainId: UniverseChainId.Mainnet, searchQuery: 'usdc' })
+      expect(result).toEqual({ chainId: UniverseChainId.Monad, searchQuery: 'usdc' })
     })
 
     it('should match interface name at start and return remaining query', () => {
@@ -91,24 +91,24 @@ describe('getPossibleChainMatchFromSearch', () => {
 
     it('should be case insensitive', () => {
       setupChains({
-        [UniverseChainId.Mainnet]: { nativeName: 'Ethereum', interfaceName: 'mainnet' },
+        [UniverseChainId.Monad]: { nativeName: 'Ethereum', interfaceName: 'mainnet' },
       })
 
-      const result = getPossibleChainMatchFromSearch('ETHEREUM usdc', [UniverseChainId.Mainnet])
+      const result = getPossibleChainMatchFromSearch('ETHEREUM usdc', [UniverseChainId.Monad])
 
-      expect(result).toEqual({ chainId: UniverseChainId.Mainnet, searchQuery: 'usdc' })
+      expect(result).toEqual({ chainId: UniverseChainId.Monad, searchQuery: 'usdc' })
     })
   })
 
   describe('when chain name appears at the end of the query', () => {
     it('should match native currency name at end and return remaining query', () => {
       setupChains({
-        [UniverseChainId.Mainnet]: { nativeName: 'Ethereum', interfaceName: 'mainnet' },
+        [UniverseChainId.Monad]: { nativeName: 'Ethereum', interfaceName: 'mainnet' },
       })
 
-      const result = getPossibleChainMatchFromSearch('usdc ethereum', [UniverseChainId.Mainnet])
+      const result = getPossibleChainMatchFromSearch('usdc ethereum', [UniverseChainId.Monad])
 
-      expect(result).toEqual({ chainId: UniverseChainId.Mainnet, searchQuery: 'usdc' })
+      expect(result).toEqual({ chainId: UniverseChainId.Monad, searchQuery: 'usdc' })
     })
 
     it('should match interface name at end and return remaining query', () => {
@@ -135,10 +135,10 @@ describe('getPossibleChainMatchFromSearch', () => {
   describe('when chain name is the exact query (no additional text)', () => {
     it('should not match when query is exactly the native currency name', () => {
       setupChains({
-        [UniverseChainId.Mainnet]: { nativeName: 'Ethereum', interfaceName: 'mainnet' },
+        [UniverseChainId.Monad]: { nativeName: 'Ethereum', interfaceName: 'mainnet' },
       })
 
-      const result = getPossibleChainMatchFromSearch('ethereum', [UniverseChainId.Mainnet])
+      const result = getPossibleChainMatchFromSearch('ethereum', [UniverseChainId.Monad])
 
       expect(result).toEqual({ chainId: null, searchQuery: 'ethereum' })
     })
@@ -167,10 +167,10 @@ describe('getPossibleChainMatchFromSearch', () => {
   describe('when chain name appears in the middle of the query', () => {
     it('should not match when chain name is in the middle', () => {
       setupChains({
-        [UniverseChainId.Mainnet]: { nativeName: 'Ethereum', interfaceName: 'mainnet' },
+        [UniverseChainId.Monad]: { nativeName: 'Ethereum', interfaceName: 'mainnet' },
       })
 
-      const result = getPossibleChainMatchFromSearch('buy ethereum token', [UniverseChainId.Mainnet])
+      const result = getPossibleChainMatchFromSearch('buy ethereum token', [UniverseChainId.Monad])
 
       expect(result).toEqual({ chainId: null, searchQuery: 'buy ethereum token' })
     })
@@ -199,16 +199,16 @@ describe('getPossibleChainMatchFromSearch', () => {
 
     it('should prefer the longest matching alias', () => {
       setupChains({
-        [UniverseChainId.Mainnet]: {
+        [UniverseChainId.Monad]: {
           nativeName: 'Ethereum',
           interfaceName: 'eth',
           searchAliases: ['ethereum mainnet'],
         },
       })
 
-      const result = getPossibleChainMatchFromSearch('ethereum mainnet usdc', [UniverseChainId.Mainnet])
+      const result = getPossibleChainMatchFromSearch('ethereum mainnet usdc', [UniverseChainId.Monad])
 
-      expect(result).toEqual({ chainId: UniverseChainId.Mainnet, searchQuery: 'usdc' })
+      expect(result).toEqual({ chainId: UniverseChainId.Monad, searchQuery: 'usdc' })
     })
   })
 
@@ -216,19 +216,16 @@ describe('getPossibleChainMatchFromSearch', () => {
     it('should skip testnet chains', () => {
       setupChains(
         {
-          [UniverseChainId.Mainnet]: { nativeName: 'Ethereum', interfaceName: 'mainnet' },
+          [UniverseChainId.Monad]: { nativeName: 'Ethereum', interfaceName: 'mainnet' },
           [UniverseChainId.Sepolia]: { nativeName: 'Ethereum', interfaceName: 'sepolia' },
         },
         [UniverseChainId.Sepolia],
       )
 
-      const result = getPossibleChainMatchFromSearch('ethereum usdc', [
-        UniverseChainId.Mainnet,
-        UniverseChainId.Sepolia,
-      ])
+      const result = getPossibleChainMatchFromSearch('ethereum usdc', [UniverseChainId.Monad, UniverseChainId.Sepolia])
 
-      expect(result).toEqual({ chainId: UniverseChainId.Mainnet, searchQuery: 'usdc' })
-      expect(mockIsTestnetChain).toHaveBeenCalledWith(UniverseChainId.Mainnet)
+      expect(result).toEqual({ chainId: UniverseChainId.Monad, searchQuery: 'usdc' })
+      expect(mockIsTestnetChain).toHaveBeenCalledWith(UniverseChainId.Monad)
     })
 
     it('should return null chainId when only testnet chains are available', () => {
@@ -248,11 +245,11 @@ describe('getPossibleChainMatchFromSearch', () => {
   describe('when no matches are found', () => {
     it('should return null chainId when no chains match', () => {
       setupChains({
-        [UniverseChainId.Mainnet]: { nativeName: 'Ethereum', interfaceName: 'mainnet' },
+        [UniverseChainId.Monad]: { nativeName: 'Ethereum', interfaceName: 'mainnet' },
         [UniverseChainId.Polygon]: { nativeName: 'POL', interfaceName: 'polygon' },
       })
 
-      const result = getPossibleChainMatchFromSearch('bitcoin usdc', [UniverseChainId.Mainnet, UniverseChainId.Polygon])
+      const result = getPossibleChainMatchFromSearch('bitcoin usdc', [UniverseChainId.Monad, UniverseChainId.Polygon])
 
       expect(result).toEqual({ chainId: null, searchQuery: 'bitcoin usdc' })
     })
@@ -284,21 +281,21 @@ describe('getPossibleChainMatchFromSearch', () => {
   describe('when multiple chains could match', () => {
     it('should return the first matching chain in enabledChains order', () => {
       setupChains({
-        [UniverseChainId.Mainnet]: { nativeName: 'Ethereum', interfaceName: 'mainnet' },
+        [UniverseChainId.Monad]: { nativeName: 'Ethereum', interfaceName: 'mainnet' },
         [UniverseChainId.ArbitrumOne]: { nativeName: 'Ethereum', interfaceName: 'arbitrum' },
       })
 
       const result = getPossibleChainMatchFromSearch('ethereum usdc', [
-        UniverseChainId.Mainnet,
+        UniverseChainId.Monad,
         UniverseChainId.ArbitrumOne,
       ])
 
-      expect(result).toEqual({ chainId: UniverseChainId.Mainnet, searchQuery: 'usdc' })
+      expect(result).toEqual({ chainId: UniverseChainId.Monad, searchQuery: 'usdc' })
     })
 
     it('should prefer a chain that matches at the start over an earlier chain that matches only at the end', () => {
       setupChains({
-        [UniverseChainId.Mainnet]: {
+        [UniverseChainId.Monad]: {
           nativeName: 'Ether',
           interfaceName: 'mainnet',
           searchAliases: ['alpha'],
@@ -309,7 +306,7 @@ describe('getPossibleChainMatchFromSearch', () => {
         },
       })
 
-      const result = getPossibleChainMatchFromSearch('foo alpha', [UniverseChainId.Mainnet, UniverseChainId.Polygon])
+      const result = getPossibleChainMatchFromSearch('foo alpha', [UniverseChainId.Monad, UniverseChainId.Polygon])
 
       expect(result).toEqual({ chainId: UniverseChainId.Polygon, searchQuery: 'alpha' })
     })
@@ -318,53 +315,53 @@ describe('getPossibleChainMatchFromSearch', () => {
   describe('query sanitization', () => {
     it('should trim whitespace from the remaining query', () => {
       setupChains({
-        [UniverseChainId.Mainnet]: { nativeName: 'Ethereum', interfaceName: 'mainnet' },
+        [UniverseChainId.Monad]: { nativeName: 'Ethereum', interfaceName: 'mainnet' },
       })
 
-      const result = getPossibleChainMatchFromSearch('ethereum usdc', [UniverseChainId.Mainnet])
+      const result = getPossibleChainMatchFromSearch('ethereum usdc', [UniverseChainId.Monad])
 
-      expect(result).toEqual({ chainId: UniverseChainId.Mainnet, searchQuery: 'usdc' })
+      expect(result).toEqual({ chainId: UniverseChainId.Monad, searchQuery: 'usdc' })
     })
 
     it('should collapse multiple spaces in the remaining query', () => {
       setupChains({
-        [UniverseChainId.Mainnet]: { nativeName: 'Ethereum', interfaceName: 'mainnet' },
+        [UniverseChainId.Monad]: { nativeName: 'Ethereum', interfaceName: 'mainnet' },
       })
 
-      const result = getPossibleChainMatchFromSearch('usdc   ethereum', [UniverseChainId.Mainnet])
+      const result = getPossibleChainMatchFromSearch('usdc   ethereum', [UniverseChainId.Monad])
 
-      expect(result).toEqual({ chainId: UniverseChainId.Mainnet, searchQuery: 'usdc' })
+      expect(result).toEqual({ chainId: UniverseChainId.Monad, searchQuery: 'usdc' })
     })
   })
 
   describe('edge cases', () => {
     it('should handle interface names with special characters', () => {
       setupChains({
-        [UniverseChainId.Mainnet]: { nativeName: 'Ethereum', interfaceName: 'main-net' },
+        [UniverseChainId.Monad]: { nativeName: 'Ethereum', interfaceName: 'main-net' },
       })
 
-      const result = getPossibleChainMatchFromSearch('main-net usdc', [UniverseChainId.Mainnet])
+      const result = getPossibleChainMatchFromSearch('main-net usdc', [UniverseChainId.Monad])
 
-      expect(result).toEqual({ chainId: UniverseChainId.Mainnet, searchQuery: 'usdc' })
+      expect(result).toEqual({ chainId: UniverseChainId.Monad, searchQuery: 'usdc' })
     })
 
     it('should match base chain at start of query', () => {
       setupChains({
-        [UniverseChainId.Mainnet]: { nativeName: 'Ethereum', interfaceName: 'mainnet' },
+        [UniverseChainId.Monad]: { nativeName: 'Ethereum', interfaceName: 'mainnet' },
         [UniverseChainId.Base]: { nativeName: 'Ethereum', interfaceName: 'base' },
       })
 
-      const result = getPossibleChainMatchFromSearch('base usdc', [UniverseChainId.Mainnet, UniverseChainId.Base])
+      const result = getPossibleChainMatchFromSearch('base usdc', [UniverseChainId.Monad, UniverseChainId.Base])
 
       expect(result).toEqual({ chainId: UniverseChainId.Base, searchQuery: 'usdc' })
     })
 
     it('should not match when search aliases is an empty array', () => {
       setupChains({
-        [UniverseChainId.Mainnet]: { nativeName: 'Ethereum', interfaceName: 'mainnet', searchAliases: [] },
+        [UniverseChainId.Monad]: { nativeName: 'Ethereum', interfaceName: 'mainnet', searchAliases: [] },
       })
 
-      const result = getPossibleChainMatchFromSearch('bitcoin usdc', [UniverseChainId.Mainnet])
+      const result = getPossibleChainMatchFromSearch('bitcoin usdc', [UniverseChainId.Monad])
 
       expect(result).toEqual({ chainId: null, searchQuery: 'bitcoin usdc' })
     })

@@ -238,7 +238,7 @@ describe('visibility slice', () => {
   })
 
   describe('setActivityVisibility', () => {
-    const chainId: UniverseChainId = UniverseChainId.Mainnet
+    const chainId: UniverseChainId = UniverseChainId.Monad
     const hash = '0x1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef'
     const transactionId = `${chainId}-${hash}`
 

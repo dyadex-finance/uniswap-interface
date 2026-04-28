@@ -12,8 +12,8 @@ import {
 } from '~/components/Liquidity/utils/currency'
 import { ETH_MAINNET } from '~/test-utils/constants'
 
-const nativeCurrency = nativeOnChain(UniverseChainId.Mainnet)
-const WETH = nativeOnChain(UniverseChainId.Mainnet).wrapped
+const nativeCurrency = nativeOnChain(UniverseChainId.Monad)
+const WETH = nativeOnChain(UniverseChainId.Monad).wrapped
 describe('getCurrencyWithWrap', () => {
   it('returns undefined when currency is undefined', () => {
     expect(getCurrencyWithWrap(undefined, ProtocolVersion.V2)).toBeUndefined()
@@ -40,7 +40,7 @@ describe('getCurrencyWithOptionalUnwrap', () => {
   it('never unwraps when shouldUnwrap is false', () => {
     expect(getCurrencyWithOptionalUnwrap({ currency: USDT, shouldUnwrap: true })).toBe(USDT)
     expect(getCurrencyWithOptionalUnwrap({ currency: WETH, shouldUnwrap: true })).toBe(
-      nativeOnChain(UniverseChainId.Mainnet),
+      nativeOnChain(UniverseChainId.Monad),
     )
     expect(getCurrencyWithOptionalUnwrap({ currency: ETH_MAINNET, shouldUnwrap: true })).toBe(ETH_MAINNET)
   })

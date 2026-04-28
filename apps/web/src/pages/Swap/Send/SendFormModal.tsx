@@ -36,7 +36,7 @@ export function SendFormModal(props: SendFormModalProps) {
   const recipientParam = isEVMAddress(rawRecipientParam) ? rawRecipientParam : undefined
   const parsedInputCurrency = useCurrency({ address: inputCurrencyParam, chainId })
   const inputCurrency = useMemo(
-    () => parsedInputCurrency ?? nativeOnChain(UniverseChainId.Mainnet),
+    () => parsedInputCurrency ?? nativeOnChain(UniverseChainId.Monad),
     [parsedInputCurrency],
   )
 

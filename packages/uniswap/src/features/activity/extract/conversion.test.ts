@@ -23,7 +23,7 @@ const FROM_ADDRESS = SAMPLE_SEED_ADDRESS_1
 const TO_ADDRESS = SAMPLE_SEED_ADDRESS_2
 const TEST_HASH = '0x00'
 const ERC20_ASSET_ADDRESS = DAI.address
-const WRAPPED_NATIVE_ADDRESS = getWrappedNativeAddressWithThrow(UniverseChainId.Mainnet)
+const WRAPPED_NATIVE_ADDRESS = getWrappedNativeAddressWithThrow(UniverseChainId.Monad)
 
 const RESPONSE_BASE = {
   id: 'base_id',
@@ -98,7 +98,7 @@ const NATIVE_TRANSFER_OUT_ASSET_CHANGE = {
   ...ERC20_TRANSFER_OUT_ASSET_CHANGE,
   asset: {
     ...ERC20_TRANSFER_OUT_ASSET_CHANGE.asset,
-    address: getNativeAddress(UniverseChainId.Mainnet),
+    address: getNativeAddress(UniverseChainId.Monad),
   },
   tokenbStandard: GraphQLApi.TokenStandard.Native,
 }
@@ -250,7 +250,7 @@ describe(parseNFTMintTransaction, () => {
         tokenId: 'token_id',
         address: 'nft_contract_address',
       },
-      purchaseCurrencyId: `1-${getNativeAddress(UniverseChainId.Mainnet)}`,
+      purchaseCurrencyId: `1-${getNativeAddress(UniverseChainId.Monad)}`,
       purchaseCurrencyAmountRaw: '1000000000000000000',
       transactedUSDValue: 1,
       isSpam: false,
@@ -473,7 +473,7 @@ describe(parseTradeTransaction, () => {
   it('Swap: parse native swap', () => {
     expect(parseTradeTransaction(MOCK_NATIVE_SWAP)).toEqual({
       type: TransactionType.Swap,
-      inputCurrencyId: `1-${getNativeAddress(UniverseChainId.Mainnet)}`,
+      inputCurrencyId: `1-${getNativeAddress(UniverseChainId.Monad)}`,
       outputCurrencyId: `1-${ERC20_ASSET_ADDRESS}`,
       transactedUSDValue: 1,
       inputCurrencyAmountRaw: '1000000000000000000',

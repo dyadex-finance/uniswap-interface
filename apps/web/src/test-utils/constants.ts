@@ -52,7 +52,7 @@ export const TEST_TOKEN_3_INFO: CurrencyInfo = {
   currencyId: 'GHI',
   safetyInfo: benignSafetyInfo,
 }
-export const ETH_MAINNET = nativeOnChain(UniverseChainId.Mainnet)
+export const ETH_MAINNET = nativeOnChain(UniverseChainId.Monad)
 export const ETH_SEPOLIA = nativeOnChain(UniverseChainId.Sepolia)
 export const TEST_POOL_12 = new Pool(
   TEST_TOKEN_1,
@@ -284,10 +284,10 @@ export const NATIVE_INFO: CurrencyInfo = {
 }
 
 export const WETH_INFO: CurrencyInfo = {
-  currency: WETH9[UniverseChainId.Mainnet],
+  currency: WETH9[UniverseChainId.Monad],
   logoUrl:
     'https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2/logo.png',
-  currencyId: WETH9[UniverseChainId.Mainnet].address,
+  currencyId: WETH9[UniverseChainId.Monad].address,
   safetyInfo: benignSafetyInfo,
 }
 

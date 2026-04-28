@@ -73,7 +73,7 @@ describe('useFormattedTransactionDataForActivity', () => {
 
   const createTestTransaction = (overrides = {}) =>
     transactionDetails({
-      chainId: UniverseChainId.Mainnet,
+      chainId: UniverseChainId.Monad,
       from: TEST_WALLET,
       status: TransactionStatus.Success,
       ...overrides,
@@ -167,7 +167,7 @@ describe('useFormattedTransactionDataForActivity', () => {
       const limitOrder = uniswapXOrderDetails({
         id: 'limit-order',
         routing: TradingApi.Routing.DUTCH_LIMIT,
-        chainId: UniverseChainId.Mainnet,
+        chainId: UniverseChainId.Monad,
         from: TEST_WALLET,
       })
 
@@ -191,13 +191,13 @@ describe('useFormattedTransactionDataForActivity', () => {
       mockUseMergeLocalAndRemoteTransactions.mockReturnValue([mainnetTx, arbitrumTx])
       mockFormatByDate({ todayTransactionList: [mainnetTx] })
 
-      renderFormattedHook({ chainIds: [UniverseChainId.Mainnet] })
+      renderFormattedHook({ chainIds: [UniverseChainId.Monad] })
 
       expect(formatTransactionsByDate).toHaveBeenCalledWith([mainnetTx], expect.anything())
     })
 
     it('should not filter when chainIds is undefined', () => {
-      const mainnetTx = createTestTransaction({ chainId: UniverseChainId.Mainnet })
+      const mainnetTx = createTestTransaction({ chainId: UniverseChainId.Monad })
       const arbitrumTx = createTestTransaction({ chainId: UniverseChainId.ArbitrumOne })
 
       mockListTransactions({ data: [mainnetTx, arbitrumTx] })
@@ -278,7 +278,7 @@ describe('useFormattedTransactionDataForActivity', () => {
     it('should filter both limit orders and chainIds', () => {
       const mainnetSwap = createTestTransaction({
         id: 'mainnet-swap',
-        chainId: UniverseChainId.Mainnet,
+        chainId: UniverseChainId.Monad,
         routing: TradingApi.Routing.CLASSIC,
       })
       const arbitrumSwap = createTestTransaction({
@@ -288,7 +288,7 @@ describe('useFormattedTransactionDataForActivity', () => {
       })
       const limitOrder = uniswapXOrderDetails({
         id: 'limit',
-        chainId: UniverseChainId.Mainnet,
+        chainId: UniverseChainId.Monad,
         routing: TradingApi.Routing.DUTCH_LIMIT,
         from: TEST_WALLET,
       })
@@ -297,7 +297,7 @@ describe('useFormattedTransactionDataForActivity', () => {
       mockUseMergeLocalAndRemoteTransactions.mockReturnValue([mainnetSwap, arbitrumSwap, limitOrder])
       mockFormatByDate({ todayTransactionList: [mainnetSwap] })
 
-      renderFormattedHook({ chainIds: [UniverseChainId.Mainnet] })
+      renderFormattedHook({ chainIds: [UniverseChainId.Monad] })
 
       // Should only pass mainnetSwap (limit order filtered, arbitrum filtered)
       expect(formatTransactionsByDate).toHaveBeenCalledWith([mainnetSwap], expect.anything())

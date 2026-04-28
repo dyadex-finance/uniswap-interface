@@ -26,8 +26,8 @@ const mockUseFeatureFlag = useFeatureFlag as Mock
 const mockUseProtocolsForChain = useProtocolsForChain as Mock
 
 describe('useQuoteRoutingParams', () => {
-  const tokenInChainId = UniverseChainId.Mainnet
-  const tokenOutChainId = UniverseChainId.Mainnet
+  const tokenInChainId = UniverseChainId.Monad
+  const tokenOutChainId = UniverseChainId.Monad
   const defaultProtocols: FrontendSupportedProtocol[] = [
     TradingApi.ProtocolItems.V2,
     TradingApi.ProtocolItems.V3,
@@ -59,7 +59,7 @@ describe('useQuoteRoutingParams', () => {
     const { result } = renderHook(() =>
       useQuoteRoutingParams({
         selectedProtocols: defaultProtocols,
-        tokenInChainId: UniverseChainId.Mainnet,
+        tokenInChainId: UniverseChainId.Monad,
         tokenOutChainId: UniverseChainId.ArbitrumOne,
         isV4HookPoolsEnabled: true,
       }),

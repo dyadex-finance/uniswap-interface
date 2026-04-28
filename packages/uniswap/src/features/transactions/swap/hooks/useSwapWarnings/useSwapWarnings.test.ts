@@ -15,7 +15,7 @@ import { createEmptyTradeWithStatus } from 'uniswap/src/test/fixtures/transactio
 import { mockLocalizedFormatter } from 'uniswap/src/test/mocks'
 import { CurrencyField } from 'uniswap/src/types/currency'
 
-const ETH = nativeOnChain(UniverseChainId.Mainnet)
+const ETH = nativeOnChain(UniverseChainId.Monad)
 
 const emptySwapInfo: Pick<
   DerivedSwapInfo,

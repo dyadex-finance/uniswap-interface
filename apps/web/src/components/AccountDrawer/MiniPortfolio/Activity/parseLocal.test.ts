@@ -60,7 +60,7 @@ function mockSwapInfo({
 
 const mockAccount1 = '0x000000000000000000000000000000000000000001'
 const mockAccount2 = '0x000000000000000000000000000000000000000002'
-const mockChainId = UniverseChainId.Mainnet
+const mockChainId = UniverseChainId.Monad
 const mockCurrencyAmountRaw = '1000000000000000000'
 const mockCurrencyAmountRawUSDC = '1000000'
 

@@ -23,7 +23,7 @@ export function useBlockExplorerLogo(chainId?: UniverseChainId): GeneratedIcon {
 }
 
 const BLOCK_EXPLORER_LOGOS_LIGHT: Record<UniverseChainId, GeneratedIcon> = {
-  [UniverseChainId.Mainnet]: EtherscanLogoLight,
+  [UniverseChainId.Monad]: EtherscanLogoLight,
   [UniverseChainId.ArbitrumOne]: ArbiscanLogoLight,
   [UniverseChainId.Avalanche]: BlockExplorer,
   [UniverseChainId.Base]: EtherscanLogoLight,
@@ -49,7 +49,7 @@ const BLOCK_EXPLORER_LOGOS_LIGHT: Record<UniverseChainId, GeneratedIcon> = {
 
 const BLOCK_EXPLORER_LOGOS_DARK: Record<UniverseChainId, GeneratedIcon> = {
   ...BLOCK_EXPLORER_LOGOS_LIGHT,
-  [UniverseChainId.Mainnet]: EtherscanLogoDark,
+  [UniverseChainId.Monad]: EtherscanLogoDark,
   [UniverseChainId.ArbitrumOne]: ArbiscanLogoDark,
   [UniverseChainId.Base]: EtherscanLogoDark,
   [UniverseChainId.Bnb]: EtherscanLogoDark,

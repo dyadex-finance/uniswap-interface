@@ -55,7 +55,7 @@ vi.mock('@universe/gating', async (importOriginal) => {
 describe('handleOnChainStep', () => {
   const hash = '0xabc123' as `0x${string}`
   const address = '0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266' as `0x${string}`
-  const chainId = UniverseChainId.Mainnet
+  const chainId = UniverseChainId.Monad
 
   const step = {
     type: TransactionStepType.SwapTransaction,

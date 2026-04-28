@@ -39,7 +39,7 @@ export function AddressHoverCard({ address, platform, children }: AddressHoverCa
   const { convertFiatAmountFormatted } = useLocalizationContext()
   const [isOpen, setIsOpen] = useState(false)
   const [isCopied, copyToClipboard] = useCopyClipboard(ONE_SECOND_MS)
-  const chainId = platform === Platform.SVM ? UniverseChainId.Solana : UniverseChainId.Mainnet
+  const chainId = platform === Platform.SVM ? UniverseChainId.Solana : UniverseChainId.Monad
   const BlockExplorerLogo = useBlockExplorerLogo(chainId)
   const shadowProps = useShadowPropsMedium()
   const isTouchDevice = useIsTouchDevice()

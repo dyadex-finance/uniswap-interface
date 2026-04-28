@@ -66,7 +66,7 @@ describe('useTransactionRequestInfo', () => {
           data: '0x',
           value: '0',
           to: '0xSwap',
-          chainId: UniverseChainId.Mainnet,
+          chainId: UniverseChainId.Monad,
           gasLimit: '500000',
           maxFeePerGas: '600000',
           maxPriorityFeePerGas: '700000',
@@ -86,7 +86,7 @@ describe('useTransactionRequestInfo', () => {
           data: '0x',
           value: '0',
           to: '0xWrap',
-          chainId: UniverseChainId.Mainnet,
+          chainId: UniverseChainId.Monad,
           gasLimit: '250000',
           maxFeePerGas: '300000',
           maxPriorityFeePerGas: '350000',
@@ -131,7 +131,7 @@ describe('useTransactionRequestInfo', () => {
 
     expect(result.current.txRequests?.[0]).toMatchObject<providers.TransactionRequest>({
       to: '0xWrap',
-      chainId: UniverseChainId.Mainnet,
+      chainId: UniverseChainId.Monad,
       gasLimit: '250000',
       maxFeePerGas: '300000',
       maxPriorityFeePerGas: '350000',
@@ -161,7 +161,7 @@ describe('useTransactionRequestInfo', () => {
 
     expect(result.current.txRequests?.[0]).toMatchObject<providers.TransactionRequest>({
       to: '0xSwap',
-      chainId: UniverseChainId.Mainnet,
+      chainId: UniverseChainId.Monad,
       gasLimit: '500000',
       maxFeePerGas: '600000',
       maxPriorityFeePerGas: '700000',

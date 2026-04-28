@@ -122,7 +122,7 @@ describe('generateCreatePositionTxRequest', () => {
         approvalCalldata: {
           token0Approval: {
             to: undefined,
-            chainId: UniverseChainId.Mainnet,
+            chainId: UniverseChainId.Monad,
           },
         },
       } as any),
@@ -140,7 +140,7 @@ describe('generateCreatePositionTxRequest', () => {
         approvalCalldata: {
           token1Approval: {
             to: undefined,
-            chainId: UniverseChainId.Mainnet,
+            chainId: UniverseChainId.Monad,
           },
         },
       } as any),
@@ -158,7 +158,7 @@ describe('generateCreatePositionTxRequest', () => {
         approvalCalldata: {
           token0Cancel: {
             to: undefined,
-            chainId: UniverseChainId.Mainnet,
+            chainId: UniverseChainId.Monad,
           },
         },
       } as any),
@@ -176,7 +176,7 @@ describe('generateCreatePositionTxRequest', () => {
         approvalCalldata: {
           token1Cancel: {
             to: undefined,
-            chainId: UniverseChainId.Mainnet,
+            chainId: UniverseChainId.Monad,
           },
         },
       } as any),

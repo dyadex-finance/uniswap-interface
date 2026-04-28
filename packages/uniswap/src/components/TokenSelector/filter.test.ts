@@ -5,7 +5,7 @@ import { DAI, DAI_ARBITRUM_ONE, nativeOnChain } from 'uniswap/src/constants/toke
 import { UniverseChainId } from 'uniswap/src/features/chains/types'
 import { currencyId } from 'uniswap/src/utils/currencyId'
 
-const ETH = nativeOnChain(UniverseChainId.Mainnet)
+const ETH = nativeOnChain(UniverseChainId.Monad)
 
 const TEST_TOKEN_INPUT: TokenOption[] = [
   {
@@ -57,7 +57,7 @@ describe(filter, () => {
   })
 
   it('filters by single chain', () => {
-    expect(filterAndGetCurrencies(TEST_TOKEN_INPUT, UniverseChainId.Mainnet)).toEqual([DAI, ETH])
+    expect(filterAndGetCurrencies(TEST_TOKEN_INPUT, UniverseChainId.Monad)).toEqual([DAI, ETH])
   })
 
   it('filters by partial token symbol', () => {
@@ -88,8 +88,8 @@ describe(filter, () => {
   })
 
   it('filters by chainFilter and searchFilter', () => {
-    expect(filterAndGetCurrencies(TEST_TOKEN_INPUT, UniverseChainId.Mainnet, 'DA')).toEqual([DAI])
-    expect(filterAndGetCurrencies(TEST_TOKEN_INPUT, UniverseChainId.Mainnet, DAI.address)).toEqual([DAI])
+    expect(filterAndGetCurrencies(TEST_TOKEN_INPUT, UniverseChainId.Monad, 'DA')).toEqual([DAI])
+    expect(filterAndGetCurrencies(TEST_TOKEN_INPUT, UniverseChainId.Monad, DAI.address)).toEqual([DAI])
     expect(filterAndGetCurrencies(TEST_TOKEN_INPUT, UniverseChainId.ArbitrumOne, 'DAI')).toEqual([DAI_ARBITRUM_ONE])
     expect(filterAndGetCurrencies(TEST_TOKEN_INPUT, UniverseChainId.ArbitrumOne, DAI_ARBITRUM_ONE.address)).toEqual([
       DAI_ARBITRUM_ONE,

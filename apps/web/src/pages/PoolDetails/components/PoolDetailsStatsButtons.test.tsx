@@ -33,7 +33,7 @@ vi.mock('~/pages/Swap', () => {
 
 describe('PoolDetailsStatsButton', () => {
   const mockProps = {
-    chainId: UniverseChainId.Mainnet,
+    chainId: UniverseChainId.Monad,
     token0: validBEPoolToken0,
     token1: validBEPoolToken1,
     feeTier: 500,
@@ -64,7 +64,7 @@ describe('PoolDetailsStatsButton', () => {
     signer: undefined,
     useProviderHook: () => undefined,
     useWalletDisplayName: () => undefined,
-    useAccountsStoreContextHook: () => ({}) as AccountsStore,
+    useAccountsStoreContextHook: () => ({} as AccountsStore),
   }
 
   beforeEach(() => {
@@ -84,7 +84,7 @@ describe('PoolDetailsStatsButton', () => {
               currency: {} as GraphQLApi.Currency,
             },
           },
-          chainId: UniverseChainId.Mainnet,
+          chainId: UniverseChainId.Monad,
           trade: {
             gasFee: {
               value: '10',

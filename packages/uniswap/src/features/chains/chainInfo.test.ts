@@ -16,7 +16,7 @@ vi.mock('uniswap/src/config', () => ({
 describe('getQuicknodeChainIdPathSuffix', () => {
   const testCases: Array<[UniverseChainId, string, string]> = [
     [UniverseChainId.Avalanche, '/ext/bc/C/rpc', 'Avalanche chain'],
-    [UniverseChainId.Mainnet, '', 'Mainnet chain'],
+    [UniverseChainId.Monad, '', 'Mainnet chain'],
     [UniverseChainId.ArbitrumOne, '', 'Arbitrum chain'],
     [UniverseChainId.Base, '', 'Base chain'],
     [UniverseChainId.Blast, '', 'Blast chain'],
@@ -79,14 +79,16 @@ describe('getQuicknodeEndpointUrl', () => {
       UniverseChainId.WorldChain,
       UniverseChainId.Zksync,
       UniverseChainId.Zora,
-      UniverseChainId.Mainnet,
+      UniverseChainId.Monad,
     ]
 
     supportedChains.forEach((chainId) => {
       const url = getQuicknodeEndpointUrl(chainId)
 
       expect(url).toEqual(
-        `https://test-endpoint${chainId === UniverseChainId.Mainnet ? '' : `.${getQuicknodeChainId(chainId)}`}.quiknode.pro/test-token-123${getQuicknodeChainIdPathSuffix(chainId)}`,
+        `https://test-endpoint${
+          chainId === UniverseChainId.Monad ? '' : `.${getQuicknodeChainId(chainId)}`
+        }.quiknode.pro/test-token-123${getQuicknodeChainIdPathSuffix(chainId)}`,
       )
     })
   })
@@ -94,7 +96,7 @@ describe('getQuicknodeEndpointUrl', () => {
 
 describe('getQuicknodeChainId', () => {
   it('returns correct quicknode subdomain for each chain', () => {
-    expect(getQuicknodeChainId(UniverseChainId.Mainnet)).toBe('')
+    expect(getQuicknodeChainId(UniverseChainId.Monad)).toBe('')
     expect(getQuicknodeChainId(UniverseChainId.ArbitrumOne)).toBe('arbitrum-mainnet')
     expect(getQuicknodeChainId(UniverseChainId.Avalanche)).toBe('avalanche-mainnet')
     expect(getQuicknodeChainId(UniverseChainId.Base)).toBe('base-mainnet')

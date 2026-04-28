@@ -69,7 +69,7 @@ const mockL1Order: UniswapXOrderDetails = {
   status: TransactionStatus.Pending,
   id: '1',
   addedTime: 1686339087000, // from createdAt in openStatusResponse
-  chainId: UniverseChainId.Mainnet,
+  chainId: UniverseChainId.Monad,
   from: '0x80becb808bfade4143183e58d18f2080e84e57a1',
   transactionOriginType: TransactionOriginType.Internal,
   typeInfo: {
@@ -78,7 +78,7 @@ const mockL1Order: UniswapXOrderDetails = {
     inputCurrencyAmountRaw: '100000000',
     expectedOutputCurrencyAmountRaw: '91371770080538616664',
     minimumOutputCurrencyAmountRaw: '90914911230135923580',
-    inputCurrencyId: buildCurrencyId(UniverseChainId.Mainnet, '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48'),
+    inputCurrencyId: buildCurrencyId(UniverseChainId.Monad, '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48'),
     outputCurrencyId: currencyId(DAI),
     tradeType: TradeType.EXACT_INPUT,
   },

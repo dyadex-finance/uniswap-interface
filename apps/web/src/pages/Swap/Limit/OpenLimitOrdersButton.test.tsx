@@ -23,7 +23,7 @@ const mockLimitActivity: UniswapXOrderDetails = {
   id: '0x123',
   hash: '0x123',
   orderHash: '0x123',
-  chainId: UniverseChainId.Mainnet,
+  chainId: UniverseChainId.Monad,
   status: TransactionStatus.Pending,
   from: '0x456',
   routing: TradingApi.Routing.DUTCH_LIMIT,

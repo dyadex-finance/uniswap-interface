@@ -4,9 +4,9 @@ import { act } from 'react'
 import { UniverseChainId } from 'uniswap/src/features/chains/types'
 import { useUserPreservedCurrencies } from '~/pages/TokenDetails/hooks/useUserPreservedCurrencies'
 
-const ETH_USDC = new Token(UniverseChainId.Mainnet, '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48', 6, 'USDC')
+const ETH_USDC = new Token(UniverseChainId.Monad, '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48', 6, 'USDC')
 const BASE_USDC = new Token(UniverseChainId.Base, '0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913', 6, 'USDC')
-const ETH = new Token(UniverseChainId.Mainnet, '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2', 18, 'WETH')
+const ETH = new Token(UniverseChainId.Monad, '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2', 18, 'WETH')
 
 describe('useUserPreservedCurrencies', () => {
   it('returns computed currencies when user has not interacted', () => {

@@ -135,13 +135,13 @@ describe('TransactionService', () => {
   const createPrepareTransactionParams = (
     overrides: Partial<PrepareTransactionParams> = {},
   ): PrepareTransactionParams => ({
-    chainId: UniverseChainId.Mainnet,
+    chainId: UniverseChainId.Monad,
     account: createMockAccount(),
     request: {
       to: '0xabcdef1234567890123456789012345678901234',
       value: '0x1234',
       data: '0x123abc',
-      chainId: UniverseChainId.Mainnet,
+      chainId: UniverseChainId.Monad,
       nonce: 5,
     },
     submitViaPrivateRpc: false,
@@ -158,7 +158,7 @@ describe('TransactionService', () => {
       nonce: 5,
       gasLimit: '0x5208',
       gasPrice: '0x9184e72a000',
-      chainId: UniverseChainId.Mainnet,
+      chainId: UniverseChainId.Monad,
     }
 
     const defaultSignedRequest = ensure0xHex(
@@ -174,7 +174,7 @@ describe('TransactionService', () => {
     }
 
     return {
-      chainId: UniverseChainId.Mainnet,
+      chainId: UniverseChainId.Monad,
       account: createMockAccount(),
       request: {
         request: defaultValidatedRequest,
@@ -200,7 +200,7 @@ describe('TransactionService', () => {
         to: '0xabcdef1234567890123456789012345678901234',
         value: '0x1234',
         data: '0x123abc',
-        chainId: UniverseChainId.Mainnet,
+        chainId: UniverseChainId.Monad,
         nonce: 5, // Provided nonce
       }
 
@@ -243,7 +243,7 @@ describe('TransactionService', () => {
         to: '0xabcdef1234567890123456789012345678901234',
         value: '0x1234',
         data: '0x123abc',
-        chainId: UniverseChainId.Mainnet,
+        chainId: UniverseChainId.Monad,
         // No nonce provided
       }
 
@@ -291,7 +291,7 @@ describe('TransactionService', () => {
         to: '0xabcdef1234567890123456789012345678901234',
         value: '0x1234',
         data: '0x123abc',
-        chainId: UniverseChainId.Mainnet,
+        chainId: UniverseChainId.Monad,
         nonce: 5,
       }
 
@@ -319,7 +319,7 @@ describe('TransactionService', () => {
         to: '0xabcdef1234567890123456789012345678901234',
         value: '0x1234',
         data: '0x123abc',
-        chainId: UniverseChainId.Mainnet,
+        chainId: UniverseChainId.Monad,
       }
 
       const params = createPrepareTransactionParams({
@@ -348,7 +348,7 @@ describe('TransactionService', () => {
 
       // Assert
       expect(mockConfigService.shouldUsePrivateRpc).toHaveBeenCalledWith({
-        chainId: UniverseChainId.Mainnet,
+        chainId: UniverseChainId.Monad,
         submitViaPrivateRpc: true,
       })
       expect(result).toEqual({
@@ -431,7 +431,7 @@ describe('TransactionService', () => {
         nonce: 5,
         gasLimit: '0x5208',
         gasPrice: '0x9184e72a000',
-        chainId: UniverseChainId.Mainnet,
+        chainId: UniverseChainId.Monad,
       }
 
       const params = createSubmitTransactionParams({
@@ -492,7 +492,7 @@ describe('TransactionService', () => {
         nonce: 5,
         gasLimit: '0x5208',
         gasPrice: '0x9184e72a000',
-        chainId: UniverseChainId.Mainnet,
+        chainId: UniverseChainId.Monad,
       }
 
       const params = createSubmitTransactionParams({
@@ -578,7 +578,7 @@ describe('TransactionService', () => {
         token_out_amount: '1700.0',
         routing: 'bridge' as const,
         transactionOriginType: 'internal',
-        chain_id_in: UniverseChainId.Mainnet,
+        chain_id_in: UniverseChainId.Monad,
         chain_id_out: UniverseChainId.Polygon,
       }
 
@@ -639,7 +639,7 @@ describe('TransactionService', () => {
         nonce: 5,
         gasLimit: '0x5208',
         gasPrice: '0x9184e72a000',
-        chainId: UniverseChainId.Mainnet,
+        chainId: UniverseChainId.Monad,
       }
 
       const params = createSubmitTransactionParams({
@@ -756,7 +756,7 @@ describe('TransactionService', () => {
         nonce: 5,
         gasLimit: '0x5208',
         gasPrice: '0x9184e72a000',
-        chainId: UniverseChainId.Mainnet,
+        chainId: UniverseChainId.Monad,
       }
 
       const validatedRequest = { ...defaultValidatedRequest, ...overrides.validatedRequest }
@@ -770,7 +770,7 @@ describe('TransactionService', () => {
       }
 
       return {
-        chainId: UniverseChainId.Mainnet,
+        chainId: UniverseChainId.Monad,
         account: mockAccount,
         request: {
           request: validatedRequest,
@@ -898,7 +898,7 @@ describe('TransactionService', () => {
         nonce: 5,
         gasLimit: '0x5208',
         gasPrice: '0x9184e72a000',
-        chainId: UniverseChainId.Mainnet,
+        chainId: UniverseChainId.Monad,
       }
 
       const params = createSubmitTransactionParams({
@@ -945,7 +945,7 @@ describe('TransactionService', () => {
         nonce: 5,
         gasLimit: '0x5208',
         gasPrice: '0x9184e72a000',
-        chainId: UniverseChainId.Mainnet,
+        chainId: UniverseChainId.Monad,
       }
 
       const typeInfo: TransactionTypeInfo = {
@@ -1000,7 +1000,7 @@ describe('TransactionService', () => {
         nonce: 5,
         gasLimit: '0x5208',
         gasPrice: '0x9184e72a000',
-        chainId: UniverseChainId.Mainnet,
+        chainId: UniverseChainId.Monad,
       }
 
       const mockBridgeAnalyticsData = {
@@ -1010,7 +1010,7 @@ describe('TransactionService', () => {
         token_out_amount: '1700.0',
         routing: 'bridge' as const,
         transactionOriginType: 'internal',
-        chain_id_in: UniverseChainId.Mainnet,
+        chain_id_in: UniverseChainId.Monad,
         chain_id_out: UniverseChainId.Polygon,
       }
 
@@ -1067,7 +1067,7 @@ describe('TransactionService', () => {
         nonce: 5,
         gasLimit: '0x5208',
         gasPrice: '0x9184e72a000',
-        chainId: UniverseChainId.Mainnet,
+        chainId: UniverseChainId.Monad,
       }
 
       const typeInfo: TransactionTypeInfo = {
@@ -1128,7 +1128,7 @@ describe('TransactionService', () => {
       }
 
       const executeParams: ExecuteTransactionParams = {
-        chainId: UniverseChainId.Mainnet,
+        chainId: UniverseChainId.Monad,
         account: mockAccount,
         options: {
           request: txRequest,
@@ -1148,7 +1148,7 @@ describe('TransactionService', () => {
         ...txRequest,
         gasLimit: '0x5208',
         gasPrice: '0x9184e72a000',
-        chainId: UniverseChainId.Mainnet,
+        chainId: UniverseChainId.Monad,
       }
 
       const signedTransaction = '0xf86c808509184e72a0008252089412345678901234567890123456789012345678908201234a'
@@ -1187,7 +1187,7 @@ describe('TransactionService', () => {
       expect(mockLogger.debug).toHaveBeenCalledWith(
         'TransactionService',
         'executeTransaction',
-        `Executing tx on ${getChainLabel(UniverseChainId.Mainnet)} to ${txRequest.to}`,
+        `Executing tx on ${getChainLabel(UniverseChainId.Monad)} to ${txRequest.to}`,
       )
     })
 
@@ -1208,7 +1208,7 @@ describe('TransactionService', () => {
       }
 
       const executeParams: ExecuteTransactionParams = {
-        chainId: UniverseChainId.Mainnet,
+        chainId: UniverseChainId.Monad,
         account: mockAccount,
         options: {
           request: txRequest,
@@ -1229,7 +1229,7 @@ describe('TransactionService', () => {
         ...requestWithNonce,
         gasLimit: '0x5208',
         gasPrice: '0x9184e72a000',
-        chainId: UniverseChainId.Mainnet,
+        chainId: UniverseChainId.Monad,
       }
 
       const signedTransaction = '0xf86c808509184e72a0008252089412345678901234567890123456789012345678908201234a'
@@ -1274,7 +1274,7 @@ describe('TransactionService', () => {
       }
 
       const executeParams: ExecuteTransactionParams = {
-        chainId: UniverseChainId.Mainnet,
+        chainId: UniverseChainId.Monad,
         account: mockAccount,
         options: {
           request: txRequest,
@@ -1299,7 +1299,7 @@ describe('TransactionService', () => {
       // Verify error was logged
       expect(mockLogger.error).toHaveBeenCalledWith(testError, {
         tags: { file: 'TransactionService', function: 'executeTransaction' },
-        extra: { chainId: UniverseChainId.Mainnet, transactionType: TransactionType.Send, request: txRequest },
+        extra: { chainId: UniverseChainId.Monad, transactionType: TransactionType.Send, request: txRequest },
       })
     })
 
@@ -1320,7 +1320,7 @@ describe('TransactionService', () => {
       }
 
       const executeParams: ExecuteTransactionParams = {
-        chainId: UniverseChainId.Mainnet,
+        chainId: UniverseChainId.Monad,
         account: mockAccount,
         options: {
           request: txRequest,
@@ -1339,7 +1339,7 @@ describe('TransactionService', () => {
         ...txRequest,
         gasLimit: '0x5208',
         gasPrice: '0x9184e72a000',
-        chainId: UniverseChainId.Mainnet,
+        chainId: UniverseChainId.Monad,
       }
 
       const signedTransaction = '0xf86c808509184e72a0008252089412345678901234567890123456789012345678908201234a'
@@ -1394,7 +1394,7 @@ describe('TransactionService', () => {
       }
 
       const executeParams: ExecuteTransactionParams = {
-        chainId: UniverseChainId.Mainnet,
+        chainId: UniverseChainId.Monad,
         account: mockAccount,
         options: {
           request: txRequest,
@@ -1416,7 +1416,7 @@ describe('TransactionService', () => {
         ...txRequest,
         gasLimit: '0x5208',
         gasPrice: '0x9184e72a000',
-        chainId: UniverseChainId.Mainnet,
+        chainId: UniverseChainId.Monad,
       }
 
       const signedTransaction = '0xf86c808509184e72a0008252089412345678901234567890123456789012345678908201234a'
@@ -1468,7 +1468,7 @@ describe('TransactionService', () => {
       // Act
       const result = await service.getNextNonce({
         account: mockAccount,
-        chainId: UniverseChainId.Mainnet,
+        chainId: UniverseChainId.Monad,
       })
 
       // Assert
@@ -1496,14 +1496,14 @@ describe('TransactionService', () => {
       // Act
       const result = await service.getNextNonce({
         account: mockAccount,
-        chainId: UniverseChainId.Mainnet,
+        chainId: UniverseChainId.Monad,
       })
 
       // Assert
       expect(mockGetTransactionCount).toHaveBeenCalledWith(mockAccount.address, 'pending')
       expect(mockTransactionRepository.getPendingPrivateTransactionCount).toHaveBeenCalledWith({
         address: mockAccount.address,
-        chainId: UniverseChainId.Mainnet,
+        chainId: UniverseChainId.Monad,
       })
       expect(result).toEqual({ nonce: 8, pendingPrivateTxCount: 3 }) // 5 + 3 = 8
     })
@@ -1622,7 +1622,7 @@ describe('TransactionService', () => {
         token_out_amount: '1700.0',
         routing: 'bridge' as const,
         transactionOriginType: 'internal',
-        chain_id_in: UniverseChainId.Mainnet,
+        chain_id_in: UniverseChainId.Monad,
         chain_id_out: UniverseChainId.Polygon,
       }
 
@@ -1886,6 +1886,6 @@ describe('TransactionService', () => {
         type: 2,
         byzantium: true,
         confirmations: 1,
-      }) as unknown as TransactionReceipt
+      } as unknown as TransactionReceipt)
   })
 })

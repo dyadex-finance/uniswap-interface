@@ -16,7 +16,7 @@ import { getLogger } from 'utilities/src/logger/logger'
  */
 const CHAIN_ID_MAP: Record<string, UniverseChainId> = {
   unichain: UniverseChainId.Unichain,
-  mainnet: UniverseChainId.Mainnet,
+  mainnet: UniverseChainId.Monad,
   arbitrum: UniverseChainId.ArbitrumOne,
   optimism: UniverseChainId.Optimism,
   polygon: UniverseChainId.Polygon,

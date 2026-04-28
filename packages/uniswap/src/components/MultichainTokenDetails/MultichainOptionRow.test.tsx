@@ -6,7 +6,7 @@ import { fireEvent, render } from 'uniswap/src/test/test-utils'
 
 describe(MultichainOptionRow, () => {
   const defaultProps = {
-    chainId: UniverseChainId.Mainnet,
+    chainId: UniverseChainId.Monad,
     rightContent: <Flex testID="right-content" />,
   }
 

@@ -15,12 +15,10 @@ export function getInitialLogoUrl({
   chainId?: number | null
   backupImg?: string | null
 }) {
-  const networkName = isUniverseChainId(chainId)
-    ? (getChainInfo(chainId).assetRepoNetworkName ?? 'ethereum')
-    : 'ethereum'
+  const networkName = isUniverseChainId(chainId) ? getChainInfo(chainId).assetRepoNetworkName ?? 'ethereum' : 'ethereum'
   const checksummedAddress = getValidAddress({
     address,
-    chainId: isUniverseChainId(chainId) ? chainId : UniverseChainId.Mainnet,
+    chainId: isUniverseChainId(chainId) ? chainId : UniverseChainId.Monad,
     withEVMChecksum: true,
   })
 

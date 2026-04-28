@@ -14,7 +14,7 @@ export interface FavoritesState {
 
 // Default currency ids, need to be normalized to match slice add and remove behavior
 const WBTC_CURRENCY_ID = normalizeCurrencyIdForMapLookup(idFromCurrency(WBTC))
-const ETH_CURRENCY_ID = normalizeCurrencyIdForMapLookup(idFromCurrency(Ether.onChain(UniverseChainId.Mainnet)))
+const ETH_CURRENCY_ID = normalizeCurrencyIdForMapLookup(idFromCurrency(Ether.onChain(UniverseChainId.Monad)))
 
 export const initialFavoritesState: FavoritesState = {
   tokens: [ETH_CURRENCY_ID, WBTC_CURRENCY_ID],

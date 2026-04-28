@@ -16,7 +16,7 @@ export const tokenItemData = createFixture<TokenItemData, TokenItemDataOptions>(
   return {
     name: t?.name ?? defaultToken.name,
     logoUrl: t?.project?.logo?.url ?? defaultToken.project.logo.url,
-    chainId: UniverseChainId.Mainnet,
+    chainId: UniverseChainId.Monad,
     address: t?.address ?? defaultToken.address,
     symbol: t?.symbol ?? defaultToken.symbol,
   }

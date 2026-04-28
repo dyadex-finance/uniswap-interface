@@ -6,7 +6,7 @@ describe(getExplorerLink, () => {
     expect(
       getExplorerLink({ chainId: UniverseChainId.ArbitrumOne, data: 'hash', type: ExplorerDataType.TRANSACTION }),
     ).toEqual('https://arbiscan.io/tx/hash')
-    expect(getExplorerLink({ chainId: UniverseChainId.Mainnet, data: 'hash', type: ExplorerDataType.ADDRESS })).toEqual(
+    expect(getExplorerLink({ chainId: UniverseChainId.Monad, data: 'hash', type: ExplorerDataType.ADDRESS })).toEqual(
       'https://etherscan.io/address/hash',
     )
     expect(getExplorerLink({ chainId: UniverseChainId.Polygon, data: 'hash', type: ExplorerDataType.TOKEN })).toEqual(

@@ -5,8 +5,8 @@ import { WrapType } from 'uniswap/src/features/transactions/types/wrap'
 import { wrappedNativeCurrency } from 'uniswap/src/utils/currency'
 
 describe(getWrapType, () => {
-  const eth = nativeOnChain(UniverseChainId.Mainnet)
-  const weth = wrappedNativeCurrency(UniverseChainId.Mainnet)!
+  const eth = nativeOnChain(UniverseChainId.Monad)
+  const weth = wrappedNativeCurrency(UniverseChainId.Monad)!
 
   const arbEth = nativeOnChain(UniverseChainId.ArbitrumOne)
   const arbWeth = wrappedNativeCurrency(UniverseChainId.ArbitrumOne)!

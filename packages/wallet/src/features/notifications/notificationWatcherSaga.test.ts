@@ -113,7 +113,7 @@ describe(pushTransactionNotification, () => {
     const swapTypeInfo: ExactOutputSwapTransactionInfo = {
       type: TransactionType.Swap,
       tradeType: TradeType.EXACT_OUTPUT,
-      inputCurrencyId: `1-${getNativeAddress(UniverseChainId.Mainnet)}`,
+      inputCurrencyId: `1-${getNativeAddress(UniverseChainId.Monad)}`,
       outputCurrencyId: '1-0x4d224452801ACEd8B2F0aebE155379bb5D594381',
       outputCurrencyAmountRaw: '230000000000000000',
       expectedInputCurrencyAmountRaw: '12000000000000000',

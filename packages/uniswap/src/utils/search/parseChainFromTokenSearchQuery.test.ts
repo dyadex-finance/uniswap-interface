@@ -3,7 +3,7 @@ import { parseChainFromTokenSearchQuery } from 'uniswap/src/utils/search/parseCh
 
 describe('parseChainFromTokenSearchQuery', () => {
   const enabledChains: UniverseChainId[] = [
-    UniverseChainId.Mainnet,
+    UniverseChainId.Monad,
     UniverseChainId.ArbitrumOne,
     UniverseChainId.Base,
     UniverseChainId.Optimism,
@@ -46,11 +46,11 @@ describe('parseChainFromTokenSearchQuery', () => {
   describe('multi-word searches', () => {
     it('parses chain from first word', () => {
       expect(parseChainFromTokenSearchQuery('ethereum dai', enabledChains)).toEqual({
-        chainFilter: UniverseChainId.Mainnet,
+        chainFilter: UniverseChainId.Monad,
         searchTerm: 'dai',
       })
       expect(parseChainFromTokenSearchQuery('ethereum dai token', enabledChains)).toEqual({
-        chainFilter: UniverseChainId.Mainnet,
+        chainFilter: UniverseChainId.Monad,
         searchTerm: 'dai token',
       })
       expect(parseChainFromTokenSearchQuery('arbitrum uni corn token', enabledChains)).toEqual({
@@ -61,7 +61,7 @@ describe('parseChainFromTokenSearchQuery', () => {
 
     it('parses chain from last word when first word is not a chain', () => {
       expect(parseChainFromTokenSearchQuery('dai ethereum', enabledChains)).toEqual({
-        chainFilter: UniverseChainId.Mainnet,
+        chainFilter: UniverseChainId.Monad,
         searchTerm: 'dai',
       })
       expect(parseChainFromTokenSearchQuery('uni corn token base', enabledChains)).toEqual({
@@ -76,7 +76,7 @@ describe('parseChainFromTokenSearchQuery', () => {
         searchTerm: 'token ethereum',
       })
       expect(parseChainFromTokenSearchQuery('ethereum token base', enabledChains)).toEqual({
-        chainFilter: UniverseChainId.Mainnet,
+        chainFilter: UniverseChainId.Monad,
         searchTerm: 'token base',
       })
     })
@@ -85,11 +85,11 @@ describe('parseChainFromTokenSearchQuery', () => {
   describe('edge cases', () => {
     it('handles extra spaces and trimming', () => {
       expect(parseChainFromTokenSearchQuery('  ethereum   dai  ', enabledChains)).toEqual({
-        chainFilter: UniverseChainId.Mainnet,
+        chainFilter: UniverseChainId.Monad,
         searchTerm: 'dai',
       })
       expect(parseChainFromTokenSearchQuery('ethereum    dai', enabledChains)).toEqual({
-        chainFilter: UniverseChainId.Mainnet,
+        chainFilter: UniverseChainId.Monad,
         searchTerm: 'dai',
       })
     })

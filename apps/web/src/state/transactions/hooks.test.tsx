@@ -35,7 +35,7 @@ describe('Transactions hooks', () => {
 
   beforeEach(() => {
     mocked(useAccount).mockReturnValue({
-      chainId: UniverseChainId.Mainnet,
+      chainId: UniverseChainId.Monad,
       address,
       status: 'connected',
     } as unknown as ReturnType<typeof useAccount>)
@@ -43,7 +43,7 @@ describe('Transactions hooks', () => {
     mocked(useWallet).mockReturnValue({
       evmAccount: {
         address,
-        chainId: UniverseChainId.Mainnet,
+        chainId: UniverseChainId.Monad,
         status: 'connected',
       },
     } as unknown as ReturnType<typeof useWallet>)
@@ -60,13 +60,13 @@ describe('Transactions hooks', () => {
   const mockTransactionResponse = {
     hash: transactionHash,
     from: address,
-    to: permit2Address(UniverseChainId.Mainnet),
+    to: permit2Address(UniverseChainId.Monad),
     data: '0x',
     value: BigNumber.from(0),
     gasLimit: BigNumber.from(100000),
     gasPrice: BigNumber.from(20000000000),
     nonce: 1,
-    chainId: UniverseChainId.Mainnet,
+    chainId: UniverseChainId.Monad,
     confirmations: 0,
     wait: vi.fn(),
   }
@@ -74,7 +74,7 @@ describe('Transactions hooks', () => {
   const mockTransactionInfo: ApproveTransactionInfo = {
     type: TransactionType.Approve,
     tokenAddress: USDC_MAINNET.address,
-    spender: permit2Address(UniverseChainId.Mainnet),
+    spender: permit2Address(UniverseChainId.Monad),
     approvalAmount: '1000000',
   }
 
@@ -87,7 +87,7 @@ describe('Transactions hooks', () => {
       })
 
       const state = store.getState()
-      expect(state.transactions[address][UniverseChainId.Mainnet]?.[transactionId]).toBeDefined()
+      expect(state.transactions[address][UniverseChainId.Monad]?.[transactionId]).toBeDefined()
     })
   })
 
@@ -110,7 +110,7 @@ describe('Transactions hooks', () => {
       })
 
       const state = store.getState()
-      expect(state.transactions[address][UniverseChainId.Mainnet]?.[transactionId]).toBeUndefined()
+      expect(state.transactions[address][UniverseChainId.Monad]?.[transactionId]).toBeUndefined()
     })
   })
 
@@ -121,7 +121,7 @@ describe('Transactions hooks', () => {
 
       // Use the same store for the approval hook
       const { result } = renderHookWithProviders(
-        () => useHasPendingApproval(USDC_MAINNET, permit2Address(UniverseChainId.Mainnet)),
+        () => useHasPendingApproval(USDC_MAINNET, permit2Address(UniverseChainId.Monad)),
         { store },
       )
 
@@ -149,7 +149,7 @@ describe('Transactions hooks', () => {
 
       // Use the same store for the approval hook
       const { result } = renderHookWithProviders(
-        () => useHasPendingApproval(USDC_MAINNET, permit2Address(UniverseChainId.Mainnet)),
+        () => useHasPendingApproval(USDC_MAINNET, permit2Address(UniverseChainId.Monad)),
         { store },
       )
 
@@ -187,7 +187,7 @@ describe('Transactions hooks', () => {
 
       // Use the same store for the approval hook
       const { result } = renderHookWithProviders(
-        () => useHasPendingApproval(USDC_MAINNET, permit2Address(UniverseChainId.Mainnet)),
+        () => useHasPendingApproval(USDC_MAINNET, permit2Address(UniverseChainId.Monad)),
         { store },
       )
 
@@ -201,7 +201,7 @@ describe('Transactions hooks', () => {
         store.dispatch({
           type: 'transactions/finalizeTransaction',
           payload: {
-            chainId: UniverseChainId.Mainnet,
+            chainId: UniverseChainId.Monad,
             id: transactionId,
             hash: transactionHash,
             from: address,
@@ -224,7 +224,7 @@ describe('Transactions hooks', () => {
 
     it('returns false when there are no pending transactions', () => {
       const { result } = renderHookWithProviders(() =>
-        useHasPendingApproval(USDC_MAINNET, permit2Address(UniverseChainId.Mainnet)),
+        useHasPendingApproval(USDC_MAINNET, permit2Address(UniverseChainId.Monad)),
       )
 
       expect(result.current).toBe(false)
@@ -241,7 +241,7 @@ describe('Transactions hooks', () => {
 
       // Use the same store for the approval hook
       const { result } = renderHookWithProviders(
-        () => useHasPendingApproval(USDC_MAINNET, permit2Address(UniverseChainId.Mainnet)),
+        () => useHasPendingApproval(USDC_MAINNET, permit2Address(UniverseChainId.Monad)),
         { store },
       )
 
@@ -266,7 +266,7 @@ describe('Transactions hooks', () => {
 
       // Use the same store for the revocation hook
       const { result } = renderHookWithProviders(
-        () => useHasPendingRevocation(USDC_MAINNET, permit2Address(UniverseChainId.Mainnet)),
+        () => useHasPendingRevocation(USDC_MAINNET, permit2Address(UniverseChainId.Monad)),
         { store },
       )
 
@@ -284,7 +284,7 @@ describe('Transactions hooks', () => {
 
       // Use the same store for the revocation hook
       const { result } = renderHookWithProviders(
-        () => useHasPendingRevocation(USDC_MAINNET, permit2Address(UniverseChainId.Mainnet)),
+        () => useHasPendingRevocation(USDC_MAINNET, permit2Address(UniverseChainId.Monad)),
         { store },
       )
 
@@ -327,7 +327,7 @@ describe('Transactions hooks', () => {
 
       // Use the same store for the revocation hook
       const { result } = renderHookWithProviders(
-        () => useHasPendingRevocation(USDC_MAINNET, permit2Address(UniverseChainId.Mainnet)),
+        () => useHasPendingRevocation(USDC_MAINNET, permit2Address(UniverseChainId.Monad)),
         { store },
       )
 
@@ -341,7 +341,7 @@ describe('Transactions hooks', () => {
         store.dispatch({
           type: 'transactions/finalizeTransaction',
           payload: {
-            chainId: UniverseChainId.Mainnet,
+            chainId: UniverseChainId.Monad,
             hash: transactionHash,
             id: transactionId,
             from: address,
@@ -356,7 +356,7 @@ describe('Transactions hooks', () => {
 
     it('returns false when there are no pending transactions', () => {
       const { result } = renderHookWithProviders(() =>
-        useHasPendingRevocation(USDC_MAINNET, permit2Address(UniverseChainId.Mainnet)),
+        useHasPendingRevocation(USDC_MAINNET, permit2Address(UniverseChainId.Monad)),
       )
 
       expect(result.current).toBe(false)
@@ -368,7 +368,7 @@ describe('Transactions hooks', () => {
 
       // Use the same store for the revocation hook
       const { result } = renderHookWithProviders(
-        () => useHasPendingRevocation(USDC_MAINNET, permit2Address(UniverseChainId.Mainnet)),
+        () => useHasPendingRevocation(USDC_MAINNET, permit2Address(UniverseChainId.Monad)),
         { store },
       )
 
@@ -397,13 +397,13 @@ describe('Transactions hooks', () => {
       // Then cancel it
       const cancelHash = '0x456'
       act(() => {
-        canceller.current({ id: transactionId, chainId: UniverseChainId.Mainnet, cancelHash })
+        canceller.current({ id: transactionId, chainId: UniverseChainId.Monad, cancelHash })
       })
 
       const state = store.getState()
       // The original transaction should still exist under the same ID
       const cancelledTransaction: InterfaceTransactionDetails =
-        state.transactions[address][UniverseChainId.Mainnet]?.[transactionId]
+        state.transactions[address][UniverseChainId.Monad]?.[transactionId]
       expect(cancelledTransaction).toBeDefined()
       expect(cancelledTransaction.id).toBe(transactionId)
       expect(cancelledTransaction.hash).toBe(cancelHash)
@@ -432,7 +432,7 @@ describe('Transactions hooks', () => {
         store.dispatch({
           type: 'transactions/addTransaction',
           payload: {
-            chainId: UniverseChainId.Mainnet,
+            chainId: UniverseChainId.Monad,
             id: transactionHash,
             hash: transactionHash,
             from: address,
@@ -456,7 +456,7 @@ describe('Transactions hooks', () => {
         store.dispatch({
           type: 'transactions/addTransaction',
           payload: {
-            chainId: UniverseChainId.Mainnet,
+            chainId: UniverseChainId.Monad,
             id: transactionHash,
             hash: transactionHash,
             from: address,
@@ -502,7 +502,7 @@ describe('Transactions hooks', () => {
         store.dispatch({
           type: 'transactions/finalizeTransaction',
           payload: {
-            chainId: UniverseChainId.Mainnet,
+            chainId: UniverseChainId.Monad,
             id: transactionId,
             hash: transactionHash,
             from: address,

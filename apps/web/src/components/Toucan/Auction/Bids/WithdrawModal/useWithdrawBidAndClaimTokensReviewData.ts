@@ -47,7 +47,7 @@ export function useWithdrawBidAndClaimTokensReviewData({
   }, [auctionChainId])
 
   // Fallback to mainnet for hook call since hooks can't be conditional
-  const nativeCurrencyInfo = useNativeCurrencyInfo(normalizedChainId ?? UniverseChainId.Mainnet)
+  const nativeCurrencyInfo = useNativeCurrencyInfo(normalizedChainId ?? UniverseChainId.Monad)
 
   // Clear state when modal closes
   useEffect(() => {

@@ -23,7 +23,7 @@ describe(NetworkChangedNotification, () => {
       <NetworkChangedNotification
         notification={{
           type: AppNotificationType.NetworkChanged,
-          chainId: UniverseChainId.Mainnet,
+          chainId: UniverseChainId.Monad,
           flow: 'swap',
         }}
       />,
@@ -37,7 +37,7 @@ describe(NetworkChangedNotification, () => {
       <NetworkChangedNotification
         notification={{
           type: AppNotificationType.NetworkChanged,
-          chainId: UniverseChainId.Mainnet,
+          chainId: UniverseChainId.Monad,
           flow: 'send',
         }}
       />,
@@ -51,7 +51,7 @@ describe(NetworkChangedNotification, () => {
       <NetworkChangedNotification
         notification={{
           type: AppNotificationType.NetworkChanged,
-          chainId: UniverseChainId.Mainnet,
+          chainId: UniverseChainId.Monad,
         }}
       />,
     )

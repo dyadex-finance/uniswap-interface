@@ -62,7 +62,7 @@ describe('protocols', () => {
         getArbitrumDutchV3Enabled: () => false,
       })
 
-      const result = protocolFilter(allProtocols, UniverseChainId.Mainnet)
+      const result = protocolFilter(allProtocols, UniverseChainId.Monad)
       expect(result).toEqual(allProtocols)
     })
 
@@ -74,7 +74,7 @@ describe('protocols', () => {
         getArbitrumDutchV3Enabled: () => false,
       })
 
-      const result = protocolFilter(allProtocols, UniverseChainId.Mainnet)
+      const result = protocolFilter(allProtocols, UniverseChainId.Monad)
       expect(result).toEqual([TradingApi.ProtocolItems.V4, TradingApi.ProtocolItems.V3, TradingApi.ProtocolItems.V2])
     })
 
@@ -129,7 +129,7 @@ describe('protocols', () => {
         getArbitrumDutchV3Enabled: () => false,
       })
 
-      const result = protocolFilter(allProtocols, UniverseChainId.Mainnet)
+      const result = protocolFilter(allProtocols, UniverseChainId.Monad)
       expect(result).toEqual([
         TradingApi.ProtocolItems.UNISWAPX_V2,
         TradingApi.ProtocolItems.V3,
@@ -145,7 +145,7 @@ describe('protocols', () => {
         getArbitrumDutchV3Enabled: () => false,
       })
 
-      const result = protocolFilter([], UniverseChainId.Mainnet)
+      const result = protocolFilter([], UniverseChainId.Monad)
       expect(result).toEqual([])
     })
 
@@ -178,7 +178,7 @@ describe('protocols', () => {
         TradingApi.ProtocolItems.V3,
       ]
 
-      const result = protocolFilter(protocolsWithDuplicates, UniverseChainId.Mainnet)
+      const result = protocolFilter(protocolsWithDuplicates, UniverseChainId.Monad)
       // Both duplicates should be filtered out
       expect(result).toEqual([TradingApi.ProtocolItems.V4, TradingApi.ProtocolItems.V3])
     })
@@ -222,7 +222,7 @@ describe('protocols', () => {
         getFeatureFlag: () => true,
       })
 
-      expect(getUniswapXPriorityOrderFlag(UniverseChainId.Mainnet)).toBe(false)
+      expect(getUniswapXPriorityOrderFlag(UniverseChainId.Monad)).toBe(false)
       expect(getUniswapXPriorityOrderFlag(UniverseChainId.Polygon)).toBe(false)
     })
 
@@ -250,12 +250,12 @@ describe('protocols', () => {
 
     it('creates a working filter function', () => {
       const getProtocolsFilter = createGetProtocolsForChain({
-        getEnabledChains: () => [UniverseChainId.Mainnet, UniverseChainId.Polygon],
+        getEnabledChains: () => [UniverseChainId.Monad, UniverseChainId.Polygon],
       })
 
       expect(typeof getProtocolsFilter).toBe('function')
 
-      const result = getProtocolsFilter(allProtocols, UniverseChainId.Mainnet)
+      const result = getProtocolsFilter(allProtocols, UniverseChainId.Monad)
       expect(Array.isArray(result)).toBe(true)
     })
 
@@ -286,11 +286,11 @@ describe('protocols', () => {
       })
 
       const getProtocolsFilter = createGetProtocolsForChain({
-        getEnabledChains: () => [UniverseChainId.Mainnet],
+        getEnabledChains: () => [UniverseChainId.Monad],
         // No getIsUniswapXSupported provided
       })
 
-      const result = getProtocolsFilter(allProtocols, UniverseChainId.Mainnet)
+      const result = getProtocolsFilter(allProtocols, UniverseChainId.Monad)
       expect(result).toContain(TradingApi.ProtocolItems.UNISWAPX_V2)
     })
 
@@ -302,26 +302,26 @@ describe('protocols', () => {
       const getIsUniswapXSupported = vi.fn(() => false) // But chain support says no
 
       const getProtocolsFilter = createGetProtocolsForChain({
-        getEnabledChains: () => [UniverseChainId.Mainnet],
+        getEnabledChains: () => [UniverseChainId.Monad],
         getIsUniswapXSupported,
       })
 
-      const result = getProtocolsFilter(allProtocols, UniverseChainId.Mainnet)
+      const result = getProtocolsFilter(allProtocols, UniverseChainId.Monad)
       // Should not contain UniswapX because chain support returned false
       expect(result).not.toContain(TradingApi.ProtocolItems.UNISWAPX_V2)
-      expect(getIsUniswapXSupported).toHaveBeenCalledWith(UniverseChainId.Mainnet)
+      expect(getIsUniswapXSupported).toHaveBeenCalledWith(UniverseChainId.Monad)
     })
 
     it('correctly creates V4 swap enabled checker', () => {
-      const mockGetV4SwapAllowed = vi.fn((chainId?: number) => chainId === UniverseChainId.Mainnet)
+      const mockGetV4SwapAllowed = vi.fn((chainId?: number) => chainId === UniverseChainId.Monad)
       mockCreateGetV4SwapEnabled.mockReturnValue(mockGetV4SwapAllowed)
 
       const getProtocolsFilter = createGetProtocolsForChain({
-        getEnabledChains: () => [UniverseChainId.Mainnet, UniverseChainId.Polygon],
+        getEnabledChains: () => [UniverseChainId.Monad, UniverseChainId.Polygon],
       })
 
       // Test Mainnet (V4 allowed)
-      const mainnetResult = getProtocolsFilter(allProtocols, UniverseChainId.Mainnet)
+      const mainnetResult = getProtocolsFilter(allProtocols, UniverseChainId.Monad)
       expect(mainnetResult).toContain(TradingApi.ProtocolItems.V4)
 
       // Test Polygon (V4 not allowed)
@@ -337,12 +337,12 @@ describe('protocols', () => {
       mockCreateGetV4SwapEnabled.mockReturnValue(() => true)
 
       const getProtocolsFilter = createGetProtocolsForChain({
-        getEnabledChains: () => [UniverseChainId.Mainnet, UniverseChainId.Base],
+        getEnabledChains: () => [UniverseChainId.Monad, UniverseChainId.Base],
         getIsUniswapXSupported: () => true,
       })
 
       // Mainnet should have all protocols (it's in LAUNCHED_UNISWAPX_CHAINS)
-      const mainnetResult = getProtocolsFilter(allProtocols, UniverseChainId.Mainnet)
+      const mainnetResult = getProtocolsFilter(allProtocols, UniverseChainId.Monad)
       expect(mainnetResult).toEqual(allProtocols)
 
       // Base should not have UniswapX (not in LAUNCHED_UNISWAPX_CHAINS and no priority flag)

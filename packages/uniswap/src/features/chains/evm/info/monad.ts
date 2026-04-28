@@ -18,11 +18,12 @@ import {
 } from 'uniswap/src/features/chains/types'
 import { Platform } from 'uniswap/src/features/platforms/types/Platform'
 import { ElementName } from 'uniswap/src/features/telemetry/constants'
-import { buildUSDC } from 'uniswap/src/features/tokens/stablecoin'
+import { buildUSDC, buildUSDT } from 'uniswap/src/features/tokens/stablecoin'
 
 const mainnetTokens = buildChainTokens({
   stables: {
     USDC: buildUSDC('0x754704Bc059F8C67012fEd69BC8A327a5aafb603', UniverseChainId.Monad),
+    USDT: buildUSDT('0xe7cd86e13AC4309349F30B3435a9d337750fC82D', UniverseChainId.Monad),
     AUSD: new Token(UniverseChainId.Monad, '0x00000000eFE302BEAA2b3e6e1b18d08D69a9012a', 6, 'AUSD', 'Agora USD'),
   },
 })

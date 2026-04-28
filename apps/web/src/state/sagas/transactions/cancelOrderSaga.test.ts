@@ -71,7 +71,7 @@ describe('cancelOrderSaga', () => {
     const cancelRequest = { to: '0x000000000022d473030f116ddee9f6b43ac78ba3', data: '0x1234' }
     store.dispatch(
       cancelTransaction({
-        chainId: UniverseChainId.Mainnet,
+        chainId: UniverseChainId.Monad,
         id: 'order-123',
         address: '0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266',
         cancelRequest,
@@ -93,7 +93,7 @@ describe('cancelOrderSaga', () => {
 
     store.dispatch(
       cancelTransaction({
-        chainId: UniverseChainId.Mainnet,
+        chainId: UniverseChainId.Monad,
         id: 'order-456',
         address: '0x123',
         cancelRequest: { to: '0xabc' },
@@ -104,7 +104,7 @@ describe('cancelOrderSaga', () => {
 
     expect(mockLogger.error).toHaveBeenCalledWith(error, {
       tags: { file: 'cancelOrderSaga', function: 'handleCancelOrder' },
-      extra: { chainId: UniverseChainId.Mainnet, id: 'order-456' },
+      extra: { chainId: UniverseChainId.Monad, id: 'order-456' },
     })
 
     task.cancel()
@@ -119,10 +119,10 @@ describe('cancelOrderSaga', () => {
     mockAppStore.getState.mockReturnValue({
       transactions: {
         [address]: {
-          [UniverseChainId.Mainnet]: {
+          [UniverseChainId.Monad]: {
             'order-789': {
               id: 'order-789',
-              chainId: UniverseChainId.Mainnet,
+              chainId: UniverseChainId.Monad,
               from: address,
               status: TransactionStatus.Cancelling,
               options: { request: {} },
@@ -137,7 +137,7 @@ describe('cancelOrderSaga', () => {
 
     store.dispatch(
       cancelTransaction({
-        chainId: UniverseChainId.Mainnet,
+        chainId: UniverseChainId.Monad,
         id: 'order-789',
         address,
         cancelRequest: { to: '0xabc' },
@@ -162,7 +162,7 @@ describe('cancelOrderSaga', () => {
 
     store.dispatch(
       cancelTransaction({
-        chainId: UniverseChainId.Mainnet,
+        chainId: UniverseChainId.Monad,
         id: 'order-1',
         address: '0x111',
         cancelRequest: { to: '0xaaa' },
@@ -173,7 +173,7 @@ describe('cancelOrderSaga', () => {
 
     store.dispatch(
       cancelTransaction({
-        chainId: UniverseChainId.Mainnet,
+        chainId: UniverseChainId.Monad,
         id: 'order-2',
         address: '0x222',
         cancelRequest: { to: '0xbbb' },

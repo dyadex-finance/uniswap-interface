@@ -222,7 +222,7 @@ describe('useTransformTokenTableData', () => {
     } as ReturnType<typeof useSortedPortfolioBalancesMultichain>)
 
     const { result } = renderHook(() =>
-      useTransformTokenTableData({ chainIds: [UniverseChainId.Mainnet as UniverseChainId] }),
+      useTransformTokenTableData({ chainIds: [UniverseChainId.Monad as UniverseChainId] }),
     )
 
     expect(result.current.visible).not.toBeNull()

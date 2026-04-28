@@ -9,7 +9,7 @@ import {
 describe('getChainFromChainUrlParam', () => {
   it('should return true for valid chain slug', () => {
     const validChainName = 'ethereum'
-    expect(getChainIdFromChainUrlParam(validChainName)).toBe(UniverseChainId.Mainnet)
+    expect(getChainIdFromChainUrlParam(validChainName)).toBe(UniverseChainId.Monad)
   })
 
   it('should return false for undefined chain slug', () => {
@@ -30,7 +30,7 @@ describe('getChainFromChainUrlParam', () => {
 
 describe('getChainUrlParam', () => {
   it('should return url param for ethereum', () => {
-    expect(getChainUrlParam(UniverseChainId.Mainnet)).toBe('ethereum')
+    expect(getChainUrlParam(UniverseChainId.Monad)).toBe('ethereum')
   })
 
   it('should return url param for unichain sepolia', () => {
@@ -40,7 +40,7 @@ describe('getChainUrlParam', () => {
 
 describe('getChainIdFromBackendChain', () => {
   it('should return url param for ethereum', () => {
-    expect(getChainIdFromBackendChain(toGraphQLChain(UniverseChainId.Mainnet))).toBe(UniverseChainId.Mainnet)
+    expect(getChainIdFromBackendChain(toGraphQLChain(UniverseChainId.Monad))).toBe(UniverseChainId.Monad)
   })
 
   it('should return url param for unichain sepolia', () => {

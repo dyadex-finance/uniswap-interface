@@ -21,7 +21,7 @@ import {
 describe('CancellationGasCalculationService', () => {
   const mockClassicTransaction: TransactionDetails = {
     id: 'classic-1',
-    chainId: UniverseChainId.Mainnet,
+    chainId: UniverseChainId.Monad,
     from: '0xuser',
     hash: '0xhash',
     routing: TradingApi.Routing.CLASSIC,
@@ -51,7 +51,7 @@ describe('CancellationGasCalculationService', () => {
 
   const mockUniswapXOrder: UniswapXOrderDetails = {
     id: 'order-1',
-    chainId: UniverseChainId.Mainnet,
+    chainId: UniverseChainId.Monad,
     from: '0xuser',
     orderHash: '0xorderHash',
     encodedOrder: '0xencodedOrder',
@@ -87,7 +87,7 @@ describe('CancellationGasCalculationService', () => {
     from: '0xuser',
     to: '0xpermit2',
     data: '0xcanceldata',
-    chainId: UniverseChainId.Mainnet,
+    chainId: UniverseChainId.Monad,
   }
 
   describe('getCancellationType', () => {
@@ -113,7 +113,7 @@ describe('CancellationGasCalculationService', () => {
       const request = createClassicCancelRequest(mockClassicTransaction)
 
       expect(request).toEqual({
-        chainId: UniverseChainId.Mainnet,
+        chainId: UniverseChainId.Monad,
         from: '0xuser',
         to: '0xuser', // Cancel transaction sends to self
         value: '0x0',
@@ -126,7 +126,7 @@ describe('CancellationGasCalculationService', () => {
       const request = createClassicCancelRequest(txWithoutOptions as TransactionDetails)
 
       expect(request).toEqual({
-        chainId: UniverseChainId.Mainnet,
+        chainId: UniverseChainId.Monad,
         from: '0xuser',
         to: '0xuser',
         value: '0x0',

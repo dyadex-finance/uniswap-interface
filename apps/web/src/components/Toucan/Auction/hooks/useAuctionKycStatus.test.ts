@@ -100,7 +100,7 @@ describe('useAuctionKycStatus', () => {
   const defaultParams = {
     walletAddress: '0x123',
     auctionAddress: '0xabc',
-    chainId: UniverseChainId.Mainnet,
+    chainId: UniverseChainId.Monad,
   }
 
   beforeEach(() => {

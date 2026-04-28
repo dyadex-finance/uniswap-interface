@@ -8,7 +8,7 @@ import { expect, getTest } from '~/playwright/fixtures'
 
 const test = getTest()
 
-const UNI_MAINNET = UNI[UniverseChainId.Mainnet]
+const UNI_MAINNET = UNI[UniverseChainId.Monad]
 
 const INPUT_TOKEN_LABEL = `${TestID.ChooseInputToken}-label`
 const OUTPUT_TOKEN_LABEL = `${TestID.ChooseOutputToken}-label`

@@ -8,7 +8,7 @@ import {
 import type { PortfolioBalance } from 'uniswap/src/features/dataApi/types'
 import { DAI_CURRENCY_INFO, UNI_CURRENCY_INFO } from 'uniswap/src/test/fixtures'
 
-const mainnetNativeAddress = getNativeAddress(UniverseChainId.Mainnet)
+const mainnetNativeAddress = getNativeAddress(UniverseChainId.Monad)
 
 const mockPortfolioData = {
   portfolio: {

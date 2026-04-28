@@ -1,10 +1,9 @@
 import type { TransactionResponse } from '@ethersproject/providers'
 import MerkleDistributorJSON from '@uniswap/merkle-distributor/build/MerkleDistributor.json'
-import { CurrencyAmount, MERKLE_DISTRIBUTOR_ADDRESS, Token } from '@dyadex-finance/sdk-core'
+import { ChainId, CurrencyAmount, MERKLE_DISTRIBUTOR_ADDRESS, Token } from '@dyadex-finance/sdk-core'
 import { useWeb3React } from '@web3-react/core'
 import JSBI from 'jsbi'
 import { useEffect, useState } from 'react'
-import { UNI } from 'uniswap/src/constants/tokens'
 import { normalizeTokenAddressForCache } from 'uniswap/src/data/cache'
 import { UniverseChainId } from 'uniswap/src/features/chains/types'
 import { Platform } from 'uniswap/src/features/platforms/types/Platform'
@@ -144,7 +143,7 @@ function useUserClaimData(account: string | null | undefined): UserClaimData | n
   const [claimInfo, setClaimInfo] = useState<{ [account: string]: UserClaimData | null }>({})
 
   useEffect(() => {
-    if (!account || chainId !== 1) {
+    if (!account || chainId !== UniverseChainId.Monad) {
       return
     }
 
@@ -167,7 +166,7 @@ function useUserClaimData(account: string | null | undefined): UserClaimData | n
       })
   }, [account, chainId])
 
-  return account && chainId === 1 ? claimInfo[account] : null
+  return account && chainId === UniverseChainId.Monad ? claimInfo[account] : null
 }
 
 // check if user is in blob and has not yet claimed UNI
@@ -175,8 +174,8 @@ export function useUserHasAvailableClaim(account: string | null | undefined): bo
   const userClaimData = useUserClaimData(account)
 
   const { data: isClaimed, isLoading: isClaimedLoading } = useReadContract({
-    address: assume0xAddress(MERKLE_DISTRIBUTOR_ADDRESS[UniverseChainId.Mainnet]),
-    chainId: UniverseChainId.Mainnet,
+    address: assume0xAddress(MERKLE_DISTRIBUTOR_ADDRESS[UniverseChainId.Monad]),
+    chainId: UniverseChainId.Monad,
     abi: claimAbi,
     functionName: 'isClaimed',
     args: userClaimData ? [BigInt(userClaimData.index)] : undefined,
@@ -192,7 +191,7 @@ export function useUserUnclaimedAmount(account: string | null | undefined): Curr
   const userClaimData = useUserClaimData(account)
   const canClaim = useUserHasAvailableClaim(account)
 
-  const uni = chainId ? (UNI as { [chainId: number]: Token })[chainId] : undefined
+  const uni = undefined
   if (!uni) {
     return undefined
   }

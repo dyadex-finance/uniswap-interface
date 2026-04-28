@@ -3,7 +3,7 @@ import { UniverseChainId } from 'uniswap/src/features/chains/types'
 import { isUniverseChainIdArrayType } from 'uniswap/src/features/gating/typeGuards'
 
 const DEFAULT_ALLOWED_NETWORKS = [
-  UniverseChainId.Mainnet,
+  UniverseChainId.Monad,
   UniverseChainId.Unichain,
   UniverseChainId.Base,
   UniverseChainId.ArbitrumOne,

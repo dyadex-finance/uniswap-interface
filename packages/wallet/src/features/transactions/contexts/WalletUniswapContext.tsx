@@ -98,7 +98,7 @@ function WalletUniswapProviderInner({ children }: PropsWithChildren): JSX.Elemen
       const initialState = prepareSwapFormState({
         inputCurrencyId,
         outputCurrencyId,
-        defaultChainId: UniverseChainId.Mainnet,
+        defaultChainId: UniverseChainId.Monad,
         exactCurrencyField,
         exactAmountToken,
       })

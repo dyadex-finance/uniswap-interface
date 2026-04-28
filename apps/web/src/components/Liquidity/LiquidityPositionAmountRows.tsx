@@ -24,7 +24,7 @@ type LiquidityPositionAmountRowsProps = {
 export function LiquidityPositionAmountRows({ rows }: LiquidityPositionAmountRowsProps) {
   const navigate = useNavigate()
   const { formatCurrencyAmount } = useLocalizationContext()
-  const chainUrlParam = getChainUrlParam(rows[0].currencyInfo.currency.chainId || UniverseChainId.Mainnet)
+  const chainUrlParam = getChainUrlParam(rows[0].currencyInfo.currency.chainId || UniverseChainId.Monad)
 
   const getLink = useCallback(
     (currencyInfo: CurrencyInfo) => {

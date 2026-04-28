@@ -34,7 +34,7 @@ export function useLpIncentives(): UseLpIncentivesResult {
 
   // Refetch rewards on transaction success with "reload" true to bust the Merkl cache for users wallet address
   const { refetch } = useGetPoolsRewards(
-    { walletAddress: account.address, chainIds: [UniverseChainId.Mainnet], reload: true },
+    { walletAddress: account.address, chainIds: [UniverseChainId.Monad], reload: true },
     false,
   )
 

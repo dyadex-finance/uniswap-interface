@@ -103,7 +103,7 @@ describe(hasSufficientGasBalance, () => {
   it('delegates to hasSufficientFundsIncludingGas for non-Tempo chains', () => {
     expect(
       hasSufficientGasBalance({
-        chainId: UniverseChainId.Mainnet,
+        chainId: UniverseChainId.Monad,
         gasBalance: ONE_ETH,
         gasFee: '1000',
       }),
@@ -113,7 +113,7 @@ describe(hasSufficientGasBalance, () => {
   it('returns false for non-Tempo chain with insufficient balance', () => {
     expect(
       hasSufficientGasBalance({
-        chainId: UniverseChainId.Mainnet,
+        chainId: UniverseChainId.Monad,
         gasBalance: ZERO_ETH,
         gasFee: '1000',
       }),

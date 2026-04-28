@@ -18,7 +18,7 @@ export default function useCurrentBlockTimestamp({
   chainId?: UniverseChainId
 } = {}): bigint | undefined {
   const account = useAccount()
-  const resolvedChainId = chainId ?? account.chainId ?? UniverseChainId.Mainnet
+  const resolvedChainId = chainId ?? account.chainId ?? UniverseChainId.Monad
 
   return useReadContract({
     address: assume0xAddress(MULTICALL_ADDRESSES[resolvedChainId]),

@@ -50,7 +50,7 @@ function makeBalance({
 }
 
 const TEST_BALANCES: PortfolioBalance[] = [
-  makeBalance({ chainId: UniverseChainId.Mainnet, balanceUSD: 3209.44, quantity: 3209.44 }),
+  makeBalance({ chainId: UniverseChainId.Monad, balanceUSD: 3209.44, quantity: 3209.44 }),
   makeBalance({ chainId: UniverseChainId.Base, balanceUSD: 1654.32, quantity: 1654.32 }),
 ]
 
@@ -138,7 +138,7 @@ describe(NetworkBalanceList, () => {
     const unsortedBalances = [
       makeBalance({ chainId: UniverseChainId.Base, balanceUSD: 100, quantity: 100 }),
       makeBalance({ chainId: UniverseChainId.ArbitrumOne, balanceUSD: 5000, quantity: 5000 }),
-      makeBalance({ chainId: UniverseChainId.Mainnet, balanceUSD: 500, quantity: 500 }),
+      makeBalance({ chainId: UniverseChainId.Monad, balanceUSD: 500, quantity: 500 }),
     ]
     const { getAllByText } = render(<NetworkBalanceList {...defaultProps} balances={unsortedBalances} />)
 

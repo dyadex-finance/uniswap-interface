@@ -33,7 +33,7 @@ test.describe(
       await stubTradingApiEndpoint({ page, endpoint: uniswapUrls.tradingApiPaths.swap })
 
       await anvil.setErc20Balance({
-        address: assume0xAddress(WETH_ADDRESS(UniverseChainId.Mainnet)),
+        address: assume0xAddress(WETH_ADDRESS(UniverseChainId.Monad)),
         balance: parseEther('1'),
       })
       await page.goto(`/swap`)

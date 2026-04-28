@@ -22,7 +22,7 @@ describe('useBlockTimestamp', () => {
 
     const { result } = renderHook(() =>
       useBlockTimestamp({
-        chainId: UniverseChainId.Mainnet,
+        chainId: UniverseChainId.Monad,
         blockNumber: undefined,
       }),
     )
@@ -49,7 +49,7 @@ describe('useBlockTimestamp', () => {
 
       const { result } = renderHook(() =>
         useBlockTimestamp({
-          chainId: UniverseChainId.Mainnet,
+          chainId: UniverseChainId.Monad,
           blockNumber: pastBlockNumber,
         }),
       )
@@ -66,7 +66,7 @@ describe('useBlockTimestamp', () => {
 
       const { result } = renderHook(() =>
         useBlockTimestamp({
-          chainId: UniverseChainId.Mainnet,
+          chainId: UniverseChainId.Monad,
           blockNumber: Number(currentBlockNumber),
         }),
       )
@@ -88,7 +88,7 @@ describe('useBlockTimestamp', () => {
 
       const { result } = renderHook(() =>
         useBlockTimestamp({
-          chainId: UniverseChainId.Mainnet,
+          chainId: UniverseChainId.Monad,
           blockNumber: pastBlockNumber,
         }),
       )
@@ -110,7 +110,7 @@ describe('useBlockTimestamp', () => {
 
       const { result } = renderHook(() =>
         useBlockTimestamp({
-          chainId: UniverseChainId.Mainnet,
+          chainId: UniverseChainId.Monad,
           blockNumber: futureBlockNumber,
         }),
       )
@@ -169,7 +169,7 @@ describe('useBlockTimestamp', () => {
 
       const { result } = renderHook(() =>
         useBlockTimestamp({
-          chainId: UniverseChainId.Mainnet,
+          chainId: UniverseChainId.Monad,
           blockNumber: futureBlockNumber,
         }),
       )
@@ -185,7 +185,7 @@ describe('useBlockTimestamp', () => {
 
       const { result } = renderHook(() =>
         useBlockTimestamp({
-          chainId: UniverseChainId.Mainnet,
+          chainId: UniverseChainId.Monad,
           blockNumber: futureBlockNumber,
         }),
       )
@@ -207,7 +207,7 @@ describe('useBlockTimestamp', () => {
 
       const { result } = renderHook(() =>
         useBlockTimestamp({
-          chainId: UniverseChainId.Mainnet,
+          chainId: UniverseChainId.Monad,
           blockNumber: futureBlockNumber,
         }),
       )
@@ -229,7 +229,7 @@ describe('useBlockTimestamp', () => {
 
       const { result } = renderHook(() =>
         useBlockTimestamp({
-          chainId: UniverseChainId.Mainnet,
+          chainId: UniverseChainId.Monad,
           blockNumber: Number(currentBlockNumber),
         }),
       )
@@ -255,7 +255,7 @@ describe('useBlockTimestamp', () => {
 
       const { result } = renderHook(() =>
         useBlockTimestamp({
-          chainId: UniverseChainId.Mainnet,
+          chainId: UniverseChainId.Monad,
           blockNumber: pastBlockNumber,
         }),
       )
@@ -263,7 +263,7 @@ describe('useBlockTimestamp', () => {
       expect(mockUseBlock).toHaveBeenCalledWith(
         expect.objectContaining({
           blockNumber: BigInt(pastBlockNumber),
-          chainId: UniverseChainId.Mainnet,
+          chainId: UniverseChainId.Monad,
           query: {
             enabled: true,
           },
@@ -282,7 +282,7 @@ describe('useBlockTimestamp', () => {
 
       renderHook(() =>
         useBlockTimestamp({
-          chainId: UniverseChainId.Mainnet,
+          chainId: UniverseChainId.Monad,
           blockNumber: futureBlockNumber,
         }),
       )

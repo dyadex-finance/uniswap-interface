@@ -95,7 +95,7 @@ function InsufficientNativeTokenWarningContent({
     currencyChainId: nativeCurrencyInfo.currency.chainId,
   })
 
-  const shouldShowNetworkName = nativeCurrency.symbol === 'ETH' && nativeCurrency.chainId !== UniverseChainId.Mainnet
+  const shouldShowNetworkName = nativeCurrency.symbol === 'ETH' && nativeCurrency.chainId !== UniverseChainId.Monad
 
   const onClose = (): void => {
     setShowModal(false)

@@ -13,7 +13,7 @@ describe('searchHistorySlice', () => {
     it('generates correct id for token search result', () => {
       const result = searchResultId({
         type: SearchHistoryResultType.Token,
-        chainId: UniverseChainId.Mainnet,
+        chainId: UniverseChainId.Monad,
         address: '0x6B175474E89094C44Da98b954EedeAC495271d0F',
       })
       expect(result).toBe('token-1-0x6b175474e89094c44da98b954eedeac495271d0f')
@@ -22,7 +22,7 @@ describe('searchHistorySlice', () => {
     it('generates correct id for token with null address (native token)', () => {
       const result = searchResultId({
         type: SearchHistoryResultType.Token,
-        chainId: UniverseChainId.Mainnet,
+        chainId: UniverseChainId.Monad,
         address: null,
       })
       expect(result).toBe('token-1-null')
@@ -36,7 +36,7 @@ describe('searchHistorySlice', () => {
         addToSearchHistory({
           searchResult: {
             type: SearchHistoryResultType.Token,
-            chainId: UniverseChainId.Mainnet,
+            chainId: UniverseChainId.Monad,
             address: '0x6B175474E89094C44Da98b954EedeAC495271d0F',
           },
         }),
@@ -45,7 +45,7 @@ describe('searchHistorySlice', () => {
       expect(state.results).toHaveLength(1)
       expect(state.results[0]).toMatchObject({
         type: SearchHistoryResultType.Token,
-        chainId: UniverseChainId.Mainnet,
+        chainId: UniverseChainId.Monad,
         address: '0x6B175474E89094C44Da98b954EedeAC495271d0F',
       })
     })
@@ -105,7 +105,7 @@ describe('searchHistorySlice', () => {
         },
         {
           type: SearchHistoryResultType.Token as const,
-          chainId: UniverseChainId.Mainnet, // Valid
+          chainId: UniverseChainId.Monad, // Valid
           address: '0x2260fac5e5542a773aa44fbcfedf7c193bc2c599' as Address,
           searchId: 'token-1-0x2260fac5e5542a773aa44fbcfedf7c193bc2c599',
         },
@@ -124,7 +124,7 @@ describe('searchHistorySlice', () => {
       expect(state.results).toHaveLength(1)
       expect(state.results[0]).toMatchObject({
         type: SearchHistoryResultType.Token,
-        chainId: UniverseChainId.Mainnet,
+        chainId: UniverseChainId.Monad,
       })
     })
 
@@ -151,7 +151,7 @@ describe('searchHistorySlice', () => {
         addToSearchHistory({
           searchResult: {
             type: SearchHistoryResultType.Token,
-            chainId: UniverseChainId.Mainnet,
+            chainId: UniverseChainId.Monad,
             address: '0x6B175474E89094C44Da98b954EedeAC495271d0F',
           },
         }),

@@ -33,7 +33,7 @@ export function SendActionTile({
 
   const onPressSend = useEvent(() => {
     if (!isSolanaOnlyWallet) {
-      navigateToSendFlow({ chainId: chainId ?? UniverseChainId.Mainnet, recipient })
+      navigateToSendFlow({ chainId: chainId ?? UniverseChainId.Monad, recipient })
       onPress?.()
     }
   })

@@ -40,7 +40,7 @@ describe('PoolDetailsHeader', () => {
     const { asFragment } = render(
       <PoolDetailsLink
         address={usdcWethPoolAddress}
-        chainId={UniverseChainId.Mainnet}
+        chainId={UniverseChainId.Monad}
         tokens={[validBEPoolToken0, validBEPoolToken1]}
       />,
     )
@@ -54,7 +54,7 @@ describe('PoolDetailsHeader', () => {
 
   it('renders link for token address', async () => {
     const { asFragment } = render(
-      <PoolDetailsLink address={USDC_MAINNET.address} chainId={UniverseChainId.Mainnet} tokens={[validBEPoolToken0]} />,
+      <PoolDetailsLink address={USDC_MAINNET.address} chainId={UniverseChainId.Monad} tokens={[validBEPoolToken0]} />,
     )
     expect(asFragment()).toMatchSnapshot()
 

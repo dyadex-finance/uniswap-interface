@@ -40,7 +40,7 @@ vi.mock('~/features/params/chainParams', async (importOriginal) => {
   const actual = await importOriginal<typeof import('~/features/params/chainParams')>()
   return {
     ...actual,
-    useChainIdFromUrlParam: vi.fn(() => UniverseChainId.Mainnet),
+    useChainIdFromUrlParam: vi.fn(() => UniverseChainId.Monad),
   }
 })
 
@@ -117,7 +117,7 @@ describe('useCreateTDPContext', () => {
     expect(result.current).toMatchObject({
       currency: expect.anything(),
       currencyChain: GraphQLApi.Chain.Ethereum,
-      currencyChainId: UniverseChainId.Mainnet,
+      currencyChainId: UniverseChainId.Monad,
       address: expect.any(String),
       tokenQuery: expect.anything(),
       multiChainMap: expect.any(Object),
@@ -145,7 +145,7 @@ describe('useCreateTDPContext', () => {
 
     expect(result.current.currency).toBeDefined()
     expect(result.current.currency?.symbol).toBe('USDC')
-    expect(result.current.currency?.chainId).toBe(UniverseChainId.Mainnet)
+    expect(result.current.currency?.chainId).toBe(UniverseChainId.Monad)
     expect(result.current.address).toBe(USDC_MAINNET.address)
   })
 

@@ -20,7 +20,7 @@ describe('validateOrdersForCancellation', () => {
       const orders = [createMockOrder()]
       const result = validateOrdersForCancellation(orders)
       expect(result.valid).toBe(true)
-      expect(result.chainId).toBe(UniverseChainId.Mainnet)
+      expect(result.chainId).toBe(UniverseChainId.Monad)
     })
 
     it('should return valid for multiple orders on same chain', () => {
@@ -31,12 +31,12 @@ describe('validateOrdersForCancellation', () => {
       ]
       const result = validateOrdersForCancellation(orders)
       expect(result.valid).toBe(true)
-      expect(result.chainId).toBe(UniverseChainId.Mainnet)
+      expect(result.chainId).toBe(UniverseChainId.Monad)
     })
 
     it('should return error for orders on different chains', () => {
       const orders = [
-        createMockOrder({ chainId: UniverseChainId.Mainnet }),
+        createMockOrder({ chainId: UniverseChainId.Monad }),
         createMockOrder({ chainId: UniverseChainId.ArbitrumOne }),
         createMockOrder({ chainId: UniverseChainId.Optimism }),
       ]
@@ -48,8 +48,8 @@ describe('validateOrdersForCancellation', () => {
 
     it('should return error for mixed chains even with mostly same chain', () => {
       const orders = [
-        createMockOrder({ chainId: UniverseChainId.Mainnet }),
-        createMockOrder({ chainId: UniverseChainId.Mainnet }),
+        createMockOrder({ chainId: UniverseChainId.Monad }),
+        createMockOrder({ chainId: UniverseChainId.Monad }),
         createMockOrder({ chainId: UniverseChainId.ArbitrumOne }),
       ]
       const result = validateOrdersForCancellation(orders)

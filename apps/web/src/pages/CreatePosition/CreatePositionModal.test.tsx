@@ -155,7 +155,7 @@ describe('CreatePositionModal', () => {
     mockUseNavigate.mockReturnValue(mockNavigate)
     mockUseSelectChain.mockReturnValue(mockSelectChain)
     mockUseAccount.mockReturnValue({
-      chainId: UniverseChainId.Mainnet,
+      chainId: UniverseChainId.Monad,
       isConnected: true,
       connector: { id: 'test' },
     })

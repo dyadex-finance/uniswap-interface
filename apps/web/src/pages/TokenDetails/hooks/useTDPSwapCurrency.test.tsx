@@ -26,13 +26,13 @@ vi.mock('~/pages/TokenDetails/components/header/currencyForSelectedMultichainDep
   currencyForSelectedMultichainDeployment: vi.fn(),
 }))
 
-const BASE_CURRENCY = new Token(UniverseChainId.Mainnet, '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48', 6, 'USDC')
+const BASE_CURRENCY = new Token(UniverseChainId.Monad, '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48', 6, 'USDC')
 const BASE_CURRENCY_ON_BASE = new Token(UniverseChainId.Base, '0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913', 6, 'USDC')
 
-const ONE_CHAIN: MultichainTokenEntry[] = [{ chainId: UniverseChainId.Mainnet, address: '0x111', isNative: false }]
+const ONE_CHAIN: MultichainTokenEntry[] = [{ chainId: UniverseChainId.Monad, address: '0x111', isNative: false }]
 
 const TWO_CHAINS: MultichainTokenEntry[] = [
-  { chainId: UniverseChainId.Mainnet, address: '0x111', isNative: false },
+  { chainId: UniverseChainId.Monad, address: '0x111', isNative: false },
   { chainId: UniverseChainId.Base, address: '0x222', isNative: false },
 ]
 
@@ -49,7 +49,7 @@ function createTDPState(
 ): TDPState {
   return {
     currencyChain: GraphQLApi.Chain.Ethereum,
-    currencyChainId: UniverseChainId.Mainnet,
+    currencyChainId: UniverseChainId.Monad,
     address: '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48',
     tokenQuery: {
       loading: false,

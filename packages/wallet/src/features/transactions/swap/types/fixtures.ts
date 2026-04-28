@@ -141,7 +141,7 @@ export const mockBridgeTrade: BridgeTrade = {
 } as unknown as BridgeTrade
 
 export const mockSwapTxRequest = {
-  chainId: UniverseChainId.Mainnet,
+  chainId: UniverseChainId.Monad,
   to: '0xSwapAddress',
   data: '0x0',
   value: '1000000000000000000',
@@ -168,7 +168,7 @@ export const createMockSignedApproveTx = (overrides?: Partial<SignedTransactionR
   request: {
     nonce: 1,
     to: '0xtoken',
-    chainId: UniverseChainId.Mainnet,
+    chainId: UniverseChainId.Monad,
     data: '0x',
     value: '0',
     gasLimit: '21000',
@@ -191,7 +191,7 @@ export const mockAnalytics: SwapTradeBaseProperties = {
   token_in_symbol: 'ETH',
   token_out_symbol: 'USDC',
   estimated_network_fee_usd: '5',
-  chain_id: UniverseChainId.Mainnet,
+  chain_id: UniverseChainId.Monad,
 }
 
 export const prepareSwapTxContext = createFixture<ValidatedSwapTxContext>()(() => ({
@@ -236,7 +236,7 @@ export const preparePreSignedSwapTransaction = createFixture<PreSignedSwapTransa
   signedApproveTx: undefined,
   signedPermitTx: undefined,
   swapTxContext: prepareSwapTxContext(),
-  chainId: UniverseChainId.Mainnet,
+  chainId: UniverseChainId.Monad,
   account: mockSignerAccount,
   metadata: {
     submitViaPrivateRpc: false,
@@ -251,7 +251,7 @@ export const prepareUniswapXPreSignedSwapTransaction = createFixture<UniswapXPre
     signedData: '0xsignedPermit',
   },
   swapTxContext: prepareUniswapXSwapTxContext(),
-  chainId: UniverseChainId.Mainnet,
+  chainId: UniverseChainId.Monad,
   account: mockSignerAccount,
   metadata: {
     submitViaPrivateRpc: false,

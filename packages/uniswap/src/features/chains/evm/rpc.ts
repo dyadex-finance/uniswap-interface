@@ -13,48 +13,11 @@ export const DEFAULT_MS_BEFORE_WARNING = ONE_MINUTE_MS * 10
 
 export function getQuicknodeChainId(chainId: UniverseChainId): string {
   switch (chainId) {
-    case UniverseChainId.Mainnet:
-      return ''
-    case UniverseChainId.ArbitrumOne:
-      return 'arbitrum-mainnet'
-    case UniverseChainId.Avalanche:
-      return 'avalanche-mainnet'
-    case UniverseChainId.Base:
-      return 'base-mainnet'
-    case UniverseChainId.Blast:
-      return 'blast-mainnet'
-    case UniverseChainId.Bnb:
-      return 'bsc'
-    case UniverseChainId.Celo:
-      return 'celo-mainnet'
-    case UniverseChainId.Linea:
-      return 'linea-mainnet'
     case UniverseChainId.Monad:
       return 'monad-mainnet'
-    case UniverseChainId.Optimism:
-      return 'optimism'
-    case UniverseChainId.Polygon:
-      return 'matic'
-    case UniverseChainId.Sepolia:
-      return 'ethereum-sepolia'
-    case UniverseChainId.Solana:
-      return 'solana-mainnet'
-    case UniverseChainId.Soneium:
-      return 'soneium-mainnet'
-    case UniverseChainId.Tempo:
-      return 'tempo-mainnet'
-    case UniverseChainId.Unichain:
-      return 'unichain-mainnet'
-    case UniverseChainId.UnichainSepolia:
-      return 'unichain-sepolia'
-    case UniverseChainId.WorldChain:
-      return 'worldchain-mainnet'
-    case UniverseChainId.XLayer:
-      return 'xlayer-mainnet'
-    case UniverseChainId.Zksync:
-      return 'zksync-mainnet'
-    case UniverseChainId.Zora:
-      return 'zora-mainnet'
+
+    case UniverseChainId.MonadTestnet:
+      return 'monad-testnet'
     default:
       throw new Error(`Chain ${chainId} does not have a corresponding QuickNode chain ID`)
   }
@@ -63,8 +26,6 @@ export function getQuicknodeChainId(chainId: UniverseChainId): string {
 // If chain requires a path suffix
 export function getQuicknodeChainIdPathSuffix(chainId: UniverseChainId): string {
   switch (chainId) {
-    case UniverseChainId.Avalanche:
-      return '/ext/bc/C/rpc' // https://www.quicknode.com/docs/avalanche#overview
     default:
       return ''
   }
@@ -80,44 +41,11 @@ export function getQuicknodeEndpointUrl(chainId: UniverseChainId): string {
 
 export function getInfuraChainId(chainId: UniverseChainId): string {
   switch (chainId) {
-    case UniverseChainId.Mainnet:
-      return 'mainnet'
-    case UniverseChainId.ArbitrumOne:
-      return 'arbitrum-mainnet'
-    case UniverseChainId.Avalanche:
-      return 'avalanche-mainnet'
-    case UniverseChainId.Base:
-      return 'base-mainnet'
-    case UniverseChainId.Blast:
-      return 'blast-mainnet'
-    case UniverseChainId.Bnb:
-      return 'bsc-mainnet'
-    case UniverseChainId.Celo:
-      return 'celo-mainnet'
-    case UniverseChainId.Linea:
-      return 'linea-mainnet'
     case UniverseChainId.Monad:
       return 'monad-mainnet'
     case UniverseChainId.MonadTestnet:
       return 'monad-testnet'
-    case UniverseChainId.Optimism:
-      return 'optimism-mainnet'
-    case UniverseChainId.Polygon:
-      return 'polygon-mainnet'
-    case UniverseChainId.Sepolia:
-      return 'sepolia'
-    case UniverseChainId.Unichain:
-      return 'unichain-mainnet'
-    case UniverseChainId.UnichainSepolia:
-      return 'unichain-sepolia'
-    case UniverseChainId.WorldChain:
-      return 'worldchain-mainnet'
-    case UniverseChainId.XLayer:
-      return 'xlayer-mainnet'
-    case UniverseChainId.Zksync:
-      return 'zksync-mainnet'
-    case UniverseChainId.Zora:
-      return 'zora-mainnet'
+
     default:
       throw new Error(`Chain ${chainId} does not have a corresponding Infura chain ID`)
   }

@@ -48,7 +48,7 @@ describe('useUpdateManualOutage', () => {
 
       const { result } = renderHook(() =>
         useTestHook({
-          chainId: UniverseChainId.Mainnet,
+          chainId: UniverseChainId.Monad,
           errorV3: networkError,
         }),
       )
@@ -59,7 +59,7 @@ describe('useUpdateManualOutage', () => {
     it('should dismiss banner when no errors are present', () => {
       const { result } = renderHook(() =>
         useTestHook({
-          chainId: UniverseChainId.Mainnet,
+          chainId: UniverseChainId.Monad,
         }),
       )
 
@@ -75,13 +75,13 @@ describe('useUpdateManualOutage', () => {
 
       const { result } = renderHook(() =>
         useTestHook({
-          chainId: UniverseChainId.Mainnet,
+          chainId: UniverseChainId.Monad,
           errorV3: networkError,
         }),
       )
 
       expect(result.current.manualOutage).toEqual({
-        chainId: UniverseChainId.Mainnet,
+        chainId: UniverseChainId.Monad,
       })
     })
 
@@ -92,13 +92,13 @@ describe('useUpdateManualOutage', () => {
 
       const { result } = renderHook(() =>
         useTestHook({
-          chainId: UniverseChainId.Mainnet,
+          chainId: UniverseChainId.Monad,
           errorV2: networkError,
         }),
       )
 
       expect(result.current.manualOutage).toEqual({
-        chainId: UniverseChainId.Mainnet,
+        chainId: UniverseChainId.Monad,
         version: GraphQLApi.ProtocolVersion.V2,
       })
     })
@@ -115,13 +115,13 @@ describe('useUpdateManualOutage', () => {
 
       const { result } = renderHook(() =>
         useTestHook({
-          chainId: UniverseChainId.Mainnet,
+          chainId: UniverseChainId.Monad,
           errorV3: serverError,
         }),
       )
 
       expect(result.current.manualOutage).toEqual({
-        chainId: UniverseChainId.Mainnet,
+        chainId: UniverseChainId.Monad,
       })
     })
 
@@ -132,7 +132,7 @@ describe('useUpdateManualOutage', () => {
 
       const { result } = renderHook(() =>
         useTestHook({
-          chainId: UniverseChainId.Mainnet,
+          chainId: UniverseChainId.Monad,
           errorV3: clientError,
         }),
       )
@@ -154,13 +154,13 @@ describe('useUpdateManualOutage', () => {
 
       const { result } = renderHook(() =>
         useTestHook({
-          chainId: UniverseChainId.Mainnet,
+          chainId: UniverseChainId.Monad,
           errorV3: externalApiError,
         }),
       )
 
       expect(result.current.manualOutage).toEqual({
-        chainId: UniverseChainId.Mainnet,
+        chainId: UniverseChainId.Monad,
       })
     })
   })
@@ -175,14 +175,14 @@ describe('useUpdateManualOutage', () => {
       const { result, rerender } = renderHook(
         ({ errorV3 }: { errorV3: ApolloError | undefined }) =>
           useTestHook({
-            chainId: UniverseChainId.Mainnet,
+            chainId: UniverseChainId.Monad,
             errorV3,
           }),
         { initialProps: { errorV3: networkError as ApolloError | undefined } },
       )
 
       expect(result.current.manualOutage).toEqual({
-        chainId: UniverseChainId.Mainnet,
+        chainId: UniverseChainId.Monad,
       })
 
       // Rerender without error (success)
@@ -202,7 +202,7 @@ describe('useUpdateManualOutage', () => {
       const { rerender, result } = renderHook(
         ({ error }: { error: ApolloError | undefined }) =>
           useTestHook({
-            chainId: UniverseChainId.Mainnet,
+            chainId: UniverseChainId.Monad,
             errorV3: error,
           }),
         { initialProps: { error: networkError as ApolloError | undefined } },
@@ -217,7 +217,7 @@ describe('useUpdateManualOutage', () => {
 
       // Should show banner after coming online
       expect(result.current.manualOutage).toEqual({
-        chainId: UniverseChainId.Mainnet,
+        chainId: UniverseChainId.Monad,
       })
     })
   })
@@ -231,7 +231,7 @@ describe('useUpdateManualOutage', () => {
       const { result, rerender } = renderHook(
         ({ trigger, errorV3 }: { trigger: number; errorV3: ApolloError | undefined }) =>
           useTestHook({
-            chainId: UniverseChainId.Mainnet,
+            chainId: UniverseChainId.Monad,
             errorV3,
             trigger,
           }),
@@ -239,7 +239,7 @@ describe('useUpdateManualOutage', () => {
       )
 
       expect(result.current.manualOutage).toEqual({
-        chainId: UniverseChainId.Mainnet,
+        chainId: UniverseChainId.Monad,
       })
 
       // Change trigger and clear error - should dismiss

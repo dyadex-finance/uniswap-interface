@@ -197,7 +197,7 @@ export const uniswapXOrderDetails = createFixture<UniswapXOrderDetails>()(() => 
     encodedOrder: faker.datatype.uuid(),
     id: faker.datatype.uuid(),
     addedTime: faker.date.recent().getTime(),
-    chainId: UniverseChainId.Mainnet,
+    chainId: UniverseChainId.Monad,
     expiry: faker.date.future().getTime(),
     from: faker.finance.ethereumAddress(),
     transactionOriginType: TransactionOriginType.Internal,

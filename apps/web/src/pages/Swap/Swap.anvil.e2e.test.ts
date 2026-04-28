@@ -185,7 +185,7 @@ test.describe(
         await anvil.setPermit2Allowance({
           owner: TEST_WALLET_ADDRESS,
           token: assume0xAddress(USDT.address),
-          spender: assume0xAddress(UNIVERSAL_ROUTER_ADDRESS(UniversalRouterVersion.V2_0, UniverseChainId.Mainnet)),
+          spender: assume0xAddress(UNIVERSAL_ROUTER_ADDRESS(UniversalRouterVersion.V2_0, UniverseChainId.Monad)),
         })
         await page.goto(`/swap?inputCurrency=${USDT.address}&outputCurrency=ETH`)
         await page.getByTestId(TestID.AmountInputIn).click()
@@ -248,7 +248,7 @@ test.describe(
         await anvil.setPermit2Allowance({
           owner: TEST_WALLET_ADDRESS,
           token: assume0xAddress(USDT.address),
-          spender: assume0xAddress(UNIVERSAL_ROUTER_ADDRESS(UniversalRouterVersion.V2_0, UniverseChainId.Mainnet)),
+          spender: assume0xAddress(UNIVERSAL_ROUTER_ADDRESS(UniversalRouterVersion.V2_0, UniverseChainId.Monad)),
           expiration: Math.floor((Date.now() - 1) / 1000),
         })
         await page.goto(`/swap?inputCurrency=${USDT.address}&outputCurrency=ETH`)
@@ -269,7 +269,7 @@ test.describe(
         await anvil.setPermit2Allowance({
           owner: TEST_WALLET_ADDRESS,
           token: assume0xAddress(USDT.address),
-          spender: assume0xAddress(UNIVERSAL_ROUTER_ADDRESS(UniversalRouterVersion.V2_0, UniverseChainId.Mainnet)),
+          spender: assume0xAddress(UNIVERSAL_ROUTER_ADDRESS(UniversalRouterVersion.V2_0, UniverseChainId.Monad)),
           amount: 1n,
         })
         await page.goto(`/swap?inputCurrency=${USDT.address}&outputCurrency=ETH`)

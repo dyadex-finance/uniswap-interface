@@ -33,8 +33,8 @@ export function createGetUpdatedTransactionDetails(ctx: {
     const privateRpcProvider = ctx.isPrivateRpc
       ? 'flashbots'
       : transaction.options.submitViaPrivateRpc
-        ? 'mevblocker'
-        : undefined
+      ? 'mevblocker'
+      : undefined
 
     const updatedTransaction: OnChainTransactionDetails & { hash: string } = {
       ...transaction,
@@ -58,7 +58,7 @@ export function createGetUpdatedTransactionDetails(ctx: {
 
 // This timeout is used to trigger a log event and make the transaction clearable if it's been pending for too long
 const getTransactionTimeoutMs = (chainId: UniverseChainId): number => {
-  if (chainId === UniverseChainId.Mainnet) {
+  if (chainId === UniverseChainId.Monad) {
     return 10 * ONE_MINUTE_MS
   }
   return ONE_MINUTE_MS

@@ -30,7 +30,7 @@ describe('useMergeLocalAndRemoteTransactions', () => {
   beforeEach(() => {
     vi.clearAllMocks()
     ;(useEnabledChains as Mock).mockReturnValue({
-      chains: [UniverseChainId.Mainnet],
+      chains: [UniverseChainId.Monad],
     })
     // Reset the activePlanStore between tests
     activePlanStore.getState().actions.resetActivePlan()
@@ -40,7 +40,7 @@ describe('useMergeLocalAndRemoteTransactions', () => {
   // Helper to create transaction with common defaults
   const createTestTransaction = (overrides = {}) =>
     transactionDetails({
-      chainId: UniverseChainId.Mainnet,
+      chainId: UniverseChainId.Monad,
       from: TEST_WALLET,
       typeInfo: extractInputSwapTransactionInfo(),
       ...overrides,
@@ -49,7 +49,7 @@ describe('useMergeLocalAndRemoteTransactions', () => {
   // Helper to create UniswapX order with common defaults
   const createTestOrder = (overrides = {}) =>
     uniswapXOrderDetails({
-      chainId: UniverseChainId.Mainnet,
+      chainId: UniverseChainId.Monad,
       from: TEST_WALLET,
       ...overrides,
     })
@@ -136,7 +136,7 @@ describe('useMergeLocalAndRemoteTransactions', () => {
         quantity: '0.001',
         tokenSymbol: 'ETH',
         tokenAddress: '0xnative',
-        chainId: UniverseChainId.Mainnet,
+        chainId: UniverseChainId.Monad,
         valueType: ValueType.Exact,
       }
       const localTx = createTestTransaction({ hash: SHARED_HASH, status: TransactionStatus.Pending })
@@ -164,7 +164,7 @@ describe('useMergeLocalAndRemoteTransactions', () => {
           quantity: '0.001',
           tokenSymbol: 'ETH',
           tokenAddress: '0xnative',
-          chainId: UniverseChainId.Mainnet,
+          chainId: UniverseChainId.Monad,
           valueType: ValueType.Exact,
         },
       })
@@ -175,7 +175,7 @@ describe('useMergeLocalAndRemoteTransactions', () => {
       const state = store.getState()
       const chainTransactions = state.transactions[TEST_WALLET]
       expect(chainTransactions).toBeDefined()
-      const finalizedTx = chainTransactions?.[UniverseChainId.Mainnet]?.[localTx.id]
+      const finalizedTx = chainTransactions?.[UniverseChainId.Monad]?.[localTx.id]
       expect(finalizedTx?.status).toBe(TransactionStatus.Success)
     })
   })
@@ -218,7 +218,7 @@ describe('useMergeLocalAndRemoteTransactions', () => {
         quantity: '0.001',
         tokenSymbol: 'ETH',
         tokenAddress: '0xnative',
-        chainId: UniverseChainId.Mainnet,
+        chainId: UniverseChainId.Monad,
         valueType: ValueType.Exact,
       }
       const localTx = createTestTransaction({ hash: SHARED_HASH, status: TransactionStatus.Canceled })
@@ -271,7 +271,7 @@ describe('useMergeLocalAndRemoteTransactions', () => {
       // Create a Plan transaction with stepDetails containing step hashes
       const planTx: TransactionDetails = {
         id: PLAN_ID,
-        chainId: UniverseChainId.Mainnet,
+        chainId: UniverseChainId.Monad,
         from: TEST_WALLET,
         status: TransactionStatus.Success,
         addedTime: Date.now(),
@@ -286,7 +286,7 @@ describe('useMergeLocalAndRemoteTransactions', () => {
           stepDetails: [
             {
               id: 'step-1',
-              chainId: UniverseChainId.Mainnet,
+              chainId: UniverseChainId.Monad,
               from: TEST_WALLET,
               hash: STEP_HASH_1,
               status: TransactionStatus.Success,
@@ -298,7 +298,7 @@ describe('useMergeLocalAndRemoteTransactions', () => {
             },
             {
               id: 'step-2',
-              chainId: UniverseChainId.Mainnet,
+              chainId: UniverseChainId.Monad,
               from: TEST_WALLET,
               hash: STEP_HASH_2,
               status: TransactionStatus.Success,
@@ -309,7 +309,7 @@ describe('useMergeLocalAndRemoteTransactions', () => {
               typeInfo: extractInputSwapTransactionInfo(),
             },
           ],
-          tokenOutChainId: UniverseChainId.Mainnet,
+          tokenOutChainId: UniverseChainId.Monad,
           inputCurrencyId: '1-0x123',
           outputCurrencyId: '1-0x456',
           inputCurrencyAmountRaw: '1000000',
@@ -359,7 +359,7 @@ describe('useMergeLocalAndRemoteTransactions', () => {
       const { planId, updatedTime, ...rest } = overrides
       return {
         id: planId,
-        chainId: UniverseChainId.Mainnet,
+        chainId: UniverseChainId.Monad,
         from: TEST_WALLET,
         status: TransactionStatus.Pending,
         addedTime: Date.now(),
@@ -372,7 +372,7 @@ describe('useMergeLocalAndRemoteTransactions', () => {
           planId,
           planStatus: undefined,
           stepDetails: [],
-          tokenOutChainId: UniverseChainId.Mainnet,
+          tokenOutChainId: UniverseChainId.Monad,
           inputCurrencyId: '1-0x123',
           outputCurrencyId: '1-0x456',
           inputCurrencyAmountRaw: '1000000',
@@ -404,7 +404,7 @@ describe('useMergeLocalAndRemoteTransactions', () => {
       expect(result.current?.[0]?.status).toBe(TransactionStatus.Success)
       expect((result.current?.[0] as PlanTransactionDetails).updatedTime).toBe(NOW)
       const state = store.getState()
-      const storedPlan = state.transactions[TEST_WALLET]?.[UniverseChainId.Mainnet]?.[PLAN_ID]
+      const storedPlan = state.transactions[TEST_WALLET]?.[UniverseChainId.Monad]?.[PLAN_ID]
       expect(storedPlan?.status).toBe(TransactionStatus.Success)
     })
 
@@ -429,7 +429,7 @@ describe('useMergeLocalAndRemoteTransactions', () => {
       expect(result.current?.[0]?.status).toBe(TransactionStatus.Pending)
       expect((result.current?.[0] as PlanTransactionDetails).updatedTime).toBe(NOW)
       const state = store.getState()
-      const storedPlan = state.transactions[TEST_WALLET]?.[UniverseChainId.Mainnet]?.[PLAN_ID]
+      const storedPlan = state.transactions[TEST_WALLET]?.[UniverseChainId.Monad]?.[PLAN_ID]
       expect(storedPlan?.status).toBe(TransactionStatus.Pending)
     })
 
@@ -467,7 +467,7 @@ describe('useMergeLocalAndRemoteTransactions', () => {
 
       const remoteRegularTx: TransactionDetails = {
         id: 'regular-tx-1',
-        chainId: UniverseChainId.Mainnet,
+        chainId: UniverseChainId.Monad,
         from: TEST_WALLET,
         hash: '0xregular',
         status: TransactionStatus.Success,
@@ -505,7 +505,7 @@ describe('useMergeLocalAndRemoteTransactions', () => {
     const createPlanTx = (planId: string, status: TransactionStatus) => {
       return {
         id: planId,
-        chainId: UniverseChainId.Mainnet,
+        chainId: UniverseChainId.Monad,
         from: TEST_WALLET,
         status,
         addedTime: Date.now(),
@@ -518,7 +518,7 @@ describe('useMergeLocalAndRemoteTransactions', () => {
           planId,
           planStatus: undefined,
           stepDetails: [],
-          tokenOutChainId: UniverseChainId.Mainnet,
+          tokenOutChainId: UniverseChainId.Monad,
           inputCurrencyId: '1-0x123',
           outputCurrencyId: '1-0x456',
           inputCurrencyAmountRaw: '1000000',
@@ -537,7 +537,7 @@ describe('useMergeLocalAndRemoteTransactions', () => {
       const fakePlanData = {
         response: {} as any,
         planId: PLAN_ID,
-        inputChainId: UniverseChainId.Mainnet,
+        inputChainId: UniverseChainId.Monad,
         steps: [],
         proofPending: false,
         currentStepIndex: 0,

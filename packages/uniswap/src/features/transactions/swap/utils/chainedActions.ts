@@ -8,7 +8,7 @@ import { UniverseChainId } from 'uniswap/src/features/chains/types'
  */
 export const CHAINED_ACTIONS_SUPPORTED_CHAINS: UniverseChainId[] = [
   // Mainnet EVM chains
-  UniverseChainId.Mainnet,
+  UniverseChainId.Monad,
   UniverseChainId.ArbitrumOne,
   UniverseChainId.Base,
   UniverseChainId.Linea,

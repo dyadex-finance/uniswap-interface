@@ -74,7 +74,7 @@ export function useDerivedSendInfo(state: SendState): SendInfo {
   const recipientInputUnitagUsername = validatedRecipientData?.unitag ?? recipientInputUnitag?.username
 
   const validatedRecipientAddress = useMemo(() => {
-    const platform = chainIdToPlatform(chainId ?? UniverseChainId.Mainnet)
+    const platform = chainIdToPlatform(chainId ?? UniverseChainId.Monad)
     return (
       validatedRecipientData?.address ??
       (getValidAddress({ address: userInput, platform, withEVMChecksum: true }) ||

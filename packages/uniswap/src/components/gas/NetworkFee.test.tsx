@@ -17,19 +17,19 @@ vi.mock('uniswap/src/features/gas/hooks', () => {
 describe(NetworkFee, () => {
   it('renders a NetworkFee normally', () => {
     const tree = render(
-      <NetworkFee chainId={UniverseChainId.Mainnet} gasFee={{ value: '500', isLoading: false, error: null }} />,
+      <NetworkFee chainId={UniverseChainId.Monad} gasFee={{ value: '500', isLoading: false, error: null }} />,
     )
     expect(tree).toMatchSnapshot()
   })
 
   it('renders a NetworkFee in a loading state', () => {
-    const tree = render(<NetworkFee chainId={UniverseChainId.Mainnet} gasFee={{ isLoading: true, error: null }} />)
+    const tree = render(<NetworkFee chainId={UniverseChainId.Monad} gasFee={{ isLoading: true, error: null }} />)
     expect(tree).toMatchSnapshot()
   })
 
   it('renders a NetworkFee in an error state', () => {
     const tree = render(
-      <NetworkFee chainId={UniverseChainId.Mainnet} gasFee={{ error: new Error(), isLoading: false }} />,
+      <NetworkFee chainId={UniverseChainId.Monad} gasFee={{ error: new Error(), isLoading: false }} />,
     )
     expect(tree).toMatchSnapshot()
   })

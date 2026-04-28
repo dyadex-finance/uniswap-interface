@@ -226,7 +226,7 @@ describe('doesTokenMatchSearchTerm', () => {
     it('should not search by address for native currencies', () => {
       const token = createMockTokenWithInfo({
         currencyInfo: createMockCurrencyInfo({
-          currency: nativeOnChain(UniverseChainId.Mainnet), // Native ETH
+          currency: nativeOnChain(UniverseChainId.Monad), // Native ETH
         }),
       })
 
@@ -379,7 +379,7 @@ describe('doesTokenMatchSearchTerm', () => {
     it('should work with NativeCurrency instances', () => {
       const token = createMockTokenWithInfo({
         currencyInfo: createMockCurrencyInfo({
-          currency: nativeOnChain(UniverseChainId.Mainnet), // Native ETH
+          currency: nativeOnChain(UniverseChainId.Monad), // Native ETH
         }),
       })
 
@@ -391,7 +391,7 @@ describe('doesTokenMatchSearchTerm', () => {
     it('should not search by address for NativeCurrency', () => {
       const token = createMockTokenWithInfo({
         currencyInfo: createMockCurrencyInfo({
-          currency: nativeOnChain(UniverseChainId.Mainnet), // Native ETH
+          currency: nativeOnChain(UniverseChainId.Monad), // Native ETH
         }),
       })
 

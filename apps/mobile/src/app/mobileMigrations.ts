@@ -52,7 +52,7 @@ export const restructureTransactionsAndNotifications = createSafeMigration({
     const addresses = Object.keys(oldTransactionState?.lastTxHistoryUpdate || [])
     for (const address of addresses) {
       newNotificationState.lastTxNotificationUpdate[address] = {
-        [UniverseChainId.Mainnet]: oldTransactionState.lastTxHistoryUpdate[address],
+        [UniverseChainId.Monad]: oldTransactionState.lastTxHistoryUpdate[address],
       }
     }
 

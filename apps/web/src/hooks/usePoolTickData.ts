@@ -189,7 +189,7 @@ export function usePoolActiveLiquidity({
   data?: TickProcessed[]
 } {
   const multichainContext = useMultichainContext()
-  const defaultChainId = multichainContext.chainId ?? UniverseChainId.Mainnet
+  const defaultChainId = multichainContext.chainId ?? UniverseChainId.Monad
   const poolsQueryEnabled = Boolean(
     poolEnabledProtocolVersion(version) && sdkCurrencies.TOKEN0 && sdkCurrencies.TOKEN1 && !skip,
   )

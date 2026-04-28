@@ -17,7 +17,7 @@ describe('parseSwapLink', () => {
 
       const result = parseSwapLinkMobileFormatOrThrow(url)
 
-      expect(result.inputAsset?.chainId).toBe(UniverseChainId.Mainnet)
+      expect(result.inputAsset?.chainId).toBe(UniverseChainId.Monad)
       expect(result.exactCurrencyField).toBe(CurrencyField.INPUT)
       expect(result.exactAmountToken).toBe('100')
     })
@@ -39,7 +39,7 @@ describe('parseSwapLink', () => {
 
       const result = parseSwapLinkWebFormatOrThrow(url)
 
-      expect(result.inputAsset?.chainId).toBe(UniverseChainId.Mainnet)
+      expect(result.inputAsset?.chainId).toBe(UniverseChainId.Monad)
       expect(result.exactCurrencyField).toBe(CurrencyField.INPUT)
       expect(result.exactAmountToken).toBe('1.5')
     })
@@ -62,7 +62,7 @@ describe('parseSwapLink', () => {
 
       const result = parseSwapLinkWebFormatOrThrow(url)
 
-      expect(result.inputAsset?.chainId).toBe(UniverseChainId.Mainnet)
+      expect(result.inputAsset?.chainId).toBe(UniverseChainId.Monad)
       expect(result.outputAsset?.chainId).toBe(UniverseChainId.Polygon)
     })
 
@@ -79,7 +79,7 @@ describe('parseSwapLink', () => {
 
       expect(result.inputAsset).toBeDefined()
       expect(result.inputAsset?.address).toBe('0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee')
-      expect(result.inputAsset?.chainId).toBe(UniverseChainId.Mainnet)
+      expect(result.inputAsset?.chainId).toBe(UniverseChainId.Monad)
       expect(result.outputAsset).toBeNull()
     })
 
@@ -92,7 +92,7 @@ describe('parseSwapLink', () => {
 
       expect(result.outputAsset).toBeDefined()
       expect(result.outputAsset?.address).toBe('0xdAC17F958D2ee523a2206206994597C13D831ec7')
-      expect(result.outputAsset?.chainId).toBe(UniverseChainId.Mainnet)
+      expect(result.outputAsset?.chainId).toBe(UniverseChainId.Monad)
       expect(result.inputAsset).toBeNull()
     })
 
@@ -110,12 +110,12 @@ describe('parseSwapLink', () => {
       const params = {
         inputAsset: {
           address: '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee',
-          chainId: UniverseChainId.Mainnet,
+          chainId: UniverseChainId.Monad,
           type: AssetType.Currency as AssetType.Currency,
         },
         outputAsset: {
           address: '0xdAC17F958D2ee523a2206206994597C13D831ec7',
-          chainId: UniverseChainId.Mainnet,
+          chainId: UniverseChainId.Monad,
           type: AssetType.Currency as AssetType.Currency,
         },
         exactCurrencyField: CurrencyField.INPUT,
@@ -134,7 +134,7 @@ describe('parseSwapLink', () => {
       const params = {
         inputAsset: {
           address: '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee',
-          chainId: UniverseChainId.Mainnet,
+          chainId: UniverseChainId.Monad,
           type: AssetType.Currency as AssetType.Currency,
         },
         outputAsset: null,
@@ -155,7 +155,7 @@ describe('parseSwapLink', () => {
         inputAsset: null,
         outputAsset: {
           address: '0xdAC17F958D2ee523a2206206994597C13D831ec7',
-          chainId: UniverseChainId.Mainnet,
+          chainId: UniverseChainId.Monad,
           type: AssetType.Currency as AssetType.Currency,
         },
         exactCurrencyField: CurrencyField.OUTPUT,
@@ -202,7 +202,7 @@ describe('parseSwapLink', () => {
     it('should reject mixed testnet and mainnet chains', () => {
       // Try to swap from Sepolia (testnet) to Mainnet
       const url = new URL(
-        `https://uniswap.org/mobile-redirect?screen=swap&inputCurrencyId=${UniverseChainId.Sepolia}-0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee&outputCurrencyId=${UniverseChainId.Mainnet}-0xdAC17F958D2ee523a2206206994597C13D831ec7&currencyField=input&amount=1`,
+        `https://uniswap.org/mobile-redirect?screen=swap&inputCurrencyId=${UniverseChainId.Sepolia}-0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee&outputCurrencyId=${UniverseChainId.Monad}-0xdAC17F958D2ee523a2206206994597C13D831ec7&currencyField=input&amount=1`,
       )
 
       const testFn = (): void => {
@@ -214,7 +214,7 @@ describe('parseSwapLink', () => {
     it('should reject mixed mainnet and testnet chains', () => {
       // Try to swap from Mainnet to UnichainSepolia (testnet)
       const url = new URL(
-        `https://uniswap.org/mobile-redirect?screen=swap&inputCurrencyId=${UniverseChainId.Mainnet}-0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee&outputCurrencyId=${UniverseChainId.UnichainSepolia}-0x31d0220469e10c4E71834a79b1f276d740d3768F&currencyField=input&amount=1`,
+        `https://uniswap.org/mobile-redirect?screen=swap&inputCurrencyId=${UniverseChainId.Monad}-0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee&outputCurrencyId=${UniverseChainId.UnichainSepolia}-0x31d0220469e10c4E71834a79b1f276d740d3768F&currencyField=input&amount=1`,
       )
 
       const testFn = (): void => {

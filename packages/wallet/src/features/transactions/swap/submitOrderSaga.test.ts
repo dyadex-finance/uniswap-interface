@@ -36,12 +36,12 @@ const mockSignerManager = {
 }
 
 const baseSubmitOrderParams = {
-  chainId: UniverseChainId.Mainnet,
+  chainId: UniverseChainId.Monad,
   account: signerMnemonicAccount(),
   typeInfo: {
     type: TransactionType.Swap,
     tradeType: TradeType.EXACT_INPUT,
-    inputCurrencyId: currencyId(nativeOnChain(UniverseChainId.Mainnet)),
+    inputCurrencyId: currencyId(nativeOnChain(UniverseChainId.Monad)),
     outputCurrencyId: '0xabc',
     inputCurrencyAmountRaw: '10000',
     expectedOutputCurrencyAmountRaw: '200000',

@@ -63,7 +63,7 @@ describe('gqlToCurrency', () => {
       })
       expect(result).toBeDefined()
       expect(result?.isNative).toBe(true)
-      expect(result?.chainId).toBe(UniverseChainId.Mainnet)
+      expect(result?.chainId).toBe(UniverseChainId.Monad)
     })
 
     it('builds ERC20 token for Mainnet token with address', () => {
@@ -118,7 +118,7 @@ describe('getTokenDetailsURL', () => {
   })
 
   it('maps native token address to NATIVE path segment when chain resolves to a universe chain id', () => {
-    const nativeEthAddress = getNativeAddress(UniverseChainId.Mainnet)
+    const nativeEthAddress = getNativeAddress(UniverseChainId.Monad)
     expect(
       getTokenDetailsURL({
         chain: GraphQLApi.Chain.Ethereum,
@@ -161,22 +161,22 @@ describe('unwrapToken', () => {
   })
 
   it('unwraps WETH to native ETH on Mainnet', () => {
-    const wethAddress = WRAPPED_NATIVE_CURRENCY[UniverseChainId.Mainnet]?.address
+    const wethAddress = WRAPPED_NATIVE_CURRENCY[UniverseChainId.Monad]?.address
     const wethToken = { address: wethAddress, symbol: 'WETH', name: 'Wrapped Ether' }
-    const result = unwrapToken(UniverseChainId.Mainnet, wethToken)
+    const result = unwrapToken(UniverseChainId.Monad, wethToken)
     expect(result.address).toBe(NATIVE_CHAIN_ID)
   })
 
   it('does not unwrap non-wrapped tokens', () => {
     const daiToken = { address: DAI.address, symbol: 'DAI', name: 'Dai' }
-    const result = unwrapToken(UniverseChainId.Mainnet, daiToken)
+    const result = unwrapToken(UniverseChainId.Monad, daiToken)
     expect(result.address).toBe(DAI.address)
     expect(result.symbol).toBe('DAI')
   })
 
   it('returns token unchanged when address is undefined', () => {
     const token = { address: undefined }
-    const result = unwrapToken(UniverseChainId.Mainnet, token)
+    const result = unwrapToken(UniverseChainId.Monad, token)
     expect(result).toBe(token)
   })
 })

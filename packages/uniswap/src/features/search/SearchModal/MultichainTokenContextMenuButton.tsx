@@ -50,7 +50,7 @@ function useBestChainCurrencyInfo(tokens: CurrencyInfo[], fallback: CurrencyInfo
   const { data: balancesById } = usePortfolioBalances({ evmAddress, svmAddress })
 
   return useMemo(() => {
-    const mainnetToken = tokens.find((t) => t.currency.chainId === UniverseChainId.Mainnet)
+    const mainnetToken = tokens.find((t) => t.currency.chainId === UniverseChainId.Monad)
     const defaultToken = mainnetToken ?? fallback
 
     if (!balancesById || tokens.length === 0) {

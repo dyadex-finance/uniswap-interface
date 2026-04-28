@@ -24,7 +24,7 @@ describe('shouldShowNetworkLogo', () => {
   it('returns true when alwaysShowNetworkLogo is true and chainId is set', () => {
     expect(
       shouldShowNetworkLogo({
-        chainId: UniverseChainId.Mainnet,
+        chainId: UniverseChainId.Monad,
         alwaysShowNetworkLogo: true,
         hideNetworkLogo: true,
         showMainnetNetworkLogo: false,
@@ -68,7 +68,7 @@ describe('shouldShowNetworkLogo', () => {
   it('returns false for mainnet when showMainnetNetworkLogo is false', () => {
     expect(
       shouldShowNetworkLogo({
-        chainId: UniverseChainId.Mainnet,
+        chainId: UniverseChainId.Monad,
         alwaysShowNetworkLogo: false,
         hideNetworkLogo: false,
         showMainnetNetworkLogo: false,
@@ -79,7 +79,7 @@ describe('shouldShowNetworkLogo', () => {
   it('returns true for mainnet when showMainnetNetworkLogo is true', () => {
     expect(
       shouldShowNetworkLogo({
-        chainId: UniverseChainId.Mainnet,
+        chainId: UniverseChainId.Monad,
         alwaysShowNetworkLogo: false,
         hideNetworkLogo: false,
         showMainnetNetworkLogo: true,
@@ -90,7 +90,7 @@ describe('shouldShowNetworkLogo', () => {
   it('returns false for mainnet when hidden even if showMainnetNetworkLogo is true', () => {
     expect(
       shouldShowNetworkLogo({
-        chainId: UniverseChainId.Mainnet,
+        chainId: UniverseChainId.Monad,
         alwaysShowNetworkLogo: false,
         hideNetworkLogo: true,
         showMainnetNetworkLogo: true,

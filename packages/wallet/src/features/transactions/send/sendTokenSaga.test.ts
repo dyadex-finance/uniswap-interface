@@ -32,19 +32,19 @@ const erc20TransferParams: SendCurrencyParams = {
   type: AssetType.Currency,
   account,
   tokenAddress: DAI.address,
-  chainId: UniverseChainId.Mainnet,
+  chainId: UniverseChainId.Monad,
   toAddress: '0xdefaced',
   amountInWei: '100000000000000000',
   currencyAmountUSD: undefined,
 }
 const nativeTransferParams: SendCurrencyParams = {
   ...erc20TransferParams,
-  tokenAddress: getNativeAddress(UniverseChainId.Mainnet),
+  tokenAddress: getNativeAddress(UniverseChainId.Monad),
 }
 const erc721TransferParams: SendNFTParams = {
   txId: '1',
   type: AssetType.ERC721,
-  chainId: UniverseChainId.Mainnet,
+  chainId: UniverseChainId.Monad,
   account,
   toAddress: '0xdefaced',
   tokenAddress: '0xdeadbeef',

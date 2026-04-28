@@ -33,7 +33,7 @@ const mockUseCurrencyInfo = useCurrencyInfo as Mock
 const mockUseOnChainCurrencyBalance = useOnChainCurrencyBalance as Mock
 const mockUseOnChainNativeCurrencyBalance = useOnChainNativeCurrencyBalance as Mock
 
-const ETH = nativeOnChain(UniverseChainId.Mainnet)
+const ETH = nativeOnChain(UniverseChainId.Monad)
 
 function createMockStep(overrides: Partial<TradingApi.PlanStep> = {}): TradingApi.PlanStep {
   return {
@@ -55,7 +55,7 @@ function setActivePlan(steps: TradingApi.PlanStep[], currentStepIndex = 0): void
   activePlanStore.setState({
     activePlan: {
       planId: 'test-plan',
-      inputChainId: UniverseChainId.Mainnet,
+      inputChainId: UniverseChainId.Monad,
       steps: steps as never[],
       currentStepIndex,
       proofPending: false,

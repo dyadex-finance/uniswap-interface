@@ -3,7 +3,7 @@ import { FeatureFlags, useFeatureFlag } from '@universe/gating'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router'
 import { Flex, Text, useMedia } from 'ui/src'
-import { UNI, USDC_BASE } from 'uniswap/src/constants/tokens'
+import { USDC_MONAD, AUSD_MONAD } from 'uniswap/src/constants/tokens'
 import { useEnabledChains } from 'uniswap/src/features/chains/hooks/useEnabledChains'
 import { UniverseChainId } from 'uniswap/src/features/chains/types'
 import { toGraphQLChain } from 'uniswap/src/features/chains/utils'
@@ -22,20 +22,16 @@ const primary = '#2ABDFF'
 
 const tokens: { chainId: UniverseChainId; address: string }[] = [
   {
-    chainId: UniverseChainId.Mainnet,
+    chainId: UniverseChainId.Monad,
     address: 'ETH',
   },
   {
-    chainId: UniverseChainId.Base,
-    address: USDC_BASE.address,
+    chainId: UniverseChainId.Monad,
+    address: USDC_MONAD.address,
   },
   {
-    chainId: UniverseChainId.Mainnet,
-    address: UNI[UniverseChainId.Mainnet].address,
-  },
-  {
-    chainId: UniverseChainId.Solana,
-    address: NATIVE_CHAIN_ID,
+    chainId: UniverseChainId.Monad,
+    address: AUSD_MONAD.address,
   },
 ]
 

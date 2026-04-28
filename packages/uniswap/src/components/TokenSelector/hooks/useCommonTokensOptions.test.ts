@@ -37,13 +37,13 @@ function makeCurrencyInfo({ token }: { token: Token }): CurrencyInfo {
 
 // Common base currencies (normally returned by useAllCommonBaseCurrencies)
 const mainnetToken1 = new Token(
-  UniverseChainId.Mainnet,
+  UniverseChainId.Monad,
   '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48',
   6,
   'USDC',
   'USD Coin',
 )
-const mainnetToken2 = new Token(UniverseChainId.Mainnet, '0x6B175474E89094C44Da98b954EedeAC495271d0F', 18, 'DAI', 'Dai')
+const mainnetToken2 = new Token(UniverseChainId.Monad, '0x6B175474E89094C44Da98b954EedeAC495271d0F', 18, 'DAI', 'Dai')
 const arbitrumToken = new Token(
   UniverseChainId.ArbitrumOne,
   '0xFF970A61A04b1cA14834A43f5dE4533eBDDB5CC8',
@@ -263,12 +263,12 @@ describe(useCommonTokensOptions, () => {
     })
 
     it('returns common base tokens filtered to Mainnet when chainFilter is Mainnet', async () => {
-      setupDefaultMocks({ chainFilter: UniverseChainId.Mainnet })
+      setupDefaultMocks({ chainFilter: UniverseChainId.Monad })
 
       const { result } = renderHook(() =>
         useCommonTokensOptions({
           portfolioData: makePortfolioData(),
-          chainFilter: UniverseChainId.Mainnet,
+          chainFilter: UniverseChainId.Monad,
         }),
       )
 
@@ -278,7 +278,7 @@ describe(useCommonTokensOptions, () => {
 
       // Should return only Mainnet tokens from common base (not Linea, XLayer, or Unichain)
       const chainIds = result.current.data?.map((opt) => opt.currencyInfo.currency.chainId) ?? []
-      expect(chainIds.every((id) => id === UniverseChainId.Mainnet)).toBe(true)
+      expect(chainIds.every((id) => id === UniverseChainId.Monad)).toBe(true)
       expect(result.current.data).toHaveLength(2) // mainnetToken1 and mainnetToken2
     })
   })
@@ -354,8 +354,8 @@ describe(useCommonTokensOptions, () => {
 
       // Should keep Mainnet and Arbitrum tokens
       const currencyIds = result.current.data?.map((opt) => opt.currencyInfo.currencyId) ?? []
-      expect(currencyIds).toContain(buildCurrencyId(UniverseChainId.Mainnet, mainnetToken1.address))
-      expect(currencyIds).toContain(buildCurrencyId(UniverseChainId.Mainnet, mainnetToken2.address))
+      expect(currencyIds).toContain(buildCurrencyId(UniverseChainId.Monad, mainnetToken1.address))
+      expect(currencyIds).toContain(buildCurrencyId(UniverseChainId.Monad, mainnetToken2.address))
       expect(currencyIds).toContain(buildCurrencyId(UniverseChainId.ArbitrumOne, arbitrumToken.address))
     })
   })

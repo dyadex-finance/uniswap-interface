@@ -747,9 +747,9 @@ describe('Redux state migrations', () => {
       ...v95Schema,
       tokens: {
         dismissedTokenWarnings: {
-          [UniverseChainId.Mainnet]: {
+          [UniverseChainId.Monad]: {
             [USDC.address]: {
-              chainId: UniverseChainId.Mainnet,
+              chainId: UniverseChainId.Monad,
               address: USDC.address,
             },
           },

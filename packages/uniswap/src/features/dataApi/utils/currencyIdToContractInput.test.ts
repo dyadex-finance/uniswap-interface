@@ -21,11 +21,11 @@ describe(currencyIdToContractInput, () => {
 describe(currencyIdToRestContractInput, () => {
   it('converts currencyId to RestContract', () => {
     expect(currencyIdToRestContractInput(SAMPLE_CURRENCY_ID_1)).toEqual({
-      chainId: UniverseChainId.Mainnet,
+      chainId: UniverseChainId.Monad,
       address: SAMPLE_CURRENCY_ID_1.replace('1-', '').toLocaleLowerCase(),
     })
     expect(currencyIdToRestContractInput(SAMPLE_CURRENCY_ID_2)).toEqual({
-      chainId: UniverseChainId.Mainnet,
+      chainId: UniverseChainId.Monad,
       address: SAMPLE_CURRENCY_ID_2.replace('1-', '').toLocaleLowerCase(),
     })
   })

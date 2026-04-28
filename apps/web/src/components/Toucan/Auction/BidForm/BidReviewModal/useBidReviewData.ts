@@ -111,7 +111,7 @@ export function useBidReviewData({
 
   // Fallback to mainnet for hook call since hooks can't be conditional.
   // gasFeeCurrencyAmount check below guards against using wrong chain's native currency.
-  const nativeCurrencyInfo = useNativeCurrencyInfo(normalizedChainId ?? UniverseChainId.Mainnet)
+  const nativeCurrencyInfo = useNativeCurrencyInfo(normalizedChainId ?? UniverseChainId.Monad)
 
   // Clear state when modal closes so it re-fires when reopened
   useEffect(() => {

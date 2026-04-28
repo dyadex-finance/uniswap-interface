@@ -12,7 +12,7 @@ describe('useChainIdsChangeEffect', () => {
 
       renderHook(() =>
         useChainIdsChangeEffect({
-          inputChainId: UniverseChainId.Mainnet,
+          inputChainId: UniverseChainId.Monad,
           outputChainId: UniverseChainId.Optimism,
           onChainIdsChanged: callback,
           skipInitialCallback: skip,
@@ -24,7 +24,7 @@ describe('useChainIdsChangeEffect', () => {
       } else {
         expect(callback).toHaveBeenCalledWith({
           currentChains: {
-            inputChainId: UniverseChainId.Mainnet,
+            inputChainId: UniverseChainId.Monad,
             outputChainId: UniverseChainId.Optimism,
           },
           prevChains: {
@@ -42,7 +42,7 @@ describe('useChainIdsChangeEffect', () => {
     {
       scenario: 'input chain changes only',
       chainStates: [
-        { inputChainId: UniverseChainId.Mainnet, outputChainId: UniverseChainId.Optimism },
+        { inputChainId: UniverseChainId.Monad, outputChainId: UniverseChainId.Optimism },
         { inputChainId: UniverseChainId.Base, outputChainId: UniverseChainId.Optimism },
       ],
       expectedChanges: { input: true, output: false },
@@ -50,15 +50,15 @@ describe('useChainIdsChangeEffect', () => {
     {
       scenario: 'output chain changes only',
       chainStates: [
-        { inputChainId: UniverseChainId.Mainnet, outputChainId: UniverseChainId.Optimism },
-        { inputChainId: UniverseChainId.Mainnet, outputChainId: UniverseChainId.Base },
+        { inputChainId: UniverseChainId.Monad, outputChainId: UniverseChainId.Optimism },
+        { inputChainId: UniverseChainId.Monad, outputChainId: UniverseChainId.Base },
       ],
       expectedChanges: { input: false, output: true },
     },
     {
       scenario: 'both chains change',
       chainStates: [
-        { inputChainId: UniverseChainId.Mainnet, outputChainId: UniverseChainId.Optimism },
+        { inputChainId: UniverseChainId.Monad, outputChainId: UniverseChainId.Optimism },
         { inputChainId: UniverseChainId.Base, outputChainId: UniverseChainId.ArbitrumOne },
       ],
       expectedChanges: { input: true, output: true },
@@ -66,8 +66,8 @@ describe('useChainIdsChangeEffect', () => {
     {
       scenario: 'no chains change',
       chainStates: [
-        { inputChainId: UniverseChainId.Mainnet, outputChainId: UniverseChainId.Optimism },
-        { inputChainId: UniverseChainId.Mainnet, outputChainId: UniverseChainId.Optimism },
+        { inputChainId: UniverseChainId.Monad, outputChainId: UniverseChainId.Optimism },
+        { inputChainId: UniverseChainId.Monad, outputChainId: UniverseChainId.Optimism },
       ],
       expectedChanges: { input: false, output: false },
       shouldCallback: false,
@@ -117,7 +117,7 @@ describe('useChainIdsChangeEffect', () => {
     {
       scenario: 'undefined input chain',
       chainStates: [
-        { inputChainId: UniverseChainId.Mainnet, outputChainId: UniverseChainId.Optimism },
+        { inputChainId: UniverseChainId.Monad, outputChainId: UniverseChainId.Optimism },
         { inputChainId: undefined as unknown as UniverseChainId, outputChainId: UniverseChainId.Optimism },
       ],
       expectedChanges: { input: true, output: false },
@@ -125,8 +125,8 @@ describe('useChainIdsChangeEffect', () => {
     {
       scenario: 'undefined output chain',
       chainStates: [
-        { inputChainId: UniverseChainId.Mainnet, outputChainId: UniverseChainId.Optimism },
-        { inputChainId: UniverseChainId.Mainnet, outputChainId: undefined as unknown as UniverseChainId },
+        { inputChainId: UniverseChainId.Monad, outputChainId: UniverseChainId.Optimism },
+        { inputChainId: UniverseChainId.Monad, outputChainId: undefined as unknown as UniverseChainId },
       ],
       expectedChanges: { input: false, output: true },
     },
@@ -166,7 +166,7 @@ describe('useChainIdsChangeEffect', () => {
   // oxlint-disable-next-line jest/expect-expect -- suppressed
   it('should handle when callback is not provided', () => {
     // Should not throw errors
-    let inputChainId = UniverseChainId.Mainnet
+    let inputChainId = UniverseChainId.Monad
     let outputChainId = UniverseChainId.Optimism
 
     const { rerender } = renderHook(() =>
@@ -188,7 +188,7 @@ describe('useChainIdsChangeEffect', () => {
 
   it('should handle consecutive chain changes', () => {
     const callback = vi.fn()
-    let inputChainId = UniverseChainId.Mainnet
+    let inputChainId = UniverseChainId.Monad
     const outputChainId = UniverseChainId.Optimism
 
     const { rerender } = renderHook(() =>

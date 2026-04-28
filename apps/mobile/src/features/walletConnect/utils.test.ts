@@ -39,7 +39,7 @@ describe(getAccountAddressFromEIP155String, () => {
 describe(getSupportedWalletConnectChains, () => {
   it('handles list of valid chains', () => {
     expect(getSupportedWalletConnectChains([EIP155_MAINNET, EIP155_POLYGON, EIP155_OPTIMISM])).toEqual([
-      UniverseChainId.Mainnet,
+      UniverseChainId.Monad,
       UniverseChainId.Polygon,
       UniverseChainId.Optimism,
     ])
@@ -47,7 +47,7 @@ describe(getSupportedWalletConnectChains, () => {
 
   it('handles list of valid chains including an invalid chain', () => {
     expect(getSupportedWalletConnectChains([EIP155_MAINNET, EIP155_POLYGON, EIP155_FANTOM_UNSUPPORTED])).toEqual([
-      UniverseChainId.Mainnet,
+      UniverseChainId.Monad,
       UniverseChainId.Polygon,
     ])
   })
@@ -55,7 +55,7 @@ describe(getSupportedWalletConnectChains, () => {
 
 describe(getChainIdFromEIP155String, () => {
   it('handles valid eip155 mainnet address', () => {
-    expect(getChainIdFromEIP155String(EIP155_MAINNET)).toBe(UniverseChainId.Mainnet)
+    expect(getChainIdFromEIP155String(EIP155_MAINNET)).toBe(UniverseChainId.Monad)
   })
 
   it('handles valid eip155 optimism address', () => {
@@ -135,7 +135,7 @@ describe(parseGetCapabilitiesRequest, () => {
   })
 
   it('handles request with address and chain IDs', () => {
-    const chainIds = [UniverseChainId.Mainnet, UniverseChainId.Polygon]
+    const chainIds = [UniverseChainId.Monad, UniverseChainId.Polygon]
     const result = parseGetCapabilitiesRequest({
       method: EthMethod.WalletGetCapabilities,
       topic: mockTopic,
@@ -164,7 +164,7 @@ describe(parseGetCapabilitiesRequest, () => {
 describe(parseSignRequest, () => {
   const mockTopic = 'test-topic'
   const mockInternalId = 123
-  const mockChainId = UniverseChainId.Mainnet
+  const mockChainId = UniverseChainId.Monad
   const mockDapp = {
     name: 'Test Dapp',
     description: 'Test Dapp Description',
@@ -269,7 +269,7 @@ describe(parseSignRequest, () => {
 describe(parseTransactionRequest, () => {
   const mockTopic = 'test-topic'
   const mockInternalId = 123
-  const mockChainId = UniverseChainId.Mainnet
+  const mockChainId = UniverseChainId.Monad
   const mockDapp = {
     name: 'Test Dapp',
     description: 'Test Dapp Description',
@@ -325,7 +325,7 @@ describe(parseTransactionRequest, () => {
 describe(parseSendCallsRequest, () => {
   const mockTopic = 'test-topic'
   const mockInternalId = 123
-  const mockChainId = UniverseChainId.Mainnet
+  const mockChainId = UniverseChainId.Monad
   const mockDapp = {
     name: 'Test Dapp',
     description: 'Test Dapp Description',
@@ -419,7 +419,7 @@ describe('personal_sign signAsString flag behavior', () => {
       method: EthMethod.PersonalSign,
       topic: 'test-topic',
       internalId: 123,
-      chainId: UniverseChainId.Mainnet,
+      chainId: UniverseChainId.Monad,
       dapp: {
         name: 'Test Dapp',
         description: 'Test Description',
@@ -443,7 +443,7 @@ describe('personal_sign signAsString flag behavior', () => {
       method: EthMethod.PersonalSign,
       topic: 'test-topic',
       internalId: 123,
-      chainId: UniverseChainId.Mainnet,
+      chainId: UniverseChainId.Monad,
       dapp: {
         name: 'Test Dapp',
         description: 'Test Description',
@@ -462,7 +462,7 @@ describe('personal_sign signAsString flag behavior', () => {
 describe(parseGetCallsStatusRequest, () => {
   const mockTopic = 'test-topic'
   const mockInternalId = 123
-  const mockChainId = UniverseChainId.Mainnet
+  const mockChainId = UniverseChainId.Monad
   const mockDapp = {
     name: 'Test Dapp',
     description: 'Test Dapp Description',

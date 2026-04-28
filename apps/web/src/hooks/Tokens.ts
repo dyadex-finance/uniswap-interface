@@ -29,7 +29,7 @@ function useCurrencyPreprocessing({
   const chainIdWithFallback =
     (typeof addressOrCurrency === 'string' ? chainId : addressOrCurrency?.chainId) ?? connectedChainId
   const supportedChainId = useSupportedChainId(chainIdWithFallback)
-  const nativeAddressWithFallback = getChainInfo(supportedChainId ?? UniverseChainId.Mainnet).nativeCurrency.address
+  const nativeAddressWithFallback = getChainInfo(supportedChainId ?? UniverseChainId.Monad).nativeCurrency.address
 
   const isNative = useMemo(() => checkIsNative(addressOrCurrency), [addressOrCurrency])
   const address = useMemo(
@@ -38,7 +38,7 @@ function useCurrencyPreprocessing({
   )
 
   const addressWithFallback = isNative || !address ? nativeAddressWithFallback : address
-  const currencyId = buildCurrencyId(supportedChainId ?? UniverseChainId.Mainnet, addressWithFallback)
+  const currencyId = buildCurrencyId(supportedChainId ?? UniverseChainId.Monad, addressWithFallback)
   const shouldSkip = !addressOrCurrency || skip
 
   return { currencyId, shouldSkip, addressOrCurrency }

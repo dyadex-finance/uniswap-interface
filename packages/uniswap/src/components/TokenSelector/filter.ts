@@ -1,7 +1,6 @@
 import Fuse from 'fuse.js'
 import { TokenOption } from 'uniswap/src/components/lists/items/types'
 import { UniverseChainId } from 'uniswap/src/features/chains/types'
-import { isWSOL } from 'uniswap/src/utils/isWSOL'
 
 const searchOptions: Fuse.IFuseOptions<TokenOption> = {
   includeMatches: true,
@@ -68,7 +67,7 @@ export function filter({
   tokenOptions,
   chainFilter,
   searchFilter,
-  hideWSOL = false,
+  hideWSOL = true,
 }: {
   tokenOptions: TokenOption[] | null
   chainFilter: UniverseChainId | null
@@ -80,9 +79,7 @@ export function filter({
   }
 
   // Filter out WSOL from Solana results when hideWSOL is true
-  const filteredTokens = hideWSOL
-    ? tokenOptions.filter((option) => !isWSOL(option.currencyInfo.currency))
-    : tokenOptions
+  const filteredTokens = tokenOptions
 
   if (!chainFilter && !searchFilter) {
     return filteredTokens

@@ -25,14 +25,14 @@ describe('useSwapNetworkChangeEffect', () => {
         useSwapNetworkChangeEffect({ inputChainId, outputChainId }),
       {
         initialProps: {
-          inputChainId: UniverseChainId.Mainnet,
-          outputChainId: UniverseChainId.Mainnet,
+          inputChainId: UniverseChainId.Monad,
+          outputChainId: UniverseChainId.Monad,
         },
       },
     )
 
     act(() => {
-      rerender({ inputChainId: UniverseChainId.Mainnet, outputChainId: UniverseChainId.Mainnet })
+      rerender({ inputChainId: UniverseChainId.Monad, outputChainId: UniverseChainId.Monad })
     })
 
     expect(onSwapChainsChangedMock).not.toHaveBeenCalled()
@@ -43,18 +43,18 @@ describe('useSwapNetworkChangeEffect', () => {
         useSwapNetworkChangeEffect({ inputChainId, outputChainId }),
       {
         initialProps: {
-          inputChainId: UniverseChainId.Mainnet,
+          inputChainId: UniverseChainId.Monad,
           outputChainId: UniverseChainId.Optimism,
         },
       },
     )
 
     act(() => {
-      rerender({ inputChainId: UniverseChainId.Mainnet, outputChainId: UniverseChainId.Base })
+      rerender({ inputChainId: UniverseChainId.Monad, outputChainId: UniverseChainId.Base })
     })
 
     expect(onSwapChainsChangedMock).toHaveBeenCalledWith({
-      chainId: UniverseChainId.Mainnet,
+      chainId: UniverseChainId.Monad,
       outputChainId: UniverseChainId.Base,
     })
   })
@@ -64,8 +64,8 @@ describe('useSwapNetworkChangeEffect', () => {
         useSwapNetworkChangeEffect({ inputChainId, outputChainId }),
       {
         initialProps: {
-          inputChainId: UniverseChainId.Mainnet,
-          outputChainId: UniverseChainId.Mainnet,
+          inputChainId: UniverseChainId.Monad,
+          outputChainId: UniverseChainId.Monad,
         } as { inputChainId?: UniverseChainId; outputChainId?: UniverseChainId },
       },
     )
@@ -76,7 +76,7 @@ describe('useSwapNetworkChangeEffect', () => {
 
     expect(onSwapChainsChangedMock).toHaveBeenCalledWith({
       chainId: UniverseChainId.Optimism,
-      prevChainId: UniverseChainId.Mainnet,
+      prevChainId: UniverseChainId.Monad,
     })
 
     act(() => {

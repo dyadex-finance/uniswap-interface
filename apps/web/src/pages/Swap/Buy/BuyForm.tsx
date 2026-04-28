@@ -190,7 +190,7 @@ function BuyFormInner({ disabled, initialCurrency }: BuyFormProps) {
       )
     } else if (currencyCode) {
       // Defaults the quote currency to the initial currency (from query params) if supported
-      const chainId = parsedQs.chainId ? Number(parsedQs.chainId) : UniverseChainId.Mainnet
+      const chainId = parsedQs.chainId ? Number(parsedQs.chainId) : UniverseChainId.Monad
       supportedToken = supportedTokens?.find(
         (meldToken) =>
           meldToken.currencyInfo?.currency.symbol === currencyCode &&
@@ -199,7 +199,7 @@ function BuyFormInner({ disabled, initialCurrency }: BuyFormProps) {
     } else {
       supportedToken =
         supportedTokens?.find((meldToken) =>
-          meldToken.currencyInfo?.currency.equals(nativeOnChain(UniverseChainId.Mainnet)),
+          meldToken.currencyInfo?.currency.equals(nativeOnChain(UniverseChainId.Monad)),
         ) ?? supportedTokens?.[0]
     }
 
@@ -316,7 +316,7 @@ function BuyFormInner({ disabled, initialCurrency }: BuyFormProps) {
                 maxDecimals={
                   inputInFiat
                     ? DEFAULT_FIAT_DECIMALS
-                    : (quoteCurrency?.currencyInfo?.currency.decimals ?? DEFAULT_FIAT_DECIMALS)
+                    : quoteCurrency?.currencyInfo?.currency.decimals ?? DEFAULT_FIAT_DECIMALS
                 }
                 testId={TestID.BuyFormAmountInput}
                 ref={inputRef}

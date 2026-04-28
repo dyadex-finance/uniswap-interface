@@ -6,7 +6,7 @@ import { currencyForSelectedMultichainDeployment } from '~/pages/TokenDetails/co
 
 /** Mainnet USDC — used as the “page” currency while selecting another deployment */
 const mainnetUsdc = new Token(
-  UniverseChainId.Mainnet,
+  UniverseChainId.Monad,
   '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48',
   6,
   'USDC',

@@ -74,15 +74,6 @@ test.describe(
       ).toBeVisible()
     })
 
-    test('output - should show crosschain swaps promo banner when chained actions flag is enabled', async ({
-      page,
-    }) => {
-      await page.goto(buildSwapUrl({ featureFlags: { [FeatureFlags.ChainedActions]: true } }))
-      await page.getByTestId(TestID.ChooseOutputToken).click()
-
-      await expect(page.getByText('Crosschain swaps are here')).toBeVisible()
-    })
-
     test('limit - should NOT show crosschain swaps promo banner in limit order flow', async ({ page }) => {
       await page.goto(buildLimitUrl({ featureFlags: { [FeatureFlags.ChainedActions]: true } }))
       // Limit page uses SwapCurrencyInputPanel which has a different selector

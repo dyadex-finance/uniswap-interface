@@ -7,14 +7,14 @@ const TEST_TOKEN_ADDRESS = '0xabcdef0123456789abcdef0123456789abcdef01'
 describe(buildCurrency, () => {
   it('should return a new Token instance when all parameters are provided', () => {
     const token = buildCurrency({
-      chainId: UniverseChainId.Mainnet,
+      chainId: UniverseChainId.Monad,
       address: TEST_TOKEN_ADDRESS,
       decimals: 0,
       symbol: 'TEST',
       name: 'Test Token',
     }) as Token
     expect(token).toBeInstanceOf(Token)
-    expect(token.chainId).toBe(UniverseChainId.Mainnet)
+    expect(token.chainId).toBe(UniverseChainId.Monad)
     expect(token.address).toBe(TEST_TOKEN_ADDRESS)
     expect(token.decimals).toBe(0)
     expect(token.symbol).toBe('TEST')
@@ -23,7 +23,7 @@ describe(buildCurrency, () => {
 
   it('should return the same reference when the same parameters are provided', () => {
     const args = {
-      chainId: UniverseChainId.Mainnet,
+      chainId: UniverseChainId.Monad,
       address: TEST_TOKEN_ADDRESS,
       decimals: 0,
       symbol: 'TEST',
@@ -39,12 +39,12 @@ describe(buildCurrency, () => {
 
   it('should return a new NativeCurrency instance when address is not provided', () => {
     const nativeCurrency = buildCurrency({
-      chainId: UniverseChainId.Mainnet,
+      chainId: UniverseChainId.Monad,
       address: null,
       decimals: 18,
     }) as NativeCurrency
     expect(nativeCurrency).toBeInstanceOf(NativeCurrency)
-    expect(nativeCurrency.chainId).toBe(UniverseChainId.Mainnet)
+    expect(nativeCurrency.chainId).toBe(UniverseChainId.Monad)
   })
 
   it('should return undefined when chainId or decimals are not provided', () => {
@@ -57,7 +57,7 @@ describe(buildCurrency, () => {
     ).toBeUndefined()
     expect(
       buildCurrency({
-        chainId: UniverseChainId.Mainnet,
+        chainId: UniverseChainId.Monad,
         address: '0x0',
         decimals: null,
       }),

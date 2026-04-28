@@ -10,8 +10,8 @@ const previousState = {
   },
   tokens: {
     dismissedTokenWarnings: {
-      [UniverseChainId.Mainnet]: {
-        [USDC.address]: { chainId: UniverseChainId.Mainnet, address: USDC.address },
+      [UniverseChainId.Monad]: {
+        [USDC.address]: { chainId: UniverseChainId.Monad, address: USDC.address },
       },
     },
   },

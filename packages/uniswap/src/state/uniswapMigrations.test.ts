@@ -29,9 +29,9 @@ describe('unchecksumDismissedTokenWarningKeys', () => {
     const state = {
       tokens: {
         dismissedTokenWarnings: {
-          [UniverseChainId.Mainnet]: {
+          [UniverseChainId.Monad]: {
             '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48': {
-              chainId: UniverseChainId.Mainnet,
+              chainId: UniverseChainId.Monad,
               address: '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48',
             },
           },
@@ -39,10 +39,10 @@ describe('unchecksumDismissedTokenWarningKeys', () => {
       },
     }
     const result = unchecksumDismissedTokenWarningKeys(state)
-    expect(result.tokens.dismissedTokenWarnings[UniverseChainId.Mainnet]).toHaveProperty(
+    expect(result.tokens.dismissedTokenWarnings[UniverseChainId.Monad]).toHaveProperty(
       '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48',
     )
-    expect(result.tokens.dismissedTokenWarnings[UniverseChainId.Mainnet]).not.toHaveProperty(
+    expect(result.tokens.dismissedTokenWarnings[UniverseChainId.Monad]).not.toHaveProperty(
       '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48',
     )
   })
@@ -379,9 +379,9 @@ describe('migrateDismissedTokenWarnings', () => {
     const state = {
       tokens: {
         dismissedTokenWarnings: {
-          [UniverseChainId.Mainnet]: {
+          [UniverseChainId.Monad]: {
             '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48': {
-              chainId: UniverseChainId.Mainnet,
+              chainId: UniverseChainId.Monad,
               address: '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48',
             },
           },
@@ -391,9 +391,9 @@ describe('migrateDismissedTokenWarnings', () => {
     const result = migrateDismissedTokenWarnings(state)
 
     const warning =
-      result.tokens.dismissedTokenWarnings[UniverseChainId.Mainnet]['0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48']
+      result.tokens.dismissedTokenWarnings[UniverseChainId.Monad]['0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48']
     expect(warning.token).toEqual({
-      chainId: UniverseChainId.Mainnet,
+      chainId: UniverseChainId.Monad,
       address: '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48',
     })
     expect(warning.warnings).toEqual([TokenProtectionWarning.NonDefault])

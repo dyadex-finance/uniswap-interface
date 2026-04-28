@@ -87,7 +87,7 @@ describe(useHighestTvlChain, () => {
 
     const { result } = renderHook(() => useHighestTvlChain({ currencyId: '1-0xEthAddress' }))
 
-    expect(result.current.chainId).toBe(UniverseChainId.Mainnet)
+    expect(result.current.chainId).toBe(UniverseChainId.Monad)
     expect(result.current.address).toBe('0xEthAddress')
   })
 
@@ -100,7 +100,7 @@ describe(useHighestTvlChain, () => {
 
     const { result } = renderHook(() => useHighestTvlChain({ currencyId: '1-0xNative' }))
 
-    expect(result.current.chainId).toBe(UniverseChainId.Mainnet)
+    expect(result.current.chainId).toBe(UniverseChainId.Monad)
     expect(result.current.address).toBeNull()
   })
 })

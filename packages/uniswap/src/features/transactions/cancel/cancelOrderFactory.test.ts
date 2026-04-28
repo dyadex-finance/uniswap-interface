@@ -49,7 +49,7 @@ vi.mock('uniswap/src/features/transactions/utils/permit2', () => ({
 describe('cancelOrderFactory', () => {
   const mockNonce = BigNumber.from('12345')
   const mockFrom = '0x1234567890abcdef'
-  const chainId = UniverseChainId.Mainnet
+  const chainId = UniverseChainId.Monad
 
   const mockPermit2 = {
     populateTransaction: {
@@ -252,7 +252,7 @@ describe('cancelOrderFactory', () => {
 
     it('should return null if orders are from different chains', async () => {
       const mixedChainOrders: OrderCancellationParams[] = [
-        { ...mockOrders[0]!, chainId: UniverseChainId.Mainnet },
+        { ...mockOrders[0]!, chainId: UniverseChainId.Monad },
         { ...mockOrders[1]!, chainId: UniverseChainId.ArbitrumOne },
       ]
 

@@ -7,7 +7,7 @@ describe('isV4UnsupportedChain', () => {
   })
 
   it.each([
-    UniverseChainId.Mainnet,
+    UniverseChainId.Monad,
     UniverseChainId.Avalanche,
     UniverseChainId.ArbitrumOne,
     UniverseChainId.Base,

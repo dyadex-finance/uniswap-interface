@@ -589,16 +589,16 @@ export function testMovedTokenWarnings(migration: (state: any) => any, prevSchem
     ...prevSchema,
     tokens: {
       dismissedWarningTokens: {
-        [buildCurrencyId(UniverseChainId.Mainnet, USDC.address)]: true,
+        [buildCurrencyId(UniverseChainId.Monad, USDC.address)]: true,
       },
     },
   }
   const result = migration(prevSchemaWithWarnings)
   expect(result.tokens.dismissedWarningTokens).toEqual(undefined)
   expect(result.tokens.dismissedTokenWarnings).toMatchObject({
-    [UniverseChainId.Mainnet]: {
+    [UniverseChainId.Monad]: {
       [USDC.address]: {
-        chainId: UniverseChainId.Mainnet,
+        chainId: UniverseChainId.Monad,
         address: USDC.address,
       },
     },
@@ -785,7 +785,7 @@ export function testRemoveUniconV2BehaviorState(migration: (state: any) => any, 
 export function testAddRoutingFieldToTransactions(migration: (state: any) => any, prevSchema: any): void {
   const TEST_ADDRESS = '0xTestAddress'
   const txDetails0 = {
-    chainId: UniverseChainId.Mainnet,
+    chainId: UniverseChainId.Monad,
     id: '0',
     from: '0xTestAddress',
     options: {
@@ -816,7 +816,7 @@ export function testAddRoutingFieldToTransactions(migration: (state: any) => any
 
   const transactions = {
     [TEST_ADDRESS]: {
-      [UniverseChainId.Mainnet]: {
+      [UniverseChainId.Monad]: {
         '0': txDetails0,
       },
       [UniverseChainId.Optimism]: {
@@ -829,7 +829,7 @@ export function testAddRoutingFieldToTransactions(migration: (state: any) => any
 
   const result = migration(stub)
 
-  expect(result.transactions[TEST_ADDRESS][UniverseChainId.Mainnet]['0'].routing).toBe('CLASSIC')
+  expect(result.transactions[TEST_ADDRESS][UniverseChainId.Monad]['0'].routing).toBe('CLASSIC')
   expect(result.transactions[TEST_ADDRESS][UniverseChainId.Optimism]['1'].routing).toBe('CLASSIC')
 }
 

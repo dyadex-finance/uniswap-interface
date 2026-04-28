@@ -22,14 +22,14 @@ import { getSDKPoolFromPoolInformation, parseRestPosition } from '~/components/L
 import { ETH_MAINNET } from '~/test-utils/constants'
 
 const token0Rest = {
-  chainId: UniverseChainId.Mainnet,
+  chainId: UniverseChainId.Monad,
   address: WETH.address,
   symbol: 'WETH',
   decimals: 18,
   name: 'Wrapped Ether',
 } as RestToken
 const token1Rest = {
-  chainId: UniverseChainId.Mainnet,
+  chainId: UniverseChainId.Monad,
   address: DAI.address,
   symbol: 'DAI',
   decimals: 18,
@@ -154,7 +154,7 @@ describe('getSDKPoolFromPoolInformation', () => {
 
 describe('parseRestPosition', () => {
   const liquidityTokenRest = {
-    chainId: UniverseChainId.Mainnet,
+    chainId: UniverseChainId.Monad,
     address: '0xb2839134B8151964f19f6f3c7D59C70ae52852F5',
     symbol: 'UNI-V2',
     decimals: 18,
@@ -181,7 +181,7 @@ describe('parseRestPosition', () => {
   } as PairPosition
 
   const MOCK_REST_V2_POSITION: RestPosition = {
-    chainId: UniverseChainId.Mainnet,
+    chainId: UniverseChainId.Monad,
     protocolVersion: ProtocolVersion.V2,
     position: {
       case: 'v2Pair',
@@ -194,7 +194,7 @@ describe('parseRestPosition', () => {
   const mockV3Position: PoolPosition = new MockPoolPosition(ProtocolVersion.V3)
 
   const MOCK_REST_V3_POSITION: RestPosition = {
-    chainId: UniverseChainId.Mainnet,
+    chainId: UniverseChainId.Monad,
     protocolVersion: ProtocolVersion.V3,
     position: {
       case: 'v3Position',
@@ -211,7 +211,7 @@ describe('parseRestPosition', () => {
   } as RestV4Position
 
   const MOCK_REST_V4_POSITION: RestPosition = {
-    chainId: UniverseChainId.Mainnet,
+    chainId: UniverseChainId.Monad,
     protocolVersion: ProtocolVersion.V4,
     position: {
       case: 'v4Position',
@@ -232,7 +232,7 @@ describe('parseRestPosition', () => {
       version: ProtocolVersion.V2,
       poolOrPair: expect.any(Pair),
       liquidityToken,
-      chainId: UniverseChainId.Mainnet,
+      chainId: UniverseChainId.Monad,
       poolId: liquidityToken.address,
       currency0Amount: CurrencyAmount.fromRawAmount(WETH, v2PairPosition.liquidity0),
       currency1Amount: CurrencyAmount.fromRawAmount(DAI, v2PairPosition.liquidity1),
@@ -266,7 +266,7 @@ describe('parseRestPosition', () => {
     expect(result).toEqual({
       status: PositionStatus.IN_RANGE,
       version: ProtocolVersion.V3,
-      chainId: UniverseChainId.Mainnet,
+      chainId: UniverseChainId.Monad,
       poolId: mockV3Position.poolId,
       tickLower: Number(mockV3Position.tickLower),
       tickUpper: Number(mockV3Position.tickUpper),
@@ -325,7 +325,7 @@ describe('parseRestPosition', () => {
       },
       status: PositionStatus.IN_RANGE,
       version: ProtocolVersion.V4,
-      chainId: UniverseChainId.Mainnet,
+      chainId: UniverseChainId.Monad,
       v4hook: ZERO_ADDRESS,
       tokenId: mockV4PoolPosition.tokenId,
       tickLower: Number(mockV4PoolPosition.tickLower),

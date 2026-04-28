@@ -28,7 +28,7 @@ describe('report submission analytics', () => {
 
       submitTokenIssueReport({
         source: 'token-details',
-        chainId: UniverseChainId.Mainnet,
+        chainId: UniverseChainId.Monad,
         tokenAddress: '0x123',
         reportOptions: [TokenReportOption.Spam, TokenReportOption.Other],
         reportTexts,
@@ -47,7 +47,7 @@ describe('report submission analytics', () => {
     it('sends undefined text when Other is not in reportTexts map', () => {
       submitTokenIssueReport({
         source: 'portfolio',
-        chainId: UniverseChainId.Mainnet,
+        chainId: UniverseChainId.Monad,
         tokenAddress: '0x123',
         reportOptions: [TokenReportOption.Spam],
         reportTexts: new Map(),
@@ -69,7 +69,7 @@ describe('report submission analytics', () => {
       const reportTexts = new Map<TokenDataReportOption, string>([[TokenDataReportOption.Other, 'chart looks off']])
 
       submitTokenDataReport({
-        chainId: UniverseChainId.Mainnet,
+        chainId: UniverseChainId.Monad,
         tokenAddress: '0x456',
         reportOptions: [TokenDataReportOption.Other],
         reportTexts,
@@ -91,7 +91,7 @@ describe('report submission analytics', () => {
       ])
 
       submitTokenDataReport({
-        chainId: UniverseChainId.Mainnet,
+        chainId: UniverseChainId.Monad,
         tokenAddress: '0x456',
         reportOptions: [TokenDataReportOption.Performance],
         reportTexts,
@@ -116,7 +116,7 @@ describe('report submission analytics', () => {
       ])
 
       submitTokenDataReport({
-        chainId: UniverseChainId.Mainnet,
+        chainId: UniverseChainId.Monad,
         tokenAddress: '0x456',
         reportOptions: [TokenDataReportOption.Performance, TokenDataReportOption.Other],
         reportTexts,
@@ -136,7 +136,7 @@ describe('report submission analytics', () => {
 
     it('sends undefined for text fields when options have no text entries', () => {
       submitTokenDataReport({
-        chainId: UniverseChainId.Mainnet,
+        chainId: UniverseChainId.Monad,
         tokenAddress: '0x456',
         reportOptions: [TokenDataReportOption.Price],
         reportTexts: new Map(),
@@ -157,7 +157,7 @@ describe('report submission analytics', () => {
     const mockCurrency = {
       isNative: false,
       address: '0xabc',
-      chainId: UniverseChainId.Mainnet,
+      chainId: UniverseChainId.Monad,
     }
 
     it('sends text for Other option', () => {
@@ -165,7 +165,7 @@ describe('report submission analytics', () => {
 
       submitPoolDataReport({
         poolId: 'pool-1',
-        chainId: UniverseChainId.Mainnet,
+        chainId: UniverseChainId.Monad,
         version: 3 as never,
         token0: mockCurrency as never,
         token1: mockCurrency as never,
@@ -187,7 +187,7 @@ describe('report submission analytics', () => {
     it('sends undefined text when Other is not selected', () => {
       submitPoolDataReport({
         poolId: 'pool-2',
-        chainId: UniverseChainId.Mainnet,
+        chainId: UniverseChainId.Monad,
         version: 3 as never,
         token0: mockCurrency as never,
         token1: mockCurrency as never,

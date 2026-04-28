@@ -46,8 +46,8 @@ describe('handleUniswapAppDeepLink', () => {
         linkSource: LinkSource.Share,
       })
         .provide([
-          [call(fromUniswapWebAppLink, 'ethereum'), UniverseChainId.Mainnet],
-          [call(buildCurrencyId, UniverseChainId.Mainnet, SAMPLE_CONTRACT_ADDRESS), SAMPLE_CURRENCY_ID],
+          [call(fromUniswapWebAppLink, 'ethereum'), UniverseChainId.Monad],
+          [call(buildCurrencyId, UniverseChainId.Monad, SAMPLE_CONTRACT_ADDRESS), SAMPLE_CURRENCY_ID],
           [
             call(navigate, MobileScreens.TokenDetails, {
               currencyId: SAMPLE_CURRENCY_ID,
@@ -75,8 +75,8 @@ describe('handleUniswapAppDeepLink', () => {
         linkSource: LinkSource.Share,
       })
         .provide([
-          [call(fromUniswapWebAppLink, 'ethereum'), UniverseChainId.Mainnet],
-          [call(buildNativeCurrencyId, UniverseChainId.Mainnet), SAMPLE_NATIVE_CURRENCY_ID],
+          [call(fromUniswapWebAppLink, 'ethereum'), UniverseChainId.Monad],
+          [call(buildNativeCurrencyId, UniverseChainId.Monad), SAMPLE_NATIVE_CURRENCY_ID],
           [
             call(navigate, MobileScreens.TokenDetails, {
               currencyId: SAMPLE_NATIVE_CURRENCY_ID,
@@ -104,8 +104,8 @@ describe('handleUniswapAppDeepLink', () => {
         linkSource: LinkSource.Widget,
       })
         .provide([
-          [call(fromUniswapWebAppLink, 'ethereum'), UniverseChainId.Mainnet],
-          [call(buildCurrencyId, UniverseChainId.Mainnet, SAMPLE_CONTRACT_ADDRESS), SAMPLE_CURRENCY_ID],
+          [call(fromUniswapWebAppLink, 'ethereum'), UniverseChainId.Monad],
+          [call(buildCurrencyId, UniverseChainId.Monad, SAMPLE_CONTRACT_ADDRESS), SAMPLE_CURRENCY_ID],
           [
             call(navigate, MobileScreens.TokenDetails, {
               currencyId: SAMPLE_CURRENCY_ID,
@@ -170,10 +170,10 @@ describe('handleUniswapAppDeepLink', () => {
         linkSource: LinkSource.Share,
       })
         .provide([
-          [call(fromUniswapWebAppLink, 'ethereum'), UniverseChainId.Mainnet],
+          [call(fromUniswapWebAppLink, 'ethereum'), UniverseChainId.Monad],
           [
             call(handleTopTokensDeepLink, {
-              chainId: UniverseChainId.Mainnet,
+              chainId: UniverseChainId.Monad,
               url,
             }),
             undefined,

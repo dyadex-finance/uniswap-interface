@@ -1,7 +1,6 @@
 import { GraphQLApi } from '@universe/api'
 import { useCallback } from 'react'
 import { useAllCommonBaseCurrencies } from 'uniswap/src/components/TokenSelector/hooks/useAllCommonBaseCurrencies'
-import { MELD_NATIVE_SOL_ADDRESS_SOLANA } from 'uniswap/src/features/chains/svm/defaults'
 import { UniverseChainId } from 'uniswap/src/features/chains/types'
 import { isUniverseChainId } from 'uniswap/src/features/chains/utils'
 import { CurrencyInfo, TokenList } from 'uniswap/src/features/dataApi/types'
@@ -54,7 +53,7 @@ export function useMeldSupportedCurrencyToCurrencyInfo(): {
       const currencyInfo = commonBases.data?.find((base) => {
         if (base.currency.isNative) {
           if (base.currency.chainId === supportedChainId) {
-            return !forCurrency.address || forCurrency.address === MELD_NATIVE_SOL_ADDRESS_SOLANA
+            return !forCurrency.address
           } else {
             return false
           }

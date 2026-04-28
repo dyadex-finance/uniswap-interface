@@ -27,7 +27,7 @@ test.describe(
   async () => {
     test.beforeEach(async ({ page, anvil }) => {
       await anvil.setErc20Balance({
-        address: assume0xAddress(WETH9[UniverseChainId.Mainnet].address),
+        address: assume0xAddress(WETH9[UniverseChainId.Monad].address),
         balance: parseEther('1000000'),
       })
       await page.route(`${uniswapUrls.tradingApiUrl}${uniswapUrls.tradingApiPaths.quote}`, async (route, request) => {
@@ -42,7 +42,7 @@ test.describe(
       await page.route(`${uniswapUrls.tradingApiUrl}${uniswapUrls.tradingApiPaths.order}`, async (route) => {
         await route.fulfill({ path: Mocks.UniswapX.openOrder })
       })
-      await page.goto(`/swap?inputCurrency=${WETH9[UniverseChainId.Mainnet].address}&outputCurrency=${DAI.address}`)
+      await page.goto(`/swap?inputCurrency=${WETH9[UniverseChainId.Monad].address}&outputCurrency=${DAI.address}`)
 
       await page.getByTestId(TestID.AmountInputIn).fill('1')
       await page.getByTestId(TestID.ReviewSwap).click()

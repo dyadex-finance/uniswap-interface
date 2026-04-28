@@ -2,7 +2,6 @@ import { BigNumber } from '@ethersproject/bignumber'
 import { NativeCurrency, Token } from '@dyadex-finance/sdk-core'
 import { nativeOnChain, WRAPPED_NATIVE_CURRENCY } from 'uniswap/src/constants/tokens'
 import { normalizeTokenAddressForCache } from 'uniswap/src/data/cache'
-import { WRAPPED_SOL_ADDRESS_SOLANA } from 'uniswap/src/features/chains/svm/defaults'
 import { UniverseChainId } from 'uniswap/src/features/chains/types'
 import { CurrencyInfo } from 'uniswap/src/features/dataApi/types'
 import { SolanaToken } from 'uniswap/src/features/tokens/SolanaToken'
@@ -60,41 +59,12 @@ export function buildCurrency(args: BuildCurrencyParams): Token | NativeCurrency
     return CURRENCY_CACHE.get(cacheKey)
   }
 
-  let result: Token | NativeCurrency | undefined
-  if (chainId === UniverseChainId.Solana && address) {
-    try {
-      if (isNativeCurrencyAddress(chainId, address)) {
-        // Return native SOL for native addresses
-        result = nativeOnChain(chainId)
-      } else if (
-        areAddressesEqual({
-          addressInput1: { address, chainId },
-          addressInput2: { address: WRAPPED_SOL_ADDRESS_SOLANA, chainId: UniverseChainId.Solana },
-        })
-      ) {
-        // Return singleton WSOL for wrapped address
-        result = WRAPPED_NATIVE_CURRENCY[chainId]
-      } else {
-        // Return regular SPL token for other addresses
-        result = new SolanaToken(chainId, address, decimals, symbol ?? undefined, name ?? undefined)
-      }
-    } catch (error) {
-      // TODO(SWAP-262): Investigate remaining source of lowercased SPL token addresses
-      const isLowercasedAddress = address.toLowerCase() === address
-      const displayError = isLowercasedAddress ? new Error(`Invalid lowercased SPL token address: ${address}`) : error
+  const buyFee = buyFeeBps && BigNumber.from(buyFeeBps).gt(0) ? BigNumber.from(buyFeeBps) : undefined
+  const sellFee = sellFeeBps && BigNumber.from(sellFeeBps).gt(0) ? BigNumber.from(sellFeeBps) : undefined
 
-      logger.error(displayError, {
-        tags: { file: 'buildCurrency.ts', function: 'buildCurrency' },
-      })
-    }
-  } else {
-    const buyFee = buyFeeBps && BigNumber.from(buyFeeBps).gt(0) ? BigNumber.from(buyFeeBps) : undefined
-    const sellFee = sellFeeBps && BigNumber.from(sellFeeBps).gt(0) ? BigNumber.from(sellFeeBps) : undefined
-
-    result = isNonNativeAddress(chainId, address)
-      ? new Token(chainId, address, decimals, symbol ?? undefined, name ?? undefined, bypassChecksum, buyFee, sellFee)
-      : nativeOnChain(chainId)
-  }
+  const result = isNonNativeAddress(chainId, address)
+    ? new Token(chainId, address, decimals, symbol ?? undefined, name ?? undefined, bypassChecksum, buyFee, sellFee)
+    : nativeOnChain(chainId)
 
   CURRENCY_CACHE.set(cacheKey, result)
   return result

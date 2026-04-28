@@ -14,7 +14,6 @@ import { UniverseChainId } from 'uniswap/src/features/chains/types'
 import { CurrencyInfo, MultichainSearchResult } from 'uniswap/src/features/dataApi/types'
 import { Platform } from 'uniswap/src/features/platforms/types/Platform'
 import { NUMBER_OF_RESULTS_LONG } from 'uniswap/src/features/search/SearchModal/constants'
-import { isWSOL } from 'uniswap/src/utils/isWSOL'
 import { useEvent } from 'utilities/src/react/hooks'
 
 function useSearchTokensQuery<T>({
@@ -67,7 +66,7 @@ export function useSearchTokens({
   chainFilter,
   skip,
   size,
-  hideWSOL = false,
+  hideWSOL = true,
 }: {
   searchQuery: string | null
   chainFilter: UniverseChainId | null
@@ -78,7 +77,7 @@ export function useSearchTokens({
   const select = useEvent((data: SearchTokensResponse): CurrencyInfo[] => {
     const multichainResponse = transformSearchToMultichain(data)
     const currencyInfos = multichainResponse.multichainTokens.flatMap(multichainTokenToCurrencyInfos)
-    return currencyInfos.filter((c) => !(hideWSOL && isWSOL(c.currency)))
+    return currencyInfos
   })
 
   return useSearchTokensQuery({ searchQuery, chainFilter, skip, size, select })

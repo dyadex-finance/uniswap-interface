@@ -27,11 +27,11 @@ vi.mock('react-router', async () => {
   }
 })
 
-const mockToken = new Token(UniverseChainId.Mainnet, validBEPoolToken0.id, 18)
+const mockToken = new Token(UniverseChainId.Monad, validBEPoolToken0.id, 18)
 const mockCurrency = {
   isToken: false,
   isNative: true,
-  chainId: UniverseChainId.Mainnet,
+  chainId: UniverseChainId.Monad,
   decimals: 18,
   wrapped: mockToken,
 } as Currency

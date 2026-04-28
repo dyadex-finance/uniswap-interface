@@ -292,7 +292,7 @@ describe('generateLiquidityServiceCreateCalldataQueryParams', () => {
       expect(v2Position.walletAddress).toBe(ZERO_ADDRESS)
       expect(v2Position.protocols).toBe(Protocols.V2)
       expect(v2Position.simulateTransaction).toBe(true)
-      expect(v2Position.chainId).toBe(UniverseChainId.Mainnet)
+      expect(v2Position.chainId).toBe(UniverseChainId.Monad)
       expect(v2Position.independentToken).toBe(IndependentToken.TOKEN_0)
       expect(v2Position.independentAmount).toBe('1000000000000000000')
       expect(v2Position.defaultDependentAmount).toBe('1000000000000000000')
@@ -490,7 +490,7 @@ describe('generateLiquidityServiceCreateCalldataQueryParams', () => {
       expect(v3Position.walletAddress).toBe(ZERO_ADDRESS)
       expect(v3Position.protocols).toBe(Protocols.V3)
       expect(v3Position.simulateTransaction).toBe(true)
-      expect(v3Position.chainId).toBe(UniverseChainId.Mainnet)
+      expect(v3Position.chainId).toBe(UniverseChainId.Monad)
       expect(v3Position.independentToken).toBe(IndependentToken.TOKEN_0)
       expect(v3Position.independentAmount).toBe('1000000000000000000')
       expect(v3Position.initialDependentAmount).toBeUndefined() // No initial price
@@ -698,7 +698,7 @@ describe('generateLiquidityServiceCreateCalldataQueryParams', () => {
       expect(v4Position.walletAddress).toBe(ZERO_ADDRESS)
       expect(v4Position.protocols).toBe(Protocols.V4)
       expect(v4Position.simulateTransaction).toBe(true)
-      expect(v4Position.chainId).toBe(UniverseChainId.Mainnet)
+      expect(v4Position.chainId).toBe(UniverseChainId.Monad)
       expect(v4Position.independentToken).toBe(IndependentToken.TOKEN_0)
       expect(v4Position.independentAmount).toBe('1000000000000000000')
       expect(v4Position.initialDependentAmount).toBeUndefined() // No initial price

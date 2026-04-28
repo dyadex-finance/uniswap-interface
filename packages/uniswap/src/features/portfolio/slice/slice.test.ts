@@ -11,7 +11,7 @@ import { buildCurrencyId } from 'uniswap/src/utils/currencyId'
 const TEST_ADDRESS1 = '0x1234567890123456789012345678901234567890'
 const TEST_ADDRESS2 = '0x0987654321098765432109876543210987654321'
 const TEST_TOKEN_ADDRESS = '0xabcdef0123456789abcdef0123456789abcdef01'
-const TEST_CHAIN_ID = UniverseChainId.Mainnet
+const TEST_CHAIN_ID = UniverseChainId.Monad
 
 describe(portfolioReducer, () => {
   describe(addTokensToBalanceOverride, () => {

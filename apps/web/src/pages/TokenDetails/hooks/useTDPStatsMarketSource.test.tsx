@@ -26,7 +26,7 @@ function createTDPState(
 ): TDPState {
   return {
     currencyChain: GraphQLApi.Chain.Ethereum,
-    currencyChainId: UniverseChainId.Mainnet,
+    currencyChainId: UniverseChainId.Monad,
     address: '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48',
     tokenQuery: { loading: false, data: undefined },
     multiChainMap: overrides.multiChainMap ?? {},
@@ -36,10 +36,10 @@ function createTDPState(
   } as unknown as TDPState
 }
 
-const ONE_CHAIN: MultichainTokenEntry[] = [{ chainId: UniverseChainId.Mainnet, address: '0x111', isNative: false }]
+const ONE_CHAIN: MultichainTokenEntry[] = [{ chainId: UniverseChainId.Monad, address: '0x111', isNative: false }]
 
 const TWO_CHAINS: MultichainTokenEntry[] = [
-  { chainId: UniverseChainId.Mainnet, address: '0x111', isNative: false },
+  { chainId: UniverseChainId.Monad, address: '0x111', isNative: false },
   { chainId: UniverseChainId.Base, address: '0x222', isNative: false },
 ]
 

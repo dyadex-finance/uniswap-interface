@@ -6,41 +6,41 @@ describe('groupGasFeesBySymbol', () => {
   it.each([
     {
       name: 'single gas fee',
-      input: [{ chainId: UniverseChainId.Mainnet, gasFeeDisplayValue: '1000000000000000' }],
+      input: [{ chainId: UniverseChainId.Monad, gasFeeDisplayValue: '1000000000000000' }],
       expected: {
         ETH: {
           totalFeeAmountInWei: '1000000000000000',
-          chainIds: [UniverseChainId.Mainnet],
-          currency: nativeOnChain(UniverseChainId.Mainnet),
+          chainIds: [UniverseChainId.Monad],
+          currency: nativeOnChain(UniverseChainId.Monad),
         },
       },
     },
     {
       name: 'multiple gas fees same symbol',
       input: [
-        { chainId: UniverseChainId.Mainnet, gasFeeDisplayValue: '1000000000000000' },
+        { chainId: UniverseChainId.Monad, gasFeeDisplayValue: '1000000000000000' },
         { chainId: UniverseChainId.ArbitrumOne, gasFeeDisplayValue: '2000000000000000' },
       ],
       expected: {
         ETH: {
           totalFeeAmountInWei: '3000000000000000',
-          chainIds: [UniverseChainId.Mainnet, UniverseChainId.ArbitrumOne],
-          currency: nativeOnChain(UniverseChainId.Mainnet),
+          chainIds: [UniverseChainId.Monad, UniverseChainId.ArbitrumOne],
+          currency: nativeOnChain(UniverseChainId.Monad),
         },
       },
     },
     {
       name: 'multiple gas fees different symbols',
       input: [
-        { chainId: UniverseChainId.Mainnet, gasFeeDisplayValue: '1000000000000000' },
+        { chainId: UniverseChainId.Monad, gasFeeDisplayValue: '1000000000000000' },
         { chainId: UniverseChainId.Optimism, gasFeeDisplayValue: '1000000000000000' },
         { chainId: UniverseChainId.Polygon, gasFeeDisplayValue: '1000000000000000' },
       ],
       expected: {
         ETH: {
           totalFeeAmountInWei: '2000000000000000',
-          chainIds: [UniverseChainId.Mainnet, UniverseChainId.Optimism],
-          currency: nativeOnChain(UniverseChainId.Mainnet),
+          chainIds: [UniverseChainId.Monad, UniverseChainId.Optimism],
+          currency: nativeOnChain(UniverseChainId.Monad),
         },
         POL: {
           totalFeeAmountInWei: '1000000000000000',

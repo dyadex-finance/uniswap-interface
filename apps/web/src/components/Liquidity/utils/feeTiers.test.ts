@@ -222,7 +222,7 @@ const DEFAULT_FEE_TIERS = {
 describe('getDefaultFeeTiersForChainWithDynamicFeeTier', () => {
   it('returns correct fee tiers for Mainnet without dynamic fee', () => {
     const result = getDefaultFeeTiersForChainWithDynamicFeeTier({
-      chainId: UniverseChainId.Mainnet,
+      chainId: UniverseChainId.Monad,
       dynamicFeeTierEnabled: false,
       protocolVersion: ProtocolVersion.V3,
     })
@@ -257,7 +257,7 @@ describe('getDefaultFeeTiersForChainWithDynamicFeeTier', () => {
 
   it('includes dynamic fee tier when enabled', () => {
     const result = getDefaultFeeTiersForChainWithDynamicFeeTier({
-      chainId: UniverseChainId.Mainnet,
+      chainId: UniverseChainId.Monad,
       dynamicFeeTierEnabled: true,
       protocolVersion: ProtocolVersion.V3,
     })
@@ -274,7 +274,7 @@ describe('getDefaultFeeTiersForChainWithDynamicFeeTier', () => {
 describe('getDefaultFeeTiersWithData', () => {
   it('returns correct fee tiers for Mainnet (V3)', () => {
     const result = getDefaultFeeTiersWithData({
-      chainId: UniverseChainId.Mainnet,
+      chainId: UniverseChainId.Monad,
       feeTierData: DEFAULT_FEE_TIERS,
       protocolVersion: ProtocolVersion.V3,
     })
@@ -306,7 +306,7 @@ describe('getDefaultFeeTiersWithData', () => {
       [`${FeeAmount.LOW}-${TICK_SPACINGS[FeeAmount.LOW]}`]: DEFAULT_FEE_TIERS[FeeAmount.LOW],
     }
     const result = getDefaultFeeTiersWithData({
-      chainId: UniverseChainId.Mainnet,
+      chainId: UniverseChainId.Monad,
       feeTierData: partialFeeTierData,
       protocolVersion: ProtocolVersion.V3,
     })
@@ -315,7 +315,7 @@ describe('getDefaultFeeTiersWithData', () => {
 
   it('returns empty array if no fee tiers match (V3)', () => {
     const result = getDefaultFeeTiersWithData({
-      chainId: UniverseChainId.Mainnet,
+      chainId: UniverseChainId.Monad,
       feeTierData: {},
       protocolVersion: ProtocolVersion.V3,
     })
@@ -376,7 +376,7 @@ describe('getDefaultFeeTiersWithData', () => {
       },
     }
     const result = getDefaultFeeTiersWithData({
-      chainId: UniverseChainId.Mainnet,
+      chainId: UniverseChainId.Monad,
       feeTierData: shuffledFeeTierData,
       protocolVersion: ProtocolVersion.V3,
     })

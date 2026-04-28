@@ -1,5 +1,5 @@
 import { type Currency, type CurrencyAmount } from '@dyadex-finance/sdk-core'
-import { nativeOnChain, PATHUSD_TEMPO } from 'uniswap/src/constants/tokens'
+import { nativeOnChain } from 'uniswap/src/constants/tokens'
 import { UniverseChainId } from 'uniswap/src/features/chains/types'
 import { useOnChainCurrencyBalance } from 'uniswap/src/features/portfolio/api'
 
@@ -9,7 +9,7 @@ import { useOnChainCurrencyBalance } from 'uniswap/src/features/portfolio/api'
  * On Tempo, gas is paid in pathUSD. On all other chains, gas is paid in the native currency.
  */
 export function getChainGasToken(chainId: UniverseChainId): Currency {
-  return chainId === UniverseChainId.Tempo ? PATHUSD_TEMPO : nativeOnChain(chainId)
+  return nativeOnChain(chainId)
 }
 
 /**

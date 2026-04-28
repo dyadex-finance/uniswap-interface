@@ -11,7 +11,7 @@ import { TEST_TOKEN_1, TEST_TOKEN_2 } from '~/test-utils/constants'
 const currency0Amount = CurrencyAmount.fromRawAmount(TEST_TOKEN_1, JSBI.BigInt(100))
 const currency1Amount = CurrencyAmount.fromRawAmount(TEST_TOKEN_2, JSBI.BigInt(100))
 const BASE_POSITION = {
-  chainId: UniverseChainId.Mainnet as EVMUniverseChainId,
+  chainId: UniverseChainId.Monad as EVMUniverseChainId,
   status: PositionStatus.IN_RANGE,
   poolId: 'pool-id',
   currency0Amount,

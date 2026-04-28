@@ -95,7 +95,7 @@ describe('TransactionConfigService', () => {
 
   describe('getTransactionTimeoutMs', () => {
     it('should return 10 minutes for Mainnet', () => {
-      const result = transactionConfigService.getTransactionTimeoutMs({ chainId: UniverseChainId.Mainnet })
+      const result = transactionConfigService.getTransactionTimeoutMs({ chainId: UniverseChainId.Monad })
 
       expect(result).toBe(10 * 60 * 1000) // 10 minutes in milliseconds
     })
@@ -136,19 +136,19 @@ describe('TransactionConfigService', () => {
       mockIsPrivateRpcSupportedOnChain.mockReturnValue(true)
 
       const result = transactionConfigService.shouldUsePrivateRpc({
-        chainId: UniverseChainId.Mainnet,
+        chainId: UniverseChainId.Monad,
         submitViaPrivateRpc: true,
       })
 
       expect(result).toBe(true)
-      expect(mockIsPrivateRpcSupportedOnChain).toHaveBeenCalledWith(UniverseChainId.Mainnet)
+      expect(mockIsPrivateRpcSupportedOnChain).toHaveBeenCalledWith(UniverseChainId.Monad)
     })
 
     it('should return false when submitViaPrivateRpc is false, even if private RPC is enabled and chain supports private RPC', () => {
       mockIsPrivateRpcSupportedOnChain.mockReturnValue(true)
 
       const result = transactionConfigService.shouldUsePrivateRpc({
-        chainId: UniverseChainId.Mainnet,
+        chainId: UniverseChainId.Monad,
         submitViaPrivateRpc: false,
       })
 
@@ -159,7 +159,7 @@ describe('TransactionConfigService', () => {
       mockIsPrivateRpcSupportedOnChain.mockReturnValue(true)
 
       const result = transactionConfigService.shouldUsePrivateRpc({
-        chainId: UniverseChainId.Mainnet,
+        chainId: UniverseChainId.Monad,
         // submitViaPrivateRpc is undefined (default)
       })
 
@@ -171,7 +171,7 @@ describe('TransactionConfigService', () => {
       mockIsPrivateRpcSupportedOnChain.mockReturnValue(true)
 
       const result = transactionConfigService.shouldUsePrivateRpc({
-        chainId: UniverseChainId.Mainnet,
+        chainId: UniverseChainId.Monad,
         submitViaPrivateRpc: true,
       })
 
@@ -210,7 +210,7 @@ describe('TransactionConfigService', () => {
       mockIsPrivateRpcSupportedOnChain.mockReturnValue(true)
 
       const result = transactionConfigService.shouldUsePrivateRpc({
-        chainId: UniverseChainId.Mainnet,
+        chainId: UniverseChainId.Monad,
         submitViaPrivateRpc: true,
       })
 

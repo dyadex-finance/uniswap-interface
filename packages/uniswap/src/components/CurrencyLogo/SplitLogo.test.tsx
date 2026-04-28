@@ -120,7 +120,7 @@ describe(SplitLogo, () => {
     it('does not render icon for Mainnet when showMainnetNetworkLogo is false', () => {
       const { queryByTestId } = render(
         <SplitLogo
-          chainId={UniverseChainId.Mainnet}
+          chainId={UniverseChainId.Monad}
           inputCurrencyInfo={daiCurrencyInfo()}
           outputCurrencyInfo={ethCurrencyInfo()}
           size={10}
@@ -134,7 +134,7 @@ describe(SplitLogo, () => {
       const { getByTestId } = render(
         <SplitLogo
           showMainnetNetworkLogo
-          chainId={UniverseChainId.Mainnet}
+          chainId={UniverseChainId.Monad}
           inputCurrencyInfo={daiCurrencyInfo()}
           outputCurrencyInfo={ethCurrencyInfo()}
           size={10}

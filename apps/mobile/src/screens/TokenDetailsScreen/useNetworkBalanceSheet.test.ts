@@ -28,9 +28,9 @@ const mockCurrentChainBalance: PortfolioBalance = {
   relativeChange24: 0,
   isHidden: false,
   currencyInfo: {
-    currencyId: `${UniverseChainId.Mainnet}-0xtoken`,
+    currencyId: `${UniverseChainId.Monad}-0xtoken`,
     currency: {
-      chainId: UniverseChainId.Mainnet,
+      chainId: UniverseChainId.Monad,
       address: '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48',
       decimals: 6,
       symbol: 'USDC',
@@ -88,8 +88,8 @@ jest.mock('uniswap/src/data/graphql/uniswap-data-api/fragments', () => ({
 }))
 
 const defaultArgs = {
-  currencyId: `${UniverseChainId.Mainnet}-0xtoken`,
-  chainId: UniverseChainId.Mainnet,
+  currencyId: `${UniverseChainId.Monad}-0xtoken`,
+  chainId: UniverseChainId.Monad,
 }
 
 describe(useNetworkBalanceSheet, () => {

@@ -34,7 +34,7 @@ const useQueryStatesMock = mocked(useQueryStates)
 const useCurrencyWithLoadingMock = mocked(useCurrencyWithLoading)
 
 describe('useLiquidityUrlState', () => {
-  const defaultChainId = UniverseChainId.Mainnet
+  const defaultChainId = UniverseChainId.Monad
   const defaultInitialToken = nativeOnChain(defaultChainId)
 
   beforeEach(() => {
@@ -270,7 +270,7 @@ describe('useLiquidityUrlState', () => {
       {
         currencyA: USDC.address,
         currencyB: '',
-        chain: UniverseChainId.Mainnet,
+        chain: UniverseChainId.Monad,
         fee: DEFAULT_FEE_DATA,
         hook: null,
         priceRangeState: {},
@@ -280,7 +280,7 @@ describe('useLiquidityUrlState', () => {
     ])
     const { result } = renderHook(() => useLiquidityUrlState())
     expect(result.current.tokenA).toEqual(USDC)
-    expect(result.current.chainId).toBe(UniverseChainId.Mainnet)
+    expect(result.current.chainId).toBe(UniverseChainId.Monad)
   })
 
   it('handles missing currencyA and currencyB', () => {
@@ -457,7 +457,7 @@ describe('useLiquidityUrlState', () => {
       {
         currencyA: USDC.address,
         currencyB: '',
-        chain: UniverseChainId.Mainnet,
+        chain: UniverseChainId.Monad,
         fee: { feeAmount: 3000, tickSpacing: 60, isDynamic: false },
         hook: '0x0000000000000000000000000000000000000001',
         priceRangeState: {
@@ -503,7 +503,7 @@ describe('useLiquidityUrlState', () => {
     expect(result.current.priceRangeState.priceInverted).toBe(true)
     expect(result.current.depositState.exactAmounts?.[PositionField.TOKEN0]).toBe('100')
     expect(result.current.flowStep).toBe(PositionFlowStep.PRICE_RANGE)
-    expect(result.current.chainId).toBe(UniverseChainId.Mainnet)
+    expect(result.current.chainId).toBe(UniverseChainId.Monad)
   })
 
   it('provides setHistoryState function for step navigation', () => {

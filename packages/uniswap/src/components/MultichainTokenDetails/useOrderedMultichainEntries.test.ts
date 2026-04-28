@@ -11,14 +11,14 @@ vi.mock('uniswap/src/features/chains/hooks/useOrderedChainIds', () => ({
 describe(useOrderedMultichainEntries, () => {
   const ENTRIES: MultichainTokenEntry[] = [
     { chainId: UniverseChainId.Base, address: '0xBase', isNative: false },
-    { chainId: UniverseChainId.Mainnet, address: '0xMainnet', isNative: false },
+    { chainId: UniverseChainId.Monad, address: '0xMainnet', isNative: false },
     { chainId: UniverseChainId.ArbitrumOne, address: '0xArbitrum', isNative: false },
   ]
 
   beforeEach(() => {
     // Return order: Ethereum first, then Arbitrum, then Base
     vi.mocked(useOrderedChainIds).mockReturnValue([
-      UniverseChainId.Mainnet,
+      UniverseChainId.Monad,
       UniverseChainId.ArbitrumOne,
       UniverseChainId.Base,
     ])
@@ -28,7 +28,7 @@ describe(useOrderedMultichainEntries, () => {
     const { result } = renderHook(() => useOrderedMultichainEntries(ENTRIES))
 
     expect(result.current.map((e) => e.chainId)).toEqual([
-      UniverseChainId.Mainnet,
+      UniverseChainId.Monad,
       UniverseChainId.ArbitrumOne,
       UniverseChainId.Base,
     ])
@@ -64,7 +64,7 @@ describe(useOrderedMultichainEntries, () => {
 
     expect(result.current).toBe(firstResult)
     expect(result.current.map((e) => e.chainId)).toEqual([
-      UniverseChainId.Mainnet,
+      UniverseChainId.Monad,
       UniverseChainId.ArbitrumOne,
       UniverseChainId.Base,
     ])

@@ -10,18 +10,18 @@ describe(NetworkPile, () => {
     })
 
     it('renders single logo', () => {
-      const tree = render(<NetworkPile chainIds={[UniverseChainId.Mainnet]} />)
+      const tree = render(<NetworkPile chainIds={[UniverseChainId.Monad]} />)
       expect(tree).toMatchSnapshot()
     })
 
     it('renders double logos', () => {
-      const tree = render(<NetworkPile chainIds={[UniverseChainId.Mainnet, UniverseChainId.ArbitrumOne]} />)
+      const tree = render(<NetworkPile chainIds={[UniverseChainId.Monad, UniverseChainId.ArbitrumOne]} />)
       expect(tree).toMatchSnapshot()
     })
 
     it('renders triple logos', () => {
       const tree = render(
-        <NetworkPile chainIds={[UniverseChainId.Mainnet, UniverseChainId.ArbitrumOne, UniverseChainId.Optimism]} />,
+        <NetworkPile chainIds={[UniverseChainId.Monad, UniverseChainId.ArbitrumOne, UniverseChainId.Optimism]} />,
       )
       expect(tree).toMatchSnapshot()
     })
@@ -30,7 +30,7 @@ describe(NetworkPile, () => {
       const tree = render(
         <NetworkPile
           chainIds={[
-            UniverseChainId.Mainnet,
+            UniverseChainId.Monad,
             UniverseChainId.ArbitrumOne,
             UniverseChainId.Optimism,
             UniverseChainId.Base,
@@ -44,7 +44,7 @@ describe(NetworkPile, () => {
       const tree = render(
         <NetworkPile
           chainIds={[
-            UniverseChainId.Mainnet,
+            UniverseChainId.Monad,
             UniverseChainId.ArbitrumOne,
             UniverseChainId.Optimism,
             UniverseChainId.Base,
@@ -59,21 +59,19 @@ describe(NetworkPile, () => {
 
   describe('small size', () => {
     it('renders single logo', () => {
-      const tree = render(<NetworkPile chainIds={[UniverseChainId.Mainnet]} size="small" />)
+      const tree = render(<NetworkPile chainIds={[UniverseChainId.Monad]} size="small" />)
       expect(tree).toMatchSnapshot()
     })
 
     it('renders double logos', () => {
-      const tree = render(
-        <NetworkPile chainIds={[UniverseChainId.Mainnet, UniverseChainId.ArbitrumOne]} size="small" />,
-      )
+      const tree = render(<NetworkPile chainIds={[UniverseChainId.Monad, UniverseChainId.ArbitrumOne]} size="small" />)
       expect(tree).toMatchSnapshot()
     })
 
     it('renders triple logos', () => {
       const tree = render(
         <NetworkPile
-          chainIds={[UniverseChainId.Mainnet, UniverseChainId.ArbitrumOne, UniverseChainId.Optimism]}
+          chainIds={[UniverseChainId.Monad, UniverseChainId.ArbitrumOne, UniverseChainId.Optimism]}
           size="small"
         />,
       )
@@ -84,7 +82,7 @@ describe(NetworkPile, () => {
       const tree = render(
         <NetworkPile
           chainIds={[
-            UniverseChainId.Mainnet,
+            UniverseChainId.Monad,
             UniverseChainId.ArbitrumOne,
             UniverseChainId.Optimism,
             UniverseChainId.Base,

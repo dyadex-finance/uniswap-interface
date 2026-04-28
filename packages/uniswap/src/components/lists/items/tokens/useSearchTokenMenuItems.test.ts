@@ -52,13 +52,7 @@ const mockHandleShareToken = vi.fn()
   handleShareToken: mockHandleShareToken,
 })
 
-const USDC_TOKEN = new Token(
-  UniverseChainId.Mainnet,
-  '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48',
-  6,
-  'USDC',
-  'USD Coin',
-)
+const USDC_TOKEN = new Token(UniverseChainId.Monad, '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48', 6, 'USDC', 'USD Coin')
 
 const ALL_ACTIONS: TokenContextMenuAction[] = [
   TokenContextMenuAction.CopyAddress,

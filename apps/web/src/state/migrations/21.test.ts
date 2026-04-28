@@ -61,7 +61,7 @@ describe('migration to v21', () => {
           '1': {
             '0x1234567890123456789012345678901234567890': {
               address: '0x1234567890123456789012345678901234567890',
-              chainId: UniverseChainId.Mainnet,
+              chainId: UniverseChainId.Monad,
               symbol: 'TEST',
               name: 'Test Token',
               decimals: 18,
@@ -114,14 +114,14 @@ describe('migration to v21', () => {
           '1': {
             '0x1234567890123456789012345678901234567890': {
               address: '0x1234567890123456789012345678901234567890',
-              chainId: UniverseChainId.Mainnet,
+              chainId: UniverseChainId.Monad,
               symbol: 'TEST',
               name: 'Test Token',
               decimals: 18,
             },
             'invalid-address': {
               address: 'invalid-address',
-              chainId: UniverseChainId.Mainnet,
+              chainId: UniverseChainId.Monad,
               symbol: 'TEST',
               name: 'Test Token',
               decimals: 18,

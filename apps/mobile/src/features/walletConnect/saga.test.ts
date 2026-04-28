@@ -122,7 +122,7 @@ describe('WalletConnect Saga', () => {
         wcSession: {
           id: '789',
           proposalNamespaces: mockNamespaces,
-          chains: [UniverseChainId.Mainnet],
+          chains: [UniverseChainId.Monad],
           dappRequestInfo,
           verifyStatus: DappVerificationStatus.Verified,
         },
@@ -216,7 +216,7 @@ describe('WalletConnect Saga', () => {
         wcSession: {
           id: '456',
           proposalNamespaces: mockNamespaces,
-          chains: [UniverseChainId.Mainnet],
+          chains: [UniverseChainId.Monad],
           dappRequestInfo,
           verifyStatus: DappVerificationStatus.Verified,
         },
@@ -302,7 +302,7 @@ describe('WalletConnect Saga', () => {
         wcSession: {
           id: '999',
           proposalNamespaces: mockNamespaces,
-          chains: [UniverseChainId.Mainnet],
+          chains: [UniverseChainId.Monad],
           dappRequestInfo,
           verifyStatus: DappVerificationStatus.Unverified,
         },
@@ -369,7 +369,7 @@ describe('WalletConnect Saga', () => {
                 icon: 'https://test.com/icon.png',
                 requestType: DappRequestType.WalletConnectSessionRequest,
               },
-              chains: [UniverseChainId.Mainnet],
+              chains: [UniverseChainId.Monad],
               namespaces: validSession.namespaces,
               activeAccount: mockAccount,
             },
@@ -478,7 +478,7 @@ describe('WalletConnect Saga', () => {
                 icon: 'https://valid.com/icon.png',
                 requestType: DappRequestType.WalletConnectSessionRequest,
               },
-              chains: [UniverseChainId.Mainnet],
+              chains: [UniverseChainId.Monad],
               namespaces: validSession.namespaces,
               activeAccount: mockAccount,
             },
@@ -498,7 +498,7 @@ describe('WalletConnect Saga', () => {
     it('disconnects sessions associated with removed accounts', async () => {
       const session = {
         id: 'session-topic',
-        chains: [UniverseChainId.Mainnet],
+        chains: [UniverseChainId.Monad],
         dappRequestInfo: {
           name: 'Dapp',
           url: 'https://dapp.com',
@@ -529,7 +529,7 @@ describe('WalletConnect Saga', () => {
     it('does not disconnect sessions for unrelated accounts', async () => {
       const session = {
         id: 'session-topic',
-        chains: [UniverseChainId.Mainnet],
+        chains: [UniverseChainId.Monad],
         dappRequestInfo: {
           name: 'Dapp',
           url: 'https://dapp.com',

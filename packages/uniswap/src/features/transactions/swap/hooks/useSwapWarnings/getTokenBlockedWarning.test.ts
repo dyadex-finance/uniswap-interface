@@ -13,10 +13,10 @@ describe('getTokenBlockedWarning', () => {
   const mockTFunction = i18next.t.bind(i18next)
 
   const createMockCurrency = (symbol: string, isBlocked: boolean): CurrencyInfo => {
-    const token = new Token(UniverseChainId.Mainnet, MOCK_CURRENCY_ADDRESS, 18, symbol)
+    const token = new Token(UniverseChainId.Monad, MOCK_CURRENCY_ADDRESS, 18, symbol)
     return {
       currency: token,
-      currencyId: `${UniverseChainId.Mainnet}-${MOCK_CURRENCY_ADDRESS}`,
+      currencyId: `${UniverseChainId.Monad}-${MOCK_CURRENCY_ADDRESS}`,
       logoUrl: null,
       safetyInfo: isBlocked
         ? { tokenList: TokenList.Blocked, protectionResult: GraphQLApi.ProtectionResult.Unknown }

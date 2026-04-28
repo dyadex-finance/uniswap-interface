@@ -22,7 +22,7 @@ import { ONE_MINUTE_MS } from 'utilities/src/time/time'
 const NATIVE_ALLOWANCE_ABI = ['function nativeAllowance(address spender) view returns (uint256)']
 
 const ELIGIBLE_CHAIN_IDS = new Set<UniverseChainId>([
-  UniverseChainId.Mainnet,
+  UniverseChainId.Monad,
   UniverseChainId.ArbitrumOne,
   UniverseChainId.Base,
 ])
@@ -32,7 +32,7 @@ type MinUsdThresholdsByChain = { mainnet: number; base: number; arbitrum: number
 const DEFAULT_MIN_USD_THRESHOLDS: MinUsdThresholdsByChain = { mainnet: 300, base: 1000, arbitrum: 300 }
 
 const CHAIN_KEY_TO_ID: Record<keyof MinUsdThresholdsByChain, UniverseChainId> = {
-  mainnet: UniverseChainId.Mainnet,
+  mainnet: UniverseChainId.Monad,
   base: UniverseChainId.Base,
   arbitrum: UniverseChainId.ArbitrumOne,
 }

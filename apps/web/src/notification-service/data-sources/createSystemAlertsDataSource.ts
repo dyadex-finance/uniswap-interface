@@ -103,7 +103,7 @@ function getChainIdFromPathname(pathname: string): UniverseChainId | undefined {
     }
   }
 
-  return UniverseChainId.Mainnet
+  return UniverseChainId.Monad
 }
 
 /**
@@ -143,7 +143,7 @@ function checkChainConnectivity(ctx: {
     notification: createChainConnectivityNotification({
       chainLabel: chainInfo.label,
       chainId: swapInputChainId,
-      isMainnet: swapInputChainId === UniverseChainId.Mainnet,
+      isMainnet: swapInputChainId === UniverseChainId.Monad,
       statusPageUrl: chainInfo.statusPage,
     }),
   }

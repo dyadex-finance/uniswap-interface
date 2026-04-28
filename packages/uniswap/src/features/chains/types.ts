@@ -11,28 +11,8 @@ import { NonEmptyArray } from 'utilities/src/primitives/array'
 import { Chain as WagmiChain } from 'wagmi/chains'
 
 export enum UniverseChainId {
-  Mainnet = UniswapSDKChainId.MAINNET,
-  ArbitrumOne = UniswapSDKChainId.ARBITRUM_ONE,
-  Avalanche = UniswapSDKChainId.AVALANCHE,
-  Base = UniswapSDKChainId.BASE,
-  Blast = UniswapSDKChainId.BLAST,
-  Bnb = UniswapSDKChainId.BNB,
-  Celo = UniswapSDKChainId.CELO,
   Monad = UniswapSDKChainId.MONAD,
   MonadTestnet = UniswapSDKChainId.MONAD_TESTNET,
-  Optimism = UniswapSDKChainId.OPTIMISM,
-  Polygon = UniswapSDKChainId.POLYGON,
-  Sepolia = UniswapSDKChainId.SEPOLIA,
-  Soneium = UniswapSDKChainId.SONEIUM,
-  Tempo = UniswapSDKChainId.TEMPO,
-  Unichain = UniswapSDKChainId.UNICHAIN,
-  UnichainSepolia = UniswapSDKChainId.UNICHAIN_SEPOLIA,
-  WorldChain = UniswapSDKChainId.WORLDCHAIN,
-  XLayer = UniswapSDKChainId.XLAYER,
-  Linea = UniswapSDKChainId.LINEA,
-  Zksync = UniswapSDKChainId.ZKSYNC,
-  Zora = UniswapSDKChainId.ZORA,
-  Solana = 501000101,
 }
 
 export type UniverseChainIdByPlatform<T extends Platform> = ((typeof UNIVERSE_CHAIN_INFO)[UniverseChainId] & {

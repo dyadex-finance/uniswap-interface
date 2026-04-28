@@ -47,7 +47,7 @@ describe('TransactionRepositoryImplRedux', () => {
 
   // Sample test data
   const mockAddress = '0x1234567890123456789012345678901234567890'
-  const mockChainId = UniverseChainId.Mainnet
+  const mockChainId = UniverseChainId.Monad
   const mockTransactionHash = '0xabcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890'
   const mockTransactionRequest = {
     to: '0xabcdef1234567890abcdef1234567890abcdef12',

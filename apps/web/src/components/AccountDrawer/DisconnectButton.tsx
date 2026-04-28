@@ -306,7 +306,6 @@ function SwitchWalletButtons() {
 function DisconnectMenu() {
   return (
     <Flex gap="$gap8">
-      <SwitchWalletButtons />
       <InLineDisconnectButton />
     </Flex>
   )
